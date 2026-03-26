@@ -1,11 +1,15 @@
 aid: argo-cd
 name: Argo CD
 description: >-
-  Argo CD is a declarative GitOps continuous delivery tool for Kubernetes that automates application deployment and lifecycle management.
+  Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes that automates the deployment of applications by using Git repositories as the source of truth for defining the desired application state.
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
   - Containers
+  - Kubernetes
+  - GitOps
+  - Continuous Delivery
+  - Deployment
 url: >-
   https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/apis.yml
 created: '2026-03-26'
@@ -15,14 +19,30 @@ apis:
   - aid: argo-cd:argo-cd
     name: Argo CD
     description: >-
-      Argo CD is a declarative GitOps continuous delivery tool for Kubernetes that automates application deployment and lifecycle management.
-    humanURL: https://github.com/api-evangelist/argo-cd
+      Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes that automates the deployment of applications by using Git repositories as the source of truth for defining the desired application state.
+    humanURL: https://argoproj.github.io/cd/
     tags:
       - Containers
-    properties: []
+      - Kubernetes
+      - GitOps
+      - Continuous Delivery
+      - Deployment
+    properties:
+      - type: Documentation
+        url: https://argo-cd.readthedocs.io/en/stable/
+      - type: Getting Started
+        url: https://argo-cd.readthedocs.io/en/stable/getting_started/
 common:
   - type: Website
-    url: https://github.com/api-evangelist/argo-cd
+    url: https://argoproj.github.io/cd/
+  - type: Documentation
+    url: https://argo-cd.readthedocs.io/en/stable/
+  - type: Getting Started
+    url: https://argo-cd.readthedocs.io/en/stable/getting_started/
+  - type: GitHub Organization
+    url: https://github.com/argoproj
+  - type: Blog
+    url: https://blog.argoproj.io/
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
