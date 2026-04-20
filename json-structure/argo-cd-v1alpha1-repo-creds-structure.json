@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-structure/argo-cd-v1alpha1-repo-creds-structure.json",
+  "name": "v1alpha1RepoCreds",
+  "description": "v1alpha1RepoCreds schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "azureActiveDirectoryEndpoint": {
+      "type": "string",
+      "name": "AzureActiveDirectoryEndpoint specifies the Azure Active Directory endpoint used for Service Principal authentication. If empty will default to https://login.microsoftonline.com"
+    },
+    "azureServicePrincipalClientId": {
+      "type": "string",
+      "name": "AzureServicePrincipalClientId specifies the client ID of the Azure Service Principal used to access the repo"
+    },
+    "azureServicePrincipalClientSecret": {
+      "type": "string",
+      "name": "AzureServicePrincipalClientSecret specifies the client secret of the Azure Service Principal used to access the repo"
+    },
+    "azureServicePrincipalTenantId": {
+      "type": "string",
+      "name": "AzureServicePrincipalTenantId specifies the tenant ID of the Azure Service Principal used to access the repo"
+    },
+    "bearerToken": {
+      "type": "string",
+      "name": "BearerToken contains the bearer token used for Git BitBucket Data Center auth at the repo server"
+    },
+    "enableOCI": {
+      "type": "boolean",
+      "name": "EnableOCI specifies whether helm-oci support should be enabled for this repo"
+    },
+    "forceHttpBasicAuth": {
+      "type": "boolean",
+      "name": "ForceHttpBasicAuth specifies whether Argo CD should attempt to force basic auth for HTTP connections"
+    },
+    "gcpServiceAccountKey": {
+      "type": "string",
+      "name": "GCPServiceAccountKey specifies the service account key in JSON format to be used for getting credentials to Google Cloud Source repos"
+    },
+    "githubAppEnterpriseBaseUrl": {
+      "type": "string",
+      "name": "GithubAppEnterpriseBaseURL specifies the GitHub API URL for GitHub app authentication. If empty will default to https://api.github.com"
+    },
+    "githubAppID": {
+      "type": "int64",
+      "name": "GithubAppId specifies the Github App ID of the app used to access the repo for GitHub app authentication"
+    },
+    "githubAppInstallationID": {
+      "type": "int64",
+      "name": "GithubAppInstallationId specifies the ID of the installed GitHub App for GitHub app authentication"
+    },
+    "githubAppPrivateKey": {
+      "type": "string",
+      "name": "GithubAppPrivateKey specifies the private key PEM data for authentication via GitHub app"
+    },
+    "insecureOCIForceHttp": {
+      "description": "InsecureOCIForceHttp specifies whether the connection to the repository uses TLS at _all_. If true, no TLS. This flag is applicable for OCI repos only.",
+      "type": "boolean"
+    },
+    "noProxy": {
+      "type": "string",
+      "name": "NoProxy specifies a list of targets where the proxy isn't used, applies only in cases where the proxy is applied"
+    },
+    "password": {
+      "type": "string",
+      "name": "Password for authenticating at the repo server"
+    },
+    "proxy": {
+      "type": "string",
+      "name": "Proxy specifies the HTTP/HTTPS proxy used to access repos at the repo server"
+    },
+    "sshPrivateKey": {
+      "type": "string",
+      "name": "SSHPrivateKey contains the private key data for authenticating at the repo server using SSH (only Git repos)"
+    },
+    "tlsClientCertData": {
+      "type": "string",
+      "name": "TLSClientCertData specifies the TLS client cert data for authenticating at the repo server"
+    },
+    "tlsClientCertKey": {
+      "type": "string",
+      "name": "TLSClientCertKey specifies the TLS client cert key for authenticating at the repo server"
+    },
+    "type": {
+      "description": "Type specifies the type of the repoCreds. Can be either \"git\", \"helm\" or \"oci\". \"git\" is assumed if empty or absent.",
+      "type": "string"
+    },
+    "url": {
+      "type": "string",
+      "name": "URL is the URL to which these credentials match"
+    },
+    "useAzureWorkloadIdentity": {
+      "type": "boolean",
+      "name": "UseAzureWorkloadIdentity specifies whether to use Azure Workload Identity for authentication"
+    },
+    "username": {
+      "type": "string",
+      "name": "Username for authenticating at the repo server"
+    }
+  }
+}

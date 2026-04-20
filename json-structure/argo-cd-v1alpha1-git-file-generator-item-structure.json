@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-structure/argo-cd-v1alpha1-git-file-generator-item-structure.json",
+  "name": "v1alpha1GitFileGeneratorItem",
+  "description": "v1alpha1GitFileGeneratorItem schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "exclude": {
+      "type": "boolean"
+    },
+    "path": {
+      "type": "string"
+    }
+  }
+}

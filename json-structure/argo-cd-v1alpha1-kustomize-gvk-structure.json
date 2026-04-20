@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-structure/argo-cd-v1alpha1-kustomize-gvk-structure.json",
+  "name": "v1alpha1KustomizeGvk",
+  "description": "v1alpha1KustomizeGvk schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "group": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

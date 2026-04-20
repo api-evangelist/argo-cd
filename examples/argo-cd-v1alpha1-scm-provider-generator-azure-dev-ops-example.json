@@ -1,0 +1,7 @@
+{
+  "accessTokenRef": "eyJhbGciOiJIUzI1NiJ9.example",
+  "allBranches": true,
+  "api": "example-api",
+  "organization": "example-organization",
+  "teamProject": "default"
+}

@@ -1,0 +1,9 @@
+{
+  "authors": "example-authors",
+  "createdAt": "example-createdat",
+  "description": "Application is synced and healthy.",
+  "docsUrl": "https://github.com/example/repo.git",
+  "imageUrl": "https://github.com/example/repo.git",
+  "sourceUrl": "https://github.com/example/repo.git",
+  "version": "v2.14.0"
+}

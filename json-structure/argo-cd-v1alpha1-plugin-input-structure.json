@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-structure/argo-cd-v1alpha1-plugin-input-structure.json",
+  "name": "v1alpha1PluginInput",
+  "description": "v1alpha1PluginInput schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "parameters": {
+      "description": "Parameters contains the information to pass to the plugin. It is a map. The keys must be strings, and the\nvalues can be any type.",
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/definitions/v1JSON"
+      }
+    }
+  }
+}

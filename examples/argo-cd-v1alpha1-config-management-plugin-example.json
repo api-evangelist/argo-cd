@@ -1,0 +1,6 @@
+{
+  "generate": "example-generate",
+  "init": "example-init",
+  "lockRepo": true,
+  "name": "my-application"
+}

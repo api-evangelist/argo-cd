@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-schema/argo-cd-v1alpha1-app-project-status-schema.json",
+  "title": "v1alpha1AppProjectStatus",
+  "description": "v1alpha1AppProjectStatus schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "jwtTokensByRole": {
+      "type": "object",
+      "title": "JWTTokensByRole contains a list of JWT tokens issued for a given role",
+      "additionalProperties": {
+        "$ref": "#/definitions/v1alpha1JWTTokens"
+      }
+    }
+  }
+}

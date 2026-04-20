@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-schema/argo-cd-application-application-rollback-request-schema.json",
+  "title": "applicationApplicationRollbackRequest",
+  "description": "applicationApplicationRollbackRequest schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "appNamespace": {
+      "type": "string"
+    },
+    "dryRun": {
+      "type": "boolean"
+    },
+    "id": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "name": {
+      "type": "string"
+    },
+    "project": {
+      "type": "string"
+    },
+    "prune": {
+      "type": "boolean"
+    }
+  }
+}

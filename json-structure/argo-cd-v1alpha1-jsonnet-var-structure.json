@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-structure/argo-cd-v1alpha1-jsonnet-var-structure.json",
+  "name": "v1alpha1JsonnetVar",
+  "description": "v1alpha1JsonnetVar schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "code": {
+      "type": "boolean"
+    },
+    "name": {
+      "type": "string"
+    },
+    "value": {
+      "type": "string"
+    }
+  }
+}

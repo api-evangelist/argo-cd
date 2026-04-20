@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-schema/argo-cd-v1alpha1-application-set-rollout-strategy-schema.json",
+  "title": "v1alpha1ApplicationSetRolloutStrategy",
+  "description": "v1alpha1ApplicationSetRolloutStrategy schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "steps": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/v1alpha1ApplicationSetRolloutStep"
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-structure/argo-cd-v1alpha1-revision-reference-structure.json",
+  "name": "v1alpha1RevisionReference",
+  "description": "RevisionReference contains a reference to a some information that is related in some way to another commit. For now,\nit supports only references to a commit. In the future, it may support other types of references.",
+  "type": "object",
+  "properties": {
+    "commit": {
+      "$ref": "#/definitions/v1alpha1CommitMetadata"
+    }
+  }
+}

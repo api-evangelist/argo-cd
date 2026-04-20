@@ -1,0 +1,8 @@
+{
+  "allBranches": true,
+  "api": "example-api",
+  "appSecretName": "my-application",
+  "excludeArchivedRepos": true,
+  "organization": "example-organization",
+  "tokenRef": "eyJhbGciOiJIUzI1NiJ9.example"
+}

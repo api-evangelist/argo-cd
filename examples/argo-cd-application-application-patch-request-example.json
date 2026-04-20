@@ -1,0 +1,7 @@
+{
+  "appNamespace": "my-application",
+  "name": "my-application",
+  "patch": "example-patch",
+  "patchType": "example-patchtype",
+  "project": "default"
+}

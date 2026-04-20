@@ -1,0 +1,49 @@
+{
+  "clusterResourceBlacklist": [
+    "https://kubernetes.default.svc",
+    "https://kubernetes.default.svc"
+  ],
+  "clusterResourceWhitelist": [
+    "https://kubernetes.default.svc",
+    "https://kubernetes.default.svc"
+  ],
+  "description": "Application is synced and healthy.",
+  "destinationServiceAccounts": [
+    "example-destinationserviceac",
+    "example-destinationserviceac"
+  ],
+  "destinations": [
+    "example-destinations",
+    "example-destinations"
+  ],
+  "namespaceResourceBlacklist": [
+    "my-application",
+    "my-application"
+  ],
+  "namespaceResourceWhitelist": [
+    "my-application",
+    "my-application"
+  ],
+  "orphanedResources": "example-orphanedresources",
+  "permitOnlyProjectScopedClusters": true,
+  "roles": [
+    "example-roles",
+    "example-roles"
+  ],
+  "signatureKeys": [
+    "eyJhbGciOiJIUzI1NiJ9.example",
+    "eyJhbGciOiJIUzI1NiJ9.example"
+  ],
+  "sourceNamespaces": [
+    "my-application",
+    "my-application"
+  ],
+  "sourceRepos": [
+    "https://github.com/example/repo.git",
+    "https://github.com/example/repo.git"
+  ],
+  "syncWindows": [
+    "example-syncwindows",
+    "example-syncwindows"
+  ]
+}

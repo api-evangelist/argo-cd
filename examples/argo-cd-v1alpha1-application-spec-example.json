@@ -1,0 +1,20 @@
+{
+  "destination": "example-destination",
+  "ignoreDifferences": [
+    "example-ignoredifferences",
+    "example-ignoredifferences"
+  ],
+  "info": [
+    "example-info",
+    "example-info"
+  ],
+  "project": "default",
+  "revisionHistoryLimit": 451,
+  "source": "example-source",
+  "sourceHydrator": "example-sourcehydrator",
+  "sources": [
+    "example-sources",
+    "example-sources"
+  ],
+  "syncPolicy": "example-syncpolicy"
+}

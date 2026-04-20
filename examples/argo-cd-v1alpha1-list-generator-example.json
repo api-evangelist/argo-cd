@@ -1,0 +1,8 @@
+{
+  "elements": [
+    "example-elements",
+    "example-elements"
+  ],
+  "elementsYaml": "example-elementsyaml",
+  "template": "example-template"
+}

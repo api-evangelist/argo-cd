@@ -1,0 +1,9 @@
+{
+  "allBranches": true,
+  "region": "example-region",
+  "role": "example-role",
+  "tagFilters": [
+    "example-tagfilters",
+    "example-tagfilters"
+  ]
+}

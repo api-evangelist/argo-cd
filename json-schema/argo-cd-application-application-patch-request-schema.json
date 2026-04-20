@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-schema/argo-cd-application-application-patch-request-schema.json",
+  "title": "applicationApplicationPatchRequest",
+  "description": "applicationApplicationPatchRequest schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "appNamespace": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "patch": {
+      "type": "string"
+    },
+    "patchType": {
+      "type": "string"
+    },
+    "project": {
+      "type": "string"
+    }
+  }
+}

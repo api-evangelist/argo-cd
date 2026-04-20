@@ -1,0 +1,10 @@
+{
+  "details": [
+    "example-details",
+    "example-details"
+  ],
+  "grpc_code": 327,
+  "http_code": 879,
+  "http_status": "Synced",
+  "message": "Application is synced and healthy."
+}

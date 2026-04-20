@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-schema/argo-cd-v1alpha1-application-set-nested-generator-schema.json",
+  "title": "v1alpha1ApplicationSetNestedGenerator",
+  "description": "ApplicationSetNestedGenerator represents a generator nested within a combination-type generator (MatrixGenerator or\nMergeGenerator).",
+  "type": "object",
+  "properties": {
+    "clusterDecisionResource": {
+      "$ref": "#/definitions/v1alpha1DuckTypeGenerator"
+    },
+    "clusters": {
+      "$ref": "#/definitions/v1alpha1ClusterGenerator"
+    },
+    "git": {
+      "$ref": "#/definitions/v1alpha1GitGenerator"
+    },
+    "list": {
+      "$ref": "#/definitions/v1alpha1ListGenerator"
+    },
+    "matrix": {
+      "$ref": "#/definitions/v1JSON"
+    },
+    "merge": {
+      "$ref": "#/definitions/v1JSON"
+    },
+    "plugin": {
+      "$ref": "#/definitions/v1alpha1PluginGenerator"
+    },
+    "pullRequest": {
+      "$ref": "#/definitions/v1alpha1PullRequestGenerator"
+    },
+    "scmProvider": {
+      "$ref": "#/definitions/v1alpha1SCMProviderGenerator"
+    },
+    "selector": {
+      "$ref": "#/definitions/v1LabelSelector"
+    }
+  }
+}

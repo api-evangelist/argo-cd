@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-schema/argo-cd-v1alpha1-sync-status-schema.json",
+  "title": "v1alpha1SyncStatus",
+  "description": "v1alpha1SyncStatus schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "comparedTo": {
+      "$ref": "#/definitions/v1alpha1ComparedTo"
+    },
+    "revision": {
+      "type": "string",
+      "title": "Revision contains information about the revision the comparison has been performed to"
+    },
+    "revisions": {
+      "type": "array",
+      "title": "Revisions contains information about the revisions of multiple sources the comparison has been performed to",
+      "items": {
+        "type": "string"
+      }
+    },
+    "status": {
+      "type": "string",
+      "title": "Status is the sync state of the comparison"
+    }
+  }
+}

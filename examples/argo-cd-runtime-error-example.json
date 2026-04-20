@@ -1,0 +1,9 @@
+{
+  "code": 733,
+  "details": [
+    "example-details",
+    "example-details"
+  ],
+  "error": "example-error",
+  "message": "Application is synced and healthy."
+}

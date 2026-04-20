@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-schema/argo-cd-v1alpha1-hydrate-to-schema.json",
+  "title": "v1alpha1HydrateTo",
+  "description": "HydrateTo specifies a location to which hydrated manifests should be pushed as a \"staging area\" before being moved to\nthe SyncSource. The RepoURL and Path are assumed based on the associated SyncSource config in the SourceHydrator.",
+  "type": "object",
+  "properties": {
+    "targetBranch": {
+      "type": "string",
+      "title": "TargetBranch is the branch to which hydrated manifests should be committed"
+    }
+  }
+}

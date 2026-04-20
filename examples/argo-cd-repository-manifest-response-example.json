@@ -1,0 +1,15 @@
+{
+  "commands": [
+    "example-commands",
+    "example-commands"
+  ],
+  "manifests": [
+    "example-manifests",
+    "example-manifests"
+  ],
+  "namespace": "my-application",
+  "revision": "abc1234def5678",
+  "server": "https://kubernetes.default.svc",
+  "sourceType": "example-sourcetype",
+  "verifyResult": "example-verifyresult"
+}

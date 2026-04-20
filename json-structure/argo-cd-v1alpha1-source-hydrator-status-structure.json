@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-structure/argo-cd-v1alpha1-source-hydrator-status-structure.json",
+  "name": "v1alpha1SourceHydratorStatus",
+  "description": "v1alpha1SourceHydratorStatus schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "currentOperation": {
+      "$ref": "#/definitions/v1alpha1HydrateOperation"
+    },
+    "lastSuccessfulOperation": {
+      "$ref": "#/definitions/v1alpha1SuccessfulHydrateOperation"
+    }
+  }
+}

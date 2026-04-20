@@ -1,0 +1,15 @@
+{
+  "hosts": [
+    "example-hosts",
+    "example-hosts"
+  ],
+  "nodes": [
+    "example-nodes",
+    "example-nodes"
+  ],
+  "orphanedNodes": [
+    "example-orphanednodes",
+    "example-orphanednodes"
+  ],
+  "shardsCount": 530
+}

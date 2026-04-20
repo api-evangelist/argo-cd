@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-schema/argo-cd-v1alpha1-health-status-schema.json",
+  "title": "v1alpha1HealthStatus",
+  "description": "v1alpha1HealthStatus schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "lastTransitionTime": {
+      "$ref": "#/definitions/v1Time"
+    },
+    "message": {
+      "type": "string",
+      "title": "Message is a human-readable informational message describing the health status"
+    },
+    "status": {
+      "type": "string",
+      "title": "Status holds the status code of the resource"
+    }
+  }
+}

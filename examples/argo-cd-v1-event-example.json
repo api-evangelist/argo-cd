@@ -1,0 +1,17 @@
+{
+  "action": "example-action",
+  "count": 747,
+  "eventTime": "example-eventtime",
+  "firstTimestamp": "example-firsttimestamp",
+  "involvedObject": "example-involvedobject",
+  "lastTimestamp": "example-lasttimestamp",
+  "message": "Application is synced and healthy.",
+  "metadata": "example-metadata",
+  "reason": "example-reason",
+  "related": "example-related",
+  "reportingComponent": "https://github.com/example/repo.git",
+  "reportingInstance": "https://github.com/example/repo.git",
+  "series": "example-series",
+  "source": "example-source",
+  "type": "example-type"
+}

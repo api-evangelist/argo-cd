@@ -1,0 +1,16 @@
+{
+  "azuredevops": "example-azuredevops",
+  "bitbucket": "example-bitbucket",
+  "bitbucketServer": "https://kubernetes.default.svc",
+  "continueOnRepoNotFoundError": true,
+  "filters": [
+    "example-filters",
+    "example-filters"
+  ],
+  "gitea": "example-gitea",
+  "github": "example-github",
+  "gitlab": "example-gitlab",
+  "requeueAfterSeconds": 977,
+  "template": "example-template",
+  "values": {}
+}

@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-structure/argo-cd-applicationset-application-set-generate-request-structure.json",
+  "name": "applicationsetApplicationSetGenerateRequest",
+  "description": "applicationsetApplicationSetGenerateRequest schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "applicationSet": {
+      "$ref": "#/definitions/v1alpha1ApplicationSet"
+    }
+  }
+}

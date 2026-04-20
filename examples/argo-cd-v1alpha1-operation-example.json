@@ -1,0 +1,9 @@
+{
+  "info": [
+    "example-info",
+    "example-info"
+  ],
+  "initiatedBy": "example-initiatedby",
+  "retry": "example-retry",
+  "sync": "example-sync"
+}

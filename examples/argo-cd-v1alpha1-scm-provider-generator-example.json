@@ -1,0 +1,17 @@
+{
+  "awsCodeCommit": "abc1234def5678",
+  "azureDevOps": "example-azuredevops",
+  "bitbucket": "example-bitbucket",
+  "bitbucketServer": "https://kubernetes.default.svc",
+  "cloneProtocol": "example-cloneprotocol",
+  "filters": [
+    "example-filters",
+    "example-filters"
+  ],
+  "gitea": "example-gitea",
+  "github": "example-github",
+  "gitlab": "example-gitlab",
+  "requeueAfterSeconds": 230,
+  "template": "example-template",
+  "values": {}
+}

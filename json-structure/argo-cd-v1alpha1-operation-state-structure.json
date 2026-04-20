@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-structure/argo-cd-v1alpha1-operation-state-structure.json",
+  "name": "v1alpha1OperationState",
+  "description": "v1alpha1OperationState schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "finishedAt": {
+      "$ref": "#/definitions/v1Time"
+    },
+    "message": {
+      "description": "Message holds any pertinent messages when attempting to perform operation (typically errors).",
+      "type": "string"
+    },
+    "operation": {
+      "$ref": "#/definitions/v1alpha1Operation"
+    },
+    "phase": {
+      "type": "string",
+      "name": "Phase is the current phase of the operation"
+    },
+    "retryCount": {
+      "type": "int64",
+      "name": "RetryCount contains time of operation retries"
+    },
+    "startedAt": {
+      "$ref": "#/definitions/v1Time"
+    },
+    "syncResult": {
+      "$ref": "#/definitions/v1alpha1SyncOperationResult"
+    }
+  }
+}

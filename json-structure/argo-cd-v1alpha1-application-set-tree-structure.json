@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-structure/argo-cd-v1alpha1-application-set-tree-structure.json",
+  "name": "v1alpha1ApplicationSetTree",
+  "description": "v1alpha1ApplicationSetTree schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "nodes": {
+      "type": "array",
+      "name": "Nodes contains list of nodes which are directly managed by the applicationset",
+      "items": {
+        "$ref": "#/definitions/v1alpha1ResourceNode"
+      }
+    }
+  }
+}

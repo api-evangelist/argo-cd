@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-structure/argo-cd-v1alpha1-pull-request-generator-structure.json",
+  "name": "v1alpha1PullRequestGenerator",
+  "description": "PullRequestGenerator defines a generator that scrapes a PullRequest API to find candidate pull requests.",
+  "type": "object",
+  "properties": {
+    "azuredevops": {
+      "$ref": "#/definitions/v1alpha1PullRequestGeneratorAzureDevOps"
+    },
+    "bitbucket": {
+      "$ref": "#/definitions/v1alpha1PullRequestGeneratorBitbucket"
+    },
+    "bitbucketServer": {
+      "$ref": "#/definitions/v1alpha1PullRequestGeneratorBitbucketServer"
+    },
+    "continueOnRepoNotFoundError": {
+      "description": "ContinueOnRepoNotFoundError is a flag to continue the ApplicationSet Pull Request generator parameters generation even if the repository is not found.",
+      "type": "boolean"
+    },
+    "filters": {
+      "description": "Filters for which pull requests should be considered.",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/v1alpha1PullRequestGeneratorFilter"
+      }
+    },
+    "gitea": {
+      "$ref": "#/definitions/v1alpha1PullRequestGeneratorGitea"
+    },
+    "github": {
+      "$ref": "#/definitions/v1alpha1PullRequestGeneratorGithub"
+    },
+    "gitlab": {
+      "$ref": "#/definitions/v1alpha1PullRequestGeneratorGitLab"
+    },
+    "requeueAfterSeconds": {
+      "description": "Standard parameters.",
+      "type": "int64"
+    },
+    "template": {
+      "$ref": "#/definitions/v1alpha1ApplicationSetTemplate"
+    },
+    "values": {
+      "type": "object",
+      "name": "Values contains key/value pairs which are passed directly as parameters to the template",
+      "additionalProperties": {
+        "type": "string"
+      }
+    }
+  }
+}

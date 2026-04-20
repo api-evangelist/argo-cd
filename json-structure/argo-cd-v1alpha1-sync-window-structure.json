@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-structure/argo-cd-v1alpha1-sync-window-structure.json",
+  "name": "v1alpha1SyncWindow",
+  "description": "v1alpha1SyncWindow schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "andOperator": {
+      "type": "boolean",
+      "name": "UseAndOperator use AND operator for matching applications, namespaces and clusters instead of the default OR operator"
+    },
+    "applications": {
+      "type": "array",
+      "name": "Applications contains a list of applications that the window will apply to",
+      "items": {
+        "type": "string"
+      }
+    },
+    "clusters": {
+      "type": "array",
+      "name": "Clusters contains a list of clusters that the window will apply to",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": {
+      "type": "string",
+      "name": "Description of the sync that will be applied to the schedule, can be used to add any information such as a ticket number for example"
+    },
+    "duration": {
+      "type": "string",
+      "name": "Duration is the amount of time the sync window will be open"
+    },
+    "kind": {
+      "type": "string",
+      "name": "Kind defines if the window allows or blocks syncs"
+    },
+    "manualSync": {
+      "type": "boolean",
+      "name": "ManualSync enables manual syncs when they would otherwise be blocked"
+    },
+    "namespaces": {
+      "type": "array",
+      "name": "Namespaces contains a list of namespaces that the window will apply to",
+      "items": {
+        "type": "string"
+      }
+    },
+    "schedule": {
+      "type": "string",
+      "name": "Schedule is the time the window will begin, specified in cron format"
+    },
+    "syncOverrun": {
+      "type": "boolean",
+      "name": "SyncOverrun allows ongoing syncs to continue in two scenarios:\nFor deny windows: allows syncs that started before the deny window became active to continue running\nFor allow windows: allows syncs that started during the allow window to continue after the window ends"
+    },
+    "timeZone": {
+      "type": "string",
+      "name": "TimeZone of the sync that will be applied to the schedule"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-structure/argo-cd-v1alpha1-oci-metadata-structure.json",
+  "name": "v1alpha1OCIMetadata",
+  "description": "v1alpha1OCIMetadata schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "authors": {
+      "type": "string"
+    },
+    "createdAt": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "docsUrl": {
+      "type": "string"
+    },
+    "imageUrl": {
+      "type": "string"
+    },
+    "sourceUrl": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

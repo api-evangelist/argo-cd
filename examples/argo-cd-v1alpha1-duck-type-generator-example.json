@@ -1,0 +1,8 @@
+{
+  "configMapRef": "example-configmapref",
+  "labelSelector": "example-labelselector",
+  "name": "my-application",
+  "requeueAfterSeconds": 122,
+  "template": "example-template",
+  "values": {}
+}

@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-structure/argo-cd-v1alpha1-application-tree-structure.json",
+  "name": "v1alpha1ApplicationTree",
+  "description": "ApplicationTree represents the hierarchical structure of resources associated with an Argo CD application.",
+  "type": "object",
+  "properties": {
+    "hosts": {
+      "description": "Hosts provides a list of Kubernetes nodes that are running pods related to the application.",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/v1alpha1HostInfo"
+      }
+    },
+    "nodes": {
+      "description": "Nodes contains a list of resources that are either directly managed by the application\nor are children of directly managed resources.",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/v1alpha1ResourceNode"
+      }
+    },
+    "orphanedNodes": {
+      "description": "OrphanedNodes contains resources that exist in the same namespace as the application\nbut are not managed by it. This list is populated only if orphaned resource tracking\nis enabled in the application's project settings.",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/v1alpha1ResourceNode"
+      }
+    },
+    "shardsCount": {
+      "description": "ShardsCount represents the total number of shards the application tree is split into.\nThis is used to distribute resource processing across multiple shards.",
+      "type": "int64"
+    }
+  }
+}

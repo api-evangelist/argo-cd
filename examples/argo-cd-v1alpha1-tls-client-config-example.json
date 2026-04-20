@@ -1,0 +1,7 @@
+{
+  "caData": "example-cadata",
+  "certData": "example-certdata",
+  "insecure": true,
+  "keyData": "eyJhbGciOiJIUzI1NiJ9.example",
+  "serverName": "my-application"
+}

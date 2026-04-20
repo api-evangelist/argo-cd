@@ -1,0 +1,5 @@
+{
+  "drySHA": "example-drysha",
+  "hydratedSHA": "example-hydratedsha",
+  "sourceHydrator": "example-sourcehydrator"
+}

@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-structure/argo-cd-v1alpha1-app-project-spec-structure.json",
+  "name": "v1alpha1AppProjectSpec",
+  "description": "v1alpha1AppProjectSpec schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "clusterResourceBlacklist": {
+      "type": "array",
+      "name": "ClusterResourceBlacklist contains list of blacklisted cluster level resources",
+      "items": {
+        "$ref": "#/definitions/v1alpha1ClusterResourceRestrictionItem"
+      }
+    },
+    "clusterResourceWhitelist": {
+      "type": "array",
+      "name": "ClusterResourceWhitelist contains list of whitelisted cluster level resources",
+      "items": {
+        "$ref": "#/definitions/v1alpha1ClusterResourceRestrictionItem"
+      }
+    },
+    "description": {
+      "type": "string",
+      "name": "Description contains optional project description\n+kubebuilder:validation:MaxLength=255"
+    },
+    "destinationServiceAccounts": {
+      "description": "DestinationServiceAccounts holds information about the service accounts to be impersonated for the application sync operation for each destination.",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/v1alpha1ApplicationDestinationServiceAccount"
+      }
+    },
+    "destinations": {
+      "type": "array",
+      "name": "Destinations contains list of destinations available for deployment",
+      "items": {
+        "$ref": "#/definitions/v1alpha1ApplicationDestination"
+      }
+    },
+    "namespaceResourceBlacklist": {
+      "type": "array",
+      "name": "NamespaceResourceBlacklist contains list of blacklisted namespace level resources",
+      "items": {
+        "$ref": "#/definitions/v1GroupKind"
+      }
+    },
+    "namespaceResourceWhitelist": {
+      "type": "array",
+      "name": "NamespaceResourceWhitelist contains list of whitelisted namespace level resources",
+      "items": {
+        "$ref": "#/definitions/v1GroupKind"
+      }
+    },
+    "orphanedResources": {
+      "$ref": "#/definitions/v1alpha1OrphanedResourcesMonitorSettings"
+    },
+    "permitOnlyProjectScopedClusters": {
+      "type": "boolean",
+      "name": "PermitOnlyProjectScopedClusters determines whether destinations can only reference clusters which are project-scoped"
+    },
+    "roles": {
+      "type": "array",
+      "name": "Roles are user defined RBAC roles associated with this project",
+      "items": {
+        "$ref": "#/definitions/v1alpha1ProjectRole"
+      }
+    },
+    "signatureKeys": {
+      "type": "array",
+      "name": "SignatureKeys contains a list of PGP key IDs that commits in Git must be signed with in order to be allowed for sync",
+      "items": {
+        "$ref": "#/definitions/v1alpha1SignatureKey"
+      }
+    },
+    "sourceNamespaces": {
+      "type": "array",
+      "name": "SourceNamespaces defines the namespaces application resources are allowed to be created in",
+      "items": {
+        "type": "string"
+      }
+    },
+    "sourceRepos": {
+      "type": "array",
+      "name": "SourceRepos contains list of repository URLs which can be used for deployment",
+      "items": {
+        "type": "string"
+      }
+    },
+    "syncWindows": {
+      "type": "array",
+      "name": "SyncWindows controls when syncs can be run for apps in this project",
+      "items": {
+        "$ref": "#/definitions/v1alpha1SyncWindow"
+      }
+    }
+  }
+}

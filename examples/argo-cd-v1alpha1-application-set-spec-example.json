@@ -1,0 +1,21 @@
+{
+  "applyNestedSelectors": true,
+  "generators": [
+    "example-generators",
+    "example-generators"
+  ],
+  "goTemplate": true,
+  "goTemplateOptions": [
+    "example-gotemplateoptions",
+    "example-gotemplateoptions"
+  ],
+  "ignoreApplicationDifferences": [
+    "example-ignoreapplicationdif",
+    "example-ignoreapplicationdif"
+  ],
+  "preservedFields": "example-preservedfields",
+  "strategy": "example-strategy",
+  "syncPolicy": "example-syncpolicy",
+  "template": "example-template",
+  "templatePatch": "example-templatepatch"
+}

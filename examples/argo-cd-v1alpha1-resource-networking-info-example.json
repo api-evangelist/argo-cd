@@ -1,0 +1,16 @@
+{
+  "externalURLs": [
+    "https://github.com/example/repo.git",
+    "https://github.com/example/repo.git"
+  ],
+  "ingress": [
+    "example-ingress",
+    "example-ingress"
+  ],
+  "labels": {},
+  "targetLabels": {},
+  "targetRefs": [
+    "main",
+    "main"
+  ]
+}

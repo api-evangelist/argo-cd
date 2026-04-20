@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-structure/argo-cd-v1alpha1-application-condition-structure.json",
+  "name": "v1alpha1ApplicationCondition",
+  "description": "v1alpha1ApplicationCondition schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "lastTransitionTime": {
+      "$ref": "#/definitions/v1Time"
+    },
+    "message": {
+      "type": "string",
+      "name": "Message contains human-readable message indicating details about condition"
+    },
+    "type": {
+      "type": "string",
+      "name": "Type is an application condition type"
+    }
+  }
+}

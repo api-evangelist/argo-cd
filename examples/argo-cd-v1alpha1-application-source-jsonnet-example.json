@@ -1,0 +1,14 @@
+{
+  "extVars": [
+    "example-extvars",
+    "example-extvars"
+  ],
+  "libs": [
+    "example-libs",
+    "example-libs"
+  ],
+  "tlas": [
+    "example-tlas",
+    "example-tlas"
+  ]
+}

@@ -1,0 +1,5 @@
+{
+  "password": "example-password",
+  "token": "eyJhbGciOiJIUzI1NiJ9.example",
+  "username": "my-application"
+}

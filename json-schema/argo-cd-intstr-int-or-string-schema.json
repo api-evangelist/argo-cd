@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-schema/argo-cd-intstr-int-or-string-schema.json",
+  "title": "intstrIntOrString",
+  "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+  "type": "object",
+  "properties": {
+    "intVal": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "strVal": {
+      "type": "string"
+    },
+    "type": {
+      "type": "integer",
+      "format": "int64"
+    }
+  }
+}

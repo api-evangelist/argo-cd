@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-schema/argo-cd-v1alpha1-connection-state-schema.json",
+  "title": "v1alpha1ConnectionState",
+  "description": "v1alpha1ConnectionState schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "attemptedAt": {
+      "$ref": "#/definitions/v1Time"
+    },
+    "message": {
+      "type": "string",
+      "title": "Message contains human readable information about the connection status"
+    },
+    "status": {
+      "type": "string",
+      "title": "Status contains the current status indicator for the connection"
+    }
+  }
+}

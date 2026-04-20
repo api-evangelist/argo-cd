@@ -1,0 +1,217 @@
+naftiko: "1.0.0-alpha1"
+
+info:
+  label: "Argo CD GitOps Delivery"
+  description: "Unified capability for GitOps-driven continuous delivery using Argo CD. Combines application management, cluster registration, repository configuration, and project governance for Platform Engineers and DevOps teams."
+  tags:
+    - Argo CD
+    - GitOps
+    - Kubernetes
+    - Continuous Delivery
+    - Platform Engineering
+  created: "2026-04-19"
+  modified: "2026-04-19"
+
+binds:
+  - namespace: env
+    keys:
+      ARGOCD_TOKEN: ARGOCD_TOKEN
+      ARGOCD_SERVER: ARGOCD_SERVER
+
+capability:
+  consumes:
+    - import: argocd
+      location: ./shared/argo-cd-api.yaml
+
+  exposes:
+    - type: rest
+      port: 8080
+      namespace: gitops-delivery-api
+      description: "Unified REST API for GitOps continuous delivery with Argo CD."
+      resources:
+        - path: /v1/applications
+          name: applications
+          description: "GitOps application lifecycle management"
+          operations:
+            - method: GET
+              name: list-applications
+              description: "List all deployed applications"
+              call: "argocd.list-applications"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+            - method: POST
+              name: create-application
+              description: "Deploy a new application from Git"
+              call: "argocd.create-application"
+              with:
+                metadata: "rest.metadata"
+                spec: "rest.spec"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/applications/{name}
+          name: application
+          description: "Single application management"
+          operations:
+            - method: GET
+              name: get-application
+              description: "Get application details and sync status"
+              call: "argocd.get-application"
+              with:
+                name: "rest.name"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+            - method: DELETE
+              name: delete-application
+              description: "Remove an application"
+              call: "argocd.delete-application"
+              with:
+                name: "rest.name"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/applications/{name}/sync
+          name: application-sync
+          description: "Application synchronization"
+          operations:
+            - method: POST
+              name: sync-application
+              description: "Trigger application sync from Git"
+              call: "argocd.sync-application"
+              with:
+                name: "rest.name"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/clusters
+          name: clusters
+          description: "Kubernetes cluster registry"
+          operations:
+            - method: GET
+              name: list-clusters
+              description: "List registered Kubernetes clusters"
+              call: "argocd.list-clusters"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/repositories
+          name: repositories
+          description: "Git repository configuration"
+          operations:
+            - method: GET
+              name: list-repositories
+              description: "List configured Git repositories"
+              call: "argocd.list-repositories"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/projects
+          name: projects
+          description: "Project and RBAC management"
+          operations:
+            - method: GET
+              name: list-projects
+              description: "List all Argo CD projects"
+              call: "argocd.list-projects"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+
+    - type: mcp
+      port: 9090
+      namespace: gitops-delivery-mcp
+      transport: http
+      description: "MCP server for AI-assisted GitOps delivery with Argo CD."
+      tools:
+        - name: list-applications
+          description: "List all Argo CD applications with their sync and health status"
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "argocd.list-applications"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: get-application
+          description: "Get detailed status of an Argo CD application including resource tree"
+          hints:
+            readOnly: true
+            openWorld: false
+          call: "argocd.get-application"
+          with:
+            name: "tools.name"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: create-application
+          description: "Deploy a new application by creating an Argo CD Application resource"
+          hints:
+            readOnly: false
+            destructive: false
+          call: "argocd.create-application"
+          with:
+            metadata: "tools.metadata"
+            spec: "tools.spec"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: sync-application
+          description: "Trigger an Argo CD application sync to reconcile desired Git state"
+          hints:
+            readOnly: false
+            destructive: false
+          call: "argocd.sync-application"
+          with:
+            name: "tools.name"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: delete-application
+          description: "Delete an Argo CD application and optionally cascade delete resources"
+          hints:
+            readOnly: false
+            destructive: true
+            idempotent: true
+          call: "argocd.delete-application"
+          with:
+            name: "tools.name"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: list-clusters
+          description: "List all Kubernetes clusters registered with Argo CD"
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "argocd.list-clusters"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: list-repositories
+          description: "List all Git repositories configured in Argo CD"
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "argocd.list-repositories"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: list-projects
+          description: "List all Argo CD projects and their RBAC policies"
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "argocd.list-projects"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: list-accounts
+          description: "List all Argo CD user accounts"
+          hints:
+            readOnly: true
+          call: "argocd.list-accounts"
+          outputParameters:
+            - type: object
+              mapping: "$."

@@ -1,0 +1,11 @@
+{
+  "jqPathExpressions": [
+    "apps/my-app",
+    "apps/my-app"
+  ],
+  "jsonPointers": [
+    "example-jsonpointers",
+    "example-jsonpointers"
+  ],
+  "name": "my-application"
+}

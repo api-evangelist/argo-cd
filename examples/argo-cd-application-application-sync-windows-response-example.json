@@ -1,0 +1,11 @@
+{
+  "activeWindows": [
+    "example-activewindows",
+    "example-activewindows"
+  ],
+  "assignedWindows": [
+    "example-assignedwindows",
+    "example-assignedwindows"
+  ],
+  "canSync": true
+}

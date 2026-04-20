@@ -1,0 +1,7 @@
+{
+  "certData": "example-certdata",
+  "certInfo": "example-certinfo",
+  "certSubType": "example-certsubtype",
+  "certType": "example-certtype",
+  "serverName": "my-application"
+}

@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-structure/argo-cd-v1alpha1-hydrate-operation-structure.json",
+  "name": "v1alpha1HydrateOperation",
+  "description": "v1alpha1HydrateOperation schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "drySHA": {
+      "type": "string",
+      "name": "DrySHA holds the resolved revision (sha) of the dry source as of the most recent reconciliation"
+    },
+    "finishedAt": {
+      "$ref": "#/definitions/v1Time"
+    },
+    "hydratedSHA": {
+      "type": "string",
+      "name": "HydratedSHA holds the resolved revision (sha) of the hydrated source as of the most recent reconciliation"
+    },
+    "message": {
+      "type": "string",
+      "name": "Message contains a message describing the current status of the hydrate operation"
+    },
+    "phase": {
+      "type": "string",
+      "name": "Phase indicates the status of the hydrate operation"
+    },
+    "sourceHydrator": {
+      "$ref": "#/definitions/v1alpha1SourceHydrator"
+    },
+    "startedAt": {
+      "$ref": "#/definitions/v1Time"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-schema/argo-cd-v1-group-kind-schema.json",
+  "title": "v1GroupKind",
+  "description": "+protobuf.options.(gogoproto.goproto_stringer)=false",
+  "type": "object",
+  "properties": {
+    "group": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string"
+    }
+  }
+}

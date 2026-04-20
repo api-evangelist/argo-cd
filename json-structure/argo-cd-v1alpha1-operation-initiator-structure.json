@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-structure/argo-cd-v1alpha1-operation-initiator-structure.json",
+  "name": "v1alpha1OperationInitiator",
+  "description": "v1alpha1OperationInitiator schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "automated": {
+      "description": "Automated is set to true if operation was initiated automatically by the application controller.",
+      "type": "boolean"
+    },
+    "username": {
+      "type": "string",
+      "name": "Username contains the name of a user who started operation"
+    }
+  }
+}

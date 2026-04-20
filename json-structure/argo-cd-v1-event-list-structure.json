@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-structure/argo-cd-v1-event-list-structure.json",
+  "name": "v1EventList",
+  "description": "EventList is a list of events.",
+  "type": "object",
+  "properties": {
+    "items": {
+      "type": "array",
+      "name": "List of events",
+      "items": {
+        "$ref": "#/definitions/v1Event"
+      }
+    },
+    "metadata": {
+      "$ref": "#/definitions/v1ListMeta"
+    }
+  }
+}

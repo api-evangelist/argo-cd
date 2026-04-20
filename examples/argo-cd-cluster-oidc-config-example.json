@@ -1,0 +1,12 @@
+{
+  "cliClientID": "app-123456",
+  "clientID": "app-123456",
+  "enablePKCEAuthentication": true,
+  "idTokenClaims": {},
+  "issuer": "example-issuer",
+  "name": "my-application",
+  "scopes": [
+    "example-scopes",
+    "example-scopes"
+  ]
+}

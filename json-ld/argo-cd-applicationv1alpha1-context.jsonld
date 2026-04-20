@@ -1,0 +1,53 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "argocd": "https://argoproj.github.io/schema/argo-cd/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "applicationv1alpha1ResourceStatus": "argocd:applicationv1alpha1ResourceStatus",
+    "applicationv1alpha1EnvEntry": "argocd:applicationv1alpha1EnvEntry",
+    "group": {
+      "@id": "argocd:group",
+      "@type": "xsd:string"
+    },
+    "health": {
+      "@id": "argocd:health",
+      "@type": "xsd:string"
+    },
+    "hook": {
+      "@id": "argocd:hook",
+      "@type": "xsd:boolean"
+    },
+    "kind": {
+      "@id": "argocd:kind",
+      "@type": "xsd:string"
+    },
+    "name": "schema:name",
+    "namespace": {
+      "@id": "argocd:namespace",
+      "@type": "xsd:string"
+    },
+    "requiresDeletionConfirmation": {
+      "@id": "argocd:requiresDeletionConfirmation",
+      "@type": "xsd:boolean"
+    },
+    "requiresPruning": {
+      "@id": "argocd:requiresPruning",
+      "@type": "xsd:boolean"
+    },
+    "status": {
+      "@id": "argocd:status",
+      "@type": "xsd:string"
+    },
+    "syncWave": {
+      "@id": "argocd:syncWave",
+      "@type": "xsd:integer"
+    },
+    "version": "schema:version",
+    "value": {
+      "@id": "argocd:value",
+      "@type": "xsd:string"
+    }
+  }
+}

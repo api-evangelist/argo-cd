@@ -1,0 +1,6 @@
+{
+  "flatList": true,
+  "selector": "example-selector",
+  "template": "example-template",
+  "values": {}
+}

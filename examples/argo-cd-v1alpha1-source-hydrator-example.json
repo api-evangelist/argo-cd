@@ -1,0 +1,5 @@
+{
+  "drySource": "example-drysource",
+  "hydrateTo": "example-hydrateto",
+  "syncSource": "example-syncsource"
+}

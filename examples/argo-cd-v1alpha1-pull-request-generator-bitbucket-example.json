@@ -1,0 +1,7 @@
+{
+  "api": "example-api",
+  "basicAuth": "example-basicauth",
+  "bearerToken": "eyJhbGciOiJIUzI1NiJ9.example",
+  "owner": "example-owner",
+  "repo": "https://github.com/example/repo.git"
+}

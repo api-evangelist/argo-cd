@@ -1,0 +1,8 @@
+{
+  "binaryPath": "apps/my-app",
+  "buildOptions": "example-buildoptions",
+  "versions": [
+    "v2.14.0",
+    "v2.14.0"
+  ]
+}

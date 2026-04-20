@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-structure/argo-cd-application-log-entry-structure.json",
+  "name": "applicationLogEntry",
+  "description": "applicationLogEntry schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "content": {
+      "type": "string"
+    },
+    "last": {
+      "type": "boolean"
+    },
+    "podName": {
+      "type": "string"
+    },
+    "timeStamp": {
+      "$ref": "#/definitions/v1Time"
+    },
+    "timeStampStr": {
+      "type": "string"
+    }
+  }
+}

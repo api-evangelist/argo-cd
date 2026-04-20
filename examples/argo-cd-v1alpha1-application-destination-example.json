@@ -1,0 +1,5 @@
+{
+  "name": "my-application",
+  "namespace": "my-application",
+  "server": "https://kubernetes.default.svc"
+}

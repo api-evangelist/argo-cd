@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-structure/argo-cd-cluster-cluster-id-structure.json",
+  "name": "clusterClusterID",
+  "description": "clusterClusterID schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "name": "type is the type of the specified cluster identifier ( \"server\" - default, \"name\" )"
+    },
+    "value": {
+      "type": "string",
+      "name": "value holds the cluster server URL or cluster name"
+    }
+  }
+}

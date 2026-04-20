@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-structure/argo-cd-v1alpha1-scm-provider-generator-bitbucket-structure.json",
+  "name": "v1alpha1SCMProviderGeneratorBitbucket",
+  "description": "SCMProviderGeneratorBitbucket defines connection info specific to Bitbucket Cloud (API version 2).",
+  "type": "object",
+  "properties": {
+    "allBranches": {
+      "description": "Scan all branches instead of just the main branch.",
+      "type": "boolean"
+    },
+    "appPasswordRef": {
+      "$ref": "#/definitions/v1alpha1SecretRef"
+    },
+    "owner": {
+      "description": "Bitbucket workspace to scan. Required.",
+      "type": "string"
+    },
+    "user": {
+      "type": "string",
+      "name": "Bitbucket user to use when authenticating.  Should have a \"member\" role to be able to read all repositories and branches.  Required"
+    }
+  }
+}

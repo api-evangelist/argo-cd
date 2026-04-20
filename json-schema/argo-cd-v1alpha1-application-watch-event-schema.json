@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-schema/argo-cd-v1alpha1-application-watch-event-schema.json",
+  "title": "v1alpha1ApplicationWatchEvent",
+  "description": "ApplicationWatchEvent contains information about application change.",
+  "type": "object",
+  "properties": {
+    "application": {
+      "$ref": "#/definitions/v1alpha1Application"
+    },
+    "type": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "argocd": "https://argoproj.github.io/schema/argo-cd/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "applicationsetApplicationSetResponse": "argocd:applicationsetApplicationSetResponse",
+    "applicationsetApplicationSetGenerateRequest": "argocd:applicationsetApplicationSetGenerateRequest",
+    "applicationsetApplicationSetGenerateResponse": "argocd:applicationsetApplicationSetGenerateResponse",
+    "applicationset": {
+      "@id": "argocd:applicationset",
+      "@type": "xsd:string"
+    },
+    "project": {
+      "@id": "argocd:project",
+      "@type": "xsd:string"
+    },
+    "applicationSet": {
+      "@id": "argocd:applicationSet",
+      "@type": "xsd:string"
+    },
+    "applications": {
+      "@id": "argocd:applications",
+      "@container": "@set",
+      "@type": "xsd:string"
+    }
+  }
+}

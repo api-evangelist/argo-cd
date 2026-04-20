@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-schema/argo-cd-v1alpha1-resource-action-param-schema.json",
+  "title": "v1alpha1ResourceActionParam",
+  "description": "ResourceActionParam represents a parameter for a resource action.\nIt includes a name, value, type, and an optional default value for the parameter.",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "Name is the name of the parameter.",
+      "type": "string"
+    }
+  }
+}

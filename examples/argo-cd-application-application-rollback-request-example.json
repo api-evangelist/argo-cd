@@ -1,0 +1,8 @@
+{
+  "appNamespace": "my-application",
+  "dryRun": true,
+  "id": 45,
+  "name": "my-application",
+  "project": "default",
+  "prune": true
+}

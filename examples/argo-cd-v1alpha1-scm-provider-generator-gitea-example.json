@@ -1,0 +1,8 @@
+{
+  "allBranches": true,
+  "api": "example-api",
+  "excludeArchivedRepos": true,
+  "insecure": true,
+  "owner": "example-owner",
+  "tokenRef": "eyJhbGciOiJIUzI1NiJ9.example"
+}

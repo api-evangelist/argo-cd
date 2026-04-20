@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-schema/argo-cd-project-project-create-request-schema.json",
+  "title": "projectProjectCreateRequest",
+  "description": "ProjectCreateRequest defines project creation parameters.",
+  "type": "object",
+  "properties": {
+    "project": {
+      "$ref": "#/definitions/v1alpha1AppProject"
+    },
+    "upsert": {
+      "type": "boolean"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-schema/argo-cd-v1alpha1-application-set-strategy-schema.json",
+  "title": "v1alpha1ApplicationSetStrategy",
+  "description": "ApplicationSetStrategy configures how generated Applications are updated in sequence.",
+  "type": "object",
+  "properties": {
+    "deletionOrder": {
+      "type": "string",
+      "title": "DeletionOrder allows specifying the order for deleting generated apps when progressive sync is enabled.\naccepts values \"AllAtOnce\" and \"Reverse\""
+    },
+    "rollingSync": {
+      "$ref": "#/definitions/v1alpha1ApplicationSetRolloutStrategy"
+    },
+    "type": {
+      "type": "string"
+    }
+  }
+}

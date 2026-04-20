@@ -1,0 +1,15 @@
+{
+  "action": "example-action",
+  "appNamespace": "my-application",
+  "group": "example-group",
+  "kind": "example-kind",
+  "name": "my-application",
+  "namespace": "my-application",
+  "project": "default",
+  "resourceActionParameters": [
+    "example-resourceactionparame",
+    "example-resourceactionparame"
+  ],
+  "resourceName": "my-application",
+  "version": "v2.14.0"
+}

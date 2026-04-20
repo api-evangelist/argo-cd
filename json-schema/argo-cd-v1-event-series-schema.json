@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-schema/argo-cd-v1-event-series-schema.json",
+  "title": "v1EventSeries",
+  "description": "EventSeries contain information on series of events, i.e. thing that was/is happening\ncontinuously for some time.",
+  "type": "object",
+  "properties": {
+    "count": {
+      "type": "integer",
+      "format": "int32",
+      "title": "Number of occurrences in this series up to the last heartbeat time"
+    },
+    "lastObservedTime": {
+      "$ref": "#/definitions/v1MicroTime"
+    }
+  }
+}

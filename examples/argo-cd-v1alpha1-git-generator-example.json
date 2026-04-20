@@ -1,0 +1,16 @@
+{
+  "directories": [
+    "example-directories",
+    "example-directories"
+  ],
+  "files": [
+    "example-files",
+    "example-files"
+  ],
+  "pathParamPrefix": "apps/my-app",
+  "repoURL": "https://github.com/example/repo.git",
+  "requeueAfterSeconds": 203,
+  "revision": "abc1234def5678",
+  "template": "example-template",
+  "values": {}
+}

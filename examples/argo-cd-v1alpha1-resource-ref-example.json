@@ -1,0 +1,8 @@
+{
+  "group": "example-group",
+  "kind": "example-kind",
+  "name": "my-application",
+  "namespace": "my-application",
+  "uid": "app-123456",
+  "version": "v2.14.0"
+}

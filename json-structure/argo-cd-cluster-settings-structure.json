@@ -1,0 +1,112 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-structure/argo-cd-cluster-settings-structure.json",
+  "name": "clusterSettings",
+  "description": "clusterSettings schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "additionalUrls": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "appLabelKey": {
+      "type": "string"
+    },
+    "appsInAnyNamespaceEnabled": {
+      "type": "boolean"
+    },
+    "configManagementPlugins": {
+      "description": "Deprecated: use sidecar plugins instead.",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/v1alpha1ConfigManagementPlugin"
+      }
+    },
+    "controllerNamespace": {
+      "type": "string"
+    },
+    "dexConfig": {
+      "$ref": "#/definitions/clusterDexConfig"
+    },
+    "execEnabled": {
+      "type": "boolean"
+    },
+    "googleAnalytics": {
+      "$ref": "#/definitions/clusterGoogleAnalyticsConfig"
+    },
+    "help": {
+      "$ref": "#/definitions/clusterHelp"
+    },
+    "hydratorEnabled": {
+      "type": "boolean"
+    },
+    "impersonationEnabled": {
+      "type": "boolean"
+    },
+    "installationID": {
+      "type": "string"
+    },
+    "kustomizeOptions": {
+      "$ref": "#/definitions/v1alpha1KustomizeOptions"
+    },
+    "kustomizeVersions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "oidcConfig": {
+      "$ref": "#/definitions/clusterOIDCConfig"
+    },
+    "passwordPattern": {
+      "type": "string"
+    },
+    "plugins": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/clusterPlugin"
+      }
+    },
+    "resourceOverrides": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/definitions/v1alpha1ResourceOverride"
+      }
+    },
+    "statusBadgeEnabled": {
+      "type": "boolean"
+    },
+    "statusBadgeRootUrl": {
+      "type": "string"
+    },
+    "syncWithReplaceAllowed": {
+      "type": "boolean"
+    },
+    "trackingMethod": {
+      "type": "string"
+    },
+    "uiBannerContent": {
+      "type": "string"
+    },
+    "uiBannerPermanent": {
+      "type": "boolean"
+    },
+    "uiBannerPosition": {
+      "type": "string"
+    },
+    "uiBannerURL": {
+      "type": "string"
+    },
+    "uiCssURL": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "userLoginsDisabled": {
+      "type": "boolean"
+    }
+  }
+}

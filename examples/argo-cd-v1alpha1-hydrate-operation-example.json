@@ -1,0 +1,9 @@
+{
+  "drySHA": "example-drysha",
+  "finishedAt": "example-finishedat",
+  "hydratedSHA": "example-hydratedsha",
+  "message": "Application is synced and healthy.",
+  "phase": "Synced",
+  "sourceHydrator": "example-sourcehydrator",
+  "startedAt": "example-startedat"
+}

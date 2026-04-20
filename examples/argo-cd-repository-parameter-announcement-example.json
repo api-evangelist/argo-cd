@@ -1,0 +1,14 @@
+{
+  "array": [
+    "example-array",
+    "example-array"
+  ],
+  "collectionType": "example-collectiontype",
+  "itemType": "example-itemtype",
+  "map": {},
+  "name": "my-application",
+  "required": true,
+  "string": "example-string",
+  "title": "example-title",
+  "tooltip": "example-tooltip"
+}

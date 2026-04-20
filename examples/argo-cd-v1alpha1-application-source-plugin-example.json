@@ -1,0 +1,11 @@
+{
+  "env": [
+    "example-env",
+    "example-env"
+  ],
+  "name": "my-application",
+  "parameters": [
+    "example-parameters",
+    "example-parameters"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-structure/argo-cd-v1-label-selector-structure.json",
+  "name": "v1LabelSelector",
+  "description": "v1LabelSelector schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "matchExpressions": {
+      "type": "array",
+      "name": "matchExpressions is a list of label selector requirements. The requirements are ANDed.\n+optional\n+listType=atomic",
+      "items": {
+        "$ref": "#/definitions/v1LabelSelectorRequirement"
+      }
+    },
+    "matchLabels": {
+      "type": "object",
+      "name": "matchLabels is a map of {key,value} pairs. A single {key,value} in the matchLabels\nmap is equivalent to an element of matchExpressions, whose key field is \"key\", the\noperator is \"In\", and the values array contains only \"value\". The requirements are ANDed.\n+optional",
+      "additionalProperties": {
+        "type": "string"
+      }
+    }
+  }
+}

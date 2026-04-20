@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-structure/argo-cd-v1alpha1-info-item-structure.json",
+  "name": "v1alpha1InfoItem",
+  "description": "v1alpha1InfoItem schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "Name is a human readable title for this piece of information.",
+      "type": "string"
+    },
+    "value": {
+      "description": "Value is human readable content.",
+      "type": "string"
+    }
+  }
+}

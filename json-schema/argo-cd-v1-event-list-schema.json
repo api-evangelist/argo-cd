@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-schema/argo-cd-v1-event-list-schema.json",
+  "title": "v1EventList",
+  "description": "EventList is a list of events.",
+  "type": "object",
+  "properties": {
+    "items": {
+      "type": "array",
+      "title": "List of events",
+      "items": {
+        "$ref": "#/definitions/v1Event"
+      }
+    },
+    "metadata": {
+      "$ref": "#/definitions/v1ListMeta"
+    }
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "annotationSelector": "example-annotationselector",
+  "labelSelector": "example-labelselector",
+  "resId": "app-123456"
+}

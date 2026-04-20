@@ -1,0 +1,11 @@
+{
+  "generators": [
+    "example-generators",
+    "example-generators"
+  ],
+  "mergeKeys": [
+    "eyJhbGciOiJIUzI1NiJ9.example",
+    "eyJhbGciOiJIUzI1NiJ9.example"
+  ],
+  "template": "example-template"
+}

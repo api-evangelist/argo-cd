@@ -1,0 +1,7 @@
+{
+  "ignore": [
+    "example-ignore",
+    "example-ignore"
+  ],
+  "warn": true
+}

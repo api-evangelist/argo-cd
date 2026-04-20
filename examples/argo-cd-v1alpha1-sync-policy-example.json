@@ -1,0 +1,9 @@
+{
+  "automated": "example-automated",
+  "managedNamespaceMetadata": "my-application",
+  "retry": "example-retry",
+  "syncOptions": [
+    "example-syncoptions",
+    "example-syncoptions"
+  ]
+}

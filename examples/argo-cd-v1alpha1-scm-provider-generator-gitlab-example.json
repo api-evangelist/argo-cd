@@ -1,0 +1,12 @@
+{
+  "allBranches": true,
+  "api": "example-api",
+  "caRef": "example-caref",
+  "group": "example-group",
+  "includeArchivedRepos": true,
+  "includeSharedProjects": true,
+  "includeSubgroups": true,
+  "insecure": true,
+  "tokenRef": "eyJhbGciOiJIUzI1NiJ9.example",
+  "topic": "example-topic"
+}

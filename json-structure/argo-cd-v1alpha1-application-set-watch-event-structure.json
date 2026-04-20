@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-structure/argo-cd-v1alpha1-application-set-watch-event-structure.json",
+  "name": "v1alpha1ApplicationSetWatchEvent",
+  "description": "ApplicationSetWatchEvent contains information about application change.",
+  "type": "object",
+  "properties": {
+    "applicationSet": {
+      "$ref": "#/definitions/v1alpha1ApplicationSet"
+    },
+    "type": {
+      "type": "string",
+      "name": "Type represents the Kubernetes watch event type. The protobuf tag uses\ncasttype to ensure the generated Go code keeps this field as\nwatch.EventType (a strong Go type) instead of falling back to a plain string"
+    }
+  }
+}

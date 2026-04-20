@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-structure/argo-cd-v1alpha1-application-set-spec-structure.json",
+  "name": "v1alpha1ApplicationSetSpec",
+  "description": "ApplicationSetSpec represents a class of application set state.",
+  "type": "object",
+  "properties": {
+    "applyNestedSelectors": {
+      "description": "ApplyNestedSelectors enables selectors defined within the generators of two level-nested matrix or merge generators.\n\nDeprecated: This field is ignored, and the behavior is always enabled. The field will be removed in a future\nversion of the ApplicationSet CRD.",
+      "type": "boolean"
+    },
+    "generators": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/v1alpha1ApplicationSetGenerator"
+      }
+    },
+    "goTemplate": {
+      "type": "boolean"
+    },
+    "goTemplateOptions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "ignoreApplicationDifferences": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/v1alpha1ApplicationSetResourceIgnoreDifferences"
+      }
+    },
+    "preservedFields": {
+      "$ref": "#/definitions/v1alpha1ApplicationPreservedFields"
+    },
+    "strategy": {
+      "$ref": "#/definitions/v1alpha1ApplicationSetStrategy"
+    },
+    "syncPolicy": {
+      "$ref": "#/definitions/v1alpha1ApplicationSetSyncPolicy"
+    },
+    "template": {
+      "$ref": "#/definitions/v1alpha1ApplicationSetTemplate"
+    },
+    "templatePatch": {
+      "type": "string"
+    }
+  }
+}

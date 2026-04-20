@@ -1,0 +1,195 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "argocd": "https://argoproj.github.io/schema/argo-cd/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "clusterDexConfig": "argocd:clusterDexConfig",
+    "clusterSettings": "argocd:clusterSettings",
+    "clusterOIDCConfig": "argocd:clusterOIDCConfig",
+    "clusterSettingsPluginsResponse": "argocd:clusterSettingsPluginsResponse",
+    "clusterHelp": "argocd:clusterHelp",
+    "clusterGoogleAnalyticsConfig": "argocd:clusterGoogleAnalyticsConfig",
+    "clusterConnector": "argocd:clusterConnector",
+    "clusterPlugin": "argocd:clusterPlugin",
+    "clusterClusterID": "argocd:clusterClusterID",
+    "clusterClusterResponse": "argocd:clusterClusterResponse",
+    "connectors": {
+      "@id": "argocd:connectors",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "additionalUrls": {
+      "@id": "argocd:additionalUrls",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "appLabelKey": {
+      "@id": "argocd:appLabelKey",
+      "@type": "xsd:string"
+    },
+    "appsInAnyNamespaceEnabled": {
+      "@id": "argocd:appsInAnyNamespaceEnabled",
+      "@type": "xsd:boolean"
+    },
+    "configManagementPlugins": {
+      "@id": "argocd:configManagementPlugins",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "controllerNamespace": {
+      "@id": "argocd:controllerNamespace",
+      "@type": "xsd:string"
+    },
+    "dexConfig": {
+      "@id": "argocd:dexConfig",
+      "@type": "xsd:string"
+    },
+    "execEnabled": {
+      "@id": "argocd:execEnabled",
+      "@type": "xsd:boolean"
+    },
+    "googleAnalytics": {
+      "@id": "argocd:googleAnalytics",
+      "@type": "xsd:string"
+    },
+    "help": {
+      "@id": "argocd:help",
+      "@type": "xsd:string"
+    },
+    "hydratorEnabled": {
+      "@id": "argocd:hydratorEnabled",
+      "@type": "xsd:boolean"
+    },
+    "impersonationEnabled": {
+      "@id": "argocd:impersonationEnabled",
+      "@type": "xsd:boolean"
+    },
+    "installationID": {
+      "@id": "argocd:installationID",
+      "@type": "xsd:string"
+    },
+    "kustomizeOptions": {
+      "@id": "argocd:kustomizeOptions",
+      "@type": "xsd:string"
+    },
+    "kustomizeVersions": {
+      "@id": "argocd:kustomizeVersions",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "oidcConfig": {
+      "@id": "argocd:oidcConfig",
+      "@type": "xsd:string"
+    },
+    "passwordPattern": {
+      "@id": "argocd:passwordPattern",
+      "@type": "xsd:string"
+    },
+    "plugins": {
+      "@id": "argocd:plugins",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "resourceOverrides": {
+      "@id": "argocd:resourceOverrides",
+      "@type": "@id"
+    },
+    "statusBadgeEnabled": {
+      "@id": "argocd:statusBadgeEnabled",
+      "@type": "xsd:boolean"
+    },
+    "statusBadgeRootUrl": {
+      "@id": "argocd:statusBadgeRootUrl",
+      "@type": "xsd:string"
+    },
+    "syncWithReplaceAllowed": {
+      "@id": "argocd:syncWithReplaceAllowed",
+      "@type": "xsd:boolean"
+    },
+    "trackingMethod": {
+      "@id": "argocd:trackingMethod",
+      "@type": "xsd:string"
+    },
+    "uiBannerContent": {
+      "@id": "argocd:uiBannerContent",
+      "@type": "xsd:string"
+    },
+    "uiBannerPermanent": {
+      "@id": "argocd:uiBannerPermanent",
+      "@type": "xsd:boolean"
+    },
+    "uiBannerPosition": {
+      "@id": "argocd:uiBannerPosition",
+      "@type": "xsd:string"
+    },
+    "uiBannerURL": {
+      "@id": "argocd:uiBannerURL",
+      "@type": "xsd:string"
+    },
+    "uiCssURL": {
+      "@id": "argocd:uiCssURL",
+      "@type": "xsd:string"
+    },
+    "url": "schema:url",
+    "userLoginsDisabled": {
+      "@id": "argocd:userLoginsDisabled",
+      "@type": "xsd:boolean"
+    },
+    "cliClientID": {
+      "@id": "argocd:cliClientID",
+      "@type": "xsd:string"
+    },
+    "clientID": {
+      "@id": "argocd:clientID",
+      "@type": "xsd:string"
+    },
+    "enablePKCEAuthentication": {
+      "@id": "argocd:enablePKCEAuthentication",
+      "@type": "xsd:boolean"
+    },
+    "idTokenClaims": {
+      "@id": "argocd:idTokenClaims",
+      "@type": "@id"
+    },
+    "issuer": {
+      "@id": "argocd:issuer",
+      "@type": "xsd:string"
+    },
+    "name": "schema:name",
+    "scopes": {
+      "@id": "argocd:scopes",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "binaryUrls": {
+      "@id": "argocd:binaryUrls",
+      "@type": "@id"
+    },
+    "chatText": {
+      "@id": "argocd:chatText",
+      "@type": "xsd:string"
+    },
+    "chatUrl": {
+      "@id": "argocd:chatUrl",
+      "@type": "xsd:string"
+    },
+    "anonymizeUsers": {
+      "@id": "argocd:anonymizeUsers",
+      "@type": "xsd:boolean"
+    },
+    "trackingID": {
+      "@id": "argocd:trackingID",
+      "@type": "xsd:string"
+    },
+    "type": {
+      "@id": "argocd:type",
+      "@type": "xsd:string"
+    },
+    "value": {
+      "@id": "argocd:value",
+      "@type": "xsd:string"
+    }
+  }
+}

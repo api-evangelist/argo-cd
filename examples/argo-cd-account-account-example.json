@@ -1,0 +1,12 @@
+{
+  "capabilities": [
+    "example-capabilities",
+    "example-capabilities"
+  ],
+  "enabled": true,
+  "name": "my-application",
+  "tokens": [
+    "eyJhbGciOiJIUzI1NiJ9.example",
+    "eyJhbGciOiJIUzI1NiJ9.example"
+  ]
+}

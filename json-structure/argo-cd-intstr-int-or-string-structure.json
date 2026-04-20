@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-structure/argo-cd-intstr-int-or-string-structure.json",
+  "name": "intstrIntOrString",
+  "description": "+protobuf=true\n+protobuf.options.(gogoproto.goproto_stringer)=false\n+k8s:openapi-gen=true",
+  "type": "object",
+  "properties": {
+    "intVal": {
+      "type": "int32"
+    },
+    "strVal": {
+      "type": "string"
+    },
+    "type": {
+      "type": "int64"
+    }
+  }
+}

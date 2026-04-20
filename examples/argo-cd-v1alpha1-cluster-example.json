@@ -1,0 +1,18 @@
+{
+  "annotations": {},
+  "clusterResources": true,
+  "config": "example-config",
+  "connectionState": "example-connectionstate",
+  "info": "example-info",
+  "labels": {},
+  "name": "my-application",
+  "namespaces": [
+    "my-application",
+    "my-application"
+  ],
+  "project": "default",
+  "refreshRequestedAt": "example-refreshrequestedat",
+  "server": "https://kubernetes.default.svc",
+  "serverVersion": "https://kubernetes.default.svc",
+  "shard": 2
+}

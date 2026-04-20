@@ -1,0 +1,8 @@
+{
+  "author": "example-author",
+  "body": "example-body",
+  "date": "example-date",
+  "repoUrl": "https://github.com/example/repo.git",
+  "sha": "example-sha",
+  "subject": "example-subject"
+}

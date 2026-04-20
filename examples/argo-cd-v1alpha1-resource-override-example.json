@@ -1,0 +1,11 @@
+{
+  "actions": "example-actions",
+  "healthLua": "Healthy",
+  "ignoreDifferences": "example-ignoredifferences",
+  "ignoreResourceUpdates": "example-ignoreresourceupdate",
+  "knownTypeFields": [
+    "example-knowntypefields",
+    "example-knowntypefields"
+  ],
+  "useOpenLibs": true
+}

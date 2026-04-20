@@ -1,0 +1,12 @@
+{
+  "destination": "example-destination",
+  "ignoreDifferences": [
+    "example-ignoredifferences",
+    "example-ignoredifferences"
+  ],
+  "source": "example-source",
+  "sources": [
+    "example-sources",
+    "example-sources"
+  ]
+}

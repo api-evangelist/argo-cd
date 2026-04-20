@@ -1,0 +1,215 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "argocd": "https://argoproj.github.io/schema/argo-cd/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "applicationApplicationSyncWindow": "argocd:applicationApplicationSyncWindow",
+    "applicationFileChunk": "argocd:applicationFileChunk",
+    "applicationResourceActionParameters": "argocd:applicationResourceActionParameters",
+    "applicationOperationTerminateResponse": "argocd:applicationOperationTerminateResponse",
+    "applicationApplicationServerSideDiffResponse": "argocd:applicationApplicationServerSideDiffResponse",
+    "applicationApplicationResourceResponse": "argocd:applicationApplicationResourceResponse",
+    "applicationSyncOptions": "argocd:applicationSyncOptions",
+    "applicationApplicationPatchRequest": "argocd:applicationApplicationPatchRequest",
+    "applicationManagedResourcesResponse": "argocd:applicationManagedResourcesResponse",
+    "applicationApplicationManifestQueryWithFiles": "argocd:applicationApplicationManifestQueryWithFiles",
+    "applicationApplicationResponse": "argocd:applicationApplicationResponse",
+    "applicationApplicationSyncRequest": "argocd:applicationApplicationSyncRequest",
+    "applicationResourceActionRunRequestV2": "argocd:applicationResourceActionRunRequestV2",
+    "applicationApplicationManifestQueryWithFilesWrapper": "argocd:applicationApplicationManifestQueryWithFilesWrapper",
+    "applicationApplicationRollbackRequest": "argocd:applicationApplicationRollbackRequest",
+    "applicationResourceActionsListResponse": "argocd:applicationResourceActionsListResponse",
+    "applicationLinkInfo": "argocd:applicationLinkInfo",
+    "applicationLinksResponse": "argocd:applicationLinksResponse",
+    "applicationLogEntry": "argocd:applicationLogEntry",
+    "applicationApplicationSyncWindowsResponse": "argocd:applicationApplicationSyncWindowsResponse",
+    "duration": {
+      "@id": "argocd:duration",
+      "@type": "xsd:string"
+    },
+    "kind": {
+      "@id": "argocd:kind",
+      "@type": "xsd:string"
+    },
+    "manualSync": {
+      "@id": "argocd:manualSync",
+      "@type": "xsd:boolean"
+    },
+    "schedule": {
+      "@id": "argocd:schedule",
+      "@type": "xsd:string"
+    },
+    "chunk": {
+      "@id": "argocd:chunk",
+      "@type": "xsd:string"
+    },
+    "name": "schema:name",
+    "value": {
+      "@id": "argocd:value",
+      "@type": "xsd:string"
+    },
+    "items": {
+      "@id": "argocd:items",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "modified": {
+      "@id": "argocd:modified",
+      "@type": "xsd:boolean"
+    },
+    "manifest": {
+      "@id": "argocd:manifest",
+      "@type": "xsd:string"
+    },
+    "appNamespace": {
+      "@id": "argocd:appNamespace",
+      "@type": "xsd:string"
+    },
+    "patch": {
+      "@id": "argocd:patch",
+      "@type": "xsd:string"
+    },
+    "patchType": {
+      "@id": "argocd:patchType",
+      "@type": "xsd:string"
+    },
+    "project": {
+      "@id": "argocd:project",
+      "@type": "xsd:string"
+    },
+    "checksum": {
+      "@id": "argocd:checksum",
+      "@type": "xsd:string"
+    },
+    "dryRun": {
+      "@id": "argocd:dryRun",
+      "@type": "xsd:boolean"
+    },
+    "infos": {
+      "@id": "argocd:infos",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "manifests": {
+      "@id": "argocd:manifests",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "prune": {
+      "@id": "argocd:prune",
+      "@type": "xsd:boolean"
+    },
+    "resources": {
+      "@id": "argocd:resources",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "retryStrategy": {
+      "@id": "argocd:retryStrategy",
+      "@type": "xsd:string"
+    },
+    "revision": {
+      "@id": "argocd:revision",
+      "@type": "xsd:string"
+    },
+    "revisions": {
+      "@id": "argocd:revisions",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "sourcePositions": {
+      "@id": "argocd:sourcePositions",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "strategy": {
+      "@id": "argocd:strategy",
+      "@type": "xsd:string"
+    },
+    "syncOptions": {
+      "@id": "argocd:syncOptions",
+      "@type": "xsd:string"
+    },
+    "action": {
+      "@id": "argocd:action",
+      "@type": "xsd:string"
+    },
+    "group": {
+      "@id": "argocd:group",
+      "@type": "xsd:string"
+    },
+    "namespace": {
+      "@id": "argocd:namespace",
+      "@type": "xsd:string"
+    },
+    "resourceActionParameters": {
+      "@id": "argocd:resourceActionParameters",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "resourceName": {
+      "@id": "argocd:resourceName",
+      "@type": "xsd:string"
+    },
+    "version": "schema:version",
+    "query": {
+      "@id": "argocd:query",
+      "@type": "xsd:string"
+    },
+    "id": {
+      "@id": "argocd:id",
+      "@type": "xsd:integer"
+    },
+    "actions": {
+      "@id": "argocd:actions",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "description": "schema:description",
+    "iconClass": {
+      "@id": "argocd:iconClass",
+      "@type": "xsd:string"
+    },
+    "title": {
+      "@id": "argocd:title",
+      "@type": "xsd:string"
+    },
+    "url": "schema:url",
+    "content": {
+      "@id": "argocd:content",
+      "@type": "xsd:string"
+    },
+    "last": {
+      "@id": "argocd:last",
+      "@type": "xsd:boolean"
+    },
+    "podName": {
+      "@id": "argocd:podName",
+      "@type": "xsd:string"
+    },
+    "timeStamp": {
+      "@id": "argocd:timeStamp",
+      "@type": "xsd:string"
+    },
+    "timeStampStr": {
+      "@id": "argocd:timeStampStr",
+      "@type": "xsd:string"
+    },
+    "activeWindows": {
+      "@id": "argocd:activeWindows",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "assignedWindows": {
+      "@id": "argocd:assignedWindows",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "canSync": {
+      "@id": "argocd:canSync",
+      "@type": "xsd:boolean"
+    }
+  }
+}

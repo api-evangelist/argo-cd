@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-structure/argo-cd-v1alpha1-repository-certificate-list-structure.json",
+  "name": "v1alpha1RepositoryCertificateList",
+  "description": "v1alpha1RepositoryCertificateList schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "items": {
+      "type": "array",
+      "name": "List of certificates to be processed",
+      "items": {
+        "$ref": "#/definitions/v1alpha1RepositoryCertificate"
+      }
+    },
+    "metadata": {
+      "$ref": "#/definitions/v1ListMeta"
+    }
+  }
+}

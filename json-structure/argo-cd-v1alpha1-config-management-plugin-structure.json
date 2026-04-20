@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-structure/argo-cd-v1alpha1-config-management-plugin-structure.json",
+  "name": "v1alpha1ConfigManagementPlugin",
+  "description": "v1alpha1ConfigManagementPlugin schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "generate": {
+      "$ref": "#/definitions/v1alpha1Command"
+    },
+    "init": {
+      "$ref": "#/definitions/v1alpha1Command"
+    },
+    "lockRepo": {
+      "type": "boolean"
+    },
+    "name": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-structure/argo-cd-v1alpha1-orphaned-resources-monitor-settings-structure.json",
+  "name": "v1alpha1OrphanedResourcesMonitorSettings",
+  "description": "v1alpha1OrphanedResourcesMonitorSettings schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "ignore": {
+      "type": "array",
+      "name": "Ignore contains a list of resources that are to be excluded from orphaned resources monitoring",
+      "items": {
+        "$ref": "#/definitions/v1alpha1OrphanedResourceKey"
+      }
+    },
+    "warn": {
+      "type": "boolean",
+      "name": "Warn indicates if warning condition should be created for apps which have orphaned resources"
+    }
+  }
+}

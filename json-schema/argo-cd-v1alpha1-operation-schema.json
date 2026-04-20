@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-schema/argo-cd-v1alpha1-operation-schema.json",
+  "title": "v1alpha1Operation",
+  "description": "v1alpha1Operation schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "info": {
+      "type": "array",
+      "title": "Info is a list of informational items for this operation",
+      "items": {
+        "$ref": "#/definitions/v1alpha1Info"
+      }
+    },
+    "initiatedBy": {
+      "$ref": "#/definitions/v1alpha1OperationInitiator"
+    },
+    "retry": {
+      "$ref": "#/definitions/v1alpha1RetryStrategy"
+    },
+    "sync": {
+      "$ref": "#/definitions/v1alpha1SyncOperation"
+    }
+  }
+}

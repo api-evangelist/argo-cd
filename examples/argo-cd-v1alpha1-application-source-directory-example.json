@@ -1,0 +1,6 @@
+{
+  "exclude": "example-exclude",
+  "include": "example-include",
+  "jsonnet": "example-jsonnet",
+  "recurse": true
+}

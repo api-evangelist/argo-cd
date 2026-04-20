@@ -1,0 +1,10 @@
+{
+  "apiVersions": [
+    "v2.14.0",
+    "v2.14.0"
+  ],
+  "applicationsCount": 522,
+  "cacheInfo": "example-cacheinfo",
+  "connectionState": "example-connectionstate",
+  "serverVersion": "https://kubernetes.default.svc"
+}

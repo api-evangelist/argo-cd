@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-structure/argo-cd-v1-owner-reference-structure.json",
+  "name": "v1OwnerReference",
+  "description": "v1OwnerReference schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "apiVersion": {
+      "description": "API version of the referent.",
+      "type": "string"
+    },
+    "blockOwnerDeletion": {
+      "type": "boolean",
+      "name": "If true, AND if the owner has the \"foregroundDeletion\" finalizer, then\nthe owner cannot be deleted from the key-value store until this\nreference is removed.\nSee https://kubernetes.io/docs/concepts/architecture/garbage-collection/#foreground-deletion\nfor how the garbage collector interacts with this field and enforces the foreground deletion.\nDefaults to false.\nTo set this field, a user needs \"delete\" permission of the owner,\notherwise 422 (Unprocessable Entity) will be returned.\n+optional"
+    },
+    "controller": {
+      "type": "boolean",
+      "name": "If true, this reference points to the managing controller.\n+optional"
+    },
+    "kind": {
+      "type": "string",
+      "name": "Kind of the referent.\nMore info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds"
+    },
+    "name": {
+      "type": "string",
+      "name": "Name of the referent.\nMore info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names#names"
+    },
+    "uid": {
+      "type": "string",
+      "name": "UID of the referent.\nMore info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names#uids"
+    }
+  }
+}

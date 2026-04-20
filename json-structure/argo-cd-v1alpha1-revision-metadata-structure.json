@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-structure/argo-cd-v1alpha1-revision-metadata-structure.json",
+  "name": "v1alpha1RevisionMetadata",
+  "description": "RevisionMetadata contains metadata for a specific revision in a Git repository. This field is used by the\nSource Hydrator feature which may be removed in the future.",
+  "type": "object",
+  "properties": {
+    "author": {
+      "type": "string",
+      "name": "who authored this revision,\ntypically their name and email, e.g. \"John Doe <john_doe@my-company.com>\",\nbut might not match this example"
+    },
+    "date": {
+      "$ref": "#/definitions/v1Time"
+    },
+    "message": {
+      "description": "Message contains the message associated with the revision, most likely the commit message.",
+      "type": "string"
+    },
+    "references": {
+      "description": "References contains references to information that's related to this commit in some way.",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/v1alpha1RevisionReference"
+      }
+    },
+    "signatureInfo": {
+      "description": "SignatureInfo contains a hint on the signer if the revision was signed with GPG, and signature verification is enabled.",
+      "type": "string"
+    },
+    "tags": {
+      "type": "array",
+      "name": "Tags specifies any tags currently attached to the revision\nFloating tags can move from one revision to another",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

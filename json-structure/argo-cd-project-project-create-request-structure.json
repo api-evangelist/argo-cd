@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-structure/argo-cd-project-project-create-request-structure.json",
+  "name": "projectProjectCreateRequest",
+  "description": "ProjectCreateRequest defines project creation parameters.",
+  "type": "object",
+  "properties": {
+    "project": {
+      "$ref": "#/definitions/v1alpha1AppProject"
+    },
+    "upsert": {
+      "type": "boolean"
+    }
+  }
+}

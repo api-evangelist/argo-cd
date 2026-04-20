@@ -1,0 +1,14 @@
+{
+  "diff": "example-diff",
+  "group": "example-group",
+  "hook": true,
+  "kind": "example-kind",
+  "liveState": "example-livestate",
+  "modified": true,
+  "name": "my-application",
+  "namespace": "my-application",
+  "normalizedLiveState": "example-normalizedlivestate",
+  "predictedLiveState": "example-predictedlivestate",
+  "resourceVersion": "v2.14.0",
+  "targetState": "main"
+}

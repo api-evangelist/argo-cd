@@ -1,0 +1,29 @@
+{
+  "apiVersions": [
+    "v2.14.0",
+    "v2.14.0"
+  ],
+  "fileParameters": [
+    "example-fileparameters",
+    "example-fileparameters"
+  ],
+  "ignoreMissingValueFiles": true,
+  "kubeVersion": "v2.14.0",
+  "namespace": "my-application",
+  "parameters": [
+    "example-parameters",
+    "example-parameters"
+  ],
+  "passCredentials": true,
+  "releaseName": "my-application",
+  "skipCrds": true,
+  "skipSchemaValidation": true,
+  "skipTests": true,
+  "valueFiles": [
+    "example-valuefiles",
+    "example-valuefiles"
+  ],
+  "values": "example-values",
+  "valuesObject": "example-valuesobject",
+  "version": "v2.14.0"
+}

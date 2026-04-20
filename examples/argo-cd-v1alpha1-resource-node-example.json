@@ -1,0 +1,18 @@
+{
+  "createdAt": "example-createdat",
+  "health": "Healthy",
+  "images": [
+    "example-images",
+    "example-images"
+  ],
+  "info": [
+    "example-info",
+    "example-info"
+  ],
+  "networkingInfo": "example-networkinginfo",
+  "parentRefs": [
+    "example-parentrefs",
+    "example-parentrefs"
+  ],
+  "resourceVersion": "v2.14.0"
+}

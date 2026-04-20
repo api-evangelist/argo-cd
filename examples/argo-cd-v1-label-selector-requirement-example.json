@@ -1,0 +1,8 @@
+{
+  "key": "eyJhbGciOiJIUzI1NiJ9.example",
+  "operator": "example-operator",
+  "values": [
+    "example-values",
+    "example-values"
+  ]
+}

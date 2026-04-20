@@ -1,0 +1,28 @@
+{
+  "autoHealAttemptsCount": 587,
+  "dryRun": true,
+  "manifests": [
+    "example-manifests",
+    "example-manifests"
+  ],
+  "prune": true,
+  "resources": [
+    "example-resources",
+    "example-resources"
+  ],
+  "revision": "abc1234def5678",
+  "revisions": [
+    "abc1234def5678",
+    "abc1234def5678"
+  ],
+  "source": "example-source",
+  "sources": [
+    "example-sources",
+    "example-sources"
+  ],
+  "syncOptions": [
+    "example-syncoptions",
+    "example-syncoptions"
+  ],
+  "syncStrategy": "example-syncstrategy"
+}

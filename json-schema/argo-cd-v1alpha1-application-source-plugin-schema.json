@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-schema/argo-cd-v1alpha1-application-source-plugin-schema.json",
+  "title": "v1alpha1ApplicationSourcePlugin",
+  "description": "v1alpha1ApplicationSourcePlugin schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "env": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/applicationv1alpha1EnvEntry"
+      }
+    },
+    "name": {
+      "type": "string"
+    },
+    "parameters": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/v1alpha1ApplicationSourcePluginParameter"
+      }
+    }
+  }
+}

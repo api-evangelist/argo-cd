@@ -1,0 +1,14 @@
+{
+  "author": "example-author",
+  "date": "example-date",
+  "message": "Application is synced and healthy.",
+  "references": [
+    "example-references",
+    "example-references"
+  ],
+  "signatureInfo": "example-signatureinfo",
+  "tags": [
+    "example-tags",
+    "example-tags"
+  ]
+}

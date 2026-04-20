@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-structure/argo-cd-v1-group-kind-structure.json",
+  "name": "v1GroupKind",
+  "description": "+protobuf.options.(gogoproto.goproto_stringer)=false",
+  "type": "object",
+  "properties": {
+    "group": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string"
+    }
+  }
+}

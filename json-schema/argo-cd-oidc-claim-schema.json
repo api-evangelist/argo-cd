@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-schema/argo-cd-oidc-claim-schema.json",
+  "title": "oidcClaim",
+  "description": "oidcClaim schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "essential": {
+      "type": "boolean"
+    },
+    "value": {
+      "type": "string"
+    },
+    "values": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

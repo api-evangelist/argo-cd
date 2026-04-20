@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-structure/argo-cd-v1alpha1-host-info-structure.json",
+  "name": "v1alpha1HostInfo",
+  "description": "HostInfo holds metadata and resource usage metrics for a specific host in the cluster.",
+  "type": "object",
+  "properties": {
+    "labels": {
+      "description": "Labels holds the labels attached to the host.",
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "name": {
+      "description": "Name is the hostname or node name in the Kubernetes cluster.",
+      "type": "string"
+    },
+    "resourcesInfo": {
+      "description": "ResourcesInfo provides a list of resource usage details for different resource types on this host.",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/v1alpha1HostResourceInfo"
+      }
+    },
+    "systemInfo": {
+      "$ref": "#/definitions/v1NodeSystemInfo"
+    }
+  }
+}

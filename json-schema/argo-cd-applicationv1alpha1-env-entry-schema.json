@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-schema/argo-cd-applicationv1alpha1-env-entry-schema.json",
+  "title": "applicationv1alpha1EnvEntry",
+  "description": "applicationv1alpha1EnvEntry schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "title": "Name is the name of the variable, usually expressed in uppercase"
+    },
+    "value": {
+      "type": "string",
+      "title": "Value is the value of the variable"
+    }
+  }
+}

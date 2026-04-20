@@ -1,0 +1,15 @@
+{
+  "BuildDate": "example-builddate",
+  "Compiler": "example-compiler",
+  "ExtraBuildInfo": "example-extrabuildinfo",
+  "GitCommit": "abc1234def5678",
+  "GitTag": "example-gittag",
+  "GitTreeState": "example-gittreestate",
+  "GoVersion": "v2.14.0",
+  "HelmVersion": "v2.14.0",
+  "JsonnetVersion": "v2.14.0",
+  "KubectlVersion": "v2.14.0",
+  "KustomizeVersion": "v2.14.0",
+  "Platform": "example-platform",
+  "Version": "v2.14.0"
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-schema/argo-cd-v1alpha1-aws-auth-config-schema.json",
+  "title": "v1alpha1AWSAuthConfig",
+  "description": "v1alpha1AWSAuthConfig schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "clusterName": {
+      "type": "string",
+      "title": "ClusterName contains AWS cluster name"
+    },
+    "profile": {
+      "description": "Profile contains optional role ARN. If set then AWS IAM Authenticator uses the profile to perform cluster operations instead of the default AWS credential provider chain.",
+      "type": "string"
+    },
+    "roleARN": {
+      "description": "RoleARN contains optional role ARN. If set then AWS IAM Authenticator assume a role to perform cluster operations instead of the default AWS credential provider chain.",
+      "type": "string"
+    }
+  }
+}

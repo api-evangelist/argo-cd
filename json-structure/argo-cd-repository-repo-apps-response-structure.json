@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-structure/argo-cd-repository-repo-apps-response-structure.json",
+  "name": "repositoryRepoAppsResponse",
+  "description": "repositoryRepoAppsResponse schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "items": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/repositoryAppInfo"
+      }
+    }
+  }
+}

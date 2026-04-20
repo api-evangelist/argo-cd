@@ -1,0 +1,16 @@
+{
+  "fileParameters": [
+    "example-fileparameters",
+    "example-fileparameters"
+  ],
+  "name": "my-application",
+  "parameters": [
+    "example-parameters",
+    "example-parameters"
+  ],
+  "valueFiles": [
+    "example-valuefiles",
+    "example-valuefiles"
+  ],
+  "values": "example-values"
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-structure/argo-cd-application-resource-actions-list-response-structure.json",
+  "name": "applicationResourceActionsListResponse",
+  "description": "applicationResourceActionsListResponse schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "actions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/v1alpha1ResourceAction"
+      }
+    }
+  }
+}

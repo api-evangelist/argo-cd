@@ -1,0 +1,70 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "argocd": "https://argoproj.github.io/schema/argo-cd/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "accountUpdatePasswordResponse": "argocd:accountUpdatePasswordResponse",
+    "accountUpdatePasswordRequest": "argocd:accountUpdatePasswordRequest",
+    "accountCreateTokenRequest": "argocd:accountCreateTokenRequest",
+    "accountAccountsList": "argocd:accountAccountsList",
+    "accountCreateTokenResponse": "argocd:accountCreateTokenResponse",
+    "accountToken": "argocd:accountToken",
+    "accountAccount": "argocd:accountAccount",
+    "accountCanIResponse": "argocd:accountCanIResponse",
+    "accountEmptyResponse": "argocd:accountEmptyResponse",
+    "currentPassword": {
+      "@id": "argocd:currentPassword",
+      "@type": "xsd:string"
+    },
+    "name": "schema:name",
+    "newPassword": {
+      "@id": "argocd:newPassword",
+      "@type": "xsd:string"
+    },
+    "expiresIn": {
+      "@id": "argocd:expiresIn",
+      "@type": "xsd:integer"
+    },
+    "id": {
+      "@id": "argocd:id",
+      "@type": "xsd:string"
+    },
+    "items": {
+      "@id": "argocd:items",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "token": {
+      "@id": "argocd:token",
+      "@type": "xsd:string"
+    },
+    "expiresAt": {
+      "@id": "argocd:expiresAt",
+      "@type": "xsd:integer"
+    },
+    "issuedAt": {
+      "@id": "argocd:issuedAt",
+      "@type": "xsd:integer"
+    },
+    "capabilities": {
+      "@id": "argocd:capabilities",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "enabled": {
+      "@id": "argocd:enabled",
+      "@type": "xsd:boolean"
+    },
+    "tokens": {
+      "@id": "argocd:tokens",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "value": {
+      "@id": "argocd:value",
+      "@type": "xsd:string"
+    }
+  }
+}

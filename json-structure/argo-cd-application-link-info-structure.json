@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-structure/argo-cd-application-link-info-structure.json",
+  "name": "applicationLinkInfo",
+  "description": "applicationLinkInfo schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "description": {
+      "type": "string"
+    },
+    "iconClass": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    }
+  }
+}

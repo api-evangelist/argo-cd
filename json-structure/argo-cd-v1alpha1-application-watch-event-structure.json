@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-structure/argo-cd-v1alpha1-application-watch-event-structure.json",
+  "name": "v1alpha1ApplicationWatchEvent",
+  "description": "ApplicationWatchEvent contains information about application change.",
+  "type": "object",
+  "properties": {
+    "application": {
+      "$ref": "#/definitions/v1alpha1Application"
+    },
+    "type": {
+      "type": "string"
+    }
+  }
+}

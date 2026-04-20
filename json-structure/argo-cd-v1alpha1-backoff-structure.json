@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-structure/argo-cd-v1alpha1-backoff-structure.json",
+  "name": "v1alpha1Backoff",
+  "description": "v1alpha1Backoff schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "duration": {
+      "type": "string",
+      "name": "Duration is the amount to back off. Default unit is seconds, but could also be a duration (e.g. \"2m\", \"1h\")"
+    },
+    "factor": {
+      "type": "int64",
+      "name": "Factor is a factor to multiply the base duration after each failed retry"
+    },
+    "maxDuration": {
+      "type": "string",
+      "name": "MaxDuration is the maximum amount of time allowed for the backoff strategy"
+    }
+  }
+}

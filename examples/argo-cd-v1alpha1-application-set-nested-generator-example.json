@@ -1,0 +1,12 @@
+{
+  "clusterDecisionResource": "https://kubernetes.default.svc",
+  "clusters": "https://kubernetes.default.svc",
+  "git": "example-git",
+  "list": "example-list",
+  "matrix": "example-matrix",
+  "merge": "example-merge",
+  "plugin": "example-plugin",
+  "pullRequest": "example-pullrequest",
+  "scmProvider": "example-scmprovider",
+  "selector": "example-selector"
+}

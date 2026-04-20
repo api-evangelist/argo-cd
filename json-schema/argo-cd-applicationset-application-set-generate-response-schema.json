@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-schema/argo-cd-applicationset-application-set-generate-response-schema.json",
+  "title": "applicationsetApplicationSetGenerateResponse",
+  "description": "applicationsetApplicationSetGenerateResponse schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "applications": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/v1alpha1Application"
+      }
+    }
+  }
+}

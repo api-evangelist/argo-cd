@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-structure/argo-cd-v1alpha1-application-destination-structure.json",
+  "name": "v1alpha1ApplicationDestination",
+  "description": "v1alpha1ApplicationDestination schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "Name is an alternate way of specifying the target cluster by its symbolic name. This must be set if Server is not set.",
+      "type": "string"
+    },
+    "namespace": {
+      "type": "string",
+      "name": "Namespace specifies the target namespace for the application's resources.\nThe namespace will only be set for namespace-scoped resources that have not set a value for .metadata.namespace"
+    },
+    "server": {
+      "description": "Server specifies the URL of the target cluster's Kubernetes control plane API. This must be set if Name is not set.",
+      "type": "string"
+    }
+  }
+}

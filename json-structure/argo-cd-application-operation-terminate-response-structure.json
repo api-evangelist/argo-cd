@@ -1,0 +1,7 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-structure/argo-cd-application-operation-terminate-response-structure.json",
+  "name": "applicationOperationTerminateResponse",
+  "description": "applicationOperationTerminateResponse schema from Argo CD API",
+  "type": "object"
+}

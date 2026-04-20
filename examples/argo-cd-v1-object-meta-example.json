@@ -1,0 +1,26 @@
+{
+  "annotations": {},
+  "creationTimestamp": "example-creationtimestamp",
+  "deletionGracePeriodSeconds": 636,
+  "deletionTimestamp": "example-deletiontimestamp",
+  "finalizers": [
+    "example-finalizers",
+    "example-finalizers"
+  ],
+  "generateName": "my-application",
+  "generation": 453,
+  "labels": {},
+  "managedFields": [
+    "example-managedfields",
+    "example-managedfields"
+  ],
+  "name": "my-application",
+  "namespace": "my-application",
+  "ownerReferences": [
+    "example-ownerreferences",
+    "example-ownerreferences"
+  ],
+  "resourceVersion": "v2.14.0",
+  "selfLink": "example-selflink",
+  "uid": "app-123456"
+}

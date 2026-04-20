@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-structure/argo-cd-v1alpha1-gnu-pg-public-key-structure.json",
+  "name": "v1alpha1GnuPGPublicKey",
+  "description": "v1alpha1GnuPGPublicKey schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "fingerprint": {
+      "type": "string",
+      "name": "Fingerprint is the fingerprint of the key"
+    },
+    "keyData": {
+      "type": "string",
+      "name": "KeyData holds the raw key data, in base64 encoded format"
+    },
+    "keyID": {
+      "type": "string",
+      "name": "KeyID specifies the key ID, in hexadecimal string format"
+    },
+    "owner": {
+      "type": "string",
+      "name": "Owner holds the owner identification, e.g. a name and e-mail address"
+    },
+    "subType": {
+      "type": "string",
+      "name": "SubType holds the key's subtype (e.g. rsa4096)"
+    },
+    "trust": {
+      "type": "string",
+      "name": "Trust holds the level of trust assigned to this key"
+    }
+  }
+}

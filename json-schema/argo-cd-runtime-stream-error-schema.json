@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-schema/argo-cd-runtime-stream-error-schema.json",
+  "title": "runtimeStreamError",
+  "description": "runtimeStreamError schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "details": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/protobufAny"
+      }
+    },
+    "grpc_code": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "http_code": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "http_status": {
+      "type": "string"
+    },
+    "message": {
+      "type": "string"
+    }
+  }
+}

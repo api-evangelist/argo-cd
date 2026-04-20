@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-schema/argo-cd-account-create-token-request-schema.json",
+  "title": "accountCreateTokenRequest",
+  "description": "accountCreateTokenRequest schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "expiresIn": {
+      "type": "integer",
+      "format": "int64",
+      "title": "expiresIn represents a duration in seconds"
+    },
+    "id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    }
+  }
+}

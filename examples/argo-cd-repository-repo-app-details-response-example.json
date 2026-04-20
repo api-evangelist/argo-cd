@@ -1,0 +1,7 @@
+{
+  "directory": "example-directory",
+  "helm": "example-helm",
+  "kustomize": "example-kustomize",
+  "plugin": "example-plugin",
+  "type": "example-type"
+}

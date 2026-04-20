@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-schema/argo-cd-application-application-sync-request-schema.json",
+  "title": "applicationApplicationSyncRequest",
+  "description": "applicationApplicationSyncRequest schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "appNamespace": {
+      "type": "string"
+    },
+    "dryRun": {
+      "type": "boolean"
+    },
+    "infos": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/v1alpha1Info"
+      }
+    },
+    "manifests": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "name": {
+      "type": "string"
+    },
+    "project": {
+      "type": "string"
+    },
+    "prune": {
+      "type": "boolean"
+    },
+    "resources": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/v1alpha1SyncOperationResource"
+      }
+    },
+    "retryStrategy": {
+      "$ref": "#/definitions/v1alpha1RetryStrategy"
+    },
+    "revision": {
+      "type": "string"
+    },
+    "revisions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "sourcePositions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "int64"
+      }
+    },
+    "strategy": {
+      "$ref": "#/definitions/v1alpha1SyncStrategy"
+    },
+    "syncOptions": {
+      "$ref": "#/definitions/applicationSyncOptions"
+    }
+  }
+}

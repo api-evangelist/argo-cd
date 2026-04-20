@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-schema/argo-cd-application-application-manifest-query-with-files-wrapper-schema.json",
+  "title": "applicationApplicationManifestQueryWithFilesWrapper",
+  "description": "applicationApplicationManifestQueryWithFilesWrapper schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "chunk": {
+      "$ref": "#/definitions/applicationFileChunk"
+    },
+    "query": {
+      "$ref": "#/definitions/applicationApplicationManifestQueryWithFiles"
+    }
+  }
+}

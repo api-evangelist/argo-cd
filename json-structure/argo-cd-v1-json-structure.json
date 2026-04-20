@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-structure/argo-cd-v1-json-structure.json",
+  "name": "v1JSON",
+  "description": "JSON represents any valid JSON value.\nThese types are supported: bool, int64, float64, string, []interface{}, map[string]interface{} and nil.",
+  "type": "object",
+  "properties": {
+    "raw": {
+      "type": "string",
+      "format": "byte"
+    }
+  }
+}

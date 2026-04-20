@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-structure/argo-cd-cluster-plugin-structure.json",
+  "name": "clusterPlugin",
+  "description": "clusterPlugin schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "name": "the name of the plugin, e.g. \"kasane\""
+    }
+  }
+}

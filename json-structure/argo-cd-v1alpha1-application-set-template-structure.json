@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-structure/argo-cd-v1alpha1-application-set-template-structure.json",
+  "name": "v1alpha1ApplicationSetTemplate",
+  "description": "v1alpha1ApplicationSetTemplate schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "metadata": {
+      "$ref": "#/definitions/v1alpha1ApplicationSetTemplateMeta"
+    },
+    "spec": {
+      "$ref": "#/definitions/v1alpha1ApplicationSpec"
+    }
+  }
+}

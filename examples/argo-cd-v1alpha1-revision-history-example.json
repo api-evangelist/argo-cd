@@ -1,0 +1,16 @@
+{
+  "deployStartedAt": "example-deploystartedat",
+  "deployedAt": "example-deployedat",
+  "id": 525,
+  "initiatedBy": "example-initiatedby",
+  "revision": "abc1234def5678",
+  "revisions": [
+    "abc1234def5678",
+    "abc1234def5678"
+  ],
+  "source": "example-source",
+  "sources": [
+    "example-sources",
+    "example-sources"
+  ]
+}

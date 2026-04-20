@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-structure/argo-cd-v1alpha1-compared-to-structure.json",
+  "name": "v1alpha1ComparedTo",
+  "description": "v1alpha1ComparedTo schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "destination": {
+      "$ref": "#/definitions/v1alpha1ApplicationDestination"
+    },
+    "ignoreDifferences": {
+      "type": "array",
+      "name": "IgnoreDifferences is a reference to the application's ignored differences used for comparison",
+      "items": {
+        "$ref": "#/definitions/v1alpha1ResourceIgnoreDifferences"
+      }
+    },
+    "source": {
+      "$ref": "#/definitions/v1alpha1ApplicationSource"
+    },
+    "sources": {
+      "type": "array",
+      "name": "Sources is a reference to the application's multiple sources used for comparison",
+      "items": {
+        "$ref": "#/definitions/v1alpha1ApplicationSource"
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "apiVersion": "v2.14.0",
+  "blockOwnerDeletion": true,
+  "controller": true,
+  "kind": "example-kind",
+  "name": "my-application",
+  "uid": "app-123456"
+}

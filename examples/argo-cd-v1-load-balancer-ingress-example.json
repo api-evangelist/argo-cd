@@ -1,0 +1,9 @@
+{
+  "hostname": "my-application",
+  "ip": "example-ip",
+  "ipMode": "example-ipmode",
+  "ports": [
+    "example-ports",
+    "example-ports"
+  ]
+}

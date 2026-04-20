@@ -1,0 +1,7 @@
+{
+  "generators": [
+    "example-generators",
+    "example-generators"
+  ],
+  "template": "example-template"
+}

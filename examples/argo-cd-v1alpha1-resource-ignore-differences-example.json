@@ -1,0 +1,18 @@
+{
+  "group": "example-group",
+  "jqPathExpressions": [
+    "apps/my-app",
+    "apps/my-app"
+  ],
+  "jsonPointers": [
+    "example-jsonpointers",
+    "example-jsonpointers"
+  ],
+  "kind": "example-kind",
+  "managedFieldsManagers": [
+    "example-managedfieldsmanager",
+    "example-managedfieldsmanager"
+  ],
+  "name": "my-application",
+  "namespace": "my-application"
+}

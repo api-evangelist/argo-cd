@@ -1,0 +1,12 @@
+{
+  "api": "example-api",
+  "caRef": "example-caref",
+  "insecure": true,
+  "labels": [
+    "example-labels",
+    "example-labels"
+  ],
+  "project": "default",
+  "pullRequestState": "example-pullrequeststate",
+  "tokenRef": "eyJhbGciOiJIUzI1NiJ9.example"
+}

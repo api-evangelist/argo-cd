@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-schema/argo-cd-v1alpha1-kustomize-selector-schema.json",
+  "title": "v1alpha1KustomizeSelector",
+  "description": "v1alpha1KustomizeSelector schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "annotationSelector": {
+      "type": "string"
+    },
+    "labelSelector": {
+      "type": "string"
+    },
+    "resId": {
+      "$ref": "#/definitions/v1alpha1KustomizeResId"
+    }
+  }
+}

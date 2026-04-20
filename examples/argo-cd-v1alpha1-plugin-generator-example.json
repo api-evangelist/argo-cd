@@ -1,0 +1,7 @@
+{
+  "configMapRef": "example-configmapref",
+  "input": "example-input",
+  "requeueAfterSeconds": 758,
+  "template": "example-template",
+  "values": {}
+}

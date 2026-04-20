@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-structure/argo-cd-runtime-error-structure.json",
+  "name": "runtimeError",
+  "description": "runtimeError schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "code": {
+      "type": "int32"
+    },
+    "details": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/protobufAny"
+      }
+    },
+    "error": {
+      "type": "string"
+    },
+    "message": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "argocd": "https://argoproj.github.io/schema/argo-cd/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "projectSyncWindowsResponse": "argocd:projectSyncWindowsResponse",
+    "projectGlobalProjectsResponse": "argocd:projectGlobalProjectsResponse",
+    "projectProjectTokenResponse": "argocd:projectProjectTokenResponse",
+    "projectEmptyResponse": "argocd:projectEmptyResponse",
+    "projectDetailedProjectsResponse": "argocd:projectDetailedProjectsResponse",
+    "projectProjectUpdateRequest": "argocd:projectProjectUpdateRequest",
+    "projectProjectCreateRequest": "argocd:projectProjectCreateRequest",
+    "projectProjectTokenCreateRequest": "argocd:projectProjectTokenCreateRequest",
+    "windows": {
+      "@id": "argocd:windows",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "items": {
+      "@id": "argocd:items",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "token": {
+      "@id": "argocd:token",
+      "@type": "xsd:string"
+    },
+    "clusters": {
+      "@id": "argocd:clusters",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "globalProjects": {
+      "@id": "argocd:globalProjects",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "project": {
+      "@id": "argocd:project",
+      "@type": "xsd:string"
+    },
+    "repositories": {
+      "@id": "argocd:repositories",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "upsert": {
+      "@id": "argocd:upsert",
+      "@type": "xsd:boolean"
+    },
+    "description": "schema:description",
+    "expiresIn": {
+      "@id": "argocd:expiresIn",
+      "@type": "xsd:integer"
+    },
+    "id": {
+      "@id": "argocd:id",
+      "@type": "xsd:string"
+    },
+    "role": {
+      "@id": "argocd:role",
+      "@type": "xsd:string"
+    }
+  }
+}

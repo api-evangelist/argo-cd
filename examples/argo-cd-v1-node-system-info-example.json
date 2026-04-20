@@ -1,0 +1,13 @@
+{
+  "architecture": "example-architecture",
+  "bootID": "app-123456",
+  "containerRuntimeVersion": "v2.14.0",
+  "kernelVersion": "v2.14.0",
+  "kubeProxyVersion": "v2.14.0",
+  "kubeletVersion": "v2.14.0",
+  "machineID": "app-123456",
+  "operatingSystem": "example-operatingsystem",
+  "osImage": "example-osimage",
+  "swap": "example-swap",
+  "systemUUID": "a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+}

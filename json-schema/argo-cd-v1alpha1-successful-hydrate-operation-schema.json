@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-schema/argo-cd-v1alpha1-successful-hydrate-operation-schema.json",
+  "title": "v1alpha1SuccessfulHydrateOperation",
+  "description": "v1alpha1SuccessfulHydrateOperation schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "drySHA": {
+      "type": "string",
+      "title": "DrySHA holds the resolved revision (sha) of the dry source as of the most recent reconciliation"
+    },
+    "hydratedSHA": {
+      "type": "string",
+      "title": "HydratedSHA holds the resolved revision (sha) of the hydrated source as of the most recent reconciliation"
+    },
+    "sourceHydrator": {
+      "$ref": "#/definitions/v1alpha1SourceHydrator"
+    }
+  }
+}

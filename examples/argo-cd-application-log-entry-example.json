@@ -1,0 +1,7 @@
+{
+  "content": "example-content",
+  "last": true,
+  "podName": "my-application",
+  "timeStamp": "example-timestamp",
+  "timeStampStr": "example-timestampstr"
+}

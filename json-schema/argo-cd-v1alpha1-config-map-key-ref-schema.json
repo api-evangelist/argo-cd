@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-schema/argo-cd-v1alpha1-config-map-key-ref-schema.json",
+  "title": "v1alpha1ConfigMapKeyRef",
+  "description": "ConfigMapKeyRef struct for a reference to a configmap key.",
+  "type": "object",
+  "properties": {
+    "configMapName": {
+      "type": "string"
+    },
+    "key": {
+      "type": "string"
+    }
+  }
+}

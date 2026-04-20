@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-schema/argo-cd-v1alpha1-pull-request-generator-bitbucket-server-schema.json",
+  "title": "v1alpha1PullRequestGeneratorBitbucketServer",
+  "description": "PullRequestGeneratorBitbucketServer defines connection info specific to BitbucketServer.",
+  "type": "object",
+  "properties": {
+    "api": {
+      "description": "The Bitbucket REST API URL to talk to e.g. https://bitbucket.org/rest Required.",
+      "type": "string"
+    },
+    "basicAuth": {
+      "$ref": "#/definitions/v1alpha1BasicAuthBitbucketServer"
+    },
+    "bearerToken": {
+      "$ref": "#/definitions/v1alpha1BearerTokenBitbucket"
+    },
+    "caRef": {
+      "$ref": "#/definitions/v1alpha1ConfigMapKeyRef"
+    },
+    "insecure": {
+      "type": "boolean",
+      "title": "Allow self-signed TLS / Certificates; default: false"
+    },
+    "project": {
+      "description": "Project to scan. Required.",
+      "type": "string"
+    },
+    "repo": {
+      "description": "Repo name to scan. Required.",
+      "type": "string"
+    }
+  }
+}

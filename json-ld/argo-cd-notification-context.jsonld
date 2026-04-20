@@ -1,0 +1,21 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "argocd": "https://argoproj.github.io/schema/argo-cd/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "notificationTrigger": "argocd:notificationTrigger",
+    "notificationServiceList": "argocd:notificationServiceList",
+    "notificationTemplateList": "argocd:notificationTemplateList",
+    "notificationService": "argocd:notificationService",
+    "notificationTemplate": "argocd:notificationTemplate",
+    "notificationTriggerList": "argocd:notificationTriggerList",
+    "name": "schema:name",
+    "items": {
+      "@id": "argocd:items",
+      "@container": "@set",
+      "@type": "xsd:string"
+    }
+  }
+}

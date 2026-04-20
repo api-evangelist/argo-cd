@@ -1,0 +1,6 @@
+{
+  "allowEmpty": true,
+  "enabled": true,
+  "prune": true,
+  "selfHeal": true
+}

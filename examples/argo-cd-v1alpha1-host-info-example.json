@@ -1,0 +1,9 @@
+{
+  "labels": {},
+  "name": "my-application",
+  "resourcesInfo": [
+    "example-resourcesinfo",
+    "example-resourcesinfo"
+  ],
+  "systemInfo": "example-systeminfo"
+}

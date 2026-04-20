@@ -1,0 +1,215 @@
+naftiko: "1.0.0-alpha1"
+
+info:
+  label: "Argo CD API"
+  description: "Argo CD REST API for managing GitOps continuous delivery on Kubernetes. Provides programmatic access to applications, clusters, repositories, projects, and accounts."
+  tags:
+    - Argo CD
+    - GitOps
+    - Kubernetes
+    - Continuous Delivery
+  created: "2026-04-19"
+  modified: "2026-04-19"
+
+binds:
+  - namespace: env
+    keys:
+      ARGOCD_TOKEN: ARGOCD_TOKEN
+      ARGOCD_SERVER: ARGOCD_SERVER
+
+capability:
+  consumes:
+    - type: http
+      namespace: argocd
+      baseUri: "{{env.ARGOCD_SERVER}}/api/v1"
+      description: "Argo CD REST API"
+      authentication:
+        type: apikey
+        key: Authorization
+        value: "Bearer {{env.ARGOCD_TOKEN}}"
+        placement: header
+      resources:
+        - name: applications
+          path: /application
+          description: "Manage Argo CD applications"
+          operations:
+            - name: list-applications
+              method: GET
+              description: "List all applications"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+            - name: create-application
+              method: POST
+              description: "Create a new application"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+              body:
+                type: json
+                data:
+                  metadata: "{{tools.metadata}}"
+                  spec: "{{tools.spec}}"
+            - name: get-application
+              method: GET
+              description: "Get application details"
+              inputParameters:
+                - name: name
+                  in: path
+                  type: string
+                  required: true
+                  description: "Application name"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+            - name: sync-application
+              method: POST
+              description: "Sync an application"
+              inputParameters:
+                - name: name
+                  in: path
+                  type: string
+                  required: true
+                  description: "Application name"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+            - name: delete-application
+              method: DELETE
+              description: "Delete an application"
+              inputParameters:
+                - name: name
+                  in: path
+                  type: string
+                  required: true
+                  description: "Application name"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+        - name: clusters
+          path: /cluster
+          description: "Manage Kubernetes clusters"
+          operations:
+            - name: list-clusters
+              method: GET
+              description: "List registered clusters"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+            - name: create-cluster
+              method: POST
+              description: "Register a new cluster"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+              body:
+                type: json
+                data:
+                  server: "{{tools.server}}"
+                  name: "{{tools.name}}"
+        - name: repositories
+          path: /repositories
+          description: "Manage Git repositories"
+          operations:
+            - name: list-repositories
+              method: GET
+              description: "List configured repositories"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+            - name: create-repository
+              method: POST
+              description: "Add a repository"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+              body:
+                type: json
+                data:
+                  repo: "{{tools.repo}}"
+        - name: projects
+          path: /projects
+          description: "Manage Argo CD projects"
+          operations:
+            - name: list-projects
+              method: GET
+              description: "List all projects"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+            - name: create-project
+              method: POST
+              description: "Create a project"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+              body:
+                type: json
+                data:
+                  metadata: "{{tools.metadata}}"
+                  spec: "{{tools.spec}}"
+        - name: accounts
+          path: /account
+          description: "Manage user accounts and tokens"
+          operations:
+            - name: list-accounts
+              method: GET
+              description: "List all accounts"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+
+  exposes:
+    - type: rest
+      port: 8100
+      namespace: argocd-api
+      resources:
+        - path: /v1/applications
+          name: applications
+          description: "Argo CD applications"
+          operations:
+            - method: GET
+              name: list-applications
+              description: "List all Argo CD applications"
+              call: "argocd.list-applications"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+
+    - type: mcp
+      port: 9100
+      namespace: argocd-mcp
+      transport: http
+      tools:
+        - name: list-applications
+          description: "List all Argo CD applications"
+          hints:
+            readOnly: true
+          call: "argocd.list-applications"
+          outputParameters:
+            - type: object
+              mapping: "$."

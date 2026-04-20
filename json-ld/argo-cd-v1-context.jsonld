@@ -1,0 +1,336 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "argocd": "https://argoproj.github.io/schema/argo-cd/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "v1LabelSelector": "argocd:v1LabelSelector",
+    "v1ListMeta": "argocd:v1ListMeta",
+    "v1ObjectMeta": "argocd:v1ObjectMeta",
+    "v1EventSource": "argocd:v1EventSource",
+    "v1FieldsV1": "argocd:v1FieldsV1",
+    "v1EventList": "argocd:v1EventList",
+    "v1LoadBalancerIngress": "argocd:v1LoadBalancerIngress",
+    "v1Event": "argocd:v1Event",
+    "v1EventSeries": "argocd:v1EventSeries",
+    "v1JSON": "argocd:v1JSON",
+    "v1NodeSystemInfo": "argocd:v1NodeSystemInfo",
+    "v1ManagedFieldsEntry": "argocd:v1ManagedFieldsEntry",
+    "v1PortStatus": "argocd:v1PortStatus",
+    "v1LabelSelectorRequirement": "argocd:v1LabelSelectorRequirement",
+    "v1NodeSwapStatus": "argocd:v1NodeSwapStatus",
+    "v1MicroTime": "argocd:v1MicroTime",
+    "v1OwnerReference": "argocd:v1OwnerReference",
+    "v1ObjectReference": "argocd:v1ObjectReference",
+    "v1GroupKind": "argocd:v1GroupKind",
+    "matchExpressions": {
+      "@id": "argocd:matchExpressions",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "matchLabels": {
+      "@id": "argocd:matchLabels",
+      "@type": "@id"
+    },
+    "continue": {
+      "@id": "argocd:continue",
+      "@type": "xsd:string"
+    },
+    "remainingItemCount": {
+      "@id": "argocd:remainingItemCount",
+      "@type": "xsd:integer"
+    },
+    "resourceVersion": {
+      "@id": "argocd:resourceVersion",
+      "@type": "xsd:string"
+    },
+    "selfLink": {
+      "@id": "argocd:selfLink",
+      "@type": "xsd:string"
+    },
+    "annotations": {
+      "@id": "argocd:annotations",
+      "@type": "@id"
+    },
+    "creationTimestamp": {
+      "@id": "argocd:creationTimestamp",
+      "@type": "xsd:string"
+    },
+    "deletionGracePeriodSeconds": {
+      "@id": "argocd:deletionGracePeriodSeconds",
+      "@type": "xsd:integer"
+    },
+    "deletionTimestamp": {
+      "@id": "argocd:deletionTimestamp",
+      "@type": "xsd:string"
+    },
+    "finalizers": {
+      "@id": "argocd:finalizers",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "generateName": {
+      "@id": "argocd:generateName",
+      "@type": "xsd:string"
+    },
+    "generation": {
+      "@id": "argocd:generation",
+      "@type": "xsd:integer"
+    },
+    "labels": {
+      "@id": "argocd:labels",
+      "@type": "@id"
+    },
+    "managedFields": {
+      "@id": "argocd:managedFields",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "name": "schema:name",
+    "namespace": {
+      "@id": "argocd:namespace",
+      "@type": "xsd:string"
+    },
+    "ownerReferences": {
+      "@id": "argocd:ownerReferences",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "uid": {
+      "@id": "argocd:uid",
+      "@type": "xsd:string"
+    },
+    "component": {
+      "@id": "argocd:component",
+      "@type": "xsd:string"
+    },
+    "host": {
+      "@id": "argocd:host",
+      "@type": "xsd:string"
+    },
+    "Raw": {
+      "@id": "argocd:Raw",
+      "@type": "xsd:string"
+    },
+    "items": {
+      "@id": "argocd:items",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "metadata": {
+      "@id": "argocd:metadata",
+      "@type": "xsd:string"
+    },
+    "hostname": {
+      "@id": "argocd:hostname",
+      "@type": "xsd:string"
+    },
+    "ip": {
+      "@id": "argocd:ip",
+      "@type": "xsd:string"
+    },
+    "ipMode": {
+      "@id": "argocd:ipMode",
+      "@type": "xsd:string"
+    },
+    "ports": {
+      "@id": "argocd:ports",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "action": {
+      "@id": "argocd:action",
+      "@type": "xsd:string"
+    },
+    "count": {
+      "@id": "argocd:count",
+      "@type": "xsd:integer"
+    },
+    "eventTime": {
+      "@id": "argocd:eventTime",
+      "@type": "xsd:string"
+    },
+    "firstTimestamp": {
+      "@id": "argocd:firstTimestamp",
+      "@type": "xsd:string"
+    },
+    "involvedObject": {
+      "@id": "argocd:involvedObject",
+      "@type": "xsd:string"
+    },
+    "lastTimestamp": {
+      "@id": "argocd:lastTimestamp",
+      "@type": "xsd:string"
+    },
+    "message": {
+      "@id": "argocd:message",
+      "@type": "xsd:string"
+    },
+    "reason": {
+      "@id": "argocd:reason",
+      "@type": "xsd:string"
+    },
+    "related": {
+      "@id": "argocd:related",
+      "@type": "xsd:string"
+    },
+    "reportingComponent": {
+      "@id": "argocd:reportingComponent",
+      "@type": "xsd:string"
+    },
+    "reportingInstance": {
+      "@id": "argocd:reportingInstance",
+      "@type": "xsd:string"
+    },
+    "series": {
+      "@id": "argocd:series",
+      "@type": "xsd:string"
+    },
+    "source": {
+      "@id": "argocd:source",
+      "@type": "xsd:string"
+    },
+    "type": {
+      "@id": "argocd:type",
+      "@type": "xsd:string"
+    },
+    "lastObservedTime": {
+      "@id": "argocd:lastObservedTime",
+      "@type": "xsd:string"
+    },
+    "raw": {
+      "@id": "argocd:raw",
+      "@type": "xsd:string"
+    },
+    "architecture": {
+      "@id": "argocd:architecture",
+      "@type": "xsd:string"
+    },
+    "bootID": {
+      "@id": "argocd:bootID",
+      "@type": "xsd:string"
+    },
+    "containerRuntimeVersion": {
+      "@id": "argocd:containerRuntimeVersion",
+      "@type": "xsd:string"
+    },
+    "kernelVersion": {
+      "@id": "argocd:kernelVersion",
+      "@type": "xsd:string"
+    },
+    "kubeProxyVersion": {
+      "@id": "argocd:kubeProxyVersion",
+      "@type": "xsd:string"
+    },
+    "kubeletVersion": {
+      "@id": "argocd:kubeletVersion",
+      "@type": "xsd:string"
+    },
+    "machineID": {
+      "@id": "argocd:machineID",
+      "@type": "xsd:string"
+    },
+    "operatingSystem": {
+      "@id": "argocd:operatingSystem",
+      "@type": "xsd:string"
+    },
+    "osImage": {
+      "@id": "argocd:osImage",
+      "@type": "xsd:string"
+    },
+    "swap": {
+      "@id": "argocd:swap",
+      "@type": "xsd:string"
+    },
+    "systemUUID": {
+      "@id": "argocd:systemUUID",
+      "@type": "xsd:string"
+    },
+    "apiVersion": {
+      "@id": "argocd:apiVersion",
+      "@type": "xsd:string"
+    },
+    "fieldsType": {
+      "@id": "argocd:fieldsType",
+      "@type": "xsd:string"
+    },
+    "fieldsV1": {
+      "@id": "argocd:fieldsV1",
+      "@type": "xsd:string"
+    },
+    "manager": {
+      "@id": "argocd:manager",
+      "@type": "xsd:string"
+    },
+    "operation": {
+      "@id": "argocd:operation",
+      "@type": "xsd:string"
+    },
+    "subresource": {
+      "@id": "argocd:subresource",
+      "@type": "xsd:string"
+    },
+    "time": {
+      "@id": "argocd:time",
+      "@type": "xsd:string"
+    },
+    "error": {
+      "@id": "argocd:error",
+      "@type": "xsd:string"
+    },
+    "port": {
+      "@id": "argocd:port",
+      "@type": "xsd:integer"
+    },
+    "protocol": {
+      "@id": "argocd:protocol",
+      "@type": "xsd:string"
+    },
+    "key": {
+      "@id": "argocd:key",
+      "@type": "xsd:string"
+    },
+    "operator": {
+      "@id": "argocd:operator",
+      "@type": "xsd:string"
+    },
+    "values": {
+      "@id": "argocd:values",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "capacity": {
+      "@id": "argocd:capacity",
+      "@type": "xsd:integer"
+    },
+    "nanos": {
+      "@id": "argocd:nanos",
+      "@type": "xsd:integer"
+    },
+    "seconds": {
+      "@id": "argocd:seconds",
+      "@type": "xsd:integer"
+    },
+    "blockOwnerDeletion": {
+      "@id": "argocd:blockOwnerDeletion",
+      "@type": "xsd:boolean"
+    },
+    "controller": {
+      "@id": "argocd:controller",
+      "@type": "xsd:boolean"
+    },
+    "kind": {
+      "@id": "argocd:kind",
+      "@type": "xsd:string"
+    },
+    "fieldPath": {
+      "@id": "argocd:fieldPath",
+      "@type": "xsd:string"
+    },
+    "group": {
+      "@id": "argocd:group",
+      "@type": "xsd:string"
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "description": "Application is synced and healthy.",
+  "expiresIn": 536,
+  "id": "example-id",
+  "project": "default",
+  "role": "example-role"
+}

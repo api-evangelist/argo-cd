@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-structure/argo-cd-project-sync-windows-response-structure.json",
+  "name": "projectSyncWindowsResponse",
+  "description": "projectSyncWindowsResponse schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "windows": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/v1alpha1SyncWindow"
+      }
+    }
+  }
+}

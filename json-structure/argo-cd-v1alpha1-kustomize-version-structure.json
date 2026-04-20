@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-structure/argo-cd-v1alpha1-kustomize-version-structure.json",
+  "name": "v1alpha1KustomizeVersion",
+  "description": "v1alpha1KustomizeVersion schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "buildOptions": {
+      "type": "string",
+      "name": "BuildOptions that are specific to a Kustomize version"
+    },
+    "name": {
+      "type": "string",
+      "name": "Name holds Kustomize version name"
+    },
+    "path": {
+      "type": "string",
+      "name": "Path holds the corresponding binary path"
+    }
+  }
+}

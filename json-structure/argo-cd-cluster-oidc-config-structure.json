@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-structure/argo-cd-cluster-oidc-config-structure.json",
+  "name": "clusterOIDCConfig",
+  "description": "clusterOIDCConfig schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "cliClientID": {
+      "type": "string"
+    },
+    "clientID": {
+      "type": "string"
+    },
+    "enablePKCEAuthentication": {
+      "type": "boolean"
+    },
+    "idTokenClaims": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/definitions/oidcClaim"
+      }
+    },
+    "issuer": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "scopes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

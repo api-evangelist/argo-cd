@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-schema/argo-cd-v1alpha1-project-role-schema.json",
+  "title": "v1alpha1ProjectRole",
+  "description": "v1alpha1ProjectRole schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "description": {
+      "type": "string",
+      "title": "Description is a description of the role"
+    },
+    "groups": {
+      "type": "array",
+      "title": "Groups are a list of OIDC group claims bound to this role",
+      "items": {
+        "type": "string"
+      }
+    },
+    "jwtTokens": {
+      "type": "array",
+      "title": "JWTTokens are a list of generated JWT tokens bound to this role",
+      "items": {
+        "$ref": "#/definitions/v1alpha1JWTToken"
+      }
+    },
+    "name": {
+      "type": "string",
+      "title": "Name is a name for this role"
+    },
+    "policies": {
+      "type": "array",
+      "title": "Policies Stores a list of casbin formatted strings that define access policies for the role in the project",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

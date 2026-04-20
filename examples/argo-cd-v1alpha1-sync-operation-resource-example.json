@@ -1,0 +1,6 @@
+{
+  "group": "example-group",
+  "kind": "example-kind",
+  "name": "my-application",
+  "namespace": "my-application"
+}

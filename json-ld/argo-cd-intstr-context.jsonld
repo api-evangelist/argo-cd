@@ -1,0 +1,22 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "argocd": "https://argoproj.github.io/schema/argo-cd/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "intstrIntOrString": "argocd:intstrIntOrString",
+    "intVal": {
+      "@id": "argocd:intVal",
+      "@type": "xsd:integer"
+    },
+    "strVal": {
+      "@id": "argocd:strVal",
+      "@type": "xsd:string"
+    },
+    "type": {
+      "@id": "argocd:type",
+      "@type": "xsd:integer"
+    }
+  }
+}

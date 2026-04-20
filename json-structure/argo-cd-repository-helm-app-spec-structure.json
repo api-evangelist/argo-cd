@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-structure/argo-cd-repository-helm-app-spec-structure.json",
+  "name": "repositoryHelmAppSpec",
+  "description": "repositoryHelmAppSpec schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "fileParameters": {
+      "type": "array",
+      "name": "helm file parameters",
+      "items": {
+        "$ref": "#/definitions/v1alpha1HelmFileParameter"
+      }
+    },
+    "name": {
+      "type": "string"
+    },
+    "parameters": {
+      "type": "array",
+      "name": "the output of `helm inspect values`",
+      "items": {
+        "$ref": "#/definitions/v1alpha1HelmParameter"
+      }
+    },
+    "valueFiles": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "values": {
+      "type": "string",
+      "name": "the contents of values.yaml"
+    }
+  }
+}

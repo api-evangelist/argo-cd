@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-schema/argo-cd-version-version-message-schema.json",
+  "title": "versionVersionMessage",
+  "description": "versionVersionMessage schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "BuildDate": {
+      "type": "string"
+    },
+    "Compiler": {
+      "type": "string"
+    },
+    "ExtraBuildInfo": {
+      "type": "string"
+    },
+    "GitCommit": {
+      "type": "string"
+    },
+    "GitTag": {
+      "type": "string"
+    },
+    "GitTreeState": {
+      "type": "string"
+    },
+    "GoVersion": {
+      "type": "string"
+    },
+    "HelmVersion": {
+      "type": "string"
+    },
+    "JsonnetVersion": {
+      "type": "string"
+    },
+    "KubectlVersion": {
+      "type": "string"
+    },
+    "KustomizeVersion": {
+      "type": "string"
+    },
+    "Platform": {
+      "type": "string"
+    },
+    "Version": {
+      "type": "string"
+    }
+  }
+}

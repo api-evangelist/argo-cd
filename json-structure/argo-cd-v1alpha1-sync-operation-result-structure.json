@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-structure/argo-cd-v1alpha1-sync-operation-result-structure.json",
+  "name": "v1alpha1SyncOperationResult",
+  "description": "v1alpha1SyncOperationResult schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "managedNamespaceMetadata": {
+      "$ref": "#/definitions/v1alpha1ManagedNamespaceMetadata"
+    },
+    "resources": {
+      "type": "array",
+      "name": "Resources contains a list of sync result items for each individual resource in a sync operation",
+      "items": {
+        "$ref": "#/definitions/v1alpha1ResourceResult"
+      }
+    },
+    "revision": {
+      "type": "string",
+      "name": "Revision holds the revision this sync operation was performed to"
+    },
+    "revisions": {
+      "type": "array",
+      "name": "Revisions holds the revision this sync operation was performed for respective indexed source in sources field",
+      "items": {
+        "type": "string"
+      }
+    },
+    "source": {
+      "$ref": "#/definitions/v1alpha1ApplicationSource"
+    },
+    "sources": {
+      "type": "array",
+      "name": "Source records the application source information of the sync, used for comparing auto-sync",
+      "items": {
+        "$ref": "#/definitions/v1alpha1ApplicationSource"
+      }
+    }
+  }
+}

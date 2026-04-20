@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-schema/argo-cd-v1alpha1-scm-provider-generator-bitbucket-server-schema.json",
+  "title": "v1alpha1SCMProviderGeneratorBitbucketServer",
+  "description": "SCMProviderGeneratorBitbucketServer defines connection info specific to Bitbucket Server.",
+  "type": "object",
+  "properties": {
+    "allBranches": {
+      "description": "Scan all branches instead of just the default branch.",
+      "type": "boolean"
+    },
+    "api": {
+      "description": "The Bitbucket Server REST API URL to talk to. Required.",
+      "type": "string"
+    },
+    "basicAuth": {
+      "$ref": "#/definitions/v1alpha1BasicAuthBitbucketServer"
+    },
+    "bearerToken": {
+      "$ref": "#/definitions/v1alpha1BearerTokenBitbucket"
+    },
+    "caRef": {
+      "$ref": "#/definitions/v1alpha1ConfigMapKeyRef"
+    },
+    "insecure": {
+      "type": "boolean",
+      "title": "Allow self-signed TLS / Certificates; default: false"
+    },
+    "project": {
+      "description": "Project to scan. Required.",
+      "type": "string"
+    }
+  }
+}

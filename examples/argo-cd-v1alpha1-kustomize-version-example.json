@@ -1,0 +1,5 @@
+{
+  "buildOptions": "example-buildoptions",
+  "name": "my-application",
+  "path": "apps/my-app"
+}

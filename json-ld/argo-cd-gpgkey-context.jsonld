@@ -1,0 +1,20 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "argocd": "https://argoproj.github.io/schema/argo-cd/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "gpgkeyGnuPGPublicKeyResponse": "argocd:gpgkeyGnuPGPublicKeyResponse",
+    "gpgkeyGnuPGPublicKeyCreateResponse": "argocd:gpgkeyGnuPGPublicKeyCreateResponse",
+    "created": {
+      "@id": "argocd:created",
+      "@type": "xsd:string"
+    },
+    "skipped": {
+      "@id": "argocd:skipped",
+      "@container": "@set",
+      "@type": "xsd:string"
+    }
+  }
+}

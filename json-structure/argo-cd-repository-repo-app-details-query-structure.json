@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-structure/argo-cd-repository-repo-app-details-query-structure.json",
+  "name": "repositoryRepoAppDetailsQuery",
+  "description": "repositoryRepoAppDetailsQuery schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "appName": {
+      "type": "string"
+    },
+    "appProject": {
+      "type": "string"
+    },
+    "source": {
+      "$ref": "#/definitions/v1alpha1ApplicationSource"
+    },
+    "sourceIndex": {
+      "type": "int32",
+      "name": "source index (for multi source apps)"
+    },
+    "versionId": {
+      "type": "int32",
+      "name": "versionId from historical data (for multi source apps)"
+    }
+  }
+}

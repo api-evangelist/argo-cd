@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-schema/argo-cd-v1-node-swap-status-schema.json",
+  "title": "v1NodeSwapStatus",
+  "description": "NodeSwapStatus represents swap memory information.",
+  "type": "object",
+  "properties": {
+    "capacity": {
+      "type": "integer",
+      "format": "int64",
+      "title": "Total amount of swap memory in bytes.\n+optional"
+    }
+  }
+}

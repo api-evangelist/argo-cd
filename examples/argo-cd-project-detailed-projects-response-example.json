@@ -1,0 +1,15 @@
+{
+  "clusters": [
+    "https://kubernetes.default.svc",
+    "https://kubernetes.default.svc"
+  ],
+  "globalProjects": [
+    "default",
+    "default"
+  ],
+  "project": "default",
+  "repositories": [
+    "https://github.com/example/repo.git",
+    "https://github.com/example/repo.git"
+  ]
+}

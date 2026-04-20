@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-structure/argo-cd-v1-event-series-structure.json",
+  "name": "v1EventSeries",
+  "description": "EventSeries contain information on series of events, i.e. thing that was/is happening\ncontinuously for some time.",
+  "type": "object",
+  "properties": {
+    "count": {
+      "type": "int32",
+      "name": "Number of occurrences in this series up to the last heartbeat time"
+    },
+    "lastObservedTime": {
+      "$ref": "#/definitions/v1MicroTime"
+    }
+  }
+}

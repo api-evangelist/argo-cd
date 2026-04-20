@@ -1,0 +1,14 @@
+{
+  "jSONPointers": [
+    "example-jsonpointers",
+    "example-jsonpointers"
+  ],
+  "jqPathExpressions": [
+    "apps/my-app",
+    "apps/my-app"
+  ],
+  "managedFieldsManagers": [
+    "example-managedfieldsmanager",
+    "example-managedfieldsmanager"
+  ]
+}

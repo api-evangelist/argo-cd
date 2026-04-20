@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-structure/argo-cd-application-application-server-side-diff-response-structure.json",
+  "name": "applicationApplicationServerSideDiffResponse",
+  "description": "applicationApplicationServerSideDiffResponse schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "items": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/v1alpha1ResourceDiff"
+      }
+    },
+    "modified": {
+      "type": "boolean"
+    }
+  }
+}

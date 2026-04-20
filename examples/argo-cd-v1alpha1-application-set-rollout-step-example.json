@@ -1,0 +1,7 @@
+{
+  "matchExpressions": [
+    "example-matchexpressions",
+    "example-matchexpressions"
+  ],
+  "maxUpdate": "example-maxupdate"
+}

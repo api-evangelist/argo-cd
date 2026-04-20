@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-schema/argo-cd-v1alpha1-git-directory-generator-item-schema.json",
+  "title": "v1alpha1GitDirectoryGeneratorItem",
+  "description": "v1alpha1GitDirectoryGeneratorItem schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "exclude": {
+      "type": "boolean"
+    },
+    "path": {
+      "type": "string"
+    }
+  }
+}

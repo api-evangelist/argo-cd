@@ -1,0 +1,31 @@
+{
+  "appNamespace": "my-application",
+  "dryRun": true,
+  "infos": [
+    "example-infos",
+    "example-infos"
+  ],
+  "manifests": [
+    "example-manifests",
+    "example-manifests"
+  ],
+  "name": "my-application",
+  "project": "default",
+  "prune": true,
+  "resources": [
+    "example-resources",
+    "example-resources"
+  ],
+  "retryStrategy": "example-retrystrategy",
+  "revision": "abc1234def5678",
+  "revisions": [
+    "abc1234def5678",
+    "abc1234def5678"
+  ],
+  "sourcePositions": [
+    "example-sourcepositions",
+    "example-sourcepositions"
+  ],
+  "strategy": "example-strategy",
+  "syncOptions": "example-syncoptions"
+}

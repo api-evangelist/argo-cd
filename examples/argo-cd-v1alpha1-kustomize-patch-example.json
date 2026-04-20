@@ -1,0 +1,6 @@
+{
+  "options": {},
+  "patch": "example-patch",
+  "path": "apps/my-app",
+  "target": "main"
+}

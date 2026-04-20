@@ -1,0 +1,17 @@
+{
+  "managedNamespaceMetadata": "my-application",
+  "resources": [
+    "example-resources",
+    "example-resources"
+  ],
+  "revision": "abc1234def5678",
+  "revisions": [
+    "abc1234def5678",
+    "abc1234def5678"
+  ],
+  "source": "example-source",
+  "sources": [
+    "example-sources",
+    "example-sources"
+  ]
+}

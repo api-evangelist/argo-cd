@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-structure/argo-cd-v1-event-source-structure.json",
+  "name": "v1EventSource",
+  "description": "EventSource contains information for an event.",
+  "type": "object",
+  "properties": {
+    "component": {
+      "type": "string",
+      "name": "Component from which the event is generated.\n+optional"
+    },
+    "host": {
+      "type": "string",
+      "name": "Node name on which the event is generated.\n+optional"
+    }
+  }
+}

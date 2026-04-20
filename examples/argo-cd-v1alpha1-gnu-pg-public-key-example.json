@@ -1,0 +1,8 @@
+{
+  "fingerprint": "example-fingerprint",
+  "keyData": "eyJhbGciOiJIUzI1NiJ9.example",
+  "keyID": "app-123456",
+  "owner": "example-owner",
+  "subType": "example-subtype",
+  "trust": "example-trust"
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-structure/argo-cd-v1alpha1-retry-strategy-structure.json",
+  "name": "v1alpha1RetryStrategy",
+  "description": "v1alpha1RetryStrategy schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "backoff": {
+      "$ref": "#/definitions/v1alpha1Backoff"
+    },
+    "limit": {
+      "description": "Limit is the maximum number of attempts for retrying a failed sync. If set to 0, no retries will be performed.",
+      "type": "int64"
+    },
+    "refresh": {
+      "type": "boolean",
+      "name": "Refresh indicates if the latest revision should be used on retry instead of the initial one (default: false)"
+    }
+  }
+}

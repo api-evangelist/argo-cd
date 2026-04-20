@@ -1,0 +1,180 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "argocd": "https://argoproj.github.io/schema/argo-cd/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "repositoryPluginAppSpec": "argocd:repositoryPluginAppSpec",
+    "repositoryDirectoryAppSpec": "argocd:repositoryDirectoryAppSpec",
+    "repositoryKustomizeAppSpec": "argocd:repositoryKustomizeAppSpec",
+    "repositoryRefs": "argocd:repositoryRefs",
+    "repositoryHelmChart": "argocd:repositoryHelmChart",
+    "repositoryRepoResponse": "argocd:repositoryRepoResponse",
+    "repositoryHelmAppSpec": "argocd:repositoryHelmAppSpec",
+    "repositoryRepoAppDetailsResponse": "argocd:repositoryRepoAppDetailsResponse",
+    "repositoryManifestResponse": "argocd:repositoryManifestResponse",
+    "repositoryParameterAnnouncement": "argocd:repositoryParameterAnnouncement",
+    "repositoryRepoAppsResponse": "argocd:repositoryRepoAppsResponse",
+    "repositoryAppInfo": "argocd:repositoryAppInfo",
+    "repositoryHelmChartsResponse": "argocd:repositoryHelmChartsResponse",
+    "repositoryRepoAppDetailsQuery": "argocd:repositoryRepoAppDetailsQuery",
+    "parametersAnnouncement": {
+      "@id": "argocd:parametersAnnouncement",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "images": {
+      "@id": "argocd:images",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "branches": {
+      "@id": "argocd:branches",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "tags": {
+      "@id": "argocd:tags",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "name": "schema:name",
+    "versions": {
+      "@id": "argocd:versions",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "fileParameters": {
+      "@id": "argocd:fileParameters",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "parameters": {
+      "@id": "argocd:parameters",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "valueFiles": {
+      "@id": "argocd:valueFiles",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "values": {
+      "@id": "argocd:values",
+      "@type": "xsd:string"
+    },
+    "directory": {
+      "@id": "argocd:directory",
+      "@type": "xsd:string"
+    },
+    "helm": {
+      "@id": "argocd:helm",
+      "@type": "xsd:string"
+    },
+    "kustomize": {
+      "@id": "argocd:kustomize",
+      "@type": "xsd:string"
+    },
+    "plugin": {
+      "@id": "argocd:plugin",
+      "@type": "xsd:string"
+    },
+    "type": {
+      "@id": "argocd:type",
+      "@type": "xsd:string"
+    },
+    "commands": {
+      "@id": "argocd:commands",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "manifests": {
+      "@id": "argocd:manifests",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "namespace": {
+      "@id": "argocd:namespace",
+      "@type": "xsd:string"
+    },
+    "revision": {
+      "@id": "argocd:revision",
+      "@type": "xsd:string"
+    },
+    "server": {
+      "@id": "argocd:server",
+      "@type": "xsd:string"
+    },
+    "sourceType": {
+      "@id": "argocd:sourceType",
+      "@type": "xsd:string"
+    },
+    "verifyResult": {
+      "@id": "argocd:verifyResult",
+      "@type": "xsd:string"
+    },
+    "array": {
+      "@id": "argocd:array",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "collectionType": {
+      "@id": "argocd:collectionType",
+      "@type": "xsd:string"
+    },
+    "itemType": {
+      "@id": "argocd:itemType",
+      "@type": "xsd:string"
+    },
+    "map": {
+      "@id": "argocd:map",
+      "@type": "@id"
+    },
+    "required": {
+      "@id": "argocd:required",
+      "@type": "xsd:boolean"
+    },
+    "string": {
+      "@id": "argocd:string",
+      "@type": "xsd:string"
+    },
+    "title": {
+      "@id": "argocd:title",
+      "@type": "xsd:string"
+    },
+    "tooltip": {
+      "@id": "argocd:tooltip",
+      "@type": "xsd:string"
+    },
+    "items": {
+      "@id": "argocd:items",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "path": {
+      "@id": "argocd:path",
+      "@type": "xsd:string"
+    },
+    "appName": {
+      "@id": "argocd:appName",
+      "@type": "xsd:string"
+    },
+    "appProject": {
+      "@id": "argocd:appProject",
+      "@type": "xsd:string"
+    },
+    "source": {
+      "@id": "argocd:source",
+      "@type": "xsd:string"
+    },
+    "sourceIndex": {
+      "@id": "argocd:sourceIndex",
+      "@type": "xsd:integer"
+    },
+    "versionId": {
+      "@id": "argocd:versionId",
+      "@type": "xsd:integer"
+    }
+  }
+}

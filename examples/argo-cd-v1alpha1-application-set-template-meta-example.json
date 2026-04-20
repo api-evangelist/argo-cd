@@ -1,0 +1,10 @@
+{
+  "annotations": {},
+  "finalizers": [
+    "example-finalizers",
+    "example-finalizers"
+  ],
+  "labels": {},
+  "name": "my-application",
+  "namespace": "my-application"
+}

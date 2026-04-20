@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-schema/argo-cd-v1alpha1-sync-strategy-schema.json",
+  "title": "v1alpha1SyncStrategy",
+  "description": "v1alpha1SyncStrategy schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "apply": {
+      "$ref": "#/definitions/v1alpha1SyncStrategyApply"
+    },
+    "hook": {
+      "$ref": "#/definitions/v1alpha1SyncStrategyHook"
+    }
+  }
+}

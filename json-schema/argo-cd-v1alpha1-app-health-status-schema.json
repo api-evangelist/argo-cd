@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-schema/argo-cd-v1alpha1-app-health-status-schema.json",
+  "title": "v1alpha1AppHealthStatus",
+  "description": "v1alpha1AppHealthStatus schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "lastTransitionTime": {
+      "$ref": "#/definitions/v1Time"
+    },
+    "message": {
+      "description": "Deprecated: this field is not used and will be removed in a future release.",
+      "type": "string",
+      "title": "Message is a human-readable informational message describing the health status"
+    },
+    "status": {
+      "type": "string",
+      "title": "Status holds the status code of the application"
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "capacity": 181,
+  "requestedByApp": 812,
+  "requestedByNeighbors": 105,
+  "resourceName": "my-application"
+}

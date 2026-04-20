@@ -1,0 +1,5 @@
+{
+  "gvk": "example-gvk",
+  "name": "my-application",
+  "namespace": "my-application"
+}

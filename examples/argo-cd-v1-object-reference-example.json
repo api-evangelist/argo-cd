@@ -1,0 +1,9 @@
+{
+  "apiVersion": "v2.14.0",
+  "fieldPath": "apps/my-app",
+  "kind": "example-kind",
+  "name": "my-application",
+  "namespace": "my-application",
+  "resourceVersion": "v2.14.0",
+  "uid": "app-123456"
+}

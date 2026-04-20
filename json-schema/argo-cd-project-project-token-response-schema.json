@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-schema/argo-cd-project-project-token-response-schema.json",
+  "title": "projectProjectTokenResponse",
+  "description": "ProjectTokenResponse wraps the created token or returns an empty string if deleted.",
+  "type": "object",
+  "properties": {
+    "token": {
+      "type": "string"
+    }
+  }
+}

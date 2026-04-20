@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-schema/argo-cd-v1alpha1-application-set-status-schema.json",
+  "title": "v1alpha1ApplicationSetStatus",
+  "description": "v1alpha1ApplicationSetStatus schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "applicationStatus": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/v1alpha1ApplicationSetApplicationStatus"
+      }
+    },
+    "conditions": {
+      "type": "array",
+      "title": "INSERT ADDITIONAL STATUS FIELD - define observed state of cluster\nImportant: Run \"make\" to regenerate code after modifying this file",
+      "items": {
+        "$ref": "#/definitions/v1alpha1ApplicationSetCondition"
+      }
+    },
+    "health": {
+      "$ref": "#/definitions/v1alpha1HealthStatus"
+    },
+    "resources": {
+      "description": "Resources is a list of Applications resources managed by this application set.",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/applicationv1alpha1ResourceStatus"
+      }
+    },
+    "resourcesCount": {
+      "description": "ResourcesCount is the total number of resources managed by this application set. The count may be higher than actual number of items in the Resources field when\nthe number of managed resources exceeds the limit imposed by the controller (to avoid making the status field too large).",
+      "type": "integer",
+      "format": "int64"
+    }
+  }
+}

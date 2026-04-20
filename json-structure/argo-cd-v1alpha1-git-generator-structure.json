@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-structure/argo-cd-v1alpha1-git-generator-structure.json",
+  "name": "v1alpha1GitGenerator",
+  "description": "v1alpha1GitGenerator schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "directories": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/v1alpha1GitDirectoryGeneratorItem"
+      }
+    },
+    "files": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/v1alpha1GitFileGeneratorItem"
+      }
+    },
+    "pathParamPrefix": {
+      "type": "string"
+    },
+    "repoURL": {
+      "type": "string"
+    },
+    "requeueAfterSeconds": {
+      "type": "int64"
+    },
+    "revision": {
+      "type": "string"
+    },
+    "template": {
+      "$ref": "#/definitions/v1alpha1ApplicationSetTemplate"
+    },
+    "values": {
+      "type": "object",
+      "name": "Values contains key/value pairs which are passed directly as parameters to the template",
+      "additionalProperties": {
+        "type": "string"
+      }
+    }
+  }
+}

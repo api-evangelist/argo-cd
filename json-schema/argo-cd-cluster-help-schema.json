@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-schema/argo-cd-cluster-help-schema.json",
+  "title": "clusterHelp",
+  "description": "clusterHelp schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "binaryUrls": {
+      "type": "object",
+      "title": "the URLs for downloading argocd binaries",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "chatText": {
+      "type": "string",
+      "title": "the text for getting chat help, defaults to \"Chat now!\""
+    },
+    "chatUrl": {
+      "type": "string",
+      "title": "the URL for getting chat help, this will typically be your Slack channel for support"
+    }
+  }
+}

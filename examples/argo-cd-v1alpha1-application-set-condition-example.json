@@ -1,0 +1,7 @@
+{
+  "lastTransitionTime": "example-lasttransitiontime",
+  "message": "Application is synced and healthy.",
+  "reason": "example-reason",
+  "status": "Synced",
+  "type": "example-type"
+}

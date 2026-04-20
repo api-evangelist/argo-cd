@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-structure/argo-cd-application-file-chunk-structure.json",
+  "name": "applicationFileChunk",
+  "description": "applicationFileChunk schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "chunk": {
+      "type": "string",
+      "format": "byte"
+    }
+  }
+}

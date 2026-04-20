@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-structure/argo-cd-notification-template-list-structure.json",
+  "name": "notificationTemplateList",
+  "description": "notificationTemplateList schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "items": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/notificationTemplate"
+      }
+    }
+  }
+}

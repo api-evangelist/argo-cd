@@ -1,0 +1,12 @@
+{
+  "chart": "example-chart",
+  "directory": "example-directory",
+  "helm": "example-helm",
+  "kustomize": "example-kustomize",
+  "name": "my-application",
+  "path": "apps/my-app",
+  "plugin": "example-plugin",
+  "ref": "example-ref",
+  "repoURL": "https://github.com/example/repo.git",
+  "targetRevision": "abc1234def5678"
+}

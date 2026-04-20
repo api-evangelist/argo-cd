@@ -1,0 +1,45 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "argocd": "https://argoproj.github.io/schema/argo-cd/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "runtimeError": "argocd:runtimeError",
+    "runtimeStreamError": "argocd:runtimeStreamError",
+    "runtimeRawExtension": "argocd:runtimeRawExtension",
+    "code": {
+      "@id": "argocd:code",
+      "@type": "xsd:integer"
+    },
+    "details": {
+      "@id": "argocd:details",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "error": {
+      "@id": "argocd:error",
+      "@type": "xsd:string"
+    },
+    "message": {
+      "@id": "argocd:message",
+      "@type": "xsd:string"
+    },
+    "grpcCode": {
+      "@id": "argocd:grpc_code",
+      "@type": "xsd:integer"
+    },
+    "httpCode": {
+      "@id": "argocd:http_code",
+      "@type": "xsd:integer"
+    },
+    "httpStatus": {
+      "@id": "argocd:http_status",
+      "@type": "xsd:string"
+    },
+    "raw": {
+      "@id": "argocd:raw",
+      "@type": "xsd:string"
+    }
+  }
+}

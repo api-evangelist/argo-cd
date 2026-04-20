@@ -1,0 +1,9 @@
+{
+  "comparedTo": "example-comparedto",
+  "revision": "abc1234def5678",
+  "revisions": [
+    "abc1234def5678",
+    "abc1234def5678"
+  ],
+  "status": "Synced"
+}

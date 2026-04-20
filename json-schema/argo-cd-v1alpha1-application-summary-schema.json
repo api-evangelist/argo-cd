@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-schema/argo-cd-v1alpha1-application-summary-schema.json",
+  "title": "v1alpha1ApplicationSummary",
+  "description": "v1alpha1ApplicationSummary schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "externalURLs": {
+      "description": "ExternalURLs holds all external URLs of application child resources.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "images": {
+      "description": "Images holds all images of application child resources.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

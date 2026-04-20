@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-schema/argo-cd-v1alpha1-application-set-condition-schema.json",
+  "title": "v1alpha1ApplicationSetCondition",
+  "description": "v1alpha1ApplicationSetCondition schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "lastTransitionTime": {
+      "$ref": "#/definitions/v1Time"
+    },
+    "message": {
+      "type": "string",
+      "title": "Message contains human-readable message indicating details about condition"
+    },
+    "reason": {
+      "type": "string",
+      "title": "Single word camelcase representing the reason for the status eg ErrorOccurred"
+    },
+    "status": {
+      "type": "string",
+      "title": "True/False/Unknown"
+    },
+    "type": {
+      "type": "string",
+      "title": "Type is an applicationset condition type"
+    }
+  }
+}

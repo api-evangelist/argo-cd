@@ -1,0 +1,13 @@
+{
+  "group": "example-group",
+  "health": "Healthy",
+  "hook": true,
+  "kind": "example-kind",
+  "name": "my-application",
+  "namespace": "my-application",
+  "requiresDeletionConfirmation": true,
+  "requiresPruning": true,
+  "status": "Synced",
+  "syncWave": 640,
+  "version": "v2.14.0"
+}

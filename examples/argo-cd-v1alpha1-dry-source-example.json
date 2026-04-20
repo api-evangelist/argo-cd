@@ -1,0 +1,9 @@
+{
+  "directory": "example-directory",
+  "helm": "example-helm",
+  "kustomize": "example-kustomize",
+  "path": "apps/my-app",
+  "plugin": "example-plugin",
+  "repoURL": "https://github.com/example/repo.git",
+  "targetRevision": "abc1234def5678"
+}

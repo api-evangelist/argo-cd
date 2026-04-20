@@ -1,0 +1,11 @@
+{
+  "api": "example-api",
+  "appSecretName": "my-application",
+  "labels": [
+    "example-labels",
+    "example-labels"
+  ],
+  "owner": "example-owner",
+  "repo": "https://github.com/example/repo.git",
+  "tokenRef": "eyJhbGciOiJIUzI1NiJ9.example"
+}

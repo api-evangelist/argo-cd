@@ -1,0 +1,5 @@
+{
+  "clusterName": "my-application",
+  "profile": "example-profile",
+  "roleARN": "example-rolearn"
+}

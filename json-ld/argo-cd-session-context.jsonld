@@ -1,0 +1,37 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "argocd": "https://argoproj.github.io/schema/argo-cd/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "sessionGetUserInfoResponse": "argocd:sessionGetUserInfoResponse",
+    "sessionSessionCreateRequest": "argocd:sessionSessionCreateRequest",
+    "sessionSessionResponse": "argocd:sessionSessionResponse",
+    "groups": {
+      "@id": "argocd:groups",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "iss": {
+      "@id": "argocd:iss",
+      "@type": "xsd:string"
+    },
+    "loggedIn": {
+      "@id": "argocd:loggedIn",
+      "@type": "xsd:boolean"
+    },
+    "username": {
+      "@id": "argocd:username",
+      "@type": "xsd:string"
+    },
+    "password": {
+      "@id": "argocd:password",
+      "@type": "xsd:string"
+    },
+    "token": {
+      "@id": "argocd:token",
+      "@type": "xsd:string"
+    }
+  }
+}

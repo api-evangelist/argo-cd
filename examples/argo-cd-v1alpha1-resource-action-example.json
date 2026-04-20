@@ -1,0 +1,10 @@
+{
+  "disabled": true,
+  "displayName": "my-application",
+  "iconClass": "example-iconclass",
+  "name": "my-application",
+  "params": [
+    "example-params",
+    "example-params"
+  ]
+}

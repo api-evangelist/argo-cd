@@ -1,0 +1,22 @@
+{
+  "andOperator": true,
+  "applications": [
+    "example-applications",
+    "example-applications"
+  ],
+  "clusters": [
+    "https://kubernetes.default.svc",
+    "https://kubernetes.default.svc"
+  ],
+  "description": "Application is synced and healthy.",
+  "duration": "example-duration",
+  "kind": "example-kind",
+  "manualSync": true,
+  "namespaces": [
+    "my-application",
+    "my-application"
+  ],
+  "schedule": "example-schedule",
+  "syncOverrun": true,
+  "timeZone": "example-timezone"
+}

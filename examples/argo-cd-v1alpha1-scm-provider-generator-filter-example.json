@@ -1,0 +1,13 @@
+{
+  "branchMatch": "main",
+  "labelMatch": "example-labelmatch",
+  "pathsDoNotExist": [
+    "apps/my-app",
+    "apps/my-app"
+  ],
+  "pathsExist": [
+    "apps/my-app",
+    "apps/my-app"
+  ],
+  "repositoryMatch": "https://github.com/example/repo.git"
+}

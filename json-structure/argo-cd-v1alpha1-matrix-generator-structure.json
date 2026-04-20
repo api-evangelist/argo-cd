@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-structure/argo-cd-v1alpha1-matrix-generator-structure.json",
+  "name": "v1alpha1MatrixGenerator",
+  "description": "MatrixGenerator generates the cartesian product of two sets of parameters. The parameters are defined by two nested\ngenerators.",
+  "type": "object",
+  "properties": {
+    "generators": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/v1alpha1ApplicationSetNestedGenerator"
+      }
+    },
+    "template": {
+      "$ref": "#/definitions/v1alpha1ApplicationSetTemplate"
+    }
+  }
+}

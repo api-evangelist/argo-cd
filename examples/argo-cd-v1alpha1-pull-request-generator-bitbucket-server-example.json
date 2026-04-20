@@ -1,0 +1,9 @@
+{
+  "api": "example-api",
+  "basicAuth": "example-basicauth",
+  "bearerToken": "eyJhbGciOiJIUzI1NiJ9.example",
+  "caRef": "example-caref",
+  "insecure": true,
+  "project": "default",
+  "repo": "https://github.com/example/repo.git"
+}

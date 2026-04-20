@@ -1,0 +1,43 @@
+{
+  "additionalUrls": [
+    "https://github.com/example/repo.git",
+    "https://github.com/example/repo.git"
+  ],
+  "appLabelKey": "eyJhbGciOiJIUzI1NiJ9.example",
+  "appsInAnyNamespaceEnabled": true,
+  "configManagementPlugins": [
+    "example-configmanagementplug",
+    "example-configmanagementplug"
+  ],
+  "controllerNamespace": "my-application",
+  "dexConfig": "example-dexconfig",
+  "execEnabled": true,
+  "googleAnalytics": "example-googleanalytics",
+  "help": "example-help",
+  "hydratorEnabled": true,
+  "impersonationEnabled": true,
+  "installationID": "app-123456",
+  "kustomizeOptions": "example-kustomizeoptions",
+  "kustomizeVersions": [
+    "v2.14.0",
+    "v2.14.0"
+  ],
+  "oidcConfig": "example-oidcconfig",
+  "passwordPattern": "example-passwordpattern",
+  "plugins": [
+    "example-plugins",
+    "example-plugins"
+  ],
+  "resourceOverrides": {},
+  "statusBadgeEnabled": true,
+  "statusBadgeRootUrl": "https://github.com/example/repo.git",
+  "syncWithReplaceAllowed": true,
+  "trackingMethod": "example-trackingmethod",
+  "uiBannerContent": "example-uibannercontent",
+  "uiBannerPermanent": true,
+  "uiBannerPosition": "example-uibannerposition",
+  "uiBannerURL": "https://github.com/example/repo.git",
+  "uiCssURL": "https://github.com/example/repo.git",
+  "url": "https://github.com/example/repo.git",
+  "userLoginsDisabled": true
+}

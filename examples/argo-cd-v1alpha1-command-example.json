@@ -1,0 +1,10 @@
+{
+  "args": [
+    "example-args",
+    "example-args"
+  ],
+  "command": [
+    "example-command",
+    "example-command"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-structure/argo-cd-v1alpha1-sync-policy-automated-structure.json",
+  "name": "v1alpha1SyncPolicyAutomated",
+  "description": "v1alpha1SyncPolicyAutomated schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "allowEmpty": {
+      "type": "boolean",
+      "name": "AllowEmpty allows apps have zero live resources (default: false)"
+    },
+    "enabled": {
+      "type": "boolean",
+      "name": "Enable allows apps to explicitly control automated sync"
+    },
+    "prune": {
+      "type": "boolean",
+      "name": "Prune specifies whether to delete resources from the cluster that are not found in the sources anymore as part of automated sync (default: false)"
+    },
+    "selfHeal": {
+      "type": "boolean",
+      "name": "SelfHeal specifies whether to revert resources back to their desired state upon modification in the cluster (default: false)"
+    }
+  }
+}

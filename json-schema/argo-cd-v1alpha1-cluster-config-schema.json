@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-schema/argo-cd-v1alpha1-cluster-config-schema.json",
+  "title": "v1alpha1ClusterConfig",
+  "description": "ClusterConfig is the configuration attributes. This structure is subset of the go-client\nrest.Config with annotations added for marshalling.",
+  "type": "object",
+  "properties": {
+    "awsAuthConfig": {
+      "$ref": "#/definitions/v1alpha1AWSAuthConfig"
+    },
+    "bearerToken": {
+      "description": "Server requires Bearer authentication. This client will not attempt to use\nrefresh tokens for an OAuth2 flow.\nTODO: demonstrate an OAuth2 compatible client.",
+      "type": "string"
+    },
+    "disableCompression": {
+      "description": "DisableCompression bypasses automatic GZip compression requests to the server.",
+      "type": "boolean"
+    },
+    "execProviderConfig": {
+      "$ref": "#/definitions/v1alpha1ExecProviderConfig"
+    },
+    "password": {
+      "type": "string"
+    },
+    "proxyUrl": {
+      "type": "string",
+      "title": "ProxyURL is the URL to the proxy to be used for all requests send to the server"
+    },
+    "tlsClientConfig": {
+      "$ref": "#/definitions/v1alpha1TLSClientConfig"
+    },
+    "username": {
+      "type": "string",
+      "title": "Server requires Basic authentication"
+    }
+  }
+}

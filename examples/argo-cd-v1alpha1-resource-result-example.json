@@ -1,0 +1,16 @@
+{
+  "group": "example-group",
+  "hookPhase": "Synced",
+  "hookType": "example-hooktype",
+  "images": [
+    "example-images",
+    "example-images"
+  ],
+  "kind": "example-kind",
+  "message": "Application is synced and healthy.",
+  "name": "my-application",
+  "namespace": "my-application",
+  "status": "Synced",
+  "syncPhase": "Synced",
+  "version": "v2.14.0"
+}

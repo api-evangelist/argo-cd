@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-schema/argo-cd-v1alpha1-revision-history-schema.json",
+  "title": "v1alpha1RevisionHistory",
+  "description": "v1alpha1RevisionHistory schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "deployStartedAt": {
+      "$ref": "#/definitions/v1Time"
+    },
+    "deployedAt": {
+      "$ref": "#/definitions/v1Time"
+    },
+    "id": {
+      "type": "integer",
+      "format": "int64",
+      "title": "ID is an auto incrementing identifier of the RevisionHistory"
+    },
+    "initiatedBy": {
+      "$ref": "#/definitions/v1alpha1OperationInitiator"
+    },
+    "revision": {
+      "type": "string",
+      "title": "Revision holds the revision the sync was performed against"
+    },
+    "revisions": {
+      "type": "array",
+      "title": "Revisions holds the revision of each source in sources field the sync was performed against",
+      "items": {
+        "type": "string"
+      }
+    },
+    "source": {
+      "$ref": "#/definitions/v1alpha1ApplicationSource"
+    },
+    "sources": {
+      "type": "array",
+      "title": "Sources is a reference to the application sources used for the sync operation",
+      "items": {
+        "$ref": "#/definitions/v1alpha1ApplicationSource"
+      }
+    }
+  }
+}

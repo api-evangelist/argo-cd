@@ -1,0 +1,16 @@
+{
+  "applicationStatus": [
+    "Synced",
+    "Synced"
+  ],
+  "conditions": [
+    "example-conditions",
+    "example-conditions"
+  ],
+  "health": "Healthy",
+  "resources": [
+    "example-resources",
+    "example-resources"
+  ],
+  "resourcesCount": 314
+}

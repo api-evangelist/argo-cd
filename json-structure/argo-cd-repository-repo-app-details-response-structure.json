@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-structure/argo-cd-repository-repo-app-details-response-structure.json",
+  "name": "repositoryRepoAppDetailsResponse",
+  "description": "repositoryRepoAppDetailsResponse schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "directory": {
+      "$ref": "#/definitions/repositoryDirectoryAppSpec"
+    },
+    "helm": {
+      "$ref": "#/definitions/repositoryHelmAppSpec"
+    },
+    "kustomize": {
+      "$ref": "#/definitions/repositoryKustomizeAppSpec"
+    },
+    "plugin": {
+      "$ref": "#/definitions/repositoryPluginAppSpec"
+    },
+    "type": {
+      "type": "string"
+    }
+  }
+}

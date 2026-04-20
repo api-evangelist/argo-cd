@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-schema/argo-cd-v1alpha1-repository-certificate-schema.json",
+  "title": "v1alpha1RepositoryCertificate",
+  "description": "v1alpha1RepositoryCertificate schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "certData": {
+      "type": "string",
+      "format": "byte",
+      "title": "CertData contains the actual certificate data, dependent on the certificate type"
+    },
+    "certInfo": {
+      "type": "string",
+      "title": "CertInfo will hold additional certificate info, depdendent on the certificate type (e.g. SSH fingerprint, X509 CommonName)"
+    },
+    "certSubType": {
+      "type": "string",
+      "title": "CertSubType specifies the sub type of the cert, i.e. \"ssh-rsa\""
+    },
+    "certType": {
+      "type": "string",
+      "title": "CertType specifies the type of the certificate - currently one of \"https\" or \"ssh\""
+    },
+    "serverName": {
+      "type": "string",
+      "title": "ServerName specifies the DNS name of the server this certificate is intended for"
+    }
+  }
+}

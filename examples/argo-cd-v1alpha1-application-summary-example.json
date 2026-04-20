@@ -1,0 +1,10 @@
+{
+  "externalURLs": [
+    "https://github.com/example/repo.git",
+    "https://github.com/example/repo.git"
+  ],
+  "images": [
+    "example-images",
+    "example-images"
+  ]
+}

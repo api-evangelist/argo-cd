@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-structure/argo-cd-v1alpha1-resource-result-structure.json",
+  "name": "v1alpha1ResourceResult",
+  "description": "v1alpha1ResourceResult schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "group": {
+      "type": "string",
+      "name": "Group specifies the API group of the resource"
+    },
+    "hookPhase": {
+      "description": "HookPhase contains the state of any operation associated with this resource OR hook\nThis can also contain values for non-hook resources.",
+      "type": "string"
+    },
+    "hookType": {
+      "type": "string",
+      "name": "HookType specifies the type of the hook. Empty for non-hook resources"
+    },
+    "images": {
+      "type": "array",
+      "name": "Images contains the images related to the ResourceResult",
+      "items": {
+        "type": "string"
+      }
+    },
+    "kind": {
+      "type": "string",
+      "name": "Kind specifies the API kind of the resource"
+    },
+    "message": {
+      "type": "string",
+      "name": "Message contains an informational or error message for the last sync OR operation"
+    },
+    "name": {
+      "type": "string",
+      "name": "Name specifies the name of the resource"
+    },
+    "namespace": {
+      "type": "string",
+      "name": "Namespace specifies the target namespace of the resource"
+    },
+    "status": {
+      "type": "string",
+      "name": "Status holds the final result of the sync. Will be empty if the resources is yet to be applied/pruned and is always zero-value for hooks"
+    },
+    "syncPhase": {
+      "type": "string",
+      "name": "SyncPhase indicates the particular phase of the sync that this result was acquired in"
+    },
+    "version": {
+      "type": "string",
+      "name": "Version specifies the API version of the resource"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-structure/argo-cd-v1alpha1-list-generator-structure.json",
+  "name": "v1alpha1ListGenerator",
+  "description": "v1alpha1ListGenerator schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "elements": {
+      "type": "array",
+      "name": "+kubebuilder:validation:Optional",
+      "items": {
+        "$ref": "#/definitions/v1JSON"
+      }
+    },
+    "elementsYaml": {
+      "type": "string"
+    },
+    "template": {
+      "$ref": "#/definitions/v1alpha1ApplicationSetTemplate"
+    }
+  }
+}

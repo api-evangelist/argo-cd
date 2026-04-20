@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-structure/argo-cd-v1alpha1-signature-key-structure.json",
+  "name": "v1alpha1SignatureKey",
+  "description": "v1alpha1SignatureKey schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "keyID": {
+      "type": "string",
+      "name": "The ID of the key in hexadecimal notation"
+    }
+  }
+}

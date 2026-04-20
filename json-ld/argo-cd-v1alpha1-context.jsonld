@@ -1,0 +1,1759 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "argocd": "https://argoproj.github.io/schema/argo-cd/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "v1alpha1ResourceRef": "argocd:v1alpha1ResourceRef",
+    "v1alpha1SCMProviderGeneratorFilter": "argocd:v1alpha1SCMProviderGeneratorFilter",
+    "v1alpha1JWTTokens": "argocd:v1alpha1JWTTokens",
+    "v1alpha1ApplicationSourceKustomize": "argocd:v1alpha1ApplicationSourceKustomize",
+    "v1alpha1ApplicationSource": "argocd:v1alpha1ApplicationSource",
+    "v1alpha1GnuPGPublicKeyList": "argocd:v1alpha1GnuPGPublicKeyList",
+    "v1alpha1SyncPolicy": "argocd:v1alpha1SyncPolicy",
+    "v1alpha1ConnectionState": "argocd:v1alpha1ConnectionState",
+    "v1alpha1SecretRef": "argocd:v1alpha1SecretRef",
+    "v1alpha1ResourceActionParam": "argocd:v1alpha1ResourceActionParam",
+    "v1alpha1ChartDetails": "argocd:v1alpha1ChartDetails",
+    "v1alpha1ClusterResourceRestrictionItem": "argocd:v1alpha1ClusterResourceRestrictionItem",
+    "v1alpha1Command": "argocd:v1alpha1Command",
+    "v1alpha1KustomizeReplica": "argocd:v1alpha1KustomizeReplica",
+    "v1alpha1ClusterGenerator": "argocd:v1alpha1ClusterGenerator",
+    "v1alpha1ManagedNamespaceMetadata": "argocd:v1alpha1ManagedNamespaceMetadata",
+    "v1alpha1ApplicationSetApplicationStatus": "argocd:v1alpha1ApplicationSetApplicationStatus",
+    "v1alpha1MergeGenerator": "argocd:v1alpha1MergeGenerator",
+    "v1alpha1ListGenerator": "argocd:v1alpha1ListGenerator",
+    "v1alpha1PullRequestGeneratorGithub": "argocd:v1alpha1PullRequestGeneratorGithub",
+    "v1alpha1PullRequestGeneratorBitbucketServer": "argocd:v1alpha1PullRequestGeneratorBitbucketServer",
+    "v1alpha1Backoff": "argocd:v1alpha1Backoff",
+    "v1alpha1AWSAuthConfig": "argocd:v1alpha1AWSAuthConfig",
+    "v1alpha1OrphanedResourceKey": "argocd:v1alpha1OrphanedResourceKey",
+    "v1alpha1SCMProviderGeneratorGitlab": "argocd:v1alpha1SCMProviderGeneratorGitlab",
+    "v1alpha1ApplicationSetGenerator": "argocd:v1alpha1ApplicationSetGenerator",
+    "v1alpha1RevisionReference": "argocd:v1alpha1RevisionReference",
+    "v1alpha1AppProjectStatus": "argocd:v1alpha1AppProjectStatus",
+    "v1alpha1HostInfo": "argocd:v1alpha1HostInfo",
+    "v1alpha1ApplicationSourcePlugin": "argocd:v1alpha1ApplicationSourcePlugin",
+    "v1alpha1ConfigManagementPlugin": "argocd:v1alpha1ConfigManagementPlugin",
+    "v1alpha1RepoCreds": "argocd:v1alpha1RepoCreds",
+    "v1alpha1SCMProviderGenerator": "argocd:v1alpha1SCMProviderGenerator",
+    "v1alpha1GitFileGeneratorItem": "argocd:v1alpha1GitFileGeneratorItem",
+    "v1alpha1ResourceNetworkingInfo": "argocd:v1alpha1ResourceNetworkingInfo",
+    "v1alpha1SyncWindow": "argocd:v1alpha1SyncWindow",
+    "v1alpha1SyncStrategyHook": "argocd:v1alpha1SyncStrategyHook",
+    "v1alpha1SyncOperation": "argocd:v1alpha1SyncOperation",
+    "v1alpha1Info": "argocd:v1alpha1Info",
+    "v1alpha1PullRequestGeneratorFilter": "argocd:v1alpha1PullRequestGeneratorFilter",
+    "v1alpha1Operation": "argocd:v1alpha1Operation",
+    "v1alpha1ConfigMapKeyRef": "argocd:v1alpha1ConfigMapKeyRef",
+    "v1alpha1ClusterInfo": "argocd:v1alpha1ClusterInfo",
+    "v1alpha1JsonnetVar": "argocd:v1alpha1JsonnetVar",
+    "v1alpha1ApplicationSetTree": "argocd:v1alpha1ApplicationSetTree",
+    "v1alpha1ApplicationSetRolloutStep": "argocd:v1alpha1ApplicationSetRolloutStep",
+    "v1alpha1ApplicationList": "argocd:v1alpha1ApplicationList",
+    "v1alpha1BearerTokenBitbucket": "argocd:v1alpha1BearerTokenBitbucket",
+    "v1alpha1SyncOperationResult": "argocd:v1alpha1SyncOperationResult",
+    "v1alpha1ApplicationSourceHelm": "argocd:v1alpha1ApplicationSourceHelm",
+    "v1alpha1GitGenerator": "argocd:v1alpha1GitGenerator",
+    "v1alpha1RepositoryCertificate": "argocd:v1alpha1RepositoryCertificate",
+    "v1alpha1ApplicationSpec": "argocd:v1alpha1ApplicationSpec",
+    "v1alpha1SCMProviderGeneratorAWSCodeCommit": "argocd:v1alpha1SCMProviderGeneratorAWSCodeCommit",
+    "v1alpha1ResourceAction": "argocd:v1alpha1ResourceAction",
+    "v1alpha1SCMProviderGeneratorAzureDevOps": "argocd:v1alpha1SCMProviderGeneratorAzureDevOps",
+    "v1alpha1ApplicationSourceDirectory": "argocd:v1alpha1ApplicationSourceDirectory",
+    "v1alpha1PullRequestGeneratorBitbucket": "argocd:v1alpha1PullRequestGeneratorBitbucket",
+    "v1alpha1SyncSource": "argocd:v1alpha1SyncSource",
+    "v1alpha1ResourceResult": "argocd:v1alpha1ResourceResult",
+    "v1alpha1KustomizeVersion": "argocd:v1alpha1KustomizeVersion",
+    "v1alpha1PluginGenerator": "argocd:v1alpha1PluginGenerator",
+    "v1alpha1SCMProviderGeneratorGithub": "argocd:v1alpha1SCMProviderGeneratorGithub",
+    "v1alpha1RepositoryList": "argocd:v1alpha1RepositoryList",
+    "v1alpha1Application": "argocd:v1alpha1Application",
+    "v1alpha1RevisionMetadata": "argocd:v1alpha1RevisionMetadata",
+    "v1alpha1SyncOperationResource": "argocd:v1alpha1SyncOperationResource",
+    "v1alpha1ApplicationSetNestedGenerator": "argocd:v1alpha1ApplicationSetNestedGenerator",
+    "v1alpha1SyncStrategyApply": "argocd:v1alpha1SyncStrategyApply",
+    "v1alpha1ApplicationSummary": "argocd:v1alpha1ApplicationSummary",
+    "v1alpha1ApplicationCondition": "argocd:v1alpha1ApplicationCondition",
+    "v1alpha1ResourceIgnoreDifferences": "argocd:v1alpha1ResourceIgnoreDifferences",
+    "v1alpha1ApplicationSet": "argocd:v1alpha1ApplicationSet",
+    "v1alpha1ApplicationSetSyncPolicy": "argocd:v1alpha1ApplicationSetSyncPolicy",
+    "v1alpha1HydrateTo": "argocd:v1alpha1HydrateTo",
+    "v1alpha1DuckTypeGenerator": "argocd:v1alpha1DuckTypeGenerator",
+    "v1alpha1AppHealthStatus": "argocd:v1alpha1AppHealthStatus",
+    "v1alpha1SourceHydratorStatus": "argocd:v1alpha1SourceHydratorStatus",
+    "v1alpha1OCIMetadata": "argocd:v1alpha1OCIMetadata",
+    "v1alpha1RevisionHistory": "argocd:v1alpha1RevisionHistory",
+    "v1alpha1ClusterConfig": "argocd:v1alpha1ClusterConfig",
+    "v1alpha1ApplicationSetStatus": "argocd:v1alpha1ApplicationSetStatus",
+    "v1alpha1ResourceDiff": "argocd:v1alpha1ResourceDiff",
+    "v1alpha1Repository": "argocd:v1alpha1Repository",
+    "v1alpha1ApplicationSourceJsonnet": "argocd:v1alpha1ApplicationSourceJsonnet",
+    "v1alpha1ProjectRole": "argocd:v1alpha1ProjectRole",
+    "v1alpha1SourceHydrator": "argocd:v1alpha1SourceHydrator",
+    "v1alpha1HydrateOperation": "argocd:v1alpha1HydrateOperation",
+    "v1alpha1AppProject": "argocd:v1alpha1AppProject",
+    "v1alpha1BasicAuthBitbucketServer": "argocd:v1alpha1BasicAuthBitbucketServer",
+    "v1alpha1ComparedTo": "argocd:v1alpha1ComparedTo",
+    "v1alpha1PluginInput": "argocd:v1alpha1PluginInput",
+    "v1alpha1SyncStrategy": "argocd:v1alpha1SyncStrategy",
+    "v1alpha1GitDirectoryGeneratorItem": "argocd:v1alpha1GitDirectoryGeneratorItem",
+    "v1alpha1SCMProviderGeneratorBitbucketServer": "argocd:v1alpha1SCMProviderGeneratorBitbucketServer",
+    "v1alpha1SCMProviderGeneratorBitbucket": "argocd:v1alpha1SCMProviderGeneratorBitbucket",
+    "v1alpha1ApplicationDestination": "argocd:v1alpha1ApplicationDestination",
+    "v1alpha1GnuPGPublicKey": "argocd:v1alpha1GnuPGPublicKey",
+    "v1alpha1PluginConfigMapRef": "argocd:v1alpha1PluginConfigMapRef",
+    "v1alpha1ApplicationSetCondition": "argocd:v1alpha1ApplicationSetCondition",
+    "v1alpha1BearerTokenBitbucketCloud": "argocd:v1alpha1BearerTokenBitbucketCloud",
+    "v1alpha1SignatureKey": "argocd:v1alpha1SignatureKey",
+    "v1alpha1ApplicationSourcePluginParameter": "argocd:v1alpha1ApplicationSourcePluginParameter",
+    "v1alpha1KustomizeGvk": "argocd:v1alpha1KustomizeGvk",
+    "v1alpha1HelmParameter": "argocd:v1alpha1HelmParameter",
+    "v1alpha1DrySource": "argocd:v1alpha1DrySource",
+    "v1alpha1PullRequestGeneratorAzureDevOps": "argocd:v1alpha1PullRequestGeneratorAzureDevOps",
+    "v1alpha1ApplicationSetWatchEvent": "argocd:v1alpha1ApplicationSetWatchEvent",
+    "v1alpha1PullRequestGenerator": "argocd:v1alpha1PullRequestGenerator",
+    "v1alpha1SyncStatus": "argocd:v1alpha1SyncStatus",
+    "v1alpha1KustomizeSelector": "argocd:v1alpha1KustomizeSelector",
+    "v1alpha1TagFilter": "argocd:v1alpha1TagFilter",
+    "v1alpha1KnownTypeField": "argocd:v1alpha1KnownTypeField",
+    "v1alpha1HelmFileParameter": "argocd:v1alpha1HelmFileParameter",
+    "v1alpha1HostResourceInfo": "argocd:v1alpha1HostResourceInfo",
+    "v1alpha1ResourceNode": "argocd:v1alpha1ResourceNode",
+    "v1alpha1KustomizeResId": "argocd:v1alpha1KustomizeResId",
+    "v1alpha1JWTToken": "argocd:v1alpha1JWTToken",
+    "v1alpha1ExecProviderConfig": "argocd:v1alpha1ExecProviderConfig",
+    "v1alpha1RetryStrategy": "argocd:v1alpha1RetryStrategy",
+    "v1alpha1ApplicationSetTemplateMeta": "argocd:v1alpha1ApplicationSetTemplateMeta",
+    "v1alpha1ApplicationDestinationServiceAccount": "argocd:v1alpha1ApplicationDestinationServiceAccount",
+    "v1alpha1OperationState": "argocd:v1alpha1OperationState",
+    "v1alpha1HealthStatus": "argocd:v1alpha1HealthStatus",
+    "v1alpha1InfoItem": "argocd:v1alpha1InfoItem",
+    "v1alpha1Cluster": "argocd:v1alpha1Cluster",
+    "v1alpha1ApplicationTree": "argocd:v1alpha1ApplicationTree",
+    "v1alpha1SyncPolicyAutomated": "argocd:v1alpha1SyncPolicyAutomated",
+    "v1alpha1ApplicationSetList": "argocd:v1alpha1ApplicationSetList",
+    "v1alpha1PullRequestGeneratorGitea": "argocd:v1alpha1PullRequestGeneratorGitea",
+    "v1alpha1AppProjectSpec": "argocd:v1alpha1AppProjectSpec",
+    "v1alpha1ApplicationSetSpec": "argocd:v1alpha1ApplicationSetSpec",
+    "v1alpha1RepoCredsList": "argocd:v1alpha1RepoCredsList",
+    "v1alpha1AppProjectList": "argocd:v1alpha1AppProjectList",
+    "v1alpha1ResourceOverride": "argocd:v1alpha1ResourceOverride",
+    "v1alpha1ApplicationSetRolloutStrategy": "argocd:v1alpha1ApplicationSetRolloutStrategy",
+    "v1alpha1ApplicationWatchEvent": "argocd:v1alpha1ApplicationWatchEvent",
+    "v1alpha1ApplicationPreservedFields": "argocd:v1alpha1ApplicationPreservedFields",
+    "v1alpha1MatrixGenerator": "argocd:v1alpha1MatrixGenerator",
+    "v1alpha1SCMProviderGeneratorGitea": "argocd:v1alpha1SCMProviderGeneratorGitea",
+    "v1alpha1OperationInitiator": "argocd:v1alpha1OperationInitiator",
+    "v1alpha1SuccessfulHydrateOperation": "argocd:v1alpha1SuccessfulHydrateOperation",
+    "v1alpha1ApplicationStatus": "argocd:v1alpha1ApplicationStatus",
+    "v1alpha1ApplicationSetTemplate": "argocd:v1alpha1ApplicationSetTemplate",
+    "v1alpha1ApplicationSetStrategy": "argocd:v1alpha1ApplicationSetStrategy",
+    "v1alpha1OrphanedResourcesMonitorSettings": "argocd:v1alpha1OrphanedResourcesMonitorSettings",
+    "v1alpha1ApplicationMatchExpression": "argocd:v1alpha1ApplicationMatchExpression",
+    "v1alpha1KustomizeOptions": "argocd:v1alpha1KustomizeOptions",
+    "v1alpha1KustomizePatch": "argocd:v1alpha1KustomizePatch",
+    "v1alpha1RepositoryCertificateList": "argocd:v1alpha1RepositoryCertificateList",
+    "v1alpha1CommitMetadata": "argocd:v1alpha1CommitMetadata",
+    "v1alpha1ApplicationSetResourceIgnoreDifferences": "argocd:v1alpha1ApplicationSetResourceIgnoreDifferences",
+    "v1alpha1TLSClientConfig": "argocd:v1alpha1TLSClientConfig",
+    "v1alpha1ClusterCacheInfo": "argocd:v1alpha1ClusterCacheInfo",
+    "v1alpha1ClusterList": "argocd:v1alpha1ClusterList",
+    "v1alpha1PullRequestGeneratorGitLab": "argocd:v1alpha1PullRequestGeneratorGitLab",
+    "v1alpha1OverrideIgnoreDiff": "argocd:v1alpha1OverrideIgnoreDiff",
+    "group": {
+      "@id": "argocd:group",
+      "@type": "xsd:string"
+    },
+    "kind": {
+      "@id": "argocd:kind",
+      "@type": "xsd:string"
+    },
+    "name": "schema:name",
+    "namespace": {
+      "@id": "argocd:namespace",
+      "@type": "xsd:string"
+    },
+    "uid": {
+      "@id": "argocd:uid",
+      "@type": "xsd:string"
+    },
+    "version": "schema:version",
+    "branchMatch": {
+      "@id": "argocd:branchMatch",
+      "@type": "xsd:string"
+    },
+    "labelMatch": {
+      "@id": "argocd:labelMatch",
+      "@type": "xsd:string"
+    },
+    "pathsDoNotExist": {
+      "@id": "argocd:pathsDoNotExist",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "pathsExist": {
+      "@id": "argocd:pathsExist",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "repositoryMatch": {
+      "@id": "argocd:repositoryMatch",
+      "@type": "xsd:string"
+    },
+    "items": {
+      "@id": "argocd:items",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "apiVersions": {
+      "@id": "argocd:apiVersions",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "commonAnnotations": {
+      "@id": "argocd:commonAnnotations",
+      "@type": "@id"
+    },
+    "commonAnnotationsEnvsubst": {
+      "@id": "argocd:commonAnnotationsEnvsubst",
+      "@type": "xsd:boolean"
+    },
+    "commonLabels": {
+      "@id": "argocd:commonLabels",
+      "@type": "@id"
+    },
+    "components": {
+      "@id": "argocd:components",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "forceCommonAnnotations": {
+      "@id": "argocd:forceCommonAnnotations",
+      "@type": "xsd:boolean"
+    },
+    "forceCommonLabels": {
+      "@id": "argocd:forceCommonLabels",
+      "@type": "xsd:boolean"
+    },
+    "ignoreMissingComponents": {
+      "@id": "argocd:ignoreMissingComponents",
+      "@type": "xsd:boolean"
+    },
+    "images": {
+      "@id": "argocd:images",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "kubeVersion": {
+      "@id": "argocd:kubeVersion",
+      "@type": "xsd:string"
+    },
+    "labelIncludeTemplates": {
+      "@id": "argocd:labelIncludeTemplates",
+      "@type": "xsd:boolean"
+    },
+    "labelWithoutSelector": {
+      "@id": "argocd:labelWithoutSelector",
+      "@type": "xsd:boolean"
+    },
+    "namePrefix": {
+      "@id": "argocd:namePrefix",
+      "@type": "xsd:string"
+    },
+    "nameSuffix": {
+      "@id": "argocd:nameSuffix",
+      "@type": "xsd:string"
+    },
+    "patches": {
+      "@id": "argocd:patches",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "replicas": {
+      "@id": "argocd:replicas",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "chart": {
+      "@id": "argocd:chart",
+      "@type": "xsd:string"
+    },
+    "directory": {
+      "@id": "argocd:directory",
+      "@type": "xsd:string"
+    },
+    "helm": {
+      "@id": "argocd:helm",
+      "@type": "xsd:string"
+    },
+    "kustomize": {
+      "@id": "argocd:kustomize",
+      "@type": "xsd:string"
+    },
+    "path": {
+      "@id": "argocd:path",
+      "@type": "xsd:string"
+    },
+    "plugin": {
+      "@id": "argocd:plugin",
+      "@type": "xsd:string"
+    },
+    "ref": {
+      "@id": "argocd:ref",
+      "@type": "xsd:string"
+    },
+    "repoURL": {
+      "@id": "argocd:repoURL",
+      "@type": "xsd:string"
+    },
+    "targetRevision": {
+      "@id": "argocd:targetRevision",
+      "@type": "xsd:string"
+    },
+    "metadata": {
+      "@id": "argocd:metadata",
+      "@type": "xsd:string"
+    },
+    "automated": {
+      "@id": "argocd:automated",
+      "@type": "xsd:string"
+    },
+    "managedNamespaceMetadata": {
+      "@id": "argocd:managedNamespaceMetadata",
+      "@type": "xsd:string"
+    },
+    "retry": {
+      "@id": "argocd:retry",
+      "@type": "xsd:string"
+    },
+    "syncOptions": {
+      "@id": "argocd:syncOptions",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "attemptedAt": {
+      "@id": "argocd:attemptedAt",
+      "@type": "xsd:string"
+    },
+    "message": {
+      "@id": "argocd:message",
+      "@type": "xsd:string"
+    },
+    "status": {
+      "@id": "argocd:status",
+      "@type": "xsd:string"
+    },
+    "key": {
+      "@id": "argocd:key",
+      "@type": "xsd:string"
+    },
+    "secretName": {
+      "@id": "argocd:secretName",
+      "@type": "xsd:string"
+    },
+    "description": "schema:description",
+    "home": {
+      "@id": "argocd:home",
+      "@type": "xsd:string"
+    },
+    "maintainers": {
+      "@id": "argocd:maintainers",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "args": {
+      "@id": "argocd:args",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "command": {
+      "@id": "argocd:command",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "count": {
+      "@id": "argocd:count",
+      "@type": "xsd:string"
+    },
+    "flatList": {
+      "@id": "argocd:flatList",
+      "@type": "xsd:boolean"
+    },
+    "selector": {
+      "@id": "argocd:selector",
+      "@type": "xsd:string"
+    },
+    "template": {
+      "@id": "argocd:template",
+      "@type": "xsd:string"
+    },
+    "values": {
+      "@id": "argocd:values",
+      "@type": "@id"
+    },
+    "annotations": {
+      "@id": "argocd:annotations",
+      "@type": "@id"
+    },
+    "labels": {
+      "@id": "argocd:labels",
+      "@type": "@id"
+    },
+    "application": {
+      "@id": "argocd:application",
+      "@type": "xsd:string"
+    },
+    "lastTransitionTime": {
+      "@id": "argocd:lastTransitionTime",
+      "@type": "xsd:string"
+    },
+    "step": {
+      "@id": "argocd:step",
+      "@type": "xsd:string"
+    },
+    "targetrevisions": {
+      "@id": "argocd:targetrevisions",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "generators": {
+      "@id": "argocd:generators",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "mergeKeys": {
+      "@id": "argocd:mergeKeys",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "elements": {
+      "@id": "argocd:elements",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "elementsYaml": {
+      "@id": "argocd:elementsYaml",
+      "@type": "xsd:string"
+    },
+    "api": {
+      "@id": "argocd:api",
+      "@type": "xsd:string"
+    },
+    "appSecretName": {
+      "@id": "argocd:appSecretName",
+      "@type": "xsd:string"
+    },
+    "owner": {
+      "@id": "argocd:owner",
+      "@type": "xsd:string"
+    },
+    "repo": {
+      "@id": "argocd:repo",
+      "@type": "xsd:string"
+    },
+    "tokenRef": {
+      "@id": "argocd:tokenRef",
+      "@type": "xsd:string"
+    },
+    "basicAuth": {
+      "@id": "argocd:basicAuth",
+      "@type": "xsd:string"
+    },
+    "bearerToken": {
+      "@id": "argocd:bearerToken",
+      "@type": "xsd:string"
+    },
+    "caRef": {
+      "@id": "argocd:caRef",
+      "@type": "xsd:string"
+    },
+    "insecure": {
+      "@id": "argocd:insecure",
+      "@type": "xsd:boolean"
+    },
+    "project": {
+      "@id": "argocd:project",
+      "@type": "xsd:string"
+    },
+    "duration": {
+      "@id": "argocd:duration",
+      "@type": "xsd:string"
+    },
+    "factor": {
+      "@id": "argocd:factor",
+      "@type": "xsd:integer"
+    },
+    "maxDuration": {
+      "@id": "argocd:maxDuration",
+      "@type": "xsd:string"
+    },
+    "clusterName": {
+      "@id": "argocd:clusterName",
+      "@type": "xsd:string"
+    },
+    "profile": {
+      "@id": "argocd:profile",
+      "@type": "xsd:string"
+    },
+    "roleARN": {
+      "@id": "argocd:roleARN",
+      "@type": "xsd:string"
+    },
+    "allBranches": {
+      "@id": "argocd:allBranches",
+      "@type": "xsd:boolean"
+    },
+    "includeArchivedRepos": {
+      "@id": "argocd:includeArchivedRepos",
+      "@type": "xsd:boolean"
+    },
+    "includeSharedProjects": {
+      "@id": "argocd:includeSharedProjects",
+      "@type": "xsd:boolean"
+    },
+    "includeSubgroups": {
+      "@id": "argocd:includeSubgroups",
+      "@type": "xsd:boolean"
+    },
+    "topic": {
+      "@id": "argocd:topic",
+      "@type": "xsd:string"
+    },
+    "clusterDecisionResource": {
+      "@id": "argocd:clusterDecisionResource",
+      "@type": "xsd:string"
+    },
+    "clusters": {
+      "@id": "argocd:clusters",
+      "@type": "xsd:string"
+    },
+    "git": {
+      "@id": "argocd:git",
+      "@type": "xsd:string"
+    },
+    "list": {
+      "@id": "argocd:list",
+      "@type": "xsd:string"
+    },
+    "matrix": {
+      "@id": "argocd:matrix",
+      "@type": "xsd:string"
+    },
+    "merge": {
+      "@id": "argocd:merge",
+      "@type": "xsd:string"
+    },
+    "pullRequest": {
+      "@id": "argocd:pullRequest",
+      "@type": "xsd:string"
+    },
+    "scmProvider": {
+      "@id": "argocd:scmProvider",
+      "@type": "xsd:string"
+    },
+    "commit": {
+      "@id": "argocd:commit",
+      "@type": "xsd:string"
+    },
+    "jwtTokensByRole": {
+      "@id": "argocd:jwtTokensByRole",
+      "@type": "@id"
+    },
+    "resourcesInfo": {
+      "@id": "argocd:resourcesInfo",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "systemInfo": {
+      "@id": "argocd:systemInfo",
+      "@type": "xsd:string"
+    },
+    "env": {
+      "@id": "argocd:env",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "parameters": {
+      "@id": "argocd:parameters",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "generate": {
+      "@id": "argocd:generate",
+      "@type": "xsd:string"
+    },
+    "init": {
+      "@id": "argocd:init",
+      "@type": "xsd:string"
+    },
+    "lockRepo": {
+      "@id": "argocd:lockRepo",
+      "@type": "xsd:boolean"
+    },
+    "azureActiveDirectoryEndpoint": {
+      "@id": "argocd:azureActiveDirectoryEndpoint",
+      "@type": "xsd:string"
+    },
+    "azureServicePrincipalClientId": {
+      "@id": "argocd:azureServicePrincipalClientId",
+      "@type": "xsd:string"
+    },
+    "azureServicePrincipalClientSecret": {
+      "@id": "argocd:azureServicePrincipalClientSecret",
+      "@type": "xsd:string"
+    },
+    "azureServicePrincipalTenantId": {
+      "@id": "argocd:azureServicePrincipalTenantId",
+      "@type": "xsd:string"
+    },
+    "enableOCI": {
+      "@id": "argocd:enableOCI",
+      "@type": "xsd:boolean"
+    },
+    "forceHttpBasicAuth": {
+      "@id": "argocd:forceHttpBasicAuth",
+      "@type": "xsd:boolean"
+    },
+    "gcpServiceAccountKey": {
+      "@id": "argocd:gcpServiceAccountKey",
+      "@type": "xsd:string"
+    },
+    "githubAppEnterpriseBaseUrl": {
+      "@id": "argocd:githubAppEnterpriseBaseUrl",
+      "@type": "xsd:string"
+    },
+    "githubAppID": {
+      "@id": "argocd:githubAppID",
+      "@type": "xsd:integer"
+    },
+    "githubAppInstallationID": {
+      "@id": "argocd:githubAppInstallationID",
+      "@type": "xsd:integer"
+    },
+    "githubAppPrivateKey": {
+      "@id": "argocd:githubAppPrivateKey",
+      "@type": "xsd:string"
+    },
+    "insecureOCIForceHttp": {
+      "@id": "argocd:insecureOCIForceHttp",
+      "@type": "xsd:boolean"
+    },
+    "noProxy": {
+      "@id": "argocd:noProxy",
+      "@type": "xsd:string"
+    },
+    "password": {
+      "@id": "argocd:password",
+      "@type": "xsd:string"
+    },
+    "proxy": {
+      "@id": "argocd:proxy",
+      "@type": "xsd:string"
+    },
+    "sshPrivateKey": {
+      "@id": "argocd:sshPrivateKey",
+      "@type": "xsd:string"
+    },
+    "tlsClientCertData": {
+      "@id": "argocd:tlsClientCertData",
+      "@type": "xsd:string"
+    },
+    "tlsClientCertKey": {
+      "@id": "argocd:tlsClientCertKey",
+      "@type": "xsd:string"
+    },
+    "type": {
+      "@id": "argocd:type",
+      "@type": "xsd:string"
+    },
+    "url": "schema:url",
+    "useAzureWorkloadIdentity": {
+      "@id": "argocd:useAzureWorkloadIdentity",
+      "@type": "xsd:boolean"
+    },
+    "username": {
+      "@id": "argocd:username",
+      "@type": "xsd:string"
+    },
+    "awsCodeCommit": {
+      "@id": "argocd:awsCodeCommit",
+      "@type": "xsd:string"
+    },
+    "azureDevOps": {
+      "@id": "argocd:azureDevOps",
+      "@type": "xsd:string"
+    },
+    "bitbucket": {
+      "@id": "argocd:bitbucket",
+      "@type": "xsd:string"
+    },
+    "bitbucketServer": {
+      "@id": "argocd:bitbucketServer",
+      "@type": "xsd:string"
+    },
+    "cloneProtocol": {
+      "@id": "argocd:cloneProtocol",
+      "@type": "xsd:string"
+    },
+    "filters": {
+      "@id": "argocd:filters",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "gitea": {
+      "@id": "argocd:gitea",
+      "@type": "xsd:string"
+    },
+    "github": {
+      "@id": "argocd:github",
+      "@type": "xsd:string"
+    },
+    "gitlab": {
+      "@id": "argocd:gitlab",
+      "@type": "xsd:string"
+    },
+    "requeueAfterSeconds": {
+      "@id": "argocd:requeueAfterSeconds",
+      "@type": "xsd:integer"
+    },
+    "exclude": {
+      "@id": "argocd:exclude",
+      "@type": "xsd:boolean"
+    },
+    "externalURLs": {
+      "@id": "argocd:externalURLs",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "ingress": {
+      "@id": "argocd:ingress",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "targetLabels": {
+      "@id": "argocd:targetLabels",
+      "@type": "@id"
+    },
+    "targetRefs": {
+      "@id": "argocd:targetRefs",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "andOperator": {
+      "@id": "argocd:andOperator",
+      "@type": "xsd:boolean"
+    },
+    "applications": {
+      "@id": "argocd:applications",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "manualSync": {
+      "@id": "argocd:manualSync",
+      "@type": "xsd:boolean"
+    },
+    "namespaces": {
+      "@id": "argocd:namespaces",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "schedule": {
+      "@id": "argocd:schedule",
+      "@type": "xsd:string"
+    },
+    "syncOverrun": {
+      "@id": "argocd:syncOverrun",
+      "@type": "xsd:boolean"
+    },
+    "timeZone": {
+      "@id": "argocd:timeZone",
+      "@type": "xsd:string"
+    },
+    "syncStrategyApply": {
+      "@id": "argocd:syncStrategyApply",
+      "@type": "xsd:string"
+    },
+    "autoHealAttemptsCount": {
+      "@id": "argocd:autoHealAttemptsCount",
+      "@type": "xsd:integer"
+    },
+    "dryRun": {
+      "@id": "argocd:dryRun",
+      "@type": "xsd:boolean"
+    },
+    "manifests": {
+      "@id": "argocd:manifests",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "prune": {
+      "@id": "argocd:prune",
+      "@type": "xsd:boolean"
+    },
+    "resources": {
+      "@id": "argocd:resources",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "revision": {
+      "@id": "argocd:revision",
+      "@type": "xsd:string"
+    },
+    "revisions": {
+      "@id": "argocd:revisions",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "source": {
+      "@id": "argocd:source",
+      "@type": "xsd:string"
+    },
+    "sources": {
+      "@id": "argocd:sources",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "syncStrategy": {
+      "@id": "argocd:syncStrategy",
+      "@type": "xsd:string"
+    },
+    "value": {
+      "@id": "argocd:value",
+      "@type": "xsd:string"
+    },
+    "targetBranchMatch": {
+      "@id": "argocd:targetBranchMatch",
+      "@type": "xsd:string"
+    },
+    "titleMatch": {
+      "@id": "argocd:titleMatch",
+      "@type": "xsd:string"
+    },
+    "info": {
+      "@id": "argocd:info",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "initiatedBy": {
+      "@id": "argocd:initiatedBy",
+      "@type": "xsd:string"
+    },
+    "sync": {
+      "@id": "argocd:sync",
+      "@type": "xsd:string"
+    },
+    "configMapName": {
+      "@id": "argocd:configMapName",
+      "@type": "xsd:string"
+    },
+    "applicationsCount": {
+      "@id": "argocd:applicationsCount",
+      "@type": "xsd:integer"
+    },
+    "cacheInfo": {
+      "@id": "argocd:cacheInfo",
+      "@type": "xsd:string"
+    },
+    "connectionState": {
+      "@id": "argocd:connectionState",
+      "@type": "xsd:string"
+    },
+    "serverVersion": {
+      "@id": "argocd:serverVersion",
+      "@type": "xsd:string"
+    },
+    "code": {
+      "@id": "argocd:code",
+      "@type": "xsd:boolean"
+    },
+    "nodes": {
+      "@id": "argocd:nodes",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "matchExpressions": {
+      "@id": "argocd:matchExpressions",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "maxUpdate": {
+      "@id": "argocd:maxUpdate",
+      "@type": "xsd:string"
+    },
+    "fileParameters": {
+      "@id": "argocd:fileParameters",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "ignoreMissingValueFiles": {
+      "@id": "argocd:ignoreMissingValueFiles",
+      "@type": "xsd:boolean"
+    },
+    "passCredentials": {
+      "@id": "argocd:passCredentials",
+      "@type": "xsd:boolean"
+    },
+    "releaseName": {
+      "@id": "argocd:releaseName",
+      "@type": "xsd:string"
+    },
+    "skipCrds": {
+      "@id": "argocd:skipCrds",
+      "@type": "xsd:boolean"
+    },
+    "skipSchemaValidation": {
+      "@id": "argocd:skipSchemaValidation",
+      "@type": "xsd:boolean"
+    },
+    "skipTests": {
+      "@id": "argocd:skipTests",
+      "@type": "xsd:boolean"
+    },
+    "valueFiles": {
+      "@id": "argocd:valueFiles",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "valuesObject": {
+      "@id": "argocd:valuesObject",
+      "@type": "xsd:string"
+    },
+    "directories": {
+      "@id": "argocd:directories",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "files": {
+      "@id": "argocd:files",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "pathParamPrefix": {
+      "@id": "argocd:pathParamPrefix",
+      "@type": "xsd:string"
+    },
+    "certData": {
+      "@id": "argocd:certData",
+      "@type": "xsd:string"
+    },
+    "certInfo": {
+      "@id": "argocd:certInfo",
+      "@type": "xsd:string"
+    },
+    "certSubType": {
+      "@id": "argocd:certSubType",
+      "@type": "xsd:string"
+    },
+    "certType": {
+      "@id": "argocd:certType",
+      "@type": "xsd:string"
+    },
+    "serverName": {
+      "@id": "argocd:serverName",
+      "@type": "xsd:string"
+    },
+    "destination": {
+      "@id": "argocd:destination",
+      "@type": "xsd:string"
+    },
+    "ignoreDifferences": {
+      "@id": "argocd:ignoreDifferences",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "revisionHistoryLimit": {
+      "@id": "argocd:revisionHistoryLimit",
+      "@type": "xsd:integer"
+    },
+    "sourceHydrator": {
+      "@id": "argocd:sourceHydrator",
+      "@type": "xsd:string"
+    },
+    "syncPolicy": {
+      "@id": "argocd:syncPolicy",
+      "@type": "xsd:string"
+    },
+    "region": {
+      "@id": "argocd:region",
+      "@type": "xsd:string"
+    },
+    "role": {
+      "@id": "argocd:role",
+      "@type": "xsd:string"
+    },
+    "tagFilters": {
+      "@id": "argocd:tagFilters",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "disabled": {
+      "@id": "argocd:disabled",
+      "@type": "xsd:boolean"
+    },
+    "displayName": {
+      "@id": "argocd:displayName",
+      "@type": "xsd:string"
+    },
+    "iconClass": {
+      "@id": "argocd:iconClass",
+      "@type": "xsd:string"
+    },
+    "params": {
+      "@id": "argocd:params",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "accessTokenRef": {
+      "@id": "argocd:accessTokenRef",
+      "@type": "xsd:string"
+    },
+    "organization": {
+      "@id": "argocd:organization",
+      "@type": "xsd:string"
+    },
+    "teamProject": {
+      "@id": "argocd:teamProject",
+      "@type": "xsd:string"
+    },
+    "include": {
+      "@id": "argocd:include",
+      "@type": "xsd:string"
+    },
+    "jsonnet": {
+      "@id": "argocd:jsonnet",
+      "@type": "xsd:string"
+    },
+    "recurse": {
+      "@id": "argocd:recurse",
+      "@type": "xsd:boolean"
+    },
+    "targetBranch": {
+      "@id": "argocd:targetBranch",
+      "@type": "xsd:string"
+    },
+    "hookPhase": {
+      "@id": "argocd:hookPhase",
+      "@type": "xsd:string"
+    },
+    "hookType": {
+      "@id": "argocd:hookType",
+      "@type": "xsd:string"
+    },
+    "syncPhase": {
+      "@id": "argocd:syncPhase",
+      "@type": "xsd:string"
+    },
+    "buildOptions": {
+      "@id": "argocd:buildOptions",
+      "@type": "xsd:string"
+    },
+    "configMapRef": {
+      "@id": "argocd:configMapRef",
+      "@type": "xsd:string"
+    },
+    "input": {
+      "@id": "argocd:input",
+      "@type": "xsd:string"
+    },
+    "excludeArchivedRepos": {
+      "@id": "argocd:excludeArchivedRepos",
+      "@type": "xsd:boolean"
+    },
+    "operation": {
+      "@id": "argocd:operation",
+      "@type": "xsd:string"
+    },
+    "spec": {
+      "@id": "argocd:spec",
+      "@type": "xsd:string"
+    },
+    "author": {
+      "@id": "argocd:author",
+      "@type": "xsd:string"
+    },
+    "date": {
+      "@id": "argocd:date",
+      "@type": "xsd:string"
+    },
+    "references": {
+      "@id": "argocd:references",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "signatureInfo": {
+      "@id": "argocd:signatureInfo",
+      "@type": "xsd:string"
+    },
+    "tags": {
+      "@id": "argocd:tags",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "force": {
+      "@id": "argocd:force",
+      "@type": "xsd:boolean"
+    },
+    "jqPathExpressions": {
+      "@id": "argocd:jqPathExpressions",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "jsonPointers": {
+      "@id": "argocd:jsonPointers",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "managedFieldsManagers": {
+      "@id": "argocd:managedFieldsManagers",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "applicationsSync": {
+      "@id": "argocd:applicationsSync",
+      "@type": "xsd:string"
+    },
+    "preserveResourcesOnDeletion": {
+      "@id": "argocd:preserveResourcesOnDeletion",
+      "@type": "xsd:boolean"
+    },
+    "labelSelector": {
+      "@id": "argocd:labelSelector",
+      "@type": "xsd:string"
+    },
+    "currentOperation": {
+      "@id": "argocd:currentOperation",
+      "@type": "xsd:string"
+    },
+    "lastSuccessfulOperation": {
+      "@id": "argocd:lastSuccessfulOperation",
+      "@type": "xsd:string"
+    },
+    "authors": {
+      "@id": "argocd:authors",
+      "@type": "xsd:string"
+    },
+    "createdAt": {
+      "@id": "argocd:createdAt",
+      "@type": "xsd:string"
+    },
+    "docsUrl": {
+      "@id": "argocd:docsUrl",
+      "@type": "xsd:string"
+    },
+    "imageUrl": {
+      "@id": "argocd:imageUrl",
+      "@type": "xsd:string"
+    },
+    "sourceUrl": {
+      "@id": "argocd:sourceUrl",
+      "@type": "xsd:string"
+    },
+    "deployStartedAt": {
+      "@id": "argocd:deployStartedAt",
+      "@type": "xsd:string"
+    },
+    "deployedAt": {
+      "@id": "argocd:deployedAt",
+      "@type": "xsd:string"
+    },
+    "id": {
+      "@id": "argocd:id",
+      "@type": "xsd:integer"
+    },
+    "awsAuthConfig": {
+      "@id": "argocd:awsAuthConfig",
+      "@type": "xsd:string"
+    },
+    "disableCompression": {
+      "@id": "argocd:disableCompression",
+      "@type": "xsd:boolean"
+    },
+    "execProviderConfig": {
+      "@id": "argocd:execProviderConfig",
+      "@type": "xsd:string"
+    },
+    "proxyUrl": {
+      "@id": "argocd:proxyUrl",
+      "@type": "xsd:string"
+    },
+    "tlsClientConfig": {
+      "@id": "argocd:tlsClientConfig",
+      "@type": "xsd:string"
+    },
+    "applicationStatus": {
+      "@id": "argocd:applicationStatus",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "conditions": {
+      "@id": "argocd:conditions",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "health": {
+      "@id": "argocd:health",
+      "@type": "xsd:string"
+    },
+    "resourcesCount": {
+      "@id": "argocd:resourcesCount",
+      "@type": "xsd:integer"
+    },
+    "diff": {
+      "@id": "argocd:diff",
+      "@type": "xsd:string"
+    },
+    "hook": {
+      "@id": "argocd:hook",
+      "@type": "xsd:boolean"
+    },
+    "liveState": {
+      "@id": "argocd:liveState",
+      "@type": "xsd:string"
+    },
+    "modified": {
+      "@id": "argocd:modified",
+      "@type": "xsd:boolean"
+    },
+    "normalizedLiveState": {
+      "@id": "argocd:normalizedLiveState",
+      "@type": "xsd:string"
+    },
+    "predictedLiveState": {
+      "@id": "argocd:predictedLiveState",
+      "@type": "xsd:string"
+    },
+    "resourceVersion": {
+      "@id": "argocd:resourceVersion",
+      "@type": "xsd:string"
+    },
+    "targetState": {
+      "@id": "argocd:targetState",
+      "@type": "xsd:string"
+    },
+    "depth": {
+      "@id": "argocd:depth",
+      "@type": "xsd:integer"
+    },
+    "enableLfs": {
+      "@id": "argocd:enableLfs",
+      "@type": "xsd:boolean"
+    },
+    "inheritedCreds": {
+      "@id": "argocd:inheritedCreds",
+      "@type": "xsd:boolean"
+    },
+    "insecureIgnoreHostKey": {
+      "@id": "argocd:insecureIgnoreHostKey",
+      "@type": "xsd:boolean"
+    },
+    "webhookManifestCacheWarmDisabled": {
+      "@id": "argocd:webhookManifestCacheWarmDisabled",
+      "@type": "xsd:boolean"
+    },
+    "extVars": {
+      "@id": "argocd:extVars",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "libs": {
+      "@id": "argocd:libs",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "tlas": {
+      "@id": "argocd:tlas",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "groups": {
+      "@id": "argocd:groups",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "jwtTokens": {
+      "@id": "argocd:jwtTokens",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "policies": {
+      "@id": "argocd:policies",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "drySource": {
+      "@id": "argocd:drySource",
+      "@type": "xsd:string"
+    },
+    "hydrateTo": {
+      "@id": "argocd:hydrateTo",
+      "@type": "xsd:string"
+    },
+    "syncSource": {
+      "@id": "argocd:syncSource",
+      "@type": "xsd:string"
+    },
+    "drySHA": {
+      "@id": "argocd:drySHA",
+      "@type": "xsd:string"
+    },
+    "finishedAt": {
+      "@id": "argocd:finishedAt",
+      "@type": "xsd:string"
+    },
+    "hydratedSHA": {
+      "@id": "argocd:hydratedSHA",
+      "@type": "xsd:string"
+    },
+    "phase": {
+      "@id": "argocd:phase",
+      "@type": "xsd:string"
+    },
+    "startedAt": {
+      "@id": "argocd:startedAt",
+      "@type": "xsd:string"
+    },
+    "passwordRef": {
+      "@id": "argocd:passwordRef",
+      "@type": "xsd:string"
+    },
+    "apply": {
+      "@id": "argocd:apply",
+      "@type": "xsd:string"
+    },
+    "appPasswordRef": {
+      "@id": "argocd:appPasswordRef",
+      "@type": "xsd:string"
+    },
+    "user": {
+      "@id": "argocd:user",
+      "@type": "xsd:string"
+    },
+    "server": {
+      "@id": "argocd:server",
+      "@type": "xsd:string"
+    },
+    "fingerprint": {
+      "@id": "argocd:fingerprint",
+      "@type": "xsd:string"
+    },
+    "keyData": {
+      "@id": "argocd:keyData",
+      "@type": "xsd:string"
+    },
+    "keyID": {
+      "@id": "argocd:keyID",
+      "@type": "xsd:string"
+    },
+    "subType": {
+      "@id": "argocd:subType",
+      "@type": "xsd:string"
+    },
+    "trust": {
+      "@id": "argocd:trust",
+      "@type": "xsd:string"
+    },
+    "reason": {
+      "@id": "argocd:reason",
+      "@type": "xsd:string"
+    },
+    "array": {
+      "@id": "argocd:array",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "map": {
+      "@id": "argocd:map",
+      "@type": "@id"
+    },
+    "string": {
+      "@id": "argocd:string",
+      "@type": "xsd:string"
+    },
+    "forceString": {
+      "@id": "argocd:forceString",
+      "@type": "xsd:boolean"
+    },
+    "applicationSet": {
+      "@id": "argocd:applicationSet",
+      "@type": "xsd:string"
+    },
+    "azuredevops": {
+      "@id": "argocd:azuredevops",
+      "@type": "xsd:string"
+    },
+    "continueOnRepoNotFoundError": {
+      "@id": "argocd:continueOnRepoNotFoundError",
+      "@type": "xsd:boolean"
+    },
+    "comparedTo": {
+      "@id": "argocd:comparedTo",
+      "@type": "xsd:string"
+    },
+    "annotationSelector": {
+      "@id": "argocd:annotationSelector",
+      "@type": "xsd:string"
+    },
+    "resId": {
+      "@id": "argocd:resId",
+      "@type": "xsd:string"
+    },
+    "field": {
+      "@id": "argocd:field",
+      "@type": "xsd:string"
+    },
+    "capacity": {
+      "@id": "argocd:capacity",
+      "@type": "xsd:integer"
+    },
+    "requestedByApp": {
+      "@id": "argocd:requestedByApp",
+      "@type": "xsd:integer"
+    },
+    "requestedByNeighbors": {
+      "@id": "argocd:requestedByNeighbors",
+      "@type": "xsd:integer"
+    },
+    "resourceName": {
+      "@id": "argocd:resourceName",
+      "@type": "xsd:string"
+    },
+    "networkingInfo": {
+      "@id": "argocd:networkingInfo",
+      "@type": "xsd:string"
+    },
+    "parentRefs": {
+      "@id": "argocd:parentRefs",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "gvk": {
+      "@id": "argocd:gvk",
+      "@type": "xsd:string"
+    },
+    "exp": {
+      "@id": "argocd:exp",
+      "@type": "xsd:integer"
+    },
+    "iat": {
+      "@id": "argocd:iat",
+      "@type": "xsd:integer"
+    },
+    "apiVersion": {
+      "@id": "argocd:apiVersion",
+      "@type": "xsd:string"
+    },
+    "installHint": {
+      "@id": "argocd:installHint",
+      "@type": "xsd:string"
+    },
+    "backoff": {
+      "@id": "argocd:backoff",
+      "@type": "xsd:string"
+    },
+    "limit": {
+      "@id": "argocd:limit",
+      "@type": "xsd:integer"
+    },
+    "refresh": {
+      "@id": "argocd:refresh",
+      "@type": "xsd:boolean"
+    },
+    "finalizers": {
+      "@id": "argocd:finalizers",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "defaultServiceAccount": {
+      "@id": "argocd:defaultServiceAccount",
+      "@type": "xsd:string"
+    },
+    "retryCount": {
+      "@id": "argocd:retryCount",
+      "@type": "xsd:integer"
+    },
+    "syncResult": {
+      "@id": "argocd:syncResult",
+      "@type": "xsd:string"
+    },
+    "clusterResources": {
+      "@id": "argocd:clusterResources",
+      "@type": "xsd:boolean"
+    },
+    "config": {
+      "@id": "argocd:config",
+      "@type": "xsd:string"
+    },
+    "refreshRequestedAt": {
+      "@id": "argocd:refreshRequestedAt",
+      "@type": "xsd:string"
+    },
+    "shard": {
+      "@id": "argocd:shard",
+      "@type": "xsd:integer"
+    },
+    "hosts": {
+      "@id": "argocd:hosts",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "orphanedNodes": {
+      "@id": "argocd:orphanedNodes",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "shardsCount": {
+      "@id": "argocd:shardsCount",
+      "@type": "xsd:integer"
+    },
+    "allowEmpty": {
+      "@id": "argocd:allowEmpty",
+      "@type": "xsd:boolean"
+    },
+    "enabled": {
+      "@id": "argocd:enabled",
+      "@type": "xsd:boolean"
+    },
+    "selfHeal": {
+      "@id": "argocd:selfHeal",
+      "@type": "xsd:boolean"
+    },
+    "clusterResourceBlacklist": {
+      "@id": "argocd:clusterResourceBlacklist",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "clusterResourceWhitelist": {
+      "@id": "argocd:clusterResourceWhitelist",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "destinationServiceAccounts": {
+      "@id": "argocd:destinationServiceAccounts",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "destinations": {
+      "@id": "argocd:destinations",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "namespaceResourceBlacklist": {
+      "@id": "argocd:namespaceResourceBlacklist",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "namespaceResourceWhitelist": {
+      "@id": "argocd:namespaceResourceWhitelist",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "orphanedResources": {
+      "@id": "argocd:orphanedResources",
+      "@type": "xsd:string"
+    },
+    "permitOnlyProjectScopedClusters": {
+      "@id": "argocd:permitOnlyProjectScopedClusters",
+      "@type": "xsd:boolean"
+    },
+    "roles": {
+      "@id": "argocd:roles",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "signatureKeys": {
+      "@id": "argocd:signatureKeys",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "sourceNamespaces": {
+      "@id": "argocd:sourceNamespaces",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "sourceRepos": {
+      "@id": "argocd:sourceRepos",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "syncWindows": {
+      "@id": "argocd:syncWindows",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "applyNestedSelectors": {
+      "@id": "argocd:applyNestedSelectors",
+      "@type": "xsd:boolean"
+    },
+    "goTemplate": {
+      "@id": "argocd:goTemplate",
+      "@type": "xsd:boolean"
+    },
+    "goTemplateOptions": {
+      "@id": "argocd:goTemplateOptions",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "ignoreApplicationDifferences": {
+      "@id": "argocd:ignoreApplicationDifferences",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "preservedFields": {
+      "@id": "argocd:preservedFields",
+      "@type": "xsd:string"
+    },
+    "strategy": {
+      "@id": "argocd:strategy",
+      "@type": "xsd:string"
+    },
+    "templatePatch": {
+      "@id": "argocd:templatePatch",
+      "@type": "xsd:string"
+    },
+    "actions": {
+      "@id": "argocd:actions",
+      "@type": "xsd:string"
+    },
+    "healthLua": {
+      "@id": "argocd:healthLua",
+      "@type": "xsd:string"
+    },
+    "ignoreResourceUpdates": {
+      "@id": "argocd:ignoreResourceUpdates",
+      "@type": "xsd:string"
+    },
+    "knownTypeFields": {
+      "@id": "argocd:knownTypeFields",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "useOpenLibs": {
+      "@id": "argocd:useOpenLibs",
+      "@type": "xsd:boolean"
+    },
+    "steps": {
+      "@id": "argocd:steps",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "controllerNamespace": {
+      "@id": "argocd:controllerNamespace",
+      "@type": "xsd:string"
+    },
+    "history": {
+      "@id": "argocd:history",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "observedAt": {
+      "@id": "argocd:observedAt",
+      "@type": "xsd:string"
+    },
+    "operationState": {
+      "@id": "argocd:operationState",
+      "@type": "xsd:string"
+    },
+    "reconciledAt": {
+      "@id": "argocd:reconciledAt",
+      "@type": "xsd:string"
+    },
+    "resourceHealthSource": {
+      "@id": "argocd:resourceHealthSource",
+      "@type": "xsd:string"
+    },
+    "sourceType": {
+      "@id": "argocd:sourceType",
+      "@type": "xsd:string"
+    },
+    "sourceTypes": {
+      "@id": "argocd:sourceTypes",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "summary": {
+      "@id": "argocd:summary",
+      "@type": "xsd:string"
+    },
+    "deletionOrder": {
+      "@id": "argocd:deletionOrder",
+      "@type": "xsd:string"
+    },
+    "rollingSync": {
+      "@id": "argocd:rollingSync",
+      "@type": "xsd:string"
+    },
+    "ignore": {
+      "@id": "argocd:ignore",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "warn": {
+      "@id": "argocd:warn",
+      "@type": "xsd:boolean"
+    },
+    "operator": {
+      "@id": "argocd:operator",
+      "@type": "xsd:string"
+    },
+    "binaryPath": {
+      "@id": "argocd:binaryPath",
+      "@type": "xsd:string"
+    },
+    "versions": {
+      "@id": "argocd:versions",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "options": {
+      "@id": "argocd:options",
+      "@type": "@id"
+    },
+    "patch": {
+      "@id": "argocd:patch",
+      "@type": "xsd:string"
+    },
+    "target": {
+      "@id": "argocd:target",
+      "@type": "xsd:string"
+    },
+    "body": {
+      "@id": "argocd:body",
+      "@type": "xsd:string"
+    },
+    "repoUrl": {
+      "@id": "argocd:repoUrl",
+      "@type": "xsd:string"
+    },
+    "sha": {
+      "@id": "argocd:sha",
+      "@type": "xsd:string"
+    },
+    "subject": {
+      "@id": "argocd:subject",
+      "@type": "xsd:string"
+    },
+    "caData": {
+      "@id": "argocd:caData",
+      "@type": "xsd:string"
+    },
+    "apisCount": {
+      "@id": "argocd:apisCount",
+      "@type": "xsd:integer"
+    },
+    "lastCacheSyncTime": {
+      "@id": "argocd:lastCacheSyncTime",
+      "@type": "xsd:string"
+    },
+    "pullRequestState": {
+      "@id": "argocd:pullRequestState",
+      "@type": "xsd:string"
+    },
+    "jSONPointers": {
+      "@id": "argocd:jSONPointers",
+      "@container": "@set",
+      "@type": "xsd:string"
+    }
+  }
+}

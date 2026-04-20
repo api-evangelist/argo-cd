@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-schema/argo-cd-v1alpha1-plugin-generator-schema.json",
+  "title": "v1alpha1PluginGenerator",
+  "description": "PluginGenerator defines connection info specific to Plugin.",
+  "type": "object",
+  "properties": {
+    "configMapRef": {
+      "$ref": "#/definitions/v1alpha1PluginConfigMapRef"
+    },
+    "input": {
+      "$ref": "#/definitions/v1alpha1PluginInput"
+    },
+    "requeueAfterSeconds": {
+      "description": "RequeueAfterSeconds determines how long the ApplicationSet controller will wait before reconciling the ApplicationSet again.",
+      "type": "integer",
+      "format": "int64"
+    },
+    "template": {
+      "$ref": "#/definitions/v1alpha1ApplicationSetTemplate"
+    },
+    "values": {
+      "description": "Values contains key/value pairs which are passed directly as parameters to the template. These values will not be\nsent as parameters to the plugin.",
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    }
+  }
+}

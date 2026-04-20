@@ -1,0 +1,4 @@
+{
+  "configMapName": "my-application",
+  "key": "eyJhbGciOiJIUzI1NiJ9.example"
+}

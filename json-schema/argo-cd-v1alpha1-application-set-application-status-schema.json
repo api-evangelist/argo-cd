@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-schema/argo-cd-v1alpha1-application-set-application-status-schema.json",
+  "title": "v1alpha1ApplicationSetApplicationStatus",
+  "description": "v1alpha1ApplicationSetApplicationStatus schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "application": {
+      "type": "string",
+      "title": "Application contains the name of the Application resource"
+    },
+    "lastTransitionTime": {
+      "$ref": "#/definitions/v1Time"
+    },
+    "message": {
+      "type": "string",
+      "title": "Message contains human-readable message indicating details about the status"
+    },
+    "status": {
+      "type": "string",
+      "title": "Status contains the AppSet's perceived status of the managed Application resource"
+    },
+    "step": {
+      "type": "string",
+      "title": "Step tracks which step this Application should be updated in"
+    },
+    "targetrevisions": {
+      "description": "TargetRevision tracks the desired revisions the Application should be synced to.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-schema/argo-cd-cluster-dex-config-schema.json",
+  "title": "clusterDexConfig",
+  "description": "clusterDexConfig schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "connectors": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/clusterConnector"
+      }
+    }
+  }
+}

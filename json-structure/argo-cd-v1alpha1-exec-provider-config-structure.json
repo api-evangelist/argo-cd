@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-structure/argo-cd-v1alpha1-exec-provider-config-structure.json",
+  "name": "v1alpha1ExecProviderConfig",
+  "description": "v1alpha1ExecProviderConfig schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "apiVersion": {
+      "type": "string",
+      "name": "Preferred input version of the ExecInfo"
+    },
+    "args": {
+      "type": "array",
+      "name": "Arguments to pass to the command when executing it",
+      "items": {
+        "type": "string"
+      }
+    },
+    "command": {
+      "type": "string",
+      "name": "Command to execute"
+    },
+    "env": {
+      "type": "object",
+      "name": "Env defines additional environment variables to expose to the process",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "installHint": {
+      "type": "string",
+      "name": "This text is shown to the user when the executable doesn't seem to be present"
+    }
+  }
+}

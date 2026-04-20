@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-structure/argo-cd-application-application-sync-windows-response-structure.json",
+  "name": "applicationApplicationSyncWindowsResponse",
+  "description": "applicationApplicationSyncWindowsResponse schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "activeWindows": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/applicationApplicationSyncWindow"
+      }
+    },
+    "assignedWindows": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/applicationApplicationSyncWindow"
+      }
+    },
+    "canSync": {
+      "type": "boolean"
+    }
+  }
+}

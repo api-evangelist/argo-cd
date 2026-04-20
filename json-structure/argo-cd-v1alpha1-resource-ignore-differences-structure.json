@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-structure/argo-cd-v1alpha1-resource-ignore-differences-structure.json",
+  "name": "v1alpha1ResourceIgnoreDifferences",
+  "description": "ResourceIgnoreDifferences contains resource filter and list of json paths which should be ignored during comparison with live state.",
+  "type": "object",
+  "properties": {
+    "group": {
+      "type": "string"
+    },
+    "jqPathExpressions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "jsonPointers": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "kind": {
+      "type": "string"
+    },
+    "managedFieldsManagers": {
+      "type": "array",
+      "name": "ManagedFieldsManagers is a list of trusted managers. Fields mutated by those managers will take precedence over the\ndesired state defined in the SCM and won't be displayed in diffs",
+      "items": {
+        "type": "string"
+      }
+    },
+    "name": {
+      "type": "string"
+    },
+    "namespace": {
+      "type": "string"
+    }
+  }
+}

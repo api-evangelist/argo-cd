@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-structure/argo-cd-v1alpha1-sync-strategy-hook-structure.json",
+  "name": "v1alpha1SyncStrategyHook",
+  "description": "SyncStrategyHook will perform a sync using hooks annotations.\nIf no hook annotation is specified falls back to `kubectl apply`.",
+  "type": "object",
+  "properties": {
+    "syncStrategyApply": {
+      "$ref": "#/definitions/v1alpha1SyncStrategyApply"
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "api": "example-api",
+  "labels": [
+    "example-labels",
+    "example-labels"
+  ],
+  "organization": "example-organization",
+  "project": "default",
+  "repo": "https://github.com/example/repo.git",
+  "tokenRef": "eyJhbGciOiJIUzI1NiJ9.example"
+}

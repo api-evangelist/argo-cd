@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-structure/argo-cd-application-application-sync-window-structure.json",
+  "name": "applicationApplicationSyncWindow",
+  "description": "applicationApplicationSyncWindow schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "duration": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string"
+    },
+    "manualSync": {
+      "type": "boolean"
+    },
+    "schedule": {
+      "type": "string"
+    }
+  }
+}

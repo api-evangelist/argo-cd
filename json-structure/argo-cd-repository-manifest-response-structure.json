@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-structure/argo-cd-repository-manifest-response-structure.json",
+  "name": "repositoryManifestResponse",
+  "description": "repositoryManifestResponse schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "commands": {
+      "type": "array",
+      "name": "Commands is the list of commands used to hydrate the manifests",
+      "items": {
+        "type": "string"
+      }
+    },
+    "manifests": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "namespace": {
+      "type": "string"
+    },
+    "revision": {
+      "type": "string",
+      "name": "resolved revision"
+    },
+    "server": {
+      "type": "string"
+    },
+    "sourceType": {
+      "type": "string"
+    },
+    "verifyResult": {
+      "type": "string",
+      "name": "Raw response of git verify-commit operation (always the empty string for Helm)"
+    }
+  }
+}

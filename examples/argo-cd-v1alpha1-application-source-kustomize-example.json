@@ -1,0 +1,35 @@
+{
+  "apiVersions": [
+    "v2.14.0",
+    "v2.14.0"
+  ],
+  "commonAnnotations": {},
+  "commonAnnotationsEnvsubst": true,
+  "commonLabels": {},
+  "components": [
+    "example-components",
+    "example-components"
+  ],
+  "forceCommonAnnotations": true,
+  "forceCommonLabels": true,
+  "ignoreMissingComponents": true,
+  "images": [
+    "example-images",
+    "example-images"
+  ],
+  "kubeVersion": "v2.14.0",
+  "labelIncludeTemplates": true,
+  "labelWithoutSelector": true,
+  "namePrefix": "my-application",
+  "nameSuffix": "my-application",
+  "namespace": "my-application",
+  "patches": [
+    "example-patches",
+    "example-patches"
+  ],
+  "replicas": [
+    "example-replicas",
+    "example-replicas"
+  ],
+  "version": "v2.14.0"
+}

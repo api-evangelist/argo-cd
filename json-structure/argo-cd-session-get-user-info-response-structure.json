@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-structure/argo-cd-session-get-user-info-response-structure.json",
+  "name": "sessionGetUserInfoResponse",
+  "description": "sessionGetUserInfoResponse schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "groups": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "iss": {
+      "type": "string"
+    },
+    "loggedIn": {
+      "type": "boolean"
+    },
+    "username": {
+      "type": "string"
+    }
+  }
+}

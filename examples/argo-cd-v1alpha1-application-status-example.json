@@ -1,0 +1,28 @@
+{
+  "conditions": [
+    "example-conditions",
+    "example-conditions"
+  ],
+  "controllerNamespace": "my-application",
+  "health": "Healthy",
+  "history": [
+    "example-history",
+    "example-history"
+  ],
+  "observedAt": "example-observedat",
+  "operationState": "example-operationstate",
+  "reconciledAt": "example-reconciledat",
+  "resourceHealthSource": "Healthy",
+  "resources": [
+    "example-resources",
+    "example-resources"
+  ],
+  "sourceHydrator": "example-sourcehydrator",
+  "sourceType": "example-sourcetype",
+  "sourceTypes": [
+    "example-sourcetypes",
+    "example-sourcetypes"
+  ],
+  "summary": "example-summary",
+  "sync": "example-sync"
+}

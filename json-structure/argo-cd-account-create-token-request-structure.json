@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-structure/argo-cd-account-create-token-request-structure.json",
+  "name": "accountCreateTokenRequest",
+  "description": "accountCreateTokenRequest schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "expiresIn": {
+      "type": "int64",
+      "name": "expiresIn represents a duration in seconds"
+    },
+    "id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-schema/argo-cd-project-detailed-projects-response-schema.json",
+  "title": "projectDetailedProjectsResponse",
+  "description": "projectDetailedProjectsResponse schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "clusters": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/v1alpha1Cluster"
+      }
+    },
+    "globalProjects": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/v1alpha1AppProject"
+      }
+    },
+    "project": {
+      "$ref": "#/definitions/v1alpha1AppProject"
+    },
+    "repositories": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/v1alpha1Repository"
+      }
+    }
+  }
+}

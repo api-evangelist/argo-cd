@@ -1,0 +1,9 @@
+{
+  "finishedAt": "example-finishedat",
+  "message": "Application is synced and healthy.",
+  "operation": "example-operation",
+  "phase": "Synced",
+  "retryCount": 355,
+  "startedAt": "example-startedat",
+  "syncResult": "example-syncresult"
+}

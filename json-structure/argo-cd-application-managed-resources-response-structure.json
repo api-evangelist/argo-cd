@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-structure/argo-cd-application-managed-resources-response-structure.json",
+  "name": "applicationManagedResourcesResponse",
+  "description": "applicationManagedResourcesResponse schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "items": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/v1alpha1ResourceDiff"
+      }
+    }
+  }
+}

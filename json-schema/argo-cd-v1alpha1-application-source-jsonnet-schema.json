@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-schema/argo-cd-v1alpha1-application-source-jsonnet-schema.json",
+  "title": "v1alpha1ApplicationSourceJsonnet",
+  "description": "v1alpha1ApplicationSourceJsonnet schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "extVars": {
+      "type": "array",
+      "title": "ExtVars is a list of Jsonnet External Variables",
+      "items": {
+        "$ref": "#/definitions/v1alpha1JsonnetVar"
+      }
+    },
+    "libs": {
+      "type": "array",
+      "title": "Additional library search dirs",
+      "items": {
+        "type": "string"
+      }
+    },
+    "tlas": {
+      "type": "array",
+      "title": "TLAS is a list of Jsonnet Top-level Arguments",
+      "items": {
+        "$ref": "#/definitions/v1alpha1JsonnetVar"
+      }
+    }
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-structure/argo-cd-v1alpha1-application-status-structure.json",
+  "name": "v1alpha1ApplicationStatus",
+  "description": "v1alpha1ApplicationStatus schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "conditions": {
+      "type": "array",
+      "name": "Conditions is a list of currently observed application conditions",
+      "items": {
+        "$ref": "#/definitions/v1alpha1ApplicationCondition"
+      }
+    },
+    "controllerNamespace": {
+      "type": "string",
+      "name": "ControllerNamespace indicates the namespace in which the application controller is located"
+    },
+    "health": {
+      "$ref": "#/definitions/v1alpha1AppHealthStatus"
+    },
+    "history": {
+      "type": "array",
+      "name": "History contains information about the application's sync history",
+      "items": {
+        "$ref": "#/definitions/v1alpha1RevisionHistory"
+      }
+    },
+    "observedAt": {
+      "$ref": "#/definitions/v1Time"
+    },
+    "operationState": {
+      "$ref": "#/definitions/v1alpha1OperationState"
+    },
+    "reconciledAt": {
+      "$ref": "#/definitions/v1Time"
+    },
+    "resourceHealthSource": {
+      "type": "string",
+      "name": "ResourceHealthSource indicates where the resource health status is stored: inline if not set or appTree"
+    },
+    "resources": {
+      "type": "array",
+      "name": "Resources is a list of Kubernetes resources managed by this application",
+      "items": {
+        "$ref": "#/definitions/applicationv1alpha1ResourceStatus"
+      }
+    },
+    "sourceHydrator": {
+      "$ref": "#/definitions/v1alpha1SourceHydratorStatus"
+    },
+    "sourceType": {
+      "type": "string",
+      "name": "SourceType specifies the type of this application"
+    },
+    "sourceTypes": {
+      "type": "array",
+      "name": "SourceTypes specifies the type of the sources included in the application",
+      "items": {
+        "type": "string"
+      }
+    },
+    "summary": {
+      "$ref": "#/definitions/v1alpha1ApplicationSummary"
+    },
+    "sync": {
+      "$ref": "#/definitions/v1alpha1SyncStatus"
+    }
+  }
+}

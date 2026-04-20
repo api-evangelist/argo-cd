@@ -1,0 +1,9 @@
+{
+  "groups": [
+    "example-groups",
+    "example-groups"
+  ],
+  "iss": "example-iss",
+  "loggedIn": true,
+  "username": "my-application"
+}

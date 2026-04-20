@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-structure/argo-cd-v1alpha1-sync-strategy-structure.json",
+  "name": "v1alpha1SyncStrategy",
+  "description": "v1alpha1SyncStrategy schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "apply": {
+      "$ref": "#/definitions/v1alpha1SyncStrategyApply"
+    },
+    "hook": {
+      "$ref": "#/definitions/v1alpha1SyncStrategyHook"
+    }
+  }
+}

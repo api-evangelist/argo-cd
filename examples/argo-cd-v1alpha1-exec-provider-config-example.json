@@ -1,0 +1,10 @@
+{
+  "apiVersion": "v2.14.0",
+  "args": [
+    "example-args",
+    "example-args"
+  ],
+  "command": "example-command",
+  "env": {},
+  "installHint": "example-installhint"
+}

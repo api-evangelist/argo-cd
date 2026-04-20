@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-schema/argo-cd-v1alpha1-application-source-directory-schema.json",
+  "title": "v1alpha1ApplicationSourceDirectory",
+  "description": "v1alpha1ApplicationSourceDirectory schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "exclude": {
+      "type": "string",
+      "title": "Exclude contains a glob pattern to match paths against that should be explicitly excluded from being used during manifest generation"
+    },
+    "include": {
+      "type": "string",
+      "title": "Include contains a glob pattern to match paths against that should be explicitly included during manifest generation"
+    },
+    "jsonnet": {
+      "$ref": "#/definitions/v1alpha1ApplicationSourceJsonnet"
+    },
+    "recurse": {
+      "type": "boolean",
+      "title": "Recurse specifies whether to scan a directory recursively for manifests"
+    }
+  }
+}

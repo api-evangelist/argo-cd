@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-schema/argo-cd-gpgkey-gnu-pg-public-key-create-response-schema.json",
+  "title": "gpgkeyGnuPGPublicKeyCreateResponse",
+  "description": "gpgkeyGnuPGPublicKeyCreateResponse schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "created": {
+      "$ref": "#/definitions/v1alpha1GnuPGPublicKeyList"
+    },
+    "skipped": {
+      "type": "array",
+      "title": "List of key IDs that haven been skipped because they already exist on the server",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-structure/argo-cd-v1alpha1-kustomize-res-id-structure.json",
+  "name": "v1alpha1KustomizeResId",
+  "description": "v1alpha1KustomizeResId schema from Argo CD API",
+  "type": "object",
+  "properties": {
+    "gvk": {
+      "$ref": "#/definitions/v1alpha1KustomizeGvk"
+    },
+    "name": {
+      "type": "string"
+    },
+    "namespace": {
+      "type": "string"
+    }
+  }
+}

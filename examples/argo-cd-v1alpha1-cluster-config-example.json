@@ -1,0 +1,10 @@
+{
+  "awsAuthConfig": "example-awsauthconfig",
+  "bearerToken": "eyJhbGciOiJIUzI1NiJ9.example",
+  "disableCompression": true,
+  "execProviderConfig": "example-execproviderconfig",
+  "password": "example-password",
+  "proxyUrl": "https://github.com/example/repo.git",
+  "tlsClientConfig": "example-tlsclientconfig",
+  "username": "my-application"
+}

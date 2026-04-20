@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/json-schema/argo-cd-v1alpha1-application-set-resource-ignore-differences-schema.json",
+  "title": "v1alpha1ApplicationSetResourceIgnoreDifferences",
+  "description": "ApplicationSetResourceIgnoreDifferences configures how the ApplicationSet controller will ignore differences in live\napplications when applying changes from generated applications.",
+  "type": "object",
+  "properties": {
+    "jqPathExpressions": {
+      "description": "JQPathExpressions is a list of JQ path expressions to fields to ignore differences for.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "jsonPointers": {
+      "description": "JSONPointers is a list of JSON pointers to fields to ignore differences for.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "name": {
+      "description": "Name is the name of the application to ignore differences for. If not specified, the rule applies to all applications.",
+      "type": "string"
+    }
+  }
+}

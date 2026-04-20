@@ -1,0 +1,62 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "argocd": "https://argoproj.github.io/schema/argo-cd/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "versionVersionMessage": "argocd:versionVersionMessage",
+    "BuildDate": {
+      "@id": "argocd:BuildDate",
+      "@type": "xsd:string"
+    },
+    "Compiler": {
+      "@id": "argocd:Compiler",
+      "@type": "xsd:string"
+    },
+    "ExtraBuildInfo": {
+      "@id": "argocd:ExtraBuildInfo",
+      "@type": "xsd:string"
+    },
+    "GitCommit": {
+      "@id": "argocd:GitCommit",
+      "@type": "xsd:string"
+    },
+    "GitTag": {
+      "@id": "argocd:GitTag",
+      "@type": "xsd:string"
+    },
+    "GitTreeState": {
+      "@id": "argocd:GitTreeState",
+      "@type": "xsd:string"
+    },
+    "GoVersion": {
+      "@id": "argocd:GoVersion",
+      "@type": "xsd:string"
+    },
+    "HelmVersion": {
+      "@id": "argocd:HelmVersion",
+      "@type": "xsd:string"
+    },
+    "JsonnetVersion": {
+      "@id": "argocd:JsonnetVersion",
+      "@type": "xsd:string"
+    },
+    "KubectlVersion": {
+      "@id": "argocd:KubectlVersion",
+      "@type": "xsd:string"
+    },
+    "KustomizeVersion": {
+      "@id": "argocd:KustomizeVersion",
+      "@type": "xsd:string"
+    },
+    "Platform": {
+      "@id": "argocd:Platform",
+      "@type": "xsd:string"
+    },
+    "Version": {
+      "@id": "argocd:Version",
+      "@type": "xsd:string"
+    }
+  }
+}

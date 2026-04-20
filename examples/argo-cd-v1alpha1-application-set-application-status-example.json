@@ -1,0 +1,11 @@
+{
+  "application": "example-application",
+  "lastTransitionTime": "example-lasttransitiontime",
+  "message": "Application is synced and healthy.",
+  "status": "Synced",
+  "step": "example-step",
+  "targetrevisions": [
+    "abc1234def5678",
+    "abc1234def5678"
+  ]
+}
