@@ -1,0 +1,13 @@
+{
+  "repo": "argo-cd",
+  "feeds": [
+    {
+      "source": "https://blog.argoproj.io/",
+      "feed_url": "https://blog.argoproj.io/feed",
+      "saved": 10,
+      "title": "Argo Project - Medium"
+    }
+  ],
+  "post_count": 10,
+  "fetched": "2026-05-03T23:22:40Z"
+}
