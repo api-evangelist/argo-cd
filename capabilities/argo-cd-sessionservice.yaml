@@ -1,0 +1,133 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Argo CD — SessionService
+  description: 'Argo CD — SessionService. 3 operations. Lead operation: Argo CD Create a New JWT for Authentication and Set
+    a Cookie if Using HTTP. Self-contained Naftiko capability covering one Argo Cd business surface.'
+  tags:
+  - Argo Cd
+  - SessionService
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    ARGO_CD_API_KEY: ARGO_CD_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: argo-cd-sessionservice
+    baseUri: ''
+    description: Argo CD — SessionService business capability. Self-contained, no shared references.
+    resources:
+    - name: api-v1-session
+      path: /api/v1/session
+      operations:
+      - name: sessionservicecreate
+        method: POST
+        description: Argo CD Create a New JWT for Authentication and Set a Cookie if Using HTTP
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: string
+          required: true
+      - name: sessionservicedelete
+        method: DELETE
+        description: Argo CD Delete an Existing JWT Cookie if Using HTTP
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: api-v1-session-userinfo
+      path: /api/v1/session/userinfo
+      operations:
+      - name: sessionservicegetuserinfo
+        method: GET
+        description: Argo CD Get the Current User's Info
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    namespace: argo-cd-sessionservice-rest
+    port: 8080
+    description: REST adapter for Argo CD — SessionService. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/api/v1/session
+      name: api-v1-session
+      description: REST surface for api-v1-session.
+      operations:
+      - method: POST
+        name: sessionservicecreate
+        description: Argo CD Create a New JWT for Authentication and Set a Cookie if Using HTTP
+        call: argo-cd-sessionservice.sessionservicecreate
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: sessionservicedelete
+        description: Argo CD Delete an Existing JWT Cookie if Using HTTP
+        call: argo-cd-sessionservice.sessionservicedelete
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/v1/session/userinfo
+      name: api-v1-session-userinfo
+      description: REST surface for api-v1-session-userinfo.
+      operations:
+      - method: GET
+        name: sessionservicegetuserinfo
+        description: Argo CD Get the Current User's Info
+        call: argo-cd-sessionservice.sessionservicegetuserinfo
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: argo-cd-sessionservice-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Argo CD — SessionService. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: argo-cd-create-new-jwt
+      description: Argo CD Create a New JWT for Authentication and Set a Cookie if Using HTTP
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: argo-cd-sessionservice.sessionservicecreate
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: argo-cd-delete-existing-jwt
+      description: Argo CD Delete an Existing JWT Cookie if Using HTTP
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: argo-cd-sessionservice.sessionservicedelete
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: argo-cd-get-current-user-s
+      description: Argo CD Get the Current User's Info
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: argo-cd-sessionservice.sessionservicegetuserinfo
+      outputParameters:
+      - type: object
+        mapping: $.

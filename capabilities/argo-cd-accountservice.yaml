@@ -1,0 +1,296 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Argo CD — AccountService
+  description: 'Argo CD — AccountService. 6 operations. Lead operation: Argo CD ListAccounts Returns the List of Accounts.
+    Self-contained Naftiko capability covering one Argo Cd business surface.'
+  tags:
+  - Argo Cd
+  - AccountService
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    ARGO_CD_API_KEY: ARGO_CD_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: argo-cd-accountservice
+    baseUri: ''
+    description: Argo CD — AccountService business capability. Self-contained, no shared references.
+    resources:
+    - name: api-v1-account
+      path: /api/v1/account
+      operations:
+      - name: accountservicelistaccounts
+        method: GET
+        description: Argo CD ListAccounts Returns the List of Accounts
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: api-v1-account-can-i-resource-action-subresource
+      path: /api/v1/account/can-i/{resource}/{action}/{subresource}
+      operations:
+      - name: accountservicecani
+        method: GET
+        description: Argo CD CanI Checks if the Current Account Has Permission to Perform an Action
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: resource
+          in: path
+          type: string
+          required: true
+        - name: action
+          in: path
+          type: string
+          required: true
+        - name: subresource
+          in: path
+          type: string
+          required: true
+    - name: api-v1-account-password
+      path: /api/v1/account/password
+      operations:
+      - name: accountserviceupdatepassword
+        method: PUT
+        description: Argo CD UpdatePassword Updates an Account's Password to a New Value
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: string
+          required: true
+    - name: api-v1-account-name
+      path: /api/v1/account/{name}
+      operations:
+      - name: accountservicegetaccount
+        method: GET
+        description: Argo CD GetAccount Returns an Account
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: name
+          in: path
+          type: string
+          required: true
+    - name: api-v1-account-name-token
+      path: /api/v1/account/{name}/token
+      operations:
+      - name: accountservicecreatetoken
+        method: POST
+        description: Argo CD CreateToken Creates a Token
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: name
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: string
+          required: true
+    - name: api-v1-account-name-token-id
+      path: /api/v1/account/{name}/token/{id}
+      operations:
+      - name: accountservicedeletetoken
+        method: DELETE
+        description: Argo CD DeleteToken Deletes a Token
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: name
+          in: path
+          type: string
+          required: true
+        - name: id
+          in: path
+          type: string
+          required: true
+  exposes:
+  - type: rest
+    namespace: argo-cd-accountservice-rest
+    port: 8080
+    description: REST adapter for Argo CD — AccountService. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/api/v1/account
+      name: api-v1-account
+      description: REST surface for api-v1-account.
+      operations:
+      - method: GET
+        name: accountservicelistaccounts
+        description: Argo CD ListAccounts Returns the List of Accounts
+        call: argo-cd-accountservice.accountservicelistaccounts
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/v1/account/can-i/{resource}/{action}/{subresource}
+      name: api-v1-account-can-i-resource-action-subresource
+      description: REST surface for api-v1-account-can-i-resource-action-subresource.
+      operations:
+      - method: GET
+        name: accountservicecani
+        description: Argo CD CanI Checks if the Current Account Has Permission to Perform an Action
+        call: argo-cd-accountservice.accountservicecani
+        with:
+          resource: rest.resource
+          action: rest.action
+          subresource: rest.subresource
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/v1/account/password
+      name: api-v1-account-password
+      description: REST surface for api-v1-account-password.
+      operations:
+      - method: PUT
+        name: accountserviceupdatepassword
+        description: Argo CD UpdatePassword Updates an Account's Password to a New Value
+        call: argo-cd-accountservice.accountserviceupdatepassword
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/v1/account/{name}
+      name: api-v1-account-name
+      description: REST surface for api-v1-account-name.
+      operations:
+      - method: GET
+        name: accountservicegetaccount
+        description: Argo CD GetAccount Returns an Account
+        call: argo-cd-accountservice.accountservicegetaccount
+        with:
+          name: rest.name
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/v1/account/{name}/token
+      name: api-v1-account-name-token
+      description: REST surface for api-v1-account-name-token.
+      operations:
+      - method: POST
+        name: accountservicecreatetoken
+        description: Argo CD CreateToken Creates a Token
+        call: argo-cd-accountservice.accountservicecreatetoken
+        with:
+          name: rest.name
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/v1/account/{name}/token/{id}
+      name: api-v1-account-name-token-id
+      description: REST surface for api-v1-account-name-token-id.
+      operations:
+      - method: DELETE
+        name: accountservicedeletetoken
+        description: Argo CD DeleteToken Deletes a Token
+        call: argo-cd-accountservice.accountservicedeletetoken
+        with:
+          name: rest.name
+          id: rest.id
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: argo-cd-accountservice-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Argo CD — AccountService. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: argo-cd-listaccounts-returns-list
+      description: Argo CD ListAccounts Returns the List of Accounts
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: argo-cd-accountservice.accountservicelistaccounts
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: argo-cd-cani-checks-if
+      description: Argo CD CanI Checks if the Current Account Has Permission to Perform an Action
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: argo-cd-accountservice.accountservicecani
+      with:
+        resource: tools.resource
+        action: tools.action
+        subresource: tools.subresource
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: argo-cd-updatepassword-updates-account-s
+      description: Argo CD UpdatePassword Updates an Account's Password to a New Value
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: argo-cd-accountservice.accountserviceupdatepassword
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: argo-cd-getaccount-returns-account
+      description: Argo CD GetAccount Returns an Account
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: argo-cd-accountservice.accountservicegetaccount
+      with:
+        name: tools.name
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: argo-cd-createtoken-creates-token
+      description: Argo CD CreateToken Creates a Token
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: argo-cd-accountservice.accountservicecreatetoken
+      with:
+        name: tools.name
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: argo-cd-deletetoken-deletes-token
+      description: Argo CD DeleteToken Deletes a Token
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: argo-cd-accountservice.accountservicedeletetoken
+      with:
+        name: tools.name
+        id: tools.id
+      outputParameters:
+      - type: object
+        mapping: $.

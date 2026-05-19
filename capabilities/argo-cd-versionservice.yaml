@@ -1,0 +1,67 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Argo CD — VersionService
+  description: 'Argo CD — VersionService. 1 operations. Lead operation: Argo CD Version Returns Version Information of the
+    API Server. Self-contained Naftiko capability covering one Argo Cd business surface.'
+  tags:
+  - Argo Cd
+  - VersionService
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    ARGO_CD_API_KEY: ARGO_CD_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: argo-cd-versionservice
+    baseUri: ''
+    description: Argo CD — VersionService business capability. Self-contained, no shared references.
+    resources:
+    - name: api-version
+      path: /api/version
+      operations:
+      - name: versionserviceversion
+        method: GET
+        description: Argo CD Version Returns Version Information of the API Server
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    namespace: argo-cd-versionservice-rest
+    port: 8080
+    description: REST adapter for Argo CD — VersionService. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/api/version
+      name: api-version
+      description: REST surface for api-version.
+      operations:
+      - method: GET
+        name: versionserviceversion
+        description: Argo CD Version Returns Version Information of the API Server
+        call: argo-cd-versionservice.versionserviceversion
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: argo-cd-versionservice-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Argo CD — VersionService. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: argo-cd-version-returns-version
+      description: Argo CD Version Returns Version Information of the API Server
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: argo-cd-versionservice.versionserviceversion
+      outputParameters:
+      - type: object
+        mapping: $.

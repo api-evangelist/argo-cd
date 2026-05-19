@@ -1,0 +1,175 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Argo CD — CertificateService
+  description: 'Argo CD — CertificateService. 3 operations. Lead operation: Argo CD List All Available Repository Certificates.
+    Self-contained Naftiko capability covering one Argo Cd business surface.'
+  tags:
+  - Argo Cd
+  - CertificateService
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    ARGO_CD_API_KEY: ARGO_CD_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: argo-cd-certificateservice
+    baseUri: ''
+    description: Argo CD — CertificateService business capability. Self-contained, no shared references.
+    resources:
+    - name: api-v1-certificates
+      path: /api/v1/certificates
+      operations:
+      - name: certificateservicelistcertificates
+        method: GET
+        description: Argo CD List All Available Repository Certificates
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: hostNamePattern
+          in: query
+          type: string
+          description: A file-glob pattern (not regular expression) the host name has to match.
+        - name: certType
+          in: query
+          type: string
+          description: The type of the certificate to match (ssh or https).
+        - name: certSubType
+          in: query
+          type: string
+          description: The sub type of the certificate to match (protocol dependent, usually only used for ssh certs).
+      - name: certificateservicecreatecertificate
+        method: POST
+        description: Argo CD Creates Repository Certificates on the Server
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: string
+          description: List of certificates to be created
+          required: true
+        - name: upsert
+          in: query
+          type: boolean
+          description: Whether to upsert already existing certificates.
+      - name: certificateservicedeletecertificate
+        method: DELETE
+        description: Argo CD Delete the Certificates That Match the RepositoryCertificateQuery
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: hostNamePattern
+          in: query
+          type: string
+          description: A file-glob pattern (not regular expression) the host name has to match.
+        - name: certType
+          in: query
+          type: string
+          description: The type of the certificate to match (ssh or https).
+        - name: certSubType
+          in: query
+          type: string
+          description: The sub type of the certificate to match (protocol dependent, usually only used for ssh certs).
+  exposes:
+  - type: rest
+    namespace: argo-cd-certificateservice-rest
+    port: 8080
+    description: REST adapter for Argo CD — CertificateService. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/api/v1/certificates
+      name: api-v1-certificates
+      description: REST surface for api-v1-certificates.
+      operations:
+      - method: GET
+        name: certificateservicelistcertificates
+        description: Argo CD List All Available Repository Certificates
+        call: argo-cd-certificateservice.certificateservicelistcertificates
+        with:
+          hostNamePattern: rest.hostNamePattern
+          certType: rest.certType
+          certSubType: rest.certSubType
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: certificateservicecreatecertificate
+        description: Argo CD Creates Repository Certificates on the Server
+        call: argo-cd-certificateservice.certificateservicecreatecertificate
+        with:
+          body: rest.body
+          upsert: rest.upsert
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: certificateservicedeletecertificate
+        description: Argo CD Delete the Certificates That Match the RepositoryCertificateQuery
+        call: argo-cd-certificateservice.certificateservicedeletecertificate
+        with:
+          hostNamePattern: rest.hostNamePattern
+          certType: rest.certType
+          certSubType: rest.certSubType
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: argo-cd-certificateservice-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Argo CD — CertificateService. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: argo-cd-list-all-available
+      description: Argo CD List All Available Repository Certificates
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: argo-cd-certificateservice.certificateservicelistcertificates
+      with:
+        hostNamePattern: tools.hostNamePattern
+        certType: tools.certType
+        certSubType: tools.certSubType
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: argo-cd-creates-repository-certificates
+      description: Argo CD Creates Repository Certificates on the Server
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: argo-cd-certificateservice.certificateservicecreatecertificate
+      with:
+        body: tools.body
+        upsert: tools.upsert
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: argo-cd-delete-certificates-that
+      description: Argo CD Delete the Certificates That Match the RepositoryCertificateQuery
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: argo-cd-certificateservice.certificateservicedeletecertificate
+      with:
+        hostNamePattern: tools.hostNamePattern
+        certType: tools.certType
+        certSubType: tools.certSubType
+      outputParameters:
+      - type: object
+        mapping: $.

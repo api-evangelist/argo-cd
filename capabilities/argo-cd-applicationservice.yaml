@@ -1,0 +1,2235 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Argo CD — ApplicationService
+  description: 'Argo CD — ApplicationService. 32 operations. Lead operation: Argo CD List Returns List of Applications. Self-contained
+    Naftiko capability covering one Argo Cd business surface.'
+  tags:
+  - Argo Cd
+  - ApplicationService
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    ARGO_CD_API_KEY: ARGO_CD_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: argo-cd-applicationservice
+    baseUri: ''
+    description: Argo CD — ApplicationService business capability. Self-contained, no shared references.
+    resources:
+    - name: api-v1-applications
+      path: /api/v1/applications
+      operations:
+      - name: applicationservicelist
+        method: GET
+        description: Argo CD List Returns List of Applications
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: name
+          in: query
+          type: string
+          description: the application's name.
+        - name: refresh
+          in: query
+          type: string
+          description: forces application reconciliation if set to 'hard'.
+        - name: projects
+          in: query
+          type: array
+          description: the project names to restrict returned list applications.
+        - name: resourceVersion
+          in: query
+          type: string
+          description: when specified with a watch call, shows changes that occur after that particular version of a resource.
+        - name: selector
+          in: query
+          type: string
+          description: the selector to restrict returned list to applications only with matched labels.
+        - name: repo
+          in: query
+          type: string
+          description: the repoURL to restrict returned list applications.
+        - name: appNamespace
+          in: query
+          type: string
+          description: the application's namespace.
+        - name: project
+          in: query
+          type: array
+          description: the project names to restrict returned list applications (legacy name for backwards-compatibility).
+      - name: applicationservicecreate
+        method: POST
+        description: Argo CD Create Creates an Application
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: string
+          required: true
+        - name: upsert
+          in: query
+          type: boolean
+        - name: validate
+          in: query
+          type: boolean
+    - name: api-v1-applications-manifestsWithFiles
+      path: /api/v1/applications/manifestsWithFiles
+      operations:
+      - name: applicationservicegetmanifestswithfiles
+        method: POST
+        description: Argo CD GetManifestsWithFiles Returns Application Manifests Using Provided Files to Generate Them
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: string
+          description: (streaming inputs)
+          required: true
+    - name: api-v1-applications-appName-server-side-diff
+      path: /api/v1/applications/{appName}/server-side-diff
+      operations:
+      - name: applicationserviceserversidediff
+        method: GET
+        description: Argo CD ServerSideDiff Performs Server-side Diff Calculation Using Dry-run Apply
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: appName
+          in: path
+          type: string
+          required: true
+        - name: appNamespace
+          in: query
+          type: string
+        - name: project
+          in: query
+          type: string
+        - name: targetManifests
+          in: query
+          type: array
+    - name: api-v1-applications-application.metadata.name
+      path: /api/v1/applications/{application.metadata.name}
+      operations:
+      - name: applicationserviceupdate
+        method: PUT
+        description: Argo CD Update Updates an Application
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: application.metadata.name
+          in: path
+          type: string
+          description: Name must be unique within a namespace. Is required when creating resources, although
+          required: true
+        - name: body
+          in: body
+          type: string
+          required: true
+        - name: validate
+          in: query
+          type: boolean
+        - name: project
+          in: query
+          type: string
+    - name: api-v1-applications-applicationName-managed-resources
+      path: /api/v1/applications/{applicationName}/managed-resources
+      operations:
+      - name: applicationservicemanagedresources
+        method: GET
+        description: Argo CD ManagedResources Returns List of Managed Resources
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: applicationName
+          in: path
+          type: string
+          required: true
+        - name: namespace
+          in: query
+          type: string
+        - name: name
+          in: query
+          type: string
+        - name: version
+          in: query
+          type: string
+        - name: group
+          in: query
+          type: string
+        - name: kind
+          in: query
+          type: string
+        - name: appNamespace
+          in: query
+          type: string
+        - name: project
+          in: query
+          type: string
+    - name: api-v1-applications-applicationName-resource-tree
+      path: /api/v1/applications/{applicationName}/resource-tree
+      operations:
+      - name: applicationserviceresourcetree
+        method: GET
+        description: Argo CD ResourceTree Returns Resource Tree
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: applicationName
+          in: path
+          type: string
+          required: true
+        - name: namespace
+          in: query
+          type: string
+        - name: name
+          in: query
+          type: string
+        - name: version
+          in: query
+          type: string
+        - name: group
+          in: query
+          type: string
+        - name: kind
+          in: query
+          type: string
+        - name: appNamespace
+          in: query
+          type: string
+        - name: project
+          in: query
+          type: string
+    - name: api-v1-applications-name
+      path: /api/v1/applications/{name}
+      operations:
+      - name: applicationserviceget
+        method: GET
+        description: Argo CD Get Returns an Application by Name
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: name
+          in: path
+          type: string
+          description: the application's name
+          required: true
+        - name: refresh
+          in: query
+          type: string
+          description: forces application reconciliation if set to 'hard'.
+        - name: projects
+          in: query
+          type: array
+          description: the project names to restrict returned list applications.
+        - name: resourceVersion
+          in: query
+          type: string
+          description: when specified with a watch call, shows changes that occur after that particular version of a resource.
+        - name: selector
+          in: query
+          type: string
+          description: the selector to restrict returned list to applications only with matched labels.
+        - name: repo
+          in: query
+          type: string
+          description: the repoURL to restrict returned list applications.
+        - name: appNamespace
+          in: query
+          type: string
+          description: the application's namespace.
+        - name: project
+          in: query
+          type: array
+          description: the project names to restrict returned list applications (legacy name for backwards-compatibility).
+      - name: applicationservicedelete
+        method: DELETE
+        description: Argo CD Delete Deletes an Application
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: name
+          in: path
+          type: string
+          required: true
+        - name: cascade
+          in: query
+          type: boolean
+        - name: propagationPolicy
+          in: query
+          type: string
+        - name: appNamespace
+          in: query
+          type: string
+        - name: project
+          in: query
+          type: string
+      - name: applicationservicepatch
+        method: PATCH
+        description: Argo CD Patch Patch an Application
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: name
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: string
+          required: true
+    - name: api-v1-applications-name-events
+      path: /api/v1/applications/{name}/events
+      operations:
+      - name: applicationservicelistresourceevents
+        method: GET
+        description: Argo CD ListResourceEvents Returns a List of Event Resources
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: name
+          in: path
+          type: string
+          required: true
+        - name: resourceNamespace
+          in: query
+          type: string
+        - name: resourceName
+          in: query
+          type: string
+        - name: resourceUID
+          in: query
+          type: string
+        - name: appNamespace
+          in: query
+          type: string
+        - name: project
+          in: query
+          type: string
+    - name: api-v1-applications-name-links
+      path: /api/v1/applications/{name}/links
+      operations:
+      - name: applicationservicelistlinks
+        method: GET
+        description: Argo CD ListLinks Returns the List of All Application Deep Links
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: name
+          in: path
+          type: string
+          required: true
+        - name: namespace
+          in: query
+          type: string
+        - name: project
+          in: query
+          type: string
+    - name: api-v1-applications-name-logs
+      path: /api/v1/applications/{name}/logs
+      operations:
+      - name: applicationservicepodlogs2
+        method: GET
+        description: Argo CD PodLogs Returns Stream of Log Entries for the Specified Pod. Pod
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: name
+          in: path
+          type: string
+          required: true
+        - name: namespace
+          in: query
+          type: string
+        - name: podName
+          in: query
+          type: string
+        - name: container
+          in: query
+          type: string
+        - name: sinceSeconds
+          in: query
+          type: string
+        - name: sinceTime.seconds
+          in: query
+          type: string
+          description: Represents seconds of UTC time since Unix epoch
+        - name: sinceTime.nanos
+          in: query
+          type: integer
+          description: Non-negative fractions of a second at nanosecond resolution. Negative
+        - name: tailLines
+          in: query
+          type: string
+        - name: follow
+          in: query
+          type: boolean
+        - name: untilTime
+          in: query
+          type: string
+        - name: filter
+          in: query
+          type: string
+        - name: kind
+          in: query
+          type: string
+        - name: group
+          in: query
+          type: string
+        - name: resourceName
+          in: query
+          type: string
+        - name: previous
+          in: query
+          type: boolean
+        - name: appNamespace
+          in: query
+          type: string
+        - name: project
+          in: query
+          type: string
+        - name: matchCase
+          in: query
+          type: boolean
+    - name: api-v1-applications-name-manifests
+      path: /api/v1/applications/{name}/manifests
+      operations:
+      - name: applicationservicegetmanifests
+        method: GET
+        description: Argo CD GetManifests Returns Application Manifests
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: name
+          in: path
+          type: string
+          required: true
+        - name: revision
+          in: query
+          type: string
+        - name: appNamespace
+          in: query
+          type: string
+        - name: project
+          in: query
+          type: string
+        - name: sourcePositions
+          in: query
+          type: array
+        - name: revisions
+          in: query
+          type: array
+        - name: noCache
+          in: query
+          type: boolean
+    - name: api-v1-applications-name-operation
+      path: /api/v1/applications/{name}/operation
+      operations:
+      - name: applicationserviceterminateoperation
+        method: DELETE
+        description: Argo CD TerminateOperation Terminates the Currently Running Operation
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: name
+          in: path
+          type: string
+          required: true
+        - name: appNamespace
+          in: query
+          type: string
+        - name: project
+          in: query
+          type: string
+    - name: api-v1-applications-name-pods-podName-logs
+      path: /api/v1/applications/{name}/pods/{podName}/logs
+      operations:
+      - name: applicationservicepodlogs
+        method: GET
+        description: Argo CD PodLogs Returns Stream of Log Entries for the Specified Pod. Pod
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: name
+          in: path
+          type: string
+          required: true
+        - name: podName
+          in: path
+          type: string
+          required: true
+        - name: namespace
+          in: query
+          type: string
+        - name: container
+          in: query
+          type: string
+        - name: sinceSeconds
+          in: query
+          type: string
+        - name: sinceTime.seconds
+          in: query
+          type: string
+          description: Represents seconds of UTC time since Unix epoch
+        - name: sinceTime.nanos
+          in: query
+          type: integer
+          description: Non-negative fractions of a second at nanosecond resolution. Negative
+        - name: tailLines
+          in: query
+          type: string
+        - name: follow
+          in: query
+          type: boolean
+        - name: untilTime
+          in: query
+          type: string
+        - name: filter
+          in: query
+          type: string
+        - name: kind
+          in: query
+          type: string
+        - name: group
+          in: query
+          type: string
+        - name: resourceName
+          in: query
+          type: string
+        - name: previous
+          in: query
+          type: boolean
+        - name: appNamespace
+          in: query
+          type: string
+        - name: project
+          in: query
+          type: string
+        - name: matchCase
+          in: query
+          type: boolean
+    - name: api-v1-applications-name-resource
+      path: /api/v1/applications/{name}/resource
+      operations:
+      - name: applicationservicegetresource
+        method: GET
+        description: Argo CD GetResource Returns Single Application Resource
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: name
+          in: path
+          type: string
+          required: true
+        - name: namespace
+          in: query
+          type: string
+        - name: resourceName
+          in: query
+          type: string
+        - name: version
+          in: query
+          type: string
+        - name: group
+          in: query
+          type: string
+        - name: kind
+          in: query
+          type: string
+        - name: appNamespace
+          in: query
+          type: string
+        - name: project
+          in: query
+          type: string
+      - name: applicationservicepatchresource
+        method: POST
+        description: Argo CD PatchResource Patch Single Application Resource
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: name
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: string
+          required: true
+        - name: namespace
+          in: query
+          type: string
+        - name: resourceName
+          in: query
+          type: string
+        - name: version
+          in: query
+          type: string
+        - name: group
+          in: query
+          type: string
+        - name: kind
+          in: query
+          type: string
+        - name: patchType
+          in: query
+          type: string
+        - name: appNamespace
+          in: query
+          type: string
+        - name: project
+          in: query
+          type: string
+      - name: applicationservicedeleteresource
+        method: DELETE
+        description: Argo CD DeleteResource Deletes a Single Application Resource
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: name
+          in: path
+          type: string
+          required: true
+        - name: namespace
+          in: query
+          type: string
+        - name: resourceName
+          in: query
+          type: string
+        - name: version
+          in: query
+          type: string
+        - name: group
+          in: query
+          type: string
+        - name: kind
+          in: query
+          type: string
+        - name: force
+          in: query
+          type: boolean
+        - name: orphan
+          in: query
+          type: boolean
+        - name: appNamespace
+          in: query
+          type: string
+        - name: project
+          in: query
+          type: string
+    - name: api-v1-applications-name-resource-actions
+      path: /api/v1/applications/{name}/resource/actions
+      operations:
+      - name: applicationservicelistresourceactions
+        method: GET
+        description: Argo CD ListResourceActions Returns List of Resource Actions
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: name
+          in: path
+          type: string
+          required: true
+        - name: namespace
+          in: query
+          type: string
+        - name: resourceName
+          in: query
+          type: string
+        - name: version
+          in: query
+          type: string
+        - name: group
+          in: query
+          type: string
+        - name: kind
+          in: query
+          type: string
+        - name: appNamespace
+          in: query
+          type: string
+        - name: project
+          in: query
+          type: string
+      - name: applicationservicerunresourceaction
+        method: POST
+        description: Argo CD RunResourceAction Runs a Resource Action
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: name
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: string
+          required: true
+        - name: namespace
+          in: query
+          type: string
+        - name: resourceName
+          in: query
+          type: string
+        - name: version
+          in: query
+          type: string
+        - name: group
+          in: query
+          type: string
+        - name: kind
+          in: query
+          type: string
+        - name: appNamespace
+          in: query
+          type: string
+        - name: project
+          in: query
+          type: string
+    - name: api-v1-applications-name-resource-actions-v2
+      path: /api/v1/applications/{name}/resource/actions/v2
+      operations:
+      - name: applicationservicerunresourceactionv2
+        method: POST
+        description: Argo CD RunResourceActionV2 Runs a Resource Action with Parameters
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: name
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: string
+          required: true
+    - name: api-v1-applications-name-resource-links
+      path: /api/v1/applications/{name}/resource/links
+      operations:
+      - name: applicationservicelistresourcelinks
+        method: GET
+        description: Argo CD ListResourceLinks Returns the List of All Resource Deep Links
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: name
+          in: path
+          type: string
+          required: true
+        - name: namespace
+          in: query
+          type: string
+        - name: resourceName
+          in: query
+          type: string
+        - name: version
+          in: query
+          type: string
+        - name: group
+          in: query
+          type: string
+        - name: kind
+          in: query
+          type: string
+        - name: appNamespace
+          in: query
+          type: string
+        - name: project
+          in: query
+          type: string
+    - name: api-v1-applications-name-revisions-revision-chartdetails
+      path: /api/v1/applications/{name}/revisions/{revision}/chartdetails
+      operations:
+      - name: applicationservicerevisionchartdetails
+        method: GET
+        description: Argo CD Get the Chart Metadata (description, Maintainers, Home) for a Specific Revision of the Application
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: name
+          in: path
+          type: string
+          description: the application's name
+          required: true
+        - name: revision
+          in: path
+          type: string
+          description: the revision of the app
+          required: true
+        - name: appNamespace
+          in: query
+          type: string
+          description: the application's namespace.
+        - name: project
+          in: query
+          type: string
+        - name: sourceIndex
+          in: query
+          type: integer
+          description: source index (for multi source apps).
+        - name: versionId
+          in: query
+          type: integer
+          description: versionId from historical data (for multi source apps).
+    - name: api-v1-applications-name-revisions-revision-metadata
+      path: /api/v1/applications/{name}/revisions/{revision}/metadata
+      operations:
+      - name: applicationservicerevisionmetadata
+        method: GET
+        description: Argo CD Get the Meta-data (author, Date, Tags, Message) for a Specific Revision of the Application
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: name
+          in: path
+          type: string
+          description: the application's name
+          required: true
+        - name: revision
+          in: path
+          type: string
+          description: the revision of the app
+          required: true
+        - name: appNamespace
+          in: query
+          type: string
+          description: the application's namespace.
+        - name: project
+          in: query
+          type: string
+        - name: sourceIndex
+          in: query
+          type: integer
+          description: source index (for multi source apps).
+        - name: versionId
+          in: query
+          type: integer
+          description: versionId from historical data (for multi source apps).
+    - name: api-v1-applications-name-revisions-revision-ocimetadata
+      path: /api/v1/applications/{name}/revisions/{revision}/ocimetadata
+      operations:
+      - name: applicationservicegetocimetadata
+        method: GET
+        description: Argo CD Get the Chart Metadata (description, Maintainers, Home) for a Specific Revision of the Application
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: name
+          in: path
+          type: string
+          description: the application's name
+          required: true
+        - name: revision
+          in: path
+          type: string
+          description: the revision of the app
+          required: true
+        - name: appNamespace
+          in: query
+          type: string
+          description: the application's namespace.
+        - name: project
+          in: query
+          type: string
+        - name: sourceIndex
+          in: query
+          type: integer
+          description: source index (for multi source apps).
+        - name: versionId
+          in: query
+          type: integer
+          description: versionId from historical data (for multi source apps).
+    - name: api-v1-applications-name-rollback
+      path: /api/v1/applications/{name}/rollback
+      operations:
+      - name: applicationservicerollback
+        method: POST
+        description: Argo CD Rollback Syncs an Application to its Target State
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: name
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: string
+          required: true
+    - name: api-v1-applications-name-spec
+      path: /api/v1/applications/{name}/spec
+      operations:
+      - name: applicationserviceupdatespec
+        method: PUT
+        description: Argo CD UpdateSpec Updates an Application Spec
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: name
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: string
+          required: true
+        - name: validate
+          in: query
+          type: boolean
+        - name: appNamespace
+          in: query
+          type: string
+        - name: project
+          in: query
+          type: string
+    - name: api-v1-applications-name-sync
+      path: /api/v1/applications/{name}/sync
+      operations:
+      - name: applicationservicesync
+        method: POST
+        description: Argo CD Sync Syncs an Application to its Target State
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: name
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: string
+          required: true
+    - name: api-v1-applications-name-syncwindows
+      path: /api/v1/applications/{name}/syncwindows
+      operations:
+      - name: applicationservicegetapplicationsyncwindows
+        method: GET
+        description: Argo CD Get Returns Sync Windows of the Application
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: name
+          in: path
+          type: string
+          required: true
+        - name: appNamespace
+          in: query
+          type: string
+        - name: project
+          in: query
+          type: string
+    - name: api-v1-stream-applications
+      path: /api/v1/stream/applications
+      operations:
+      - name: applicationservicewatch
+        method: GET
+        description: Argo CD Watch Returns Stream of Application Change Events
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: name
+          in: query
+          type: string
+          description: the application's name.
+        - name: refresh
+          in: query
+          type: string
+          description: forces application reconciliation if set to 'hard'.
+        - name: projects
+          in: query
+          type: array
+          description: the project names to restrict returned list applications.
+        - name: resourceVersion
+          in: query
+          type: string
+          description: when specified with a watch call, shows changes that occur after that particular version of a resource.
+        - name: selector
+          in: query
+          type: string
+          description: the selector to restrict returned list to applications only with matched labels.
+        - name: repo
+          in: query
+          type: string
+          description: the repoURL to restrict returned list applications.
+        - name: appNamespace
+          in: query
+          type: string
+          description: the application's namespace.
+        - name: project
+          in: query
+          type: array
+          description: the project names to restrict returned list applications (legacy name for backwards-compatibility).
+    - name: api-v1-stream-applications-applicationName-resource-tree
+      path: /api/v1/stream/applications/{applicationName}/resource-tree
+      operations:
+      - name: applicationservicewatchresourcetree
+        method: GET
+        description: Argo CD Watch Returns Stream of Application Resource Tree
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: applicationName
+          in: path
+          type: string
+          required: true
+        - name: namespace
+          in: query
+          type: string
+        - name: name
+          in: query
+          type: string
+        - name: version
+          in: query
+          type: string
+        - name: group
+          in: query
+          type: string
+        - name: kind
+          in: query
+          type: string
+        - name: appNamespace
+          in: query
+          type: string
+        - name: project
+          in: query
+          type: string
+  exposes:
+  - type: rest
+    namespace: argo-cd-applicationservice-rest
+    port: 8080
+    description: REST adapter for Argo CD — ApplicationService. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/api/v1/applications
+      name: api-v1-applications
+      description: REST surface for api-v1-applications.
+      operations:
+      - method: GET
+        name: applicationservicelist
+        description: Argo CD List Returns List of Applications
+        call: argo-cd-applicationservice.applicationservicelist
+        with:
+          name: rest.name
+          refresh: rest.refresh
+          projects: rest.projects
+          resourceVersion: rest.resourceVersion
+          selector: rest.selector
+          repo: rest.repo
+          appNamespace: rest.appNamespace
+          project: rest.project
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: applicationservicecreate
+        description: Argo CD Create Creates an Application
+        call: argo-cd-applicationservice.applicationservicecreate
+        with:
+          body: rest.body
+          upsert: rest.upsert
+          validate: rest.validate
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/v1/applications/manifestswithfiles
+      name: api-v1-applications-manifestswithfiles
+      description: REST surface for api-v1-applications-manifestsWithFiles.
+      operations:
+      - method: POST
+        name: applicationservicegetmanifestswithfiles
+        description: Argo CD GetManifestsWithFiles Returns Application Manifests Using Provided Files to Generate Them
+        call: argo-cd-applicationservice.applicationservicegetmanifestswithfiles
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/v1/applications/{appname}/server-side-diff
+      name: api-v1-applications-appname-server-side-diff
+      description: REST surface for api-v1-applications-appName-server-side-diff.
+      operations:
+      - method: GET
+        name: applicationserviceserversidediff
+        description: Argo CD ServerSideDiff Performs Server-side Diff Calculation Using Dry-run Apply
+        call: argo-cd-applicationservice.applicationserviceserversidediff
+        with:
+          appName: rest.appName
+          appNamespace: rest.appNamespace
+          project: rest.project
+          targetManifests: rest.targetManifests
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/v1/applications/{application-metadata-name}
+      name: api-v1-applications-application-metadata-name
+      description: REST surface for api-v1-applications-application.metadata.name.
+      operations:
+      - method: PUT
+        name: applicationserviceupdate
+        description: Argo CD Update Updates an Application
+        call: argo-cd-applicationservice.applicationserviceupdate
+        with:
+          application.metadata.name: rest.application.metadata.name
+          body: rest.body
+          validate: rest.validate
+          project: rest.project
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/v1/applications/{applicationname}/managed-resources
+      name: api-v1-applications-applicationname-managed-resources
+      description: REST surface for api-v1-applications-applicationName-managed-resources.
+      operations:
+      - method: GET
+        name: applicationservicemanagedresources
+        description: Argo CD ManagedResources Returns List of Managed Resources
+        call: argo-cd-applicationservice.applicationservicemanagedresources
+        with:
+          applicationName: rest.applicationName
+          namespace: rest.namespace
+          name: rest.name
+          version: rest.version
+          group: rest.group
+          kind: rest.kind
+          appNamespace: rest.appNamespace
+          project: rest.project
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/v1/applications/{applicationname}/resource-tree
+      name: api-v1-applications-applicationname-resource-tree
+      description: REST surface for api-v1-applications-applicationName-resource-tree.
+      operations:
+      - method: GET
+        name: applicationserviceresourcetree
+        description: Argo CD ResourceTree Returns Resource Tree
+        call: argo-cd-applicationservice.applicationserviceresourcetree
+        with:
+          applicationName: rest.applicationName
+          namespace: rest.namespace
+          name: rest.name
+          version: rest.version
+          group: rest.group
+          kind: rest.kind
+          appNamespace: rest.appNamespace
+          project: rest.project
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/v1/applications/{name}
+      name: api-v1-applications-name
+      description: REST surface for api-v1-applications-name.
+      operations:
+      - method: GET
+        name: applicationserviceget
+        description: Argo CD Get Returns an Application by Name
+        call: argo-cd-applicationservice.applicationserviceget
+        with:
+          name: rest.name
+          refresh: rest.refresh
+          projects: rest.projects
+          resourceVersion: rest.resourceVersion
+          selector: rest.selector
+          repo: rest.repo
+          appNamespace: rest.appNamespace
+          project: rest.project
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: applicationservicedelete
+        description: Argo CD Delete Deletes an Application
+        call: argo-cd-applicationservice.applicationservicedelete
+        with:
+          name: rest.name
+          cascade: rest.cascade
+          propagationPolicy: rest.propagationPolicy
+          appNamespace: rest.appNamespace
+          project: rest.project
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: applicationservicepatch
+        description: Argo CD Patch Patch an Application
+        call: argo-cd-applicationservice.applicationservicepatch
+        with:
+          name: rest.name
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/v1/applications/{name}/events
+      name: api-v1-applications-name-events
+      description: REST surface for api-v1-applications-name-events.
+      operations:
+      - method: GET
+        name: applicationservicelistresourceevents
+        description: Argo CD ListResourceEvents Returns a List of Event Resources
+        call: argo-cd-applicationservice.applicationservicelistresourceevents
+        with:
+          name: rest.name
+          resourceNamespace: rest.resourceNamespace
+          resourceName: rest.resourceName
+          resourceUID: rest.resourceUID
+          appNamespace: rest.appNamespace
+          project: rest.project
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/v1/applications/{name}/links
+      name: api-v1-applications-name-links
+      description: REST surface for api-v1-applications-name-links.
+      operations:
+      - method: GET
+        name: applicationservicelistlinks
+        description: Argo CD ListLinks Returns the List of All Application Deep Links
+        call: argo-cd-applicationservice.applicationservicelistlinks
+        with:
+          name: rest.name
+          namespace: rest.namespace
+          project: rest.project
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/v1/applications/{name}/logs
+      name: api-v1-applications-name-logs
+      description: REST surface for api-v1-applications-name-logs.
+      operations:
+      - method: GET
+        name: applicationservicepodlogs2
+        description: Argo CD PodLogs Returns Stream of Log Entries for the Specified Pod. Pod
+        call: argo-cd-applicationservice.applicationservicepodlogs2
+        with:
+          name: rest.name
+          namespace: rest.namespace
+          podName: rest.podName
+          container: rest.container
+          sinceSeconds: rest.sinceSeconds
+          sinceTime.seconds: rest.sinceTime.seconds
+          sinceTime.nanos: rest.sinceTime.nanos
+          tailLines: rest.tailLines
+          follow: rest.follow
+          untilTime: rest.untilTime
+          filter: rest.filter
+          kind: rest.kind
+          group: rest.group
+          resourceName: rest.resourceName
+          previous: rest.previous
+          appNamespace: rest.appNamespace
+          project: rest.project
+          matchCase: rest.matchCase
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/v1/applications/{name}/manifests
+      name: api-v1-applications-name-manifests
+      description: REST surface for api-v1-applications-name-manifests.
+      operations:
+      - method: GET
+        name: applicationservicegetmanifests
+        description: Argo CD GetManifests Returns Application Manifests
+        call: argo-cd-applicationservice.applicationservicegetmanifests
+        with:
+          name: rest.name
+          revision: rest.revision
+          appNamespace: rest.appNamespace
+          project: rest.project
+          sourcePositions: rest.sourcePositions
+          revisions: rest.revisions
+          noCache: rest.noCache
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/v1/applications/{name}/operation
+      name: api-v1-applications-name-operation
+      description: REST surface for api-v1-applications-name-operation.
+      operations:
+      - method: DELETE
+        name: applicationserviceterminateoperation
+        description: Argo CD TerminateOperation Terminates the Currently Running Operation
+        call: argo-cd-applicationservice.applicationserviceterminateoperation
+        with:
+          name: rest.name
+          appNamespace: rest.appNamespace
+          project: rest.project
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/v1/applications/{name}/pods/{podname}/logs
+      name: api-v1-applications-name-pods-podname-logs
+      description: REST surface for api-v1-applications-name-pods-podName-logs.
+      operations:
+      - method: GET
+        name: applicationservicepodlogs
+        description: Argo CD PodLogs Returns Stream of Log Entries for the Specified Pod. Pod
+        call: argo-cd-applicationservice.applicationservicepodlogs
+        with:
+          name: rest.name
+          podName: rest.podName
+          namespace: rest.namespace
+          container: rest.container
+          sinceSeconds: rest.sinceSeconds
+          sinceTime.seconds: rest.sinceTime.seconds
+          sinceTime.nanos: rest.sinceTime.nanos
+          tailLines: rest.tailLines
+          follow: rest.follow
+          untilTime: rest.untilTime
+          filter: rest.filter
+          kind: rest.kind
+          group: rest.group
+          resourceName: rest.resourceName
+          previous: rest.previous
+          appNamespace: rest.appNamespace
+          project: rest.project
+          matchCase: rest.matchCase
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/v1/applications/{name}/resource
+      name: api-v1-applications-name-resource
+      description: REST surface for api-v1-applications-name-resource.
+      operations:
+      - method: GET
+        name: applicationservicegetresource
+        description: Argo CD GetResource Returns Single Application Resource
+        call: argo-cd-applicationservice.applicationservicegetresource
+        with:
+          name: rest.name
+          namespace: rest.namespace
+          resourceName: rest.resourceName
+          version: rest.version
+          group: rest.group
+          kind: rest.kind
+          appNamespace: rest.appNamespace
+          project: rest.project
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: applicationservicepatchresource
+        description: Argo CD PatchResource Patch Single Application Resource
+        call: argo-cd-applicationservice.applicationservicepatchresource
+        with:
+          name: rest.name
+          body: rest.body
+          namespace: rest.namespace
+          resourceName: rest.resourceName
+          version: rest.version
+          group: rest.group
+          kind: rest.kind
+          patchType: rest.patchType
+          appNamespace: rest.appNamespace
+          project: rest.project
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: applicationservicedeleteresource
+        description: Argo CD DeleteResource Deletes a Single Application Resource
+        call: argo-cd-applicationservice.applicationservicedeleteresource
+        with:
+          name: rest.name
+          namespace: rest.namespace
+          resourceName: rest.resourceName
+          version: rest.version
+          group: rest.group
+          kind: rest.kind
+          force: rest.force
+          orphan: rest.orphan
+          appNamespace: rest.appNamespace
+          project: rest.project
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/v1/applications/{name}/resource/actions
+      name: api-v1-applications-name-resource-actions
+      description: REST surface for api-v1-applications-name-resource-actions.
+      operations:
+      - method: GET
+        name: applicationservicelistresourceactions
+        description: Argo CD ListResourceActions Returns List of Resource Actions
+        call: argo-cd-applicationservice.applicationservicelistresourceactions
+        with:
+          name: rest.name
+          namespace: rest.namespace
+          resourceName: rest.resourceName
+          version: rest.version
+          group: rest.group
+          kind: rest.kind
+          appNamespace: rest.appNamespace
+          project: rest.project
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: applicationservicerunresourceaction
+        description: Argo CD RunResourceAction Runs a Resource Action
+        call: argo-cd-applicationservice.applicationservicerunresourceaction
+        with:
+          name: rest.name
+          body: rest.body
+          namespace: rest.namespace
+          resourceName: rest.resourceName
+          version: rest.version
+          group: rest.group
+          kind: rest.kind
+          appNamespace: rest.appNamespace
+          project: rest.project
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/v1/applications/{name}/resource/actions/v2
+      name: api-v1-applications-name-resource-actions-v2
+      description: REST surface for api-v1-applications-name-resource-actions-v2.
+      operations:
+      - method: POST
+        name: applicationservicerunresourceactionv2
+        description: Argo CD RunResourceActionV2 Runs a Resource Action with Parameters
+        call: argo-cd-applicationservice.applicationservicerunresourceactionv2
+        with:
+          name: rest.name
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/v1/applications/{name}/resource/links
+      name: api-v1-applications-name-resource-links
+      description: REST surface for api-v1-applications-name-resource-links.
+      operations:
+      - method: GET
+        name: applicationservicelistresourcelinks
+        description: Argo CD ListResourceLinks Returns the List of All Resource Deep Links
+        call: argo-cd-applicationservice.applicationservicelistresourcelinks
+        with:
+          name: rest.name
+          namespace: rest.namespace
+          resourceName: rest.resourceName
+          version: rest.version
+          group: rest.group
+          kind: rest.kind
+          appNamespace: rest.appNamespace
+          project: rest.project
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/v1/applications/{name}/revisions/{revision}/chartdetails
+      name: api-v1-applications-name-revisions-revision-chartdetails
+      description: REST surface for api-v1-applications-name-revisions-revision-chartdetails.
+      operations:
+      - method: GET
+        name: applicationservicerevisionchartdetails
+        description: Argo CD Get the Chart Metadata (description, Maintainers, Home) for a Specific Revision of the Application
+        call: argo-cd-applicationservice.applicationservicerevisionchartdetails
+        with:
+          name: rest.name
+          revision: rest.revision
+          appNamespace: rest.appNamespace
+          project: rest.project
+          sourceIndex: rest.sourceIndex
+          versionId: rest.versionId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/v1/applications/{name}/revisions/{revision}/metadata
+      name: api-v1-applications-name-revisions-revision-metadata
+      description: REST surface for api-v1-applications-name-revisions-revision-metadata.
+      operations:
+      - method: GET
+        name: applicationservicerevisionmetadata
+        description: Argo CD Get the Meta-data (author, Date, Tags, Message) for a Specific Revision of the Application
+        call: argo-cd-applicationservice.applicationservicerevisionmetadata
+        with:
+          name: rest.name
+          revision: rest.revision
+          appNamespace: rest.appNamespace
+          project: rest.project
+          sourceIndex: rest.sourceIndex
+          versionId: rest.versionId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/v1/applications/{name}/revisions/{revision}/ocimetadata
+      name: api-v1-applications-name-revisions-revision-ocimetadata
+      description: REST surface for api-v1-applications-name-revisions-revision-ocimetadata.
+      operations:
+      - method: GET
+        name: applicationservicegetocimetadata
+        description: Argo CD Get the Chart Metadata (description, Maintainers, Home) for a Specific Revision of the Application
+        call: argo-cd-applicationservice.applicationservicegetocimetadata
+        with:
+          name: rest.name
+          revision: rest.revision
+          appNamespace: rest.appNamespace
+          project: rest.project
+          sourceIndex: rest.sourceIndex
+          versionId: rest.versionId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/v1/applications/{name}/rollback
+      name: api-v1-applications-name-rollback
+      description: REST surface for api-v1-applications-name-rollback.
+      operations:
+      - method: POST
+        name: applicationservicerollback
+        description: Argo CD Rollback Syncs an Application to its Target State
+        call: argo-cd-applicationservice.applicationservicerollback
+        with:
+          name: rest.name
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/v1/applications/{name}/spec
+      name: api-v1-applications-name-spec
+      description: REST surface for api-v1-applications-name-spec.
+      operations:
+      - method: PUT
+        name: applicationserviceupdatespec
+        description: Argo CD UpdateSpec Updates an Application Spec
+        call: argo-cd-applicationservice.applicationserviceupdatespec
+        with:
+          name: rest.name
+          body: rest.body
+          validate: rest.validate
+          appNamespace: rest.appNamespace
+          project: rest.project
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/v1/applications/{name}/sync
+      name: api-v1-applications-name-sync
+      description: REST surface for api-v1-applications-name-sync.
+      operations:
+      - method: POST
+        name: applicationservicesync
+        description: Argo CD Sync Syncs an Application to its Target State
+        call: argo-cd-applicationservice.applicationservicesync
+        with:
+          name: rest.name
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/v1/applications/{name}/syncwindows
+      name: api-v1-applications-name-syncwindows
+      description: REST surface for api-v1-applications-name-syncwindows.
+      operations:
+      - method: GET
+        name: applicationservicegetapplicationsyncwindows
+        description: Argo CD Get Returns Sync Windows of the Application
+        call: argo-cd-applicationservice.applicationservicegetapplicationsyncwindows
+        with:
+          name: rest.name
+          appNamespace: rest.appNamespace
+          project: rest.project
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/v1/stream/applications
+      name: api-v1-stream-applications
+      description: REST surface for api-v1-stream-applications.
+      operations:
+      - method: GET
+        name: applicationservicewatch
+        description: Argo CD Watch Returns Stream of Application Change Events
+        call: argo-cd-applicationservice.applicationservicewatch
+        with:
+          name: rest.name
+          refresh: rest.refresh
+          projects: rest.projects
+          resourceVersion: rest.resourceVersion
+          selector: rest.selector
+          repo: rest.repo
+          appNamespace: rest.appNamespace
+          project: rest.project
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/v1/stream/applications/{applicationname}/resource-tree
+      name: api-v1-stream-applications-applicationname-resource-tree
+      description: REST surface for api-v1-stream-applications-applicationName-resource-tree.
+      operations:
+      - method: GET
+        name: applicationservicewatchresourcetree
+        description: Argo CD Watch Returns Stream of Application Resource Tree
+        call: argo-cd-applicationservice.applicationservicewatchresourcetree
+        with:
+          applicationName: rest.applicationName
+          namespace: rest.namespace
+          name: rest.name
+          version: rest.version
+          group: rest.group
+          kind: rest.kind
+          appNamespace: rest.appNamespace
+          project: rest.project
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: argo-cd-applicationservice-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Argo CD — ApplicationService. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: argo-cd-list-returns-list
+      description: Argo CD List Returns List of Applications
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: argo-cd-applicationservice.applicationservicelist
+      with:
+        name: tools.name
+        refresh: tools.refresh
+        projects: tools.projects
+        resourceVersion: tools.resourceVersion
+        selector: tools.selector
+        repo: tools.repo
+        appNamespace: tools.appNamespace
+        project: tools.project
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: argo-cd-create-creates-application
+      description: Argo CD Create Creates an Application
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: argo-cd-applicationservice.applicationservicecreate
+      with:
+        body: tools.body
+        upsert: tools.upsert
+        validate: tools.validate
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: argo-cd-getmanifestswithfiles-returns-application
+      description: Argo CD GetManifestsWithFiles Returns Application Manifests Using Provided Files to Generate Them
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: argo-cd-applicationservice.applicationservicegetmanifestswithfiles
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: argo-cd-serversidediff-performs-server
+      description: Argo CD ServerSideDiff Performs Server-side Diff Calculation Using Dry-run Apply
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: argo-cd-applicationservice.applicationserviceserversidediff
+      with:
+        appName: tools.appName
+        appNamespace: tools.appNamespace
+        project: tools.project
+        targetManifests: tools.targetManifests
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: argo-cd-update-updates-application
+      description: Argo CD Update Updates an Application
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: argo-cd-applicationservice.applicationserviceupdate
+      with:
+        application.metadata.name: tools.application.metadata.name
+        body: tools.body
+        validate: tools.validate
+        project: tools.project
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: argo-cd-managedresources-returns-list
+      description: Argo CD ManagedResources Returns List of Managed Resources
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: argo-cd-applicationservice.applicationservicemanagedresources
+      with:
+        applicationName: tools.applicationName
+        namespace: tools.namespace
+        name: tools.name
+        version: tools.version
+        group: tools.group
+        kind: tools.kind
+        appNamespace: tools.appNamespace
+        project: tools.project
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: argo-cd-resourcetree-returns-resource
+      description: Argo CD ResourceTree Returns Resource Tree
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: argo-cd-applicationservice.applicationserviceresourcetree
+      with:
+        applicationName: tools.applicationName
+        namespace: tools.namespace
+        name: tools.name
+        version: tools.version
+        group: tools.group
+        kind: tools.kind
+        appNamespace: tools.appNamespace
+        project: tools.project
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: argo-cd-get-returns-application
+      description: Argo CD Get Returns an Application by Name
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: argo-cd-applicationservice.applicationserviceget
+      with:
+        name: tools.name
+        refresh: tools.refresh
+        projects: tools.projects
+        resourceVersion: tools.resourceVersion
+        selector: tools.selector
+        repo: tools.repo
+        appNamespace: tools.appNamespace
+        project: tools.project
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: argo-cd-delete-deletes-application
+      description: Argo CD Delete Deletes an Application
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: argo-cd-applicationservice.applicationservicedelete
+      with:
+        name: tools.name
+        cascade: tools.cascade
+        propagationPolicy: tools.propagationPolicy
+        appNamespace: tools.appNamespace
+        project: tools.project
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: argo-cd-patch-patch-application
+      description: Argo CD Patch Patch an Application
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: argo-cd-applicationservice.applicationservicepatch
+      with:
+        name: tools.name
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: argo-cd-listresourceevents-returns-list
+      description: Argo CD ListResourceEvents Returns a List of Event Resources
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: argo-cd-applicationservice.applicationservicelistresourceevents
+      with:
+        name: tools.name
+        resourceNamespace: tools.resourceNamespace
+        resourceName: tools.resourceName
+        resourceUID: tools.resourceUID
+        appNamespace: tools.appNamespace
+        project: tools.project
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: argo-cd-listlinks-returns-list
+      description: Argo CD ListLinks Returns the List of All Application Deep Links
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: argo-cd-applicationservice.applicationservicelistlinks
+      with:
+        name: tools.name
+        namespace: tools.namespace
+        project: tools.project
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: argo-cd-podlogs-returns-stream
+      description: Argo CD PodLogs Returns Stream of Log Entries for the Specified Pod. Pod
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: argo-cd-applicationservice.applicationservicepodlogs2
+      with:
+        name: tools.name
+        namespace: tools.namespace
+        podName: tools.podName
+        container: tools.container
+        sinceSeconds: tools.sinceSeconds
+        sinceTime.seconds: tools.sinceTime.seconds
+        sinceTime.nanos: tools.sinceTime.nanos
+        tailLines: tools.tailLines
+        follow: tools.follow
+        untilTime: tools.untilTime
+        filter: tools.filter
+        kind: tools.kind
+        group: tools.group
+        resourceName: tools.resourceName
+        previous: tools.previous
+        appNamespace: tools.appNamespace
+        project: tools.project
+        matchCase: tools.matchCase
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: argo-cd-getmanifests-returns-application
+      description: Argo CD GetManifests Returns Application Manifests
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: argo-cd-applicationservice.applicationservicegetmanifests
+      with:
+        name: tools.name
+        revision: tools.revision
+        appNamespace: tools.appNamespace
+        project: tools.project
+        sourcePositions: tools.sourcePositions
+        revisions: tools.revisions
+        noCache: tools.noCache
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: argo-cd-terminateoperation-terminates-currently
+      description: Argo CD TerminateOperation Terminates the Currently Running Operation
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: argo-cd-applicationservice.applicationserviceterminateoperation
+      with:
+        name: tools.name
+        appNamespace: tools.appNamespace
+        project: tools.project
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: argo-cd-podlogs-returns-stream-2
+      description: Argo CD PodLogs Returns Stream of Log Entries for the Specified Pod. Pod
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: argo-cd-applicationservice.applicationservicepodlogs
+      with:
+        name: tools.name
+        podName: tools.podName
+        namespace: tools.namespace
+        container: tools.container
+        sinceSeconds: tools.sinceSeconds
+        sinceTime.seconds: tools.sinceTime.seconds
+        sinceTime.nanos: tools.sinceTime.nanos
+        tailLines: tools.tailLines
+        follow: tools.follow
+        untilTime: tools.untilTime
+        filter: tools.filter
+        kind: tools.kind
+        group: tools.group
+        resourceName: tools.resourceName
+        previous: tools.previous
+        appNamespace: tools.appNamespace
+        project: tools.project
+        matchCase: tools.matchCase
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: argo-cd-getresource-returns-single
+      description: Argo CD GetResource Returns Single Application Resource
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: argo-cd-applicationservice.applicationservicegetresource
+      with:
+        name: tools.name
+        namespace: tools.namespace
+        resourceName: tools.resourceName
+        version: tools.version
+        group: tools.group
+        kind: tools.kind
+        appNamespace: tools.appNamespace
+        project: tools.project
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: argo-cd-patchresource-patch-single
+      description: Argo CD PatchResource Patch Single Application Resource
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: argo-cd-applicationservice.applicationservicepatchresource
+      with:
+        name: tools.name
+        body: tools.body
+        namespace: tools.namespace
+        resourceName: tools.resourceName
+        version: tools.version
+        group: tools.group
+        kind: tools.kind
+        patchType: tools.patchType
+        appNamespace: tools.appNamespace
+        project: tools.project
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: argo-cd-deleteresource-deletes-single
+      description: Argo CD DeleteResource Deletes a Single Application Resource
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: argo-cd-applicationservice.applicationservicedeleteresource
+      with:
+        name: tools.name
+        namespace: tools.namespace
+        resourceName: tools.resourceName
+        version: tools.version
+        group: tools.group
+        kind: tools.kind
+        force: tools.force
+        orphan: tools.orphan
+        appNamespace: tools.appNamespace
+        project: tools.project
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: argo-cd-listresourceactions-returns-list
+      description: Argo CD ListResourceActions Returns List of Resource Actions
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: argo-cd-applicationservice.applicationservicelistresourceactions
+      with:
+        name: tools.name
+        namespace: tools.namespace
+        resourceName: tools.resourceName
+        version: tools.version
+        group: tools.group
+        kind: tools.kind
+        appNamespace: tools.appNamespace
+        project: tools.project
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: argo-cd-runresourceaction-runs-resource
+      description: Argo CD RunResourceAction Runs a Resource Action
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: argo-cd-applicationservice.applicationservicerunresourceaction
+      with:
+        name: tools.name
+        body: tools.body
+        namespace: tools.namespace
+        resourceName: tools.resourceName
+        version: tools.version
+        group: tools.group
+        kind: tools.kind
+        appNamespace: tools.appNamespace
+        project: tools.project
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: argo-cd-runresourceactionv2-runs-resource
+      description: Argo CD RunResourceActionV2 Runs a Resource Action with Parameters
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: argo-cd-applicationservice.applicationservicerunresourceactionv2
+      with:
+        name: tools.name
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: argo-cd-listresourcelinks-returns-list
+      description: Argo CD ListResourceLinks Returns the List of All Resource Deep Links
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: argo-cd-applicationservice.applicationservicelistresourcelinks
+      with:
+        name: tools.name
+        namespace: tools.namespace
+        resourceName: tools.resourceName
+        version: tools.version
+        group: tools.group
+        kind: tools.kind
+        appNamespace: tools.appNamespace
+        project: tools.project
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: argo-cd-get-chart-metadata
+      description: Argo CD Get the Chart Metadata (description, Maintainers, Home) for a Specific Revision of the Application
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: argo-cd-applicationservice.applicationservicerevisionchartdetails
+      with:
+        name: tools.name
+        revision: tools.revision
+        appNamespace: tools.appNamespace
+        project: tools.project
+        sourceIndex: tools.sourceIndex
+        versionId: tools.versionId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: argo-cd-get-meta-data
+      description: Argo CD Get the Meta-data (author, Date, Tags, Message) for a Specific Revision of the Application
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: argo-cd-applicationservice.applicationservicerevisionmetadata
+      with:
+        name: tools.name
+        revision: tools.revision
+        appNamespace: tools.appNamespace
+        project: tools.project
+        sourceIndex: tools.sourceIndex
+        versionId: tools.versionId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: argo-cd-get-chart-metadata-2
+      description: Argo CD Get the Chart Metadata (description, Maintainers, Home) for a Specific Revision of the Application
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: argo-cd-applicationservice.applicationservicegetocimetadata
+      with:
+        name: tools.name
+        revision: tools.revision
+        appNamespace: tools.appNamespace
+        project: tools.project
+        sourceIndex: tools.sourceIndex
+        versionId: tools.versionId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: argo-cd-rollback-syncs-application
+      description: Argo CD Rollback Syncs an Application to its Target State
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: argo-cd-applicationservice.applicationservicerollback
+      with:
+        name: tools.name
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: argo-cd-updatespec-updates-application
+      description: Argo CD UpdateSpec Updates an Application Spec
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: argo-cd-applicationservice.applicationserviceupdatespec
+      with:
+        name: tools.name
+        body: tools.body
+        validate: tools.validate
+        appNamespace: tools.appNamespace
+        project: tools.project
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: argo-cd-sync-syncs-application
+      description: Argo CD Sync Syncs an Application to its Target State
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: argo-cd-applicationservice.applicationservicesync
+      with:
+        name: tools.name
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: argo-cd-get-returns-sync
+      description: Argo CD Get Returns Sync Windows of the Application
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: argo-cd-applicationservice.applicationservicegetapplicationsyncwindows
+      with:
+        name: tools.name
+        appNamespace: tools.appNamespace
+        project: tools.project
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: argo-cd-watch-returns-stream
+      description: Argo CD Watch Returns Stream of Application Change Events
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: argo-cd-applicationservice.applicationservicewatch
+      with:
+        name: tools.name
+        refresh: tools.refresh
+        projects: tools.projects
+        resourceVersion: tools.resourceVersion
+        selector: tools.selector
+        repo: tools.repo
+        appNamespace: tools.appNamespace
+        project: tools.project
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: argo-cd-watch-returns-stream-2
+      description: Argo CD Watch Returns Stream of Application Resource Tree
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: argo-cd-applicationservice.applicationservicewatchresourcetree
+      with:
+        applicationName: tools.applicationName
+        namespace: tools.namespace
+        name: tools.name
+        version: tools.version
+        group: tools.group
+        kind: tools.kind
+        appNamespace: tools.appNamespace
+        project: tools.project
+      outputParameters:
+      - type: object
+        mapping: $.

@@ -1,0 +1,551 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Argo CD — ProjectService
+  description: 'Argo CD — ProjectService. 12 operations. Lead operation: Argo CD List Returns List of Projects. Self-contained
+    Naftiko capability covering one Argo Cd business surface.'
+  tags:
+  - Argo Cd
+  - ProjectService
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    ARGO_CD_API_KEY: ARGO_CD_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: argo-cd-projectservice
+    baseUri: ''
+    description: Argo CD — ProjectService business capability. Self-contained, no shared references.
+    resources:
+    - name: api-v1-projects
+      path: /api/v1/projects
+      operations:
+      - name: projectservicelist
+        method: GET
+        description: Argo CD List Returns List of Projects
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: name
+          in: query
+          type: string
+      - name: projectservicecreate
+        method: POST
+        description: Argo CD Create a New Project
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: string
+          required: true
+    - name: api-v1-projects-name
+      path: /api/v1/projects/{name}
+      operations:
+      - name: projectserviceget
+        method: GET
+        description: Argo CD Get Returns a Project by Name
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: name
+          in: path
+          type: string
+          required: true
+      - name: projectservicedelete
+        method: DELETE
+        description: Argo CD Delete Deletes a Project
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: name
+          in: path
+          type: string
+          required: true
+    - name: api-v1-projects-name-detailed
+      path: /api/v1/projects/{name}/detailed
+      operations:
+      - name: projectservicegetdetailedproject
+        method: GET
+        description: Argo CD GetDetailedProject Returns a Project That Include Project, Global Project and Scoped Resources
+          by Name
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: name
+          in: path
+          type: string
+          required: true
+    - name: api-v1-projects-name-events
+      path: /api/v1/projects/{name}/events
+      operations:
+      - name: projectservicelistevents
+        method: GET
+        description: Argo CD ListEvents Returns a List of Project Events
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: name
+          in: path
+          type: string
+          required: true
+    - name: api-v1-projects-name-globalprojects
+      path: /api/v1/projects/{name}/globalprojects
+      operations:
+      - name: projectservicegetglobalprojects
+        method: GET
+        description: Argo CD Get Returns a Virtual Project by Name
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: name
+          in: path
+          type: string
+          required: true
+    - name: api-v1-projects-name-links
+      path: /api/v1/projects/{name}/links
+      operations:
+      - name: projectservicelistlinks
+        method: GET
+        description: Argo CD ListLinks Returns All Deep Links for the Particular Project
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: name
+          in: path
+          type: string
+          required: true
+    - name: api-v1-projects-name-syncwindows
+      path: /api/v1/projects/{name}/syncwindows
+      operations:
+      - name: projectservicegetsyncwindowsstate
+        method: GET
+        description: Argo CD GetSchedulesState Returns True if There Are Any Active Sync SyncWindows
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: name
+          in: path
+          type: string
+          required: true
+    - name: api-v1-projects-project.metadata.name
+      path: /api/v1/projects/{project.metadata.name}
+      operations:
+      - name: projectserviceupdate
+        method: PUT
+        description: Argo CD Update Updates a Project
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: project.metadata.name
+          in: path
+          type: string
+          description: Name must be unique within a namespace. Is required when creating resources, although
+          required: true
+        - name: body
+          in: body
+          type: string
+          required: true
+    - name: api-v1-projects-project-roles-role-token
+      path: /api/v1/projects/{project}/roles/{role}/token
+      operations:
+      - name: projectservicecreatetoken
+        method: POST
+        description: Argo CD Create a New Project Token
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: project
+          in: path
+          type: string
+          required: true
+        - name: role
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: string
+          required: true
+    - name: api-v1-projects-project-roles-role-token-iat
+      path: /api/v1/projects/{project}/roles/{role}/token/{iat}
+      operations:
+      - name: projectservicedeletetoken
+        method: DELETE
+        description: Argo CD Delete a New Project Token
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: project
+          in: path
+          type: string
+          required: true
+        - name: role
+          in: path
+          type: string
+          required: true
+        - name: iat
+          in: path
+          type: string
+          required: true
+        - name: id
+          in: query
+          type: string
+  exposes:
+  - type: rest
+    namespace: argo-cd-projectservice-rest
+    port: 8080
+    description: REST adapter for Argo CD — ProjectService. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/api/v1/projects
+      name: api-v1-projects
+      description: REST surface for api-v1-projects.
+      operations:
+      - method: GET
+        name: projectservicelist
+        description: Argo CD List Returns List of Projects
+        call: argo-cd-projectservice.projectservicelist
+        with:
+          name: rest.name
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: projectservicecreate
+        description: Argo CD Create a New Project
+        call: argo-cd-projectservice.projectservicecreate
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/v1/projects/{name}
+      name: api-v1-projects-name
+      description: REST surface for api-v1-projects-name.
+      operations:
+      - method: GET
+        name: projectserviceget
+        description: Argo CD Get Returns a Project by Name
+        call: argo-cd-projectservice.projectserviceget
+        with:
+          name: rest.name
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: projectservicedelete
+        description: Argo CD Delete Deletes a Project
+        call: argo-cd-projectservice.projectservicedelete
+        with:
+          name: rest.name
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/v1/projects/{name}/detailed
+      name: api-v1-projects-name-detailed
+      description: REST surface for api-v1-projects-name-detailed.
+      operations:
+      - method: GET
+        name: projectservicegetdetailedproject
+        description: Argo CD GetDetailedProject Returns a Project That Include Project, Global Project and Scoped Resources
+          by Name
+        call: argo-cd-projectservice.projectservicegetdetailedproject
+        with:
+          name: rest.name
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/v1/projects/{name}/events
+      name: api-v1-projects-name-events
+      description: REST surface for api-v1-projects-name-events.
+      operations:
+      - method: GET
+        name: projectservicelistevents
+        description: Argo CD ListEvents Returns a List of Project Events
+        call: argo-cd-projectservice.projectservicelistevents
+        with:
+          name: rest.name
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/v1/projects/{name}/globalprojects
+      name: api-v1-projects-name-globalprojects
+      description: REST surface for api-v1-projects-name-globalprojects.
+      operations:
+      - method: GET
+        name: projectservicegetglobalprojects
+        description: Argo CD Get Returns a Virtual Project by Name
+        call: argo-cd-projectservice.projectservicegetglobalprojects
+        with:
+          name: rest.name
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/v1/projects/{name}/links
+      name: api-v1-projects-name-links
+      description: REST surface for api-v1-projects-name-links.
+      operations:
+      - method: GET
+        name: projectservicelistlinks
+        description: Argo CD ListLinks Returns All Deep Links for the Particular Project
+        call: argo-cd-projectservice.projectservicelistlinks
+        with:
+          name: rest.name
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/v1/projects/{name}/syncwindows
+      name: api-v1-projects-name-syncwindows
+      description: REST surface for api-v1-projects-name-syncwindows.
+      operations:
+      - method: GET
+        name: projectservicegetsyncwindowsstate
+        description: Argo CD GetSchedulesState Returns True if There Are Any Active Sync SyncWindows
+        call: argo-cd-projectservice.projectservicegetsyncwindowsstate
+        with:
+          name: rest.name
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/v1/projects/{project-metadata-name}
+      name: api-v1-projects-project-metadata-name
+      description: REST surface for api-v1-projects-project.metadata.name.
+      operations:
+      - method: PUT
+        name: projectserviceupdate
+        description: Argo CD Update Updates a Project
+        call: argo-cd-projectservice.projectserviceupdate
+        with:
+          project.metadata.name: rest.project.metadata.name
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/v1/projects/{project}/roles/{role}/token
+      name: api-v1-projects-project-roles-role-token
+      description: REST surface for api-v1-projects-project-roles-role-token.
+      operations:
+      - method: POST
+        name: projectservicecreatetoken
+        description: Argo CD Create a New Project Token
+        call: argo-cd-projectservice.projectservicecreatetoken
+        with:
+          project: rest.project
+          role: rest.role
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/api/v1/projects/{project}/roles/{role}/token/{iat}
+      name: api-v1-projects-project-roles-role-token-iat
+      description: REST surface for api-v1-projects-project-roles-role-token-iat.
+      operations:
+      - method: DELETE
+        name: projectservicedeletetoken
+        description: Argo CD Delete a New Project Token
+        call: argo-cd-projectservice.projectservicedeletetoken
+        with:
+          project: rest.project
+          role: rest.role
+          iat: rest.iat
+          id: rest.id
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: argo-cd-projectservice-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Argo CD — ProjectService. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: argo-cd-list-returns-list
+      description: Argo CD List Returns List of Projects
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: argo-cd-projectservice.projectservicelist
+      with:
+        name: tools.name
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: argo-cd-create-new-project
+      description: Argo CD Create a New Project
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: argo-cd-projectservice.projectservicecreate
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: argo-cd-get-returns-project
+      description: Argo CD Get Returns a Project by Name
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: argo-cd-projectservice.projectserviceget
+      with:
+        name: tools.name
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: argo-cd-delete-deletes-project
+      description: Argo CD Delete Deletes a Project
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: argo-cd-projectservice.projectservicedelete
+      with:
+        name: tools.name
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: argo-cd-getdetailedproject-returns-project
+      description: Argo CD GetDetailedProject Returns a Project That Include Project, Global Project and Scoped Resources
+        by Name
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: argo-cd-projectservice.projectservicegetdetailedproject
+      with:
+        name: tools.name
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: argo-cd-listevents-returns-list
+      description: Argo CD ListEvents Returns a List of Project Events
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: argo-cd-projectservice.projectservicelistevents
+      with:
+        name: tools.name
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: argo-cd-get-returns-virtual
+      description: Argo CD Get Returns a Virtual Project by Name
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: argo-cd-projectservice.projectservicegetglobalprojects
+      with:
+        name: tools.name
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: argo-cd-listlinks-returns-all
+      description: Argo CD ListLinks Returns All Deep Links for the Particular Project
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: argo-cd-projectservice.projectservicelistlinks
+      with:
+        name: tools.name
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: argo-cd-getschedulesstate-returns-true
+      description: Argo CD GetSchedulesState Returns True if There Are Any Active Sync SyncWindows
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: argo-cd-projectservice.projectservicegetsyncwindowsstate
+      with:
+        name: tools.name
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: argo-cd-update-updates-project
+      description: Argo CD Update Updates a Project
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: argo-cd-projectservice.projectserviceupdate
+      with:
+        project.metadata.name: tools.project.metadata.name
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: argo-cd-create-new-project-2
+      description: Argo CD Create a New Project Token
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: argo-cd-projectservice.projectservicecreatetoken
+      with:
+        project: tools.project
+        role: tools.role
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: argo-cd-delete-new-project
+      description: Argo CD Delete a New Project Token
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: argo-cd-projectservice.projectservicedeletetoken
+      with:
+        project: tools.project
+        role: tools.role
+        iat: tools.iat
+        id: tools.id
+      outputParameters:
+      - type: object
+        mapping: $.
