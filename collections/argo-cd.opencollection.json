@@ -1,0 +1,3437 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Argo CD",
+    "version": "2.14.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "AccountService",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Argo CD ListAccounts Returns the List of Accounts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/account"
+          },
+          "docs": "Argo CD ListAccounts Returns the List of Accounts"
+        },
+        {
+          "info": {
+            "name": "Argo CD CanI Checks if the Current Account Has Permission to Perform an Action",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/account/can-i/:resource/:action/:subresource",
+            "params": [
+              {
+                "name": "resource",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "action",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "subresource",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Argo CD CanI Checks if the Current Account Has Permission to Perform an Action"
+        },
+        {
+          "info": {
+            "name": "Argo CD UpdatePassword Updates an Account's Password to a New Value",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/api/v1/account/password"
+          },
+          "docs": "Argo CD UpdatePassword Updates an Account's Password to a New Value"
+        },
+        {
+          "info": {
+            "name": "Argo CD GetAccount Returns an Account",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/account/:name",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Argo CD GetAccount Returns an Account"
+        },
+        {
+          "info": {
+            "name": "Argo CD CreateToken Creates a Token",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v1/account/:name/token",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Argo CD CreateToken Creates a Token"
+        },
+        {
+          "info": {
+            "name": "Argo CD DeleteToken Deletes a Token",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/api/v1/account/:name/token/:id",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Argo CD DeleteToken Deletes a Token"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "ApplicationService",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Argo CD List Returns List of Applications",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/applications",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "query",
+                "description": "the application's name."
+              },
+              {
+                "name": "refresh",
+                "value": "",
+                "type": "query",
+                "description": "forces application reconciliation if set to 'hard'."
+              },
+              {
+                "name": "projects",
+                "value": "",
+                "type": "query",
+                "description": "the project names to restrict returned list applications."
+              },
+              {
+                "name": "resourceVersion",
+                "value": "",
+                "type": "query",
+                "description": "when specified with a watch call, shows changes that occur after that particular version of a resource."
+              },
+              {
+                "name": "selector",
+                "value": "",
+                "type": "query",
+                "description": "the selector to restrict returned list to applications only with matched labels."
+              },
+              {
+                "name": "repo",
+                "value": "",
+                "type": "query",
+                "description": "the repoURL to restrict returned list applications."
+              },
+              {
+                "name": "appNamespace",
+                "value": "",
+                "type": "query",
+                "description": "the application's namespace."
+              },
+              {
+                "name": "project",
+                "value": "",
+                "type": "query",
+                "description": "the project names to restrict returned list applications (legacy name for backwards-compatibility)."
+              }
+            ]
+          },
+          "docs": "Argo CD List Returns List of Applications"
+        },
+        {
+          "info": {
+            "name": "Argo CD Create Creates an Application",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v1/applications",
+            "params": [
+              {
+                "name": "upsert",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "validate",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Argo CD Create Creates an Application"
+        },
+        {
+          "info": {
+            "name": "Argo CD GetManifestsWithFiles Returns Application Manifests Using Provided Files to Generate Them",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v1/applications/manifestsWithFiles"
+          },
+          "docs": "Argo CD GetManifestsWithFiles Returns Application Manifests Using Provided Files to Generate Them"
+        },
+        {
+          "info": {
+            "name": "Argo CD ServerSideDiff Performs Server-side Diff Calculation Using Dry-run Apply",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/applications/:appName/server-side-diff",
+            "params": [
+              {
+                "name": "appName",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "appNamespace",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "project",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "targetManifests",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Argo CD ServerSideDiff Performs Server-side Diff Calculation Using Dry-run Apply"
+        },
+        {
+          "info": {
+            "name": "Argo CD Update Updates an Application",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/api/v1/applications/:application.metadata.name",
+            "params": [
+              {
+                "name": "application.metadata.name",
+                "value": "",
+                "type": "path",
+                "description": "Name must be unique within a namespace. Is required when creating resources, although\nsome resources may allow a client to request the generation of an appropriate name\nautomatically. Name is primarily intended for creation idempotence and configuration\ndefinition.\nCannot be updated.\nMore info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names#names\n+optional"
+              },
+              {
+                "name": "validate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "project",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Argo CD Update Updates an Application"
+        },
+        {
+          "info": {
+            "name": "Argo CD ManagedResources Returns List of Managed Resources",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/applications/:applicationName/managed-resources",
+            "params": [
+              {
+                "name": "applicationName",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "namespace",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "version",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "group",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "kind",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "appNamespace",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "project",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Argo CD ManagedResources Returns List of Managed Resources"
+        },
+        {
+          "info": {
+            "name": "Argo CD ResourceTree Returns Resource Tree",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/applications/:applicationName/resource-tree",
+            "params": [
+              {
+                "name": "applicationName",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "namespace",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "version",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "group",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "kind",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "appNamespace",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "project",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Argo CD ResourceTree Returns Resource Tree"
+        },
+        {
+          "info": {
+            "name": "Argo CD Get Returns an Application by Name",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/applications/:name",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "the application's name"
+              },
+              {
+                "name": "refresh",
+                "value": "",
+                "type": "query",
+                "description": "forces application reconciliation if set to 'hard'."
+              },
+              {
+                "name": "projects",
+                "value": "",
+                "type": "query",
+                "description": "the project names to restrict returned list applications."
+              },
+              {
+                "name": "resourceVersion",
+                "value": "",
+                "type": "query",
+                "description": "when specified with a watch call, shows changes that occur after that particular version of a resource."
+              },
+              {
+                "name": "selector",
+                "value": "",
+                "type": "query",
+                "description": "the selector to restrict returned list to applications only with matched labels."
+              },
+              {
+                "name": "repo",
+                "value": "",
+                "type": "query",
+                "description": "the repoURL to restrict returned list applications."
+              },
+              {
+                "name": "appNamespace",
+                "value": "",
+                "type": "query",
+                "description": "the application's namespace."
+              },
+              {
+                "name": "project",
+                "value": "",
+                "type": "query",
+                "description": "the project names to restrict returned list applications (legacy name for backwards-compatibility)."
+              }
+            ]
+          },
+          "docs": "Argo CD Get Returns an Application by Name"
+        },
+        {
+          "info": {
+            "name": "Argo CD Patch Patch an Application",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/api/v1/applications/:name",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Argo CD Patch Patch an Application"
+        },
+        {
+          "info": {
+            "name": "Argo CD Delete Deletes an Application",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/api/v1/applications/:name",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "cascade",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "propagationPolicy",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "appNamespace",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "project",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Argo CD Delete Deletes an Application"
+        },
+        {
+          "info": {
+            "name": "Argo CD ListResourceEvents Returns a List of Event Resources",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/applications/:name/events",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "resourceNamespace",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "resourceName",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "resourceUID",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "appNamespace",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "project",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Argo CD ListResourceEvents Returns a List of Event Resources"
+        },
+        {
+          "info": {
+            "name": "Argo CD ListLinks Returns the List of All Application Deep Links",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/applications/:name/links",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "namespace",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "project",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Argo CD ListLinks Returns the List of All Application Deep Links"
+        },
+        {
+          "info": {
+            "name": "Argo CD PodLogs Returns Stream of Log Entries for the Specified Pod. Pod",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/applications/:name/logs",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "namespace",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "podName",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "container",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sinceSeconds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sinceTime.seconds",
+                "value": "",
+                "type": "query",
+                "description": "Represents seconds of UTC time since Unix epoch\n1970-01-01T00:00:00Z. Must be from 0001-01-01T00:00:00Z to\n9999-12-31T23:59:59Z inclusive."
+              },
+              {
+                "name": "sinceTime.nanos",
+                "value": "",
+                "type": "query",
+                "description": "Non-negative fractions of a second at nanosecond resolution. Negative\nsecond values with fractions must still have non-negative nanos values\nthat count forward in time. Must be from 0 to 999,999,999\ninclusive. This field may be limited in precision depending on context."
+              },
+              {
+                "name": "tailLines",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "follow",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "untilTime",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "kind",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "group",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "resourceName",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "previous",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "appNamespace",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "project",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "matchCase",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Argo CD PodLogs Returns Stream of Log Entries for the Specified Pod. Pod"
+        },
+        {
+          "info": {
+            "name": "Argo CD GetManifests Returns Application Manifests",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/applications/:name/manifests",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "revision",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "appNamespace",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "project",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sourcePositions",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "revisions",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "noCache",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Argo CD GetManifests Returns Application Manifests"
+        },
+        {
+          "info": {
+            "name": "Argo CD TerminateOperation Terminates the Currently Running Operation",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/api/v1/applications/:name/operation",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "appNamespace",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "project",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Argo CD TerminateOperation Terminates the Currently Running Operation"
+        },
+        {
+          "info": {
+            "name": "Argo CD PodLogs Returns Stream of Log Entries for the Specified Pod. Pod",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/applications/:name/pods/:podName/logs",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "podName",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "namespace",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "container",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sinceSeconds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sinceTime.seconds",
+                "value": "",
+                "type": "query",
+                "description": "Represents seconds of UTC time since Unix epoch\n1970-01-01T00:00:00Z. Must be from 0001-01-01T00:00:00Z to\n9999-12-31T23:59:59Z inclusive."
+              },
+              {
+                "name": "sinceTime.nanos",
+                "value": "",
+                "type": "query",
+                "description": "Non-negative fractions of a second at nanosecond resolution. Negative\nsecond values with fractions must still have non-negative nanos values\nthat count forward in time. Must be from 0 to 999,999,999\ninclusive. This field may be limited in precision depending on context."
+              },
+              {
+                "name": "tailLines",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "follow",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "untilTime",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "kind",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "group",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "resourceName",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "previous",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "appNamespace",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "project",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "matchCase",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Argo CD PodLogs Returns Stream of Log Entries for the Specified Pod. Pod"
+        },
+        {
+          "info": {
+            "name": "Argo CD GetResource Returns Single Application Resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/applications/:name/resource",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "namespace",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "resourceName",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "version",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "group",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "kind",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "appNamespace",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "project",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Argo CD GetResource Returns Single Application Resource"
+        },
+        {
+          "info": {
+            "name": "Argo CD PatchResource Patch Single Application Resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v1/applications/:name/resource",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "namespace",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "resourceName",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "version",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "group",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "kind",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "patchType",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "appNamespace",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "project",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Argo CD PatchResource Patch Single Application Resource"
+        },
+        {
+          "info": {
+            "name": "Argo CD DeleteResource Deletes a Single Application Resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/api/v1/applications/:name/resource",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "namespace",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "resourceName",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "version",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "group",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "kind",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "force",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "orphan",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "appNamespace",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "project",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Argo CD DeleteResource Deletes a Single Application Resource"
+        },
+        {
+          "info": {
+            "name": "Argo CD ListResourceActions Returns List of Resource Actions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/applications/:name/resource/actions",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "namespace",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "resourceName",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "version",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "group",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "kind",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "appNamespace",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "project",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Argo CD ListResourceActions Returns List of Resource Actions"
+        },
+        {
+          "info": {
+            "name": "Argo CD RunResourceAction Runs a Resource Action",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v1/applications/:name/resource/actions",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "namespace",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "resourceName",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "version",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "group",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "kind",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "appNamespace",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "project",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Deprecated: use RunResourceActionV2 instead. This version does not support resource action parameters but is\nmaintained for backward compatibility. It will be removed in a future release."
+        },
+        {
+          "info": {
+            "name": "Argo CD RunResourceActionV2 Runs a Resource Action with Parameters",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v1/applications/:name/resource/actions/v2",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Argo CD RunResourceActionV2 Runs a Resource Action with Parameters"
+        },
+        {
+          "info": {
+            "name": "Argo CD ListResourceLinks Returns the List of All Resource Deep Links",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/applications/:name/resource/links",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "namespace",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "resourceName",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "version",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "group",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "kind",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "appNamespace",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "project",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Argo CD ListResourceLinks Returns the List of All Resource Deep Links"
+        },
+        {
+          "info": {
+            "name": "Argo CD Get the Chart Metadata (description, Maintainers, Home) for a Specific Revision of the Application",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/applications/:name/revisions/:revision/chartdetails",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "the application's name"
+              },
+              {
+                "name": "revision",
+                "value": "",
+                "type": "path",
+                "description": "the revision of the app"
+              },
+              {
+                "name": "appNamespace",
+                "value": "",
+                "type": "query",
+                "description": "the application's namespace."
+              },
+              {
+                "name": "project",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sourceIndex",
+                "value": "",
+                "type": "query",
+                "description": "source index (for multi source apps)."
+              },
+              {
+                "name": "versionId",
+                "value": "",
+                "type": "query",
+                "description": "versionId from historical data (for multi source apps)."
+              }
+            ]
+          },
+          "docs": "Argo CD Get the Chart Metadata (description, Maintainers, Home) for a Specific Revision of the Application"
+        },
+        {
+          "info": {
+            "name": "Argo CD Get the Meta-data (author, Date, Tags, Message) for a Specific Revision of the Application",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/applications/:name/revisions/:revision/metadata",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "the application's name"
+              },
+              {
+                "name": "revision",
+                "value": "",
+                "type": "path",
+                "description": "the revision of the app"
+              },
+              {
+                "name": "appNamespace",
+                "value": "",
+                "type": "query",
+                "description": "the application's namespace."
+              },
+              {
+                "name": "project",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sourceIndex",
+                "value": "",
+                "type": "query",
+                "description": "source index (for multi source apps)."
+              },
+              {
+                "name": "versionId",
+                "value": "",
+                "type": "query",
+                "description": "versionId from historical data (for multi source apps)."
+              }
+            ]
+          },
+          "docs": "Argo CD Get the Meta-data (author, Date, Tags, Message) for a Specific Revision of the Application"
+        },
+        {
+          "info": {
+            "name": "Argo CD Get the Chart Metadata (description, Maintainers, Home) for a Specific Revision of the Application",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/applications/:name/revisions/:revision/ocimetadata",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "the application's name"
+              },
+              {
+                "name": "revision",
+                "value": "",
+                "type": "path",
+                "description": "the revision of the app"
+              },
+              {
+                "name": "appNamespace",
+                "value": "",
+                "type": "query",
+                "description": "the application's namespace."
+              },
+              {
+                "name": "project",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sourceIndex",
+                "value": "",
+                "type": "query",
+                "description": "source index (for multi source apps)."
+              },
+              {
+                "name": "versionId",
+                "value": "",
+                "type": "query",
+                "description": "versionId from historical data (for multi source apps)."
+              }
+            ]
+          },
+          "docs": "Argo CD Get the Chart Metadata (description, Maintainers, Home) for a Specific Revision of the Application"
+        },
+        {
+          "info": {
+            "name": "Argo CD Rollback Syncs an Application to its Target State",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v1/applications/:name/rollback",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Argo CD Rollback Syncs an Application to its Target State"
+        },
+        {
+          "info": {
+            "name": "Argo CD UpdateSpec Updates an Application Spec",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/api/v1/applications/:name/spec",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "validate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "appNamespace",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "project",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Argo CD UpdateSpec Updates an Application Spec"
+        },
+        {
+          "info": {
+            "name": "Argo CD Sync Syncs an Application to its Target State",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v1/applications/:name/sync",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Argo CD Sync Syncs an Application to its Target State"
+        },
+        {
+          "info": {
+            "name": "Argo CD Get Returns Sync Windows of the Application",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/applications/:name/syncwindows",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "appNamespace",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "project",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Argo CD Get Returns Sync Windows of the Application"
+        },
+        {
+          "info": {
+            "name": "Argo CD Watch Returns Stream of Application Change Events",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/stream/applications",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "query",
+                "description": "the application's name."
+              },
+              {
+                "name": "refresh",
+                "value": "",
+                "type": "query",
+                "description": "forces application reconciliation if set to 'hard'."
+              },
+              {
+                "name": "projects",
+                "value": "",
+                "type": "query",
+                "description": "the project names to restrict returned list applications."
+              },
+              {
+                "name": "resourceVersion",
+                "value": "",
+                "type": "query",
+                "description": "when specified with a watch call, shows changes that occur after that particular version of a resource."
+              },
+              {
+                "name": "selector",
+                "value": "",
+                "type": "query",
+                "description": "the selector to restrict returned list to applications only with matched labels."
+              },
+              {
+                "name": "repo",
+                "value": "",
+                "type": "query",
+                "description": "the repoURL to restrict returned list applications."
+              },
+              {
+                "name": "appNamespace",
+                "value": "",
+                "type": "query",
+                "description": "the application's namespace."
+              },
+              {
+                "name": "project",
+                "value": "",
+                "type": "query",
+                "description": "the project names to restrict returned list applications (legacy name for backwards-compatibility)."
+              }
+            ]
+          },
+          "docs": "Argo CD Watch Returns Stream of Application Change Events"
+        },
+        {
+          "info": {
+            "name": "Argo CD Watch Returns Stream of Application Resource Tree",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/stream/applications/:applicationName/resource-tree",
+            "params": [
+              {
+                "name": "applicationName",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "namespace",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "version",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "group",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "kind",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "appNamespace",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "project",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Argo CD Watch Returns Stream of Application Resource Tree"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "ApplicationSetService",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Argo CD List Returns List of Applicationset",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/applicationsets",
+            "params": [
+              {
+                "name": "projects",
+                "value": "",
+                "type": "query",
+                "description": "the project names to restrict returned list applicationsets."
+              },
+              {
+                "name": "selector",
+                "value": "",
+                "type": "query",
+                "description": "the selector to restrict returned list to applications only with matched labels."
+              },
+              {
+                "name": "appsetNamespace",
+                "value": "",
+                "type": "query",
+                "description": "The application set namespace. Default empty is argocd control plane namespace."
+              }
+            ]
+          },
+          "docs": "Argo CD List Returns List of Applicationset"
+        },
+        {
+          "info": {
+            "name": "Argo CD Create Creates an Applicationset",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v1/applicationsets",
+            "params": [
+              {
+                "name": "upsert",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "dryRun",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Argo CD Create Creates an Applicationset"
+        },
+        {
+          "info": {
+            "name": "Argo CD Generate Generates",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v1/applicationsets/generate"
+          },
+          "docs": "Argo CD Generate Generates"
+        },
+        {
+          "info": {
+            "name": "Argo CD Get Returns an Applicationset by Name",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/applicationsets/:name",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "the applicationsets's name"
+              },
+              {
+                "name": "appsetNamespace",
+                "value": "",
+                "type": "query",
+                "description": "The application set namespace. Default empty is argocd control plane namespace."
+              }
+            ]
+          },
+          "docs": "Argo CD Get Returns an Applicationset by Name"
+        },
+        {
+          "info": {
+            "name": "Argo CD Delete Deletes an Application Set",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/api/v1/applicationsets/:name",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "appsetNamespace",
+                "value": "",
+                "type": "query",
+                "description": "The application set namespace. Default empty is argocd control plane namespace."
+              }
+            ]
+          },
+          "docs": "Argo CD Delete Deletes an Application Set"
+        },
+        {
+          "info": {
+            "name": "Argo CD ListResourceEvents Returns a List of Event Resources",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/applicationsets/:name/events",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "the applicationsets's name"
+              },
+              {
+                "name": "appsetNamespace",
+                "value": "",
+                "type": "query",
+                "description": "The application set namespace. Default empty is argocd control plane namespace."
+              }
+            ]
+          },
+          "docs": "Argo CD ListResourceEvents Returns a List of Event Resources"
+        },
+        {
+          "info": {
+            "name": "Argo CD ResourceTree Returns Resource Tree",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/applicationsets/:name/resource-tree",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "appsetNamespace",
+                "value": "",
+                "type": "query",
+                "description": "The application set namespace. Default empty is argocd control plane namespace."
+              }
+            ]
+          },
+          "docs": "Argo CD ResourceTree Returns Resource Tree"
+        },
+        {
+          "info": {
+            "name": "ApplicationSetService_Watch",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/stream/applicationsets",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "projects",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "selector",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "appSetNamespace",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "resourceVersion",
+                "value": "",
+                "type": "query",
+                "description": "when specified with a watch call, shows changes that occur after that particular version of a resource."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "CertificateService",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Argo CD List All Available Repository Certificates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/certificates",
+            "params": [
+              {
+                "name": "hostNamePattern",
+                "value": "",
+                "type": "query",
+                "description": "A file-glob pattern (not regular expression) the host name has to match."
+              },
+              {
+                "name": "certType",
+                "value": "",
+                "type": "query",
+                "description": "The type of the certificate to match (ssh or https)."
+              },
+              {
+                "name": "certSubType",
+                "value": "",
+                "type": "query",
+                "description": "The sub type of the certificate to match (protocol dependent, usually only used for ssh certs)."
+              }
+            ]
+          },
+          "docs": "Argo CD List All Available Repository Certificates"
+        },
+        {
+          "info": {
+            "name": "Argo CD Creates Repository Certificates on the Server",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v1/certificates",
+            "params": [
+              {
+                "name": "upsert",
+                "value": "",
+                "type": "query",
+                "description": "Whether to upsert already existing certificates."
+              }
+            ]
+          },
+          "docs": "Argo CD Creates Repository Certificates on the Server"
+        },
+        {
+          "info": {
+            "name": "Argo CD Delete the Certificates That Match the RepositoryCertificateQuery",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/api/v1/certificates",
+            "params": [
+              {
+                "name": "hostNamePattern",
+                "value": "",
+                "type": "query",
+                "description": "A file-glob pattern (not regular expression) the host name has to match."
+              },
+              {
+                "name": "certType",
+                "value": "",
+                "type": "query",
+                "description": "The type of the certificate to match (ssh or https)."
+              },
+              {
+                "name": "certSubType",
+                "value": "",
+                "type": "query",
+                "description": "The sub type of the certificate to match (protocol dependent, usually only used for ssh certs)."
+              }
+            ]
+          },
+          "docs": "Argo CD Delete the Certificates That Match the RepositoryCertificateQuery"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "ClusterService",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Argo CD List Returns List of Clusters",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/clusters",
+            "params": [
+              {
+                "name": "server",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "id.type",
+                "value": "",
+                "type": "query",
+                "description": "type is the type of the specified cluster identifier ( \"server\" - default, \"name\" )."
+              },
+              {
+                "name": "id.value",
+                "value": "",
+                "type": "query",
+                "description": "value holds the cluster server URL or cluster name."
+              }
+            ]
+          },
+          "docs": "Argo CD List Returns List of Clusters"
+        },
+        {
+          "info": {
+            "name": "Argo CD Create Creates a Cluster",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v1/clusters",
+            "params": [
+              {
+                "name": "upsert",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Argo CD Create Creates a Cluster"
+        },
+        {
+          "info": {
+            "name": "Argo CD Get Returns a Cluster by Server Address",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/clusters/:id.value",
+            "params": [
+              {
+                "name": "id.value",
+                "value": "",
+                "type": "path",
+                "description": "value holds the cluster server URL or cluster name"
+              },
+              {
+                "name": "server",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "id.type",
+                "value": "",
+                "type": "query",
+                "description": "type is the type of the specified cluster identifier ( \"server\" - default, \"name\" )."
+              }
+            ]
+          },
+          "docs": "Argo CD Get Returns a Cluster by Server Address"
+        },
+        {
+          "info": {
+            "name": "Argo CD Update Updates a Cluster",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/api/v1/clusters/:id.value",
+            "params": [
+              {
+                "name": "id.value",
+                "value": "",
+                "type": "path",
+                "description": "value holds the cluster server URL or cluster name"
+              },
+              {
+                "name": "updatedFields",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "id.type",
+                "value": "",
+                "type": "query",
+                "description": "type is the type of the specified cluster identifier ( \"server\" - default, \"name\" )."
+              }
+            ]
+          },
+          "docs": "Argo CD Update Updates a Cluster"
+        },
+        {
+          "info": {
+            "name": "Argo CD Delete Deletes a Cluster",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/api/v1/clusters/:id.value",
+            "params": [
+              {
+                "name": "id.value",
+                "value": "",
+                "type": "path",
+                "description": "value holds the cluster server URL or cluster name"
+              },
+              {
+                "name": "server",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "id.type",
+                "value": "",
+                "type": "query",
+                "description": "type is the type of the specified cluster identifier ( \"server\" - default, \"name\" )."
+              }
+            ]
+          },
+          "docs": "Argo CD Delete Deletes a Cluster"
+        },
+        {
+          "info": {
+            "name": "Argo CD InvalidateCache Invalidates Cluster Cache",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v1/clusters/:id.value/invalidate-cache",
+            "params": [
+              {
+                "name": "id.value",
+                "value": "",
+                "type": "path",
+                "description": "value holds the cluster server URL or cluster name"
+              }
+            ]
+          },
+          "docs": "Argo CD InvalidateCache Invalidates Cluster Cache"
+        },
+        {
+          "info": {
+            "name": "Argo CD RotateAuth Rotates the Bearer Token Used for a Cluster",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v1/clusters/:id.value/rotate-auth",
+            "params": [
+              {
+                "name": "id.value",
+                "value": "",
+                "type": "path",
+                "description": "value holds the cluster server URL or cluster name"
+              }
+            ]
+          },
+          "docs": "Argo CD RotateAuth Rotates the Bearer Token Used for a Cluster"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "GPGKeyService",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Argo CD List All Available Repository Certificates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/gpgkeys",
+            "params": [
+              {
+                "name": "keyID",
+                "value": "",
+                "type": "query",
+                "description": "The GPG key ID to query for."
+              }
+            ]
+          },
+          "docs": "Argo CD List All Available Repository Certificates"
+        },
+        {
+          "info": {
+            "name": "Argo CD Create One or More GPG Public Keys in the Server's Configuration",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v1/gpgkeys",
+            "params": [
+              {
+                "name": "upsert",
+                "value": "",
+                "type": "query",
+                "description": "Whether to upsert already existing public keys."
+              }
+            ]
+          },
+          "docs": "Argo CD Create One or More GPG Public Keys in the Server's Configuration"
+        },
+        {
+          "info": {
+            "name": "Argo CD Delete Specified GPG Public Key from the Server's Configuration",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/api/v1/gpgkeys",
+            "params": [
+              {
+                "name": "keyID",
+                "value": "",
+                "type": "query",
+                "description": "The GPG key ID to query for."
+              }
+            ]
+          },
+          "docs": "Argo CD Delete Specified GPG Public Key from the Server's Configuration"
+        },
+        {
+          "info": {
+            "name": "Argo CD Get Information About Specified GPG Public Key from the Server",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/gpgkeys/:keyID",
+            "params": [
+              {
+                "name": "keyID",
+                "value": "",
+                "type": "path",
+                "description": "The GPG key ID to query for"
+              }
+            ]
+          },
+          "docs": "Argo CD Get Information About Specified GPG Public Key from the Server"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "NotificationService",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Argo CD List Returns List of Services",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/notifications/services"
+          },
+          "docs": "Argo CD List Returns List of Services"
+        },
+        {
+          "info": {
+            "name": "Argo CD List Returns List of Templates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/notifications/templates"
+          },
+          "docs": "Argo CD List Returns List of Templates"
+        },
+        {
+          "info": {
+            "name": "Argo CD List Returns List of Triggers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/notifications/triggers"
+          },
+          "docs": "Argo CD List Returns List of Triggers"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "ProjectService",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Argo CD List Returns List of Projects",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/projects",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Argo CD List Returns List of Projects"
+        },
+        {
+          "info": {
+            "name": "Argo CD Create a New Project",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v1/projects"
+          },
+          "docs": "Argo CD Create a New Project"
+        },
+        {
+          "info": {
+            "name": "Argo CD Get Returns a Project by Name",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/projects/:name",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Argo CD Get Returns a Project by Name"
+        },
+        {
+          "info": {
+            "name": "Argo CD Delete Deletes a Project",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/api/v1/projects/:name",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Argo CD Delete Deletes a Project"
+        },
+        {
+          "info": {
+            "name": "Argo CD GetDetailedProject Returns a Project That Include Project, Global Project and Scoped Resources by Name",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/projects/:name/detailed",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Argo CD GetDetailedProject Returns a Project That Include Project, Global Project and Scoped Resources by Name"
+        },
+        {
+          "info": {
+            "name": "Argo CD ListEvents Returns a List of Project Events",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/projects/:name/events",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Argo CD ListEvents Returns a List of Project Events"
+        },
+        {
+          "info": {
+            "name": "Argo CD Get Returns a Virtual Project by Name",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/projects/:name/globalprojects",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Argo CD Get Returns a Virtual Project by Name"
+        },
+        {
+          "info": {
+            "name": "Argo CD ListLinks Returns All Deep Links for the Particular Project",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/projects/:name/links",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Argo CD ListLinks Returns All Deep Links for the Particular Project"
+        },
+        {
+          "info": {
+            "name": "Argo CD GetSchedulesState Returns True if There Are Any Active Sync SyncWindows",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/projects/:name/syncwindows",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Argo CD GetSchedulesState Returns True if There Are Any Active Sync SyncWindows"
+        },
+        {
+          "info": {
+            "name": "Argo CD Update Updates a Project",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/api/v1/projects/:project.metadata.name",
+            "params": [
+              {
+                "name": "project.metadata.name",
+                "value": "",
+                "type": "path",
+                "description": "Name must be unique within a namespace. Is required when creating resources, although\nsome resources may allow a client to request the generation of an appropriate name\nautomatically. Name is primarily intended for creation idempotence and configuration\ndefinition.\nCannot be updated.\nMore info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names#names\n+optional"
+              }
+            ]
+          },
+          "docs": "Argo CD Update Updates a Project"
+        },
+        {
+          "info": {
+            "name": "Argo CD Create a New Project Token",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v1/projects/:project/roles/:role/token",
+            "params": [
+              {
+                "name": "project",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "role",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Argo CD Create a New Project Token"
+        },
+        {
+          "info": {
+            "name": "Argo CD Delete a New Project Token",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/api/v1/projects/:project/roles/:role/token/:iat",
+            "params": [
+              {
+                "name": "project",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "role",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "iat",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Argo CD Delete a New Project Token"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "RepoCredsService",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Argo CD ListRepositoryCredentials Gets a List of All Configured Repository Credential Sets",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/repocreds",
+            "params": [
+              {
+                "name": "url",
+                "value": "",
+                "type": "query",
+                "description": "Repo URL for query."
+              }
+            ]
+          },
+          "docs": "Argo CD ListRepositoryCredentials Gets a List of All Configured Repository Credential Sets"
+        },
+        {
+          "info": {
+            "name": "Argo CD CreateRepositoryCredentials Creates a New Repository Credential Set",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v1/repocreds",
+            "params": [
+              {
+                "name": "upsert",
+                "value": "",
+                "type": "query",
+                "description": "Whether to create in upsert mode."
+              }
+            ]
+          },
+          "docs": "Argo CD CreateRepositoryCredentials Creates a New Repository Credential Set"
+        },
+        {
+          "info": {
+            "name": "Argo CD UpdateRepositoryCredentials Updates a Repository Credential Set",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/api/v1/repocreds/:creds.url",
+            "params": [
+              {
+                "name": "creds.url",
+                "value": "",
+                "type": "path",
+                "description": "URL is the URL to which these credentials match"
+              }
+            ]
+          },
+          "docs": "Argo CD UpdateRepositoryCredentials Updates a Repository Credential Set"
+        },
+        {
+          "info": {
+            "name": "Argo CD DeleteRepositoryCredentials Deletes a Repository Credential Set from the Configuration",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/api/v1/repocreds/:url",
+            "params": [
+              {
+                "name": "url",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Argo CD DeleteRepositoryCredentials Deletes a Repository Credential Set from the Configuration"
+        },
+        {
+          "info": {
+            "name": "Argo CD ListWriteRepositoryCredentials Gets a List of All Configured Repository Credential Sets That Have Write Access",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/write-repocreds",
+            "params": [
+              {
+                "name": "url",
+                "value": "",
+                "type": "query",
+                "description": "Repo URL for query."
+              }
+            ]
+          },
+          "docs": "Argo CD ListWriteRepositoryCredentials Gets a List of All Configured Repository Credential Sets That Have Write Access"
+        },
+        {
+          "info": {
+            "name": "Argo CD CreateWriteRepositoryCredentials Creates a New Repository Credential Set with Write Access",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v1/write-repocreds",
+            "params": [
+              {
+                "name": "upsert",
+                "value": "",
+                "type": "query",
+                "description": "Whether to create in upsert mode."
+              }
+            ]
+          },
+          "docs": "Argo CD CreateWriteRepositoryCredentials Creates a New Repository Credential Set with Write Access"
+        },
+        {
+          "info": {
+            "name": "Argo CD UpdateWriteRepositoryCredentials Updates a Repository Credential Set with Write Access",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/api/v1/write-repocreds/:creds.url",
+            "params": [
+              {
+                "name": "creds.url",
+                "value": "",
+                "type": "path",
+                "description": "URL is the URL to which these credentials match"
+              }
+            ]
+          },
+          "docs": "Argo CD UpdateWriteRepositoryCredentials Updates a Repository Credential Set with Write Access"
+        },
+        {
+          "info": {
+            "name": "Argo CD DeleteWriteRepositoryCredentials Deletes a Repository Credential Set with Write Access from the Configuration",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/api/v1/write-repocreds/:url",
+            "params": [
+              {
+                "name": "url",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Argo CD DeleteWriteRepositoryCredentials Deletes a Repository Credential Set with Write Access from the Configuration"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "RepositoryService",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Argo CD ListRepositories Gets a List of All Configured Repositories",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/repositories",
+            "params": [
+              {
+                "name": "repo",
+                "value": "",
+                "type": "query",
+                "description": "Repo URL for query."
+              },
+              {
+                "name": "forceRefresh",
+                "value": "",
+                "type": "query",
+                "description": "Whether to force a cache refresh on repo's connection state."
+              },
+              {
+                "name": "appProject",
+                "value": "",
+                "type": "query",
+                "description": "App project for query."
+              }
+            ]
+          },
+          "docs": "Argo CD ListRepositories Gets a List of All Configured Repositories"
+        },
+        {
+          "info": {
+            "name": "Argo CD CreateRepository Creates a New Repository Configuration",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v1/repositories",
+            "params": [
+              {
+                "name": "upsert",
+                "value": "",
+                "type": "query",
+                "description": "Whether to create in upsert mode."
+              },
+              {
+                "name": "credsOnly",
+                "value": "",
+                "type": "query",
+                "description": "Whether to operate on credential set instead of repository."
+              }
+            ]
+          },
+          "docs": "Argo CD CreateRepository Creates a New Repository Configuration"
+        },
+        {
+          "info": {
+            "name": "Argo CD UpdateRepository Updates a Repository Configuration",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/api/v1/repositories/:repo.repo",
+            "params": [
+              {
+                "name": "repo.repo",
+                "value": "",
+                "type": "path",
+                "description": "Repo contains the URL to the remote repository"
+              }
+            ]
+          },
+          "docs": "Argo CD UpdateRepository Updates a Repository Configuration"
+        },
+        {
+          "info": {
+            "name": "Argo CD Get Returns a Repository or its Credentials",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/repositories/:repo",
+            "params": [
+              {
+                "name": "repo",
+                "value": "",
+                "type": "path",
+                "description": "Repo URL for query"
+              },
+              {
+                "name": "forceRefresh",
+                "value": "",
+                "type": "query",
+                "description": "Whether to force a cache refresh on repo's connection state."
+              },
+              {
+                "name": "appProject",
+                "value": "",
+                "type": "query",
+                "description": "App project for query."
+              }
+            ]
+          },
+          "docs": "Argo CD Get Returns a Repository or its Credentials"
+        },
+        {
+          "info": {
+            "name": "Argo CD DeleteRepository Deletes a Repository from the Configuration",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/api/v1/repositories/:repo",
+            "params": [
+              {
+                "name": "repo",
+                "value": "",
+                "type": "path",
+                "description": "Repo URL for query"
+              },
+              {
+                "name": "forceRefresh",
+                "value": "",
+                "type": "query",
+                "description": "Whether to force a cache refresh on repo's connection state."
+              },
+              {
+                "name": "appProject",
+                "value": "",
+                "type": "query",
+                "description": "App project for query."
+              }
+            ]
+          },
+          "docs": "Argo CD DeleteRepository Deletes a Repository from the Configuration"
+        },
+        {
+          "info": {
+            "name": "Argo CD ListApps Returns List of Apps in the Repo",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/repositories/:repo/apps",
+            "params": [
+              {
+                "name": "repo",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "revision",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "appName",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "appProject",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Argo CD ListApps Returns List of Apps in the Repo"
+        },
+        {
+          "info": {
+            "name": "Argo CD GetHelmCharts Returns List of Helm Charts in the Specified Repository",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/repositories/:repo/helmcharts",
+            "params": [
+              {
+                "name": "repo",
+                "value": "",
+                "type": "path",
+                "description": "Repo URL for query"
+              },
+              {
+                "name": "forceRefresh",
+                "value": "",
+                "type": "query",
+                "description": "Whether to force a cache refresh on repo's connection state."
+              },
+              {
+                "name": "appProject",
+                "value": "",
+                "type": "query",
+                "description": "App project for query."
+              }
+            ]
+          },
+          "docs": "Argo CD GetHelmCharts Returns List of Helm Charts in the Specified Repository"
+        },
+        {
+          "info": {
+            "name": "RepositoryService_ListOCITags",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/repositories/:repo/oci-tags",
+            "params": [
+              {
+                "name": "repo",
+                "value": "",
+                "type": "path",
+                "description": "Repo URL for query"
+              },
+              {
+                "name": "forceRefresh",
+                "value": "",
+                "type": "query",
+                "description": "Whether to force a cache refresh on repo's connection state."
+              },
+              {
+                "name": "appProject",
+                "value": "",
+                "type": "query",
+                "description": "App project for query."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "RepositoryService_ListRefs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/repositories/:repo/refs",
+            "params": [
+              {
+                "name": "repo",
+                "value": "",
+                "type": "path",
+                "description": "Repo URL for query"
+              },
+              {
+                "name": "forceRefresh",
+                "value": "",
+                "type": "query",
+                "description": "Whether to force a cache refresh on repo's connection state."
+              },
+              {
+                "name": "appProject",
+                "value": "",
+                "type": "query",
+                "description": "App project for query."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "Argo CD ValidateAccess Validates Access to a Repository with Given Parameters",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v1/repositories/:repo/validate",
+            "params": [
+              {
+                "name": "repo",
+                "value": "",
+                "type": "path",
+                "description": "The URL to the repo"
+              },
+              {
+                "name": "username",
+                "value": "",
+                "type": "query",
+                "description": "Username for accessing repo."
+              },
+              {
+                "name": "password",
+                "value": "",
+                "type": "query",
+                "description": "Password for accessing repo."
+              },
+              {
+                "name": "sshPrivateKey",
+                "value": "",
+                "type": "query",
+                "description": "Private key data for accessing SSH repository."
+              },
+              {
+                "name": "insecure",
+                "value": "",
+                "type": "query",
+                "description": "Whether to skip certificate or host key validation."
+              },
+              {
+                "name": "tlsClientCertData",
+                "value": "",
+                "type": "query",
+                "description": "TLS client cert data for accessing HTTPS repository."
+              },
+              {
+                "name": "tlsClientCertKey",
+                "value": "",
+                "type": "query",
+                "description": "TLS client cert key for accessing HTTPS repository."
+              },
+              {
+                "name": "type",
+                "value": "",
+                "type": "query",
+                "description": "The type of the repo."
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "query",
+                "description": "The name of the repo."
+              },
+              {
+                "name": "enableOci",
+                "value": "",
+                "type": "query",
+                "description": "Whether helm-oci support should be enabled for this repo."
+              },
+              {
+                "name": "githubAppPrivateKey",
+                "value": "",
+                "type": "query",
+                "description": "Github App Private Key PEM data."
+              },
+              {
+                "name": "githubAppID",
+                "value": "",
+                "type": "query",
+                "description": "Github App ID of the app used to access the repo."
+              },
+              {
+                "name": "githubAppInstallationID",
+                "value": "",
+                "type": "query",
+                "description": "Github App Installation ID of the installed GitHub App."
+              },
+              {
+                "name": "githubAppEnterpriseBaseUrl",
+                "value": "",
+                "type": "query",
+                "description": "Github App Enterprise base url if empty will default to https://api.github.com."
+              },
+              {
+                "name": "proxy",
+                "value": "",
+                "type": "query",
+                "description": "HTTP/HTTPS proxy to access the repository."
+              },
+              {
+                "name": "project",
+                "value": "",
+                "type": "query",
+                "description": "Reference between project and repository that allow you automatically to be added as item inside SourceRepos project entity."
+              },
+              {
+                "name": "gcpServiceAccountKey",
+                "value": "",
+                "type": "query",
+                "description": "Google Cloud Platform service account key."
+              },
+              {
+                "name": "forceHttpBasicAuth",
+                "value": "",
+                "type": "query",
+                "description": "Whether to force HTTP basic auth."
+              },
+              {
+                "name": "useAzureWorkloadIdentity",
+                "value": "",
+                "type": "query",
+                "description": "Whether to use azure workload identity for authentication."
+              },
+              {
+                "name": "bearerToken",
+                "value": "",
+                "type": "query",
+                "description": "BearerToken contains the bearer token used for Git auth at the repo server."
+              },
+              {
+                "name": "insecureOciForceHttp",
+                "value": "",
+                "type": "query",
+                "description": "Whether https should be disabled for an OCI repo."
+              },
+              {
+                "name": "azureServicePrincipalClientId",
+                "value": "",
+                "type": "query",
+                "description": "Azure Service Principal Client ID."
+              },
+              {
+                "name": "azureServicePrincipalClientSecret",
+                "value": "",
+                "type": "query",
+                "description": "Azure Service Principal Client Secret."
+              },
+              {
+                "name": "azureServicePrincipalTenantId",
+                "value": "",
+                "type": "query",
+                "description": "Azure Service Principal Tenant ID."
+              },
+              {
+                "name": "azureActiveDirectoryEndpoint",
+                "value": "",
+                "type": "query",
+                "description": "Azure Active Directory Endpoint."
+              }
+            ]
+          },
+          "docs": "Argo CD ValidateAccess Validates Access to a Repository with Given Parameters"
+        },
+        {
+          "info": {
+            "name": "Argo CD GetAppDetails Returns Application Details by Given Path",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v1/repositories/:source.repoURL/appdetails",
+            "params": [
+              {
+                "name": "source.repoURL",
+                "value": "",
+                "type": "path",
+                "description": "RepoURL is the URL to the repository (Git or Helm) that contains the application manifests"
+              }
+            ]
+          },
+          "docs": "Argo CD GetAppDetails Returns Application Details by Given Path"
+        },
+        {
+          "info": {
+            "name": "Argo CD ListWriteRepositories Gets a List of All Configured Write Repositories",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/write-repositories",
+            "params": [
+              {
+                "name": "repo",
+                "value": "",
+                "type": "query",
+                "description": "Repo URL for query."
+              },
+              {
+                "name": "forceRefresh",
+                "value": "",
+                "type": "query",
+                "description": "Whether to force a cache refresh on repo's connection state."
+              },
+              {
+                "name": "appProject",
+                "value": "",
+                "type": "query",
+                "description": "App project for query."
+              }
+            ]
+          },
+          "docs": "Argo CD ListWriteRepositories Gets a List of All Configured Write Repositories"
+        },
+        {
+          "info": {
+            "name": "Argo CD CreateWriteRepository Creates a New Write Repository Configuration",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v1/write-repositories",
+            "params": [
+              {
+                "name": "upsert",
+                "value": "",
+                "type": "query",
+                "description": "Whether to create in upsert mode."
+              },
+              {
+                "name": "credsOnly",
+                "value": "",
+                "type": "query",
+                "description": "Whether to operate on credential set instead of repository."
+              }
+            ]
+          },
+          "docs": "Argo CD CreateWriteRepository Creates a New Write Repository Configuration"
+        },
+        {
+          "info": {
+            "name": "Argo CD UpdateWriteRepository Updates a Write Repository Configuration",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/api/v1/write-repositories/:repo.repo",
+            "params": [
+              {
+                "name": "repo.repo",
+                "value": "",
+                "type": "path",
+                "description": "Repo contains the URL to the remote repository"
+              }
+            ]
+          },
+          "docs": "Argo CD UpdateWriteRepository Updates a Write Repository Configuration"
+        },
+        {
+          "info": {
+            "name": "Argo CD GetWrite Returns a Repository or its Write Credentials",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/write-repositories/:repo",
+            "params": [
+              {
+                "name": "repo",
+                "value": "",
+                "type": "path",
+                "description": "Repo URL for query"
+              },
+              {
+                "name": "forceRefresh",
+                "value": "",
+                "type": "query",
+                "description": "Whether to force a cache refresh on repo's connection state."
+              },
+              {
+                "name": "appProject",
+                "value": "",
+                "type": "query",
+                "description": "App project for query."
+              }
+            ]
+          },
+          "docs": "Argo CD GetWrite Returns a Repository or its Write Credentials"
+        },
+        {
+          "info": {
+            "name": "Argo CD DeleteWriteRepository Deletes a Write Repository from the Configuration",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/api/v1/write-repositories/:repo",
+            "params": [
+              {
+                "name": "repo",
+                "value": "",
+                "type": "path",
+                "description": "Repo URL for query"
+              },
+              {
+                "name": "forceRefresh",
+                "value": "",
+                "type": "query",
+                "description": "Whether to force a cache refresh on repo's connection state."
+              },
+              {
+                "name": "appProject",
+                "value": "",
+                "type": "query",
+                "description": "App project for query."
+              }
+            ]
+          },
+          "docs": "Argo CD DeleteWriteRepository Deletes a Write Repository from the Configuration"
+        },
+        {
+          "info": {
+            "name": "Argo CD ValidateWriteAccess Validates Write Access to a Repository with Given Parameters",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v1/write-repositories/:repo/validate",
+            "params": [
+              {
+                "name": "repo",
+                "value": "",
+                "type": "path",
+                "description": "The URL to the repo"
+              },
+              {
+                "name": "username",
+                "value": "",
+                "type": "query",
+                "description": "Username for accessing repo."
+              },
+              {
+                "name": "password",
+                "value": "",
+                "type": "query",
+                "description": "Password for accessing repo."
+              },
+              {
+                "name": "sshPrivateKey",
+                "value": "",
+                "type": "query",
+                "description": "Private key data for accessing SSH repository."
+              },
+              {
+                "name": "insecure",
+                "value": "",
+                "type": "query",
+                "description": "Whether to skip certificate or host key validation."
+              },
+              {
+                "name": "tlsClientCertData",
+                "value": "",
+                "type": "query",
+                "description": "TLS client cert data for accessing HTTPS repository."
+              },
+              {
+                "name": "tlsClientCertKey",
+                "value": "",
+                "type": "query",
+                "description": "TLS client cert key for accessing HTTPS repository."
+              },
+              {
+                "name": "type",
+                "value": "",
+                "type": "query",
+                "description": "The type of the repo."
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "query",
+                "description": "The name of the repo."
+              },
+              {
+                "name": "enableOci",
+                "value": "",
+                "type": "query",
+                "description": "Whether helm-oci support should be enabled for this repo."
+              },
+              {
+                "name": "githubAppPrivateKey",
+                "value": "",
+                "type": "query",
+                "description": "Github App Private Key PEM data."
+              },
+              {
+                "name": "githubAppID",
+                "value": "",
+                "type": "query",
+                "description": "Github App ID of the app used to access the repo."
+              },
+              {
+                "name": "githubAppInstallationID",
+                "value": "",
+                "type": "query",
+                "description": "Github App Installation ID of the installed GitHub App."
+              },
+              {
+                "name": "githubAppEnterpriseBaseUrl",
+                "value": "",
+                "type": "query",
+                "description": "Github App Enterprise base url if empty will default to https://api.github.com."
+              },
+              {
+                "name": "proxy",
+                "value": "",
+                "type": "query",
+                "description": "HTTP/HTTPS proxy to access the repository."
+              },
+              {
+                "name": "project",
+                "value": "",
+                "type": "query",
+                "description": "Reference between project and repository that allow you automatically to be added as item inside SourceRepos project entity."
+              },
+              {
+                "name": "gcpServiceAccountKey",
+                "value": "",
+                "type": "query",
+                "description": "Google Cloud Platform service account key."
+              },
+              {
+                "name": "forceHttpBasicAuth",
+                "value": "",
+                "type": "query",
+                "description": "Whether to force HTTP basic auth."
+              },
+              {
+                "name": "useAzureWorkloadIdentity",
+                "value": "",
+                "type": "query",
+                "description": "Whether to use azure workload identity for authentication."
+              },
+              {
+                "name": "bearerToken",
+                "value": "",
+                "type": "query",
+                "description": "BearerToken contains the bearer token used for Git auth at the repo server."
+              },
+              {
+                "name": "insecureOciForceHttp",
+                "value": "",
+                "type": "query",
+                "description": "Whether https should be disabled for an OCI repo."
+              },
+              {
+                "name": "azureServicePrincipalClientId",
+                "value": "",
+                "type": "query",
+                "description": "Azure Service Principal Client ID."
+              },
+              {
+                "name": "azureServicePrincipalClientSecret",
+                "value": "",
+                "type": "query",
+                "description": "Azure Service Principal Client Secret."
+              },
+              {
+                "name": "azureServicePrincipalTenantId",
+                "value": "",
+                "type": "query",
+                "description": "Azure Service Principal Tenant ID."
+              },
+              {
+                "name": "azureActiveDirectoryEndpoint",
+                "value": "",
+                "type": "query",
+                "description": "Azure Active Directory Endpoint."
+              }
+            ]
+          },
+          "docs": "Argo CD ValidateWriteAccess Validates Write Access to a Repository with Given Parameters"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "SessionService",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Argo CD Create a New JWT for Authentication and Set a Cookie if Using HTTP",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v1/session"
+          },
+          "docs": "Argo CD Create a New JWT for Authentication and Set a Cookie if Using HTTP"
+        },
+        {
+          "info": {
+            "name": "Argo CD Delete an Existing JWT Cookie if Using HTTP",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/api/v1/session"
+          },
+          "docs": "Argo CD Delete an Existing JWT Cookie if Using HTTP"
+        },
+        {
+          "info": {
+            "name": "Argo CD Get the Current User's Info",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/session/userinfo"
+          },
+          "docs": "Argo CD Get the Current User's Info"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "SettingsService",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Argo CD Get Returns Argo CD Settings",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/settings"
+          },
+          "docs": "Argo CD Get Returns Argo CD Settings"
+        },
+        {
+          "info": {
+            "name": "Argo CD Get Returns Argo CD Plugins",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/settings/plugins"
+          },
+          "docs": "Argo CD Get Returns Argo CD Plugins"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "VersionService",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Argo CD Version Returns Version Information of the API Server",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/version"
+          },
+          "docs": "Argo CD Version Returns Version Information of the API Server"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
