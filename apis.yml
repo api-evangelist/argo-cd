@@ -64,7 +64,7 @@ common:
     url: https://github.com/argoproj/argo-cd/blob/master/CHANGELOG.md
   - type: CLI
     url: https://argo-cd.readthedocs.io/en/stable/user-guide/commands/argocd/
-  - type: SDK
+  - type: SDKs
     url: https://github.com/argoproj/argo-cd/tree/master/pkg/apiclient
   - type: Support
     url: https://github.com/argoproj/argo-cd/issues
