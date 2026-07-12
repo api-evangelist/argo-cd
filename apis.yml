@@ -44,6 +44,10 @@ apis:
       - type: APIReference
         url: https://cd.apps.argoproj.io/swagger-ui
 common:
+  - type: DomainSecurity
+    url: security/argo-cd-domain-security.yml
+  - type: Authentication
+    url: authentication/argo-cd-authentication.yml
   - type: LinkedIn
     url: https://www.linkedin.com/company/argoproj
   - type: Website
