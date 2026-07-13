@@ -1,166 +1,172 @@
-# Argo CD API Spectral Ruleset
-# Enforces conventions observed in the Argo CD REST API (swagger 2.0)
-
+# argo-cd — Spectral ruleset (strengthened)
+# Plain Spectral. Existing hand-authored rules preserved; measured rules added
+# from this provider's own OpenAPI conventions by strengthen_ruleset.py,
+# then self-validated against the spec.
+#
+# Provenance:
+#   - path-params-casing: snake @ 77% (n=79)
+#   - query-params-casing: snake @ 50% (n=283)
+#   - merge: kept 18 existing, added 3 measured, upgraded 0
+#   - added: path-params-casing, query-params-casing, no-empty-descriptions
+extends:
+  - spectral:oas
 rules:
-
-  # INFO / METADATA
   info-title-prefix:
     description: API title must start with "Argo CD"
     severity: warn
-    given: "$.info.title"
+    given: $.info.title
     then:
       function: pattern
       functionOptions:
-        match: "^Argo CD"
-
+        match: ^Argo CD
   info-description-required:
     description: API must have a description
     severity: error
-    given: "$.info"
+    given: $.info
     then:
       field: description
       function: truthy
-
   info-version-required:
     description: API must have a version
     severity: error
-    given: "$.info"
+    given: $.info
     then:
       field: version
       function: truthy
-
-  # OPERATIONS
   operation-summary-required:
     description: Every operation must have a summary
     severity: error
-    given: "$.paths[*][get,post,put,delete,patch]"
+    given: $.paths[*][get,post,put,delete,patch]
     then:
       field: summary
       function: truthy
-
   operation-summary-title-case:
     description: Operation summaries must start with "Argo CD"
     severity: warn
-    given: "$.paths[*][get,post,put,delete,patch].summary"
+    given: $.paths[*][get,post,put,delete,patch].summary
     then:
       function: pattern
       functionOptions:
-        match: "^Argo CD"
-
+        match: ^Argo CD
   operation-description-required:
     description: Every operation must have a description
     severity: warn
-    given: "$.paths[*][get,post,put,delete,patch]"
+    given: $.paths[*][get,post,put,delete,patch]
     then:
       field: description
       function: truthy
-
   operation-operationid-required:
     description: Every operation must have an operationId
     severity: error
-    given: "$.paths[*][get,post,put,delete,patch]"
+    given: $.paths[*][get,post,put,delete,patch]
     then:
       field: operationId
       function: truthy
-
   operation-tags-required:
     description: Every operation must have at least one tag
     severity: warn
-    given: "$.paths[*][get,post,put,delete,patch]"
+    given: $.paths[*][get,post,put,delete,patch]
     then:
       field: tags
       function: truthy
-
-  # PATHS - NAMING CONVENTIONS
   paths-kebab-case:
     description: Path segments should use kebab-case
     severity: warn
-    given: "$.paths[*]~"
+    given: $.paths[*]~
     then:
       function: pattern
       functionOptions:
-        match: "^(/api/v[0-9]+)?(/[a-z0-9{}-]+)*$"
-
+        match: ^(/api/v[0-9]+)?(/[a-z0-9{}-]+)*$
   paths-no-trailing-slash:
     description: Paths must not have trailing slashes
     severity: warn
-    given: "$.paths[*]~"
+    given: $.paths[*]~
     then:
       function: pattern
       functionOptions:
-        notMatch: "/$"
-
+        notMatch: /$
   paths-versioned:
     description: All paths should be versioned with /api/v1/
     severity: info
-    given: "$.paths[*]~"
+    given: $.paths[*]~
     then:
       function: pattern
       functionOptions:
-        match: "^/api/v"
-
-  # PARAMETERS
+        match: ^/api/v
   parameter-description-required:
     description: All parameters must have a description
     severity: warn
-    given: "$.paths[*][get,post,put,delete,patch].parameters[*]"
+    given: $.paths[*][get,post,put,delete,patch].parameters[*]
     then:
       field: description
       function: truthy
-
-  # RESPONSES
   response-success-required:
     description: Every operation must have a success response
     severity: error
-    given: "$.paths[*][get,post,put,delete,patch].responses"
+    given: $.paths[*][get,post,put,delete,patch].responses
     then:
       function: schema
       functionOptions:
         schema:
           type: object
           minProperties: 1
-
   response-description-required:
     description: All responses must have a description
     severity: warn
-    given: "$.paths[*][get,post,put,delete,patch].responses[*]"
+    given: $.paths[*][get,post,put,delete,patch].responses[*]
     then:
       field: description
       function: truthy
-
-  # SECURITY
   security-definitions-required:
     description: API must define security schemes
     severity: warn
-    given: "$"
+    given: $
     then:
       field: securityDefinitions
       function: truthy
-
-  # HTTP METHOD CONVENTIONS
   get-no-request-body:
     description: GET operations must not have a request body
     severity: error
-    given: "$.paths[*].get"
+    given: $.paths[*].get
     then:
       field: body
       function: falsy
-
-  # GENERAL QUALITY
   no-empty-summaries:
     description: Summaries must not be empty strings
     severity: error
-    given: "$.paths[*][get,post,put,delete,patch].summary"
+    given: $.paths[*][get,post,put,delete,patch].summary
     then:
       function: pattern
       functionOptions:
-        match: ".+"
-
+        match: .+
   operation-id-camel-case:
     description: OperationIds should use camelCase or ServiceName_MethodName pattern
     severity: info
-    given: "$.paths[*][get,post,put,delete,patch].operationId"
+    given: $.paths[*][get,post,put,delete,patch].operationId
     then:
       function: pattern
       functionOptions:
-        match: "^[A-Za-z][A-Za-z0-9_]*$"
+        match: ^[A-Za-z][A-Za-z0-9_]*$
+  path-params-casing:
+    description: Path parameters should be snake_case (the dominant convention in this API).
+    severity: warn
+    given: $.paths[*].parameters[?(@.in=='path')].name
+    then:
+      function: casing
+      functionOptions:
+        type: snake
+  query-params-casing:
+    description: Query parameters should be snake_case (the dominant convention in this API).
+    severity: info
+    given: $.paths[*][get,post,put,patch,delete].parameters[?(@.in=='query')]
+    then:
+      field: name
+      function: casing
+      functionOptions:
+        type: snake
+  no-empty-descriptions:
+    description: Descriptions must not be empty strings.
+    severity: warn
+    given: $..description
+    then:
+      function: truthy
