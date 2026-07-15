@@ -44,6 +44,8 @@ apis:
       - type: APIReference
         url: https://cd.apps.argoproj.io/swagger-ui
 common:
+  - type: AgenticAccess
+    url: agentic-access/argo-cd-agentic-access.yml
   - type: DomainSecurity
     url: security/argo-cd-domain-security.yml
   - type: Authentication
