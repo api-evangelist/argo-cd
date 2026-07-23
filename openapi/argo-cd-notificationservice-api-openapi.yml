@@ -1,0 +1,135 @@
+swagger: '2.0'
+info:
+  description: Argo CD REST API for managing GitOps continuous delivery on Kubernetes. Authentication uses JWT bearer tokens obtained via the /api/v1/session endpoint.
+  title: Argo CD AccountService NotificationService API
+  version: 2.14.0
+  x-type: opensource
+  x-generated-from: documentation
+consumes:
+- application/json
+produces:
+- application/json
+security:
+- BearerToken: []
+tags:
+- name: NotificationService
+paths:
+  /api/v1/notifications/services:
+    get:
+      tags:
+      - NotificationService
+      summary: Argo CD List Returns List of Services
+      operationId: NotificationService_ListServices
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            $ref: '#/definitions/notificationServiceList'
+        default:
+          description: An unexpected error response.
+          schema:
+            $ref: '#/definitions/runtimeError'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /api/v1/notifications/templates:
+    get:
+      tags:
+      - NotificationService
+      summary: Argo CD List Returns List of Templates
+      operationId: NotificationService_ListTemplates
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            $ref: '#/definitions/notificationTemplateList'
+        default:
+          description: An unexpected error response.
+          schema:
+            $ref: '#/definitions/runtimeError'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /api/v1/notifications/triggers:
+    get:
+      tags:
+      - NotificationService
+      summary: Argo CD List Returns List of Triggers
+      operationId: NotificationService_ListTriggers
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            $ref: '#/definitions/notificationTriggerList'
+        default:
+          description: An unexpected error response.
+          schema:
+            $ref: '#/definitions/runtimeError'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+definitions:
+  protobufAny:
+    type: object
+    properties:
+      type_url:
+        type: string
+      value:
+        type: string
+        format: byte
+  runtimeError:
+    type: object
+    properties:
+      code:
+        type: integer
+        format: int32
+      details:
+        type: array
+        items:
+          $ref: '#/definitions/protobufAny'
+      error:
+        type: string
+      message:
+        type: string
+  notificationTemplateList:
+    type: object
+    properties:
+      items:
+        type: array
+        items:
+          $ref: '#/definitions/notificationTemplate'
+  notificationTriggerList:
+    type: object
+    properties:
+      items:
+        type: array
+        items:
+          $ref: '#/definitions/notificationTrigger'
+  notificationTrigger:
+    type: object
+    properties:
+      name:
+        type: string
+  notificationTemplate:
+    type: object
+    properties:
+      name:
+        type: string
+  notificationService:
+    type: object
+    properties:
+      name:
+        type: string
+  notificationServiceList:
+    type: object
+    properties:
+      items:
+        type: array
+        items:
+          $ref: '#/definitions/notificationService'
+securityDefinitions:
+  BearerToken:
+    type: apiKey
+    in: header
+    name: Authorization
+    description: 'JWT Bearer token. Format: Bearer <token>'

@@ -1,0 +1,263 @@
+swagger: '2.0'
+info:
+  description: Argo CD REST API for managing GitOps continuous delivery on Kubernetes. Authentication uses JWT bearer tokens obtained via the /api/v1/session endpoint.
+  title: Argo CD AccountService API
+  version: 2.14.0
+  x-type: opensource
+  x-generated-from: documentation
+consumes:
+- application/json
+produces:
+- application/json
+security:
+- BearerToken: []
+tags:
+- name: AccountService
+paths:
+  /api/v1/account:
+    get:
+      tags:
+      - AccountService
+      summary: Argo CD ListAccounts Returns the List of Accounts
+      operationId: AccountService_ListAccounts
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            $ref: '#/definitions/accountAccountsList'
+        default:
+          description: An unexpected error response.
+          schema:
+            $ref: '#/definitions/runtimeError'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /api/v1/account/can-i/{resource}/{action}/{subresource}:
+    get:
+      tags:
+      - AccountService
+      summary: Argo CD CanI Checks if the Current Account Has Permission to Perform an Action
+      operationId: AccountService_CanI
+      parameters:
+      - type: string
+        name: resource
+        in: path
+        required: true
+      - type: string
+        name: action
+        in: path
+        required: true
+      - type: string
+        name: subresource
+        in: path
+        required: true
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            $ref: '#/definitions/accountCanIResponse'
+        default:
+          description: An unexpected error response.
+          schema:
+            $ref: '#/definitions/runtimeError'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /api/v1/account/password:
+    put:
+      tags:
+      - AccountService
+      summary: Argo CD UpdatePassword Updates an Account's Password to a New Value
+      operationId: AccountService_UpdatePassword
+      parameters:
+      - name: body
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/accountUpdatePasswordRequest'
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            $ref: '#/definitions/accountUpdatePasswordResponse'
+        default:
+          description: An unexpected error response.
+          schema:
+            $ref: '#/definitions/runtimeError'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /api/v1/account/{name}:
+    get:
+      tags:
+      - AccountService
+      summary: Argo CD GetAccount Returns an Account
+      operationId: AccountService_GetAccount
+      parameters:
+      - type: string
+        name: name
+        in: path
+        required: true
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            $ref: '#/definitions/accountAccount'
+        default:
+          description: An unexpected error response.
+          schema:
+            $ref: '#/definitions/runtimeError'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /api/v1/account/{name}/token:
+    post:
+      tags:
+      - AccountService
+      summary: Argo CD CreateToken Creates a Token
+      operationId: AccountService_CreateToken
+      parameters:
+      - type: string
+        name: name
+        in: path
+        required: true
+      - name: body
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/accountCreateTokenRequest'
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            $ref: '#/definitions/accountCreateTokenResponse'
+        default:
+          description: An unexpected error response.
+          schema:
+            $ref: '#/definitions/runtimeError'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /api/v1/account/{name}/token/{id}:
+    delete:
+      tags:
+      - AccountService
+      summary: Argo CD DeleteToken Deletes a Token
+      operationId: AccountService_DeleteToken
+      parameters:
+      - type: string
+        name: name
+        in: path
+        required: true
+      - type: string
+        name: id
+        in: path
+        required: true
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            $ref: '#/definitions/accountEmptyResponse'
+        default:
+          description: An unexpected error response.
+          schema:
+            $ref: '#/definitions/runtimeError'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+definitions:
+  accountUpdatePasswordResponse:
+    type: object
+  accountAccount:
+    type: object
+    properties:
+      capabilities:
+        type: array
+        items:
+          type: string
+      enabled:
+        type: boolean
+      name:
+        type: string
+      tokens:
+        type: array
+        items:
+          $ref: '#/definitions/accountToken'
+  accountAccountsList:
+    type: object
+    properties:
+      items:
+        type: array
+        items:
+          $ref: '#/definitions/accountAccount'
+  protobufAny:
+    type: object
+    properties:
+      type_url:
+        type: string
+      value:
+        type: string
+        format: byte
+  runtimeError:
+    type: object
+    properties:
+      code:
+        type: integer
+        format: int32
+      details:
+        type: array
+        items:
+          $ref: '#/definitions/protobufAny'
+      error:
+        type: string
+      message:
+        type: string
+  accountToken:
+    type: object
+    properties:
+      expiresAt:
+        type: integer
+        format: int64
+      id:
+        type: string
+      issuedAt:
+        type: integer
+        format: int64
+  accountUpdatePasswordRequest:
+    type: object
+    properties:
+      currentPassword:
+        type: string
+      name:
+        type: string
+      newPassword:
+        type: string
+  accountCreateTokenResponse:
+    type: object
+    properties:
+      token:
+        type: string
+  accountCanIResponse:
+    type: object
+    properties:
+      value:
+        type: string
+  accountEmptyResponse:
+    type: object
+  accountCreateTokenRequest:
+    type: object
+    properties:
+      expiresIn:
+        type: integer
+        format: int64
+        title: expiresIn represents a duration in seconds
+      id:
+        type: string
+      name:
+        type: string
+securityDefinitions:
+  BearerToken:
+    type: apiKey
+    in: header
+    name: Authorization
+    description: 'JWT Bearer token. Format: Bearer <token>'

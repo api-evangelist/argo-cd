@@ -1,0 +1,134 @@
+swagger: '2.0'
+info:
+  description: Argo CD REST API for managing GitOps continuous delivery on Kubernetes. Authentication uses JWT bearer tokens obtained via the /api/v1/session endpoint.
+  title: Argo CD AccountService SessionService API
+  version: 2.14.0
+  x-type: opensource
+  x-generated-from: documentation
+consumes:
+- application/json
+produces:
+- application/json
+security:
+- BearerToken: []
+tags:
+- name: SessionService
+paths:
+  /api/v1/session:
+    post:
+      tags:
+      - SessionService
+      summary: Argo CD Create a New JWT for Authentication and Set a Cookie if Using HTTP
+      operationId: SessionService_Create
+      parameters:
+      - name: body
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/sessionSessionCreateRequest'
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            $ref: '#/definitions/sessionSessionResponse'
+        default:
+          description: An unexpected error response.
+          schema:
+            $ref: '#/definitions/runtimeError'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    delete:
+      tags:
+      - SessionService
+      summary: Argo CD Delete an Existing JWT Cookie if Using HTTP
+      operationId: SessionService_Delete
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            $ref: '#/definitions/sessionSessionResponse'
+        default:
+          description: An unexpected error response.
+          schema:
+            $ref: '#/definitions/runtimeError'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /api/v1/session/userinfo:
+    get:
+      tags:
+      - SessionService
+      summary: Argo CD Get the Current User's Info
+      operationId: SessionService_GetUserInfo
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            $ref: '#/definitions/sessionGetUserInfoResponse'
+        default:
+          description: An unexpected error response.
+          schema:
+            $ref: '#/definitions/runtimeError'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+definitions:
+  sessionSessionResponse:
+    description: SessionResponse wraps the created token or returns an empty string if deleted.
+    type: object
+    properties:
+      token:
+        type: string
+  protobufAny:
+    type: object
+    properties:
+      type_url:
+        type: string
+      value:
+        type: string
+        format: byte
+  runtimeError:
+    type: object
+    properties:
+      code:
+        type: integer
+        format: int32
+      details:
+        type: array
+        items:
+          $ref: '#/definitions/protobufAny'
+      error:
+        type: string
+      message:
+        type: string
+  sessionGetUserInfoResponse:
+    type: object
+    title: The current user's userInfo info
+    properties:
+      groups:
+        type: array
+        items:
+          type: string
+      iss:
+        type: string
+      loggedIn:
+        type: boolean
+      username:
+        type: string
+  sessionSessionCreateRequest:
+    description: SessionCreateRequest is for logging in.
+    type: object
+    properties:
+      password:
+        type: string
+      token:
+        type: string
+      username:
+        type: string
+securityDefinitions:
+  BearerToken:
+    type: apiKey
+    in: header
+    name: Authorization
+    description: 'JWT Bearer token. Format: Bearer <token>'
