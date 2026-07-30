@@ -6,7 +6,20 @@ description: >-
   config management tools (Helm, Kustomize, Jsonnet, plain YAML), multi-cluster deployments, RBAC, SSO integrations, and
   a fully-loaded web UI. Part of the CNCF ecosystem and the Argo Project, governed by the Linux Foundation.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/argo-cd.png
 tags:
   - Continuous Delivery
   - Containers
@@ -20,29 +33,227 @@ created: '2026-03-26'
 modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
-  - aid: argo-cd:argo-cd
-    name: Argo CD API
-    description: >-
-      The Argo CD REST API provides programmatic access to all Argo CD functionality including application management,
-      cluster registration, repository configuration, project RBAC, account management, notifications, and settings.
-      Authentication uses JWT bearer tokens obtained via the session endpoint.
-    humanURL: https://argo-cd.readthedocs.io/en/stable/developer-guide/api-docs/
-    tags:
-      - Continuous Delivery
-      - GitOps
-      - Kubernetes
-      - REST API
-    properties:
-      - type: Documentation
-        url: https://argo-cd.readthedocs.io/en/stable/developer-guide/api-docs/
-      - type: OpenAPI
-        url: openapi/argo-cd-openapi.json
-      - type: GettingStarted
-        url: https://argo-cd.readthedocs.io/en/stable/getting_started/
-      - type: Authentication
-        url: https://argo-cd.readthedocs.io/en/stable/developer-guide/api-docs/#authentication
-      - type: APIReference
-        url: https://cd.apps.argoproj.io/swagger-ui
+- aid: argo-cd:argo-cd-accountservice-api
+  name: Argo CD AccountService API
+  description: The AccountService API from Argo CD — 6 operation(s) for accountservice.
+  humanURL: https://argo-cd.readthedocs.io/en/stable/developer-guide/api-docs/
+  tags:
+  - AccountService
+  properties:
+  - type: OpenAPI
+    url: openapi/argo-cd-accountservice-api-openapi.yml
+  - type: Documentation
+    url: https://argo-cd.readthedocs.io/en/stable/developer-guide/api-docs/
+  - type: GettingStarted
+    url: https://argo-cd.readthedocs.io/en/stable/getting_started/
+  - type: Authentication
+    url: https://argo-cd.readthedocs.io/en/stable/developer-guide/api-docs/#authentication
+  - type: APIReference
+    url: https://cd.apps.argoproj.io/swagger-ui
+- aid: argo-cd:argo-cd-applicationservice-api
+  name: Argo CD ApplicationService API
+  description: The ApplicationService API from Argo CD — 26 operation(s) for applicationservice.
+  humanURL: https://argo-cd.readthedocs.io/en/stable/developer-guide/api-docs/
+  tags:
+  - ApplicationService
+  properties:
+  - type: OpenAPI
+    url: openapi/argo-cd-applicationservice-api-openapi.yml
+  - type: Documentation
+    url: https://argo-cd.readthedocs.io/en/stable/developer-guide/api-docs/
+  - type: GettingStarted
+    url: https://argo-cd.readthedocs.io/en/stable/getting_started/
+  - type: Authentication
+    url: https://argo-cd.readthedocs.io/en/stable/developer-guide/api-docs/#authentication
+  - type: APIReference
+    url: https://cd.apps.argoproj.io/swagger-ui
+- aid: argo-cd:argo-cd-applicationsetservice-api
+  name: Argo CD ApplicationSetService API
+  description: The ApplicationSetService API from Argo CD — 6 operation(s) for applicationsetservice.
+  humanURL: https://argo-cd.readthedocs.io/en/stable/developer-guide/api-docs/
+  tags:
+  - ApplicationSetService
+  properties:
+  - type: OpenAPI
+    url: openapi/argo-cd-applicationsetservice-api-openapi.yml
+  - type: Documentation
+    url: https://argo-cd.readthedocs.io/en/stable/developer-guide/api-docs/
+  - type: GettingStarted
+    url: https://argo-cd.readthedocs.io/en/stable/getting_started/
+  - type: Authentication
+    url: https://argo-cd.readthedocs.io/en/stable/developer-guide/api-docs/#authentication
+  - type: APIReference
+    url: https://cd.apps.argoproj.io/swagger-ui
+- aid: argo-cd:argo-cd-certificateservice-api
+  name: Argo CD CertificateService API
+  description: The CertificateService API from Argo CD — 1 operation(s) for certificateservice.
+  humanURL: https://argo-cd.readthedocs.io/en/stable/developer-guide/api-docs/
+  tags:
+  - CertificateService
+  properties:
+  - type: OpenAPI
+    url: openapi/argo-cd-certificateservice-api-openapi.yml
+  - type: Documentation
+    url: https://argo-cd.readthedocs.io/en/stable/developer-guide/api-docs/
+  - type: GettingStarted
+    url: https://argo-cd.readthedocs.io/en/stable/getting_started/
+  - type: Authentication
+    url: https://argo-cd.readthedocs.io/en/stable/developer-guide/api-docs/#authentication
+  - type: APIReference
+    url: https://cd.apps.argoproj.io/swagger-ui
+- aid: argo-cd:argo-cd-clusterservice-api
+  name: Argo CD ClusterService API
+  description: The ClusterService API from Argo CD — 4 operation(s) for clusterservice.
+  humanURL: https://argo-cd.readthedocs.io/en/stable/developer-guide/api-docs/
+  tags:
+  - ClusterService
+  properties:
+  - type: OpenAPI
+    url: openapi/argo-cd-clusterservice-api-openapi.yml
+  - type: Documentation
+    url: https://argo-cd.readthedocs.io/en/stable/developer-guide/api-docs/
+  - type: GettingStarted
+    url: https://argo-cd.readthedocs.io/en/stable/getting_started/
+  - type: Authentication
+    url: https://argo-cd.readthedocs.io/en/stable/developer-guide/api-docs/#authentication
+  - type: APIReference
+    url: https://cd.apps.argoproj.io/swagger-ui
+- aid: argo-cd:argo-cd-gpgkeyservice-api
+  name: Argo CD GPGKeyService API
+  description: The GPGKeyService API from Argo CD — 2 operation(s) for gpgkeyservice.
+  humanURL: https://argo-cd.readthedocs.io/en/stable/developer-guide/api-docs/
+  tags:
+  - GPGKeyService
+  properties:
+  - type: OpenAPI
+    url: openapi/argo-cd-gpgkeyservice-api-openapi.yml
+  - type: Documentation
+    url: https://argo-cd.readthedocs.io/en/stable/developer-guide/api-docs/
+  - type: GettingStarted
+    url: https://argo-cd.readthedocs.io/en/stable/getting_started/
+  - type: Authentication
+    url: https://argo-cd.readthedocs.io/en/stable/developer-guide/api-docs/#authentication
+  - type: APIReference
+    url: https://cd.apps.argoproj.io/swagger-ui
+- aid: argo-cd:argo-cd-notificationservice-api
+  name: Argo CD NotificationService API
+  description: The NotificationService API from Argo CD — 3 operation(s) for notificationservice.
+  humanURL: https://argo-cd.readthedocs.io/en/stable/developer-guide/api-docs/
+  tags:
+  - NotificationService
+  properties:
+  - type: OpenAPI
+    url: openapi/argo-cd-notificationservice-api-openapi.yml
+  - type: Documentation
+    url: https://argo-cd.readthedocs.io/en/stable/developer-guide/api-docs/
+  - type: GettingStarted
+    url: https://argo-cd.readthedocs.io/en/stable/getting_started/
+  - type: Authentication
+    url: https://argo-cd.readthedocs.io/en/stable/developer-guide/api-docs/#authentication
+  - type: APIReference
+    url: https://cd.apps.argoproj.io/swagger-ui
+- aid: argo-cd:argo-cd-projectservice-api
+  name: Argo CD ProjectService API
+  description: The ProjectService API from Argo CD — 10 operation(s) for projectservice.
+  humanURL: https://argo-cd.readthedocs.io/en/stable/developer-guide/api-docs/
+  tags:
+  - ProjectService
+  properties:
+  - type: OpenAPI
+    url: openapi/argo-cd-projectservice-api-openapi.yml
+  - type: Documentation
+    url: https://argo-cd.readthedocs.io/en/stable/developer-guide/api-docs/
+  - type: GettingStarted
+    url: https://argo-cd.readthedocs.io/en/stable/getting_started/
+  - type: Authentication
+    url: https://argo-cd.readthedocs.io/en/stable/developer-guide/api-docs/#authentication
+  - type: APIReference
+    url: https://cd.apps.argoproj.io/swagger-ui
+- aid: argo-cd:argo-cd-repocredsservice-api
+  name: Argo CD RepoCredsService API
+  description: The RepoCredsService API from Argo CD — 6 operation(s) for repocredsservice.
+  humanURL: https://argo-cd.readthedocs.io/en/stable/developer-guide/api-docs/
+  tags:
+  - RepoCredsService
+  properties:
+  - type: OpenAPI
+    url: openapi/argo-cd-repocredsservice-api-openapi.yml
+  - type: Documentation
+    url: https://argo-cd.readthedocs.io/en/stable/developer-guide/api-docs/
+  - type: GettingStarted
+    url: https://argo-cd.readthedocs.io/en/stable/getting_started/
+  - type: Authentication
+    url: https://argo-cd.readthedocs.io/en/stable/developer-guide/api-docs/#authentication
+  - type: APIReference
+    url: https://cd.apps.argoproj.io/swagger-ui
+- aid: argo-cd:argo-cd-repositoryservice-api
+  name: Argo CD RepositoryService API
+  description: The RepositoryService API from Argo CD — 13 operation(s) for repositoryservice.
+  humanURL: https://argo-cd.readthedocs.io/en/stable/developer-guide/api-docs/
+  tags:
+  - RepositoryService
+  properties:
+  - type: OpenAPI
+    url: openapi/argo-cd-repositoryservice-api-openapi.yml
+  - type: Documentation
+    url: https://argo-cd.readthedocs.io/en/stable/developer-guide/api-docs/
+  - type: GettingStarted
+    url: https://argo-cd.readthedocs.io/en/stable/getting_started/
+  - type: Authentication
+    url: https://argo-cd.readthedocs.io/en/stable/developer-guide/api-docs/#authentication
+  - type: APIReference
+    url: https://cd.apps.argoproj.io/swagger-ui
+- aid: argo-cd:argo-cd-sessionservice-api
+  name: Argo CD SessionService API
+  description: The SessionService API from Argo CD — 2 operation(s) for sessionservice.
+  humanURL: https://argo-cd.readthedocs.io/en/stable/developer-guide/api-docs/
+  tags:
+  - SessionService
+  properties:
+  - type: OpenAPI
+    url: openapi/argo-cd-sessionservice-api-openapi.yml
+  - type: Documentation
+    url: https://argo-cd.readthedocs.io/en/stable/developer-guide/api-docs/
+  - type: GettingStarted
+    url: https://argo-cd.readthedocs.io/en/stable/getting_started/
+  - type: Authentication
+    url: https://argo-cd.readthedocs.io/en/stable/developer-guide/api-docs/#authentication
+  - type: APIReference
+    url: https://cd.apps.argoproj.io/swagger-ui
+- aid: argo-cd:argo-cd-settingsservice-api
+  name: Argo CD SettingsService API
+  description: The SettingsService API from Argo CD — 2 operation(s) for settingsservice.
+  humanURL: https://argo-cd.readthedocs.io/en/stable/developer-guide/api-docs/
+  tags:
+  - SettingsService
+  properties:
+  - type: OpenAPI
+    url: openapi/argo-cd-settingsservice-api-openapi.yml
+  - type: Documentation
+    url: https://argo-cd.readthedocs.io/en/stable/developer-guide/api-docs/
+  - type: GettingStarted
+    url: https://argo-cd.readthedocs.io/en/stable/getting_started/
+  - type: Authentication
+    url: https://argo-cd.readthedocs.io/en/stable/developer-guide/api-docs/#authentication
+  - type: APIReference
+    url: https://cd.apps.argoproj.io/swagger-ui
+- aid: argo-cd:argo-cd-versionservice-api
+  name: Argo CD VersionService API
+  description: The VersionService API from Argo CD — 1 operation(s) for versionservice.
+  humanURL: https://argo-cd.readthedocs.io/en/stable/developer-guide/api-docs/
+  tags:
+  - VersionService
+  properties:
+  - type: OpenAPI
+    url: openapi/argo-cd-versionservice-api-openapi.yml
+  - type: Documentation
+    url: https://argo-cd.readthedocs.io/en/stable/developer-guide/api-docs/
+  - type: GettingStarted
+    url: https://argo-cd.readthedocs.io/en/stable/getting_started/
+  - type: Authentication
+    url: https://argo-cd.readthedocs.io/en/stable/developer-guide/api-docs/#authentication
+  - type: APIReference
+    url: https://cd.apps.argoproj.io/swagger-ui
 common:
   - type: AgenticAccess
     url: agentic-access/argo-cd-agentic-access.yml
