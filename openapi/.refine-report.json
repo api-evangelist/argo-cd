@@ -1,0 +1,38 @@
+{
+  "provider": "argo-cd",
+  "sources": [
+    "argo-cd-accountservice-api-openapi.yml",
+    "argo-cd-applicationservice-api-openapi.yml",
+    "argo-cd-applicationsetservice-api-openapi.yml",
+    "argo-cd-certificateservice-api-openapi.yml",
+    "argo-cd-clusterservice-api-openapi.yml",
+    "argo-cd-gpgkeyservice-api-openapi.yml",
+    "argo-cd-notificationservice-api-openapi.yml",
+    "argo-cd-projectservice-api-openapi.yml",
+    "argo-cd-repocredsservice-api-openapi.yml",
+    "argo-cd-repositoryservice-api-openapi.yml",
+    "argo-cd-sessionservice-api-openapi.yml",
+    "argo-cd-settingsservice-api-openapi.yml",
+    "argo-cd-versionservice-api-openapi.yml"
+  ],
+  "outputs": [
+    "argo-cd-accountservice-api-openapi.yml",
+    "argo-cd-applicationservice-api-openapi.yml",
+    "argo-cd-applicationsetservice-api-openapi.yml",
+    "argo-cd-certificateservice-api-openapi.yml",
+    "argo-cd-clusterservice-api-openapi.yml",
+    "argo-cd-gpgkeyservice-api-openapi.yml",
+    "argo-cd-notificationservice-api-openapi.yml",
+    "argo-cd-projectservice-api-openapi.yml",
+    "argo-cd-repocredsservice-api-openapi.yml",
+    "argo-cd-repositoryservice-api-openapi.yml",
+    "argo-cd-sessionservice-api-openapi.yml",
+    "argo-cd-settingsservice-api-openapi.yml",
+    "argo-cd-versionservice-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
