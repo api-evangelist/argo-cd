@@ -255,6 +255,13 @@ apis:
   - type: APIReference
     url: https://cd.apps.argoproj.io/swagger-ui
 common:
+  - type: SecurityPolicy
+    url: https://github.com/argoproj/argo-cd/blob/master/SECURITY.md
+  - type: ContributionGuide
+    url: https://github.com/argoproj/argo-cd/blob/master/CONTRIBUTING.md
+  - type: License
+    name: Apache-2.0
+    url: https://github.com/argoproj/argo-cd/blob/master/LICENSE
   - type: AgenticAccess
     url: agentic-access/argo-cd-agentic-access.yml
   - type: DomainSecurity
