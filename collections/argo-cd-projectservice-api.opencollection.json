@@ -1,0 +1,248 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Argo CD AccountService ProjectService API",
+    "version": "2.14.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "ProjectService",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Argo CD List Returns List of Projects",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/projects",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Argo CD List Returns List of Projects"
+        },
+        {
+          "info": {
+            "name": "Argo CD Create a New Project",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v1/projects"
+          },
+          "docs": "Argo CD Create a New Project"
+        },
+        {
+          "info": {
+            "name": "Argo CD Get Returns a Project by Name",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/projects/:name",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Argo CD Get Returns a Project by Name"
+        },
+        {
+          "info": {
+            "name": "Argo CD Delete Deletes a Project",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/api/v1/projects/:name",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Argo CD Delete Deletes a Project"
+        },
+        {
+          "info": {
+            "name": "Argo CD GetDetailedProject Returns a Project That Include Project, Global Project and Scoped Resources by Name",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/projects/:name/detailed",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Argo CD GetDetailedProject Returns a Project That Include Project, Global Project and Scoped Resources by Name"
+        },
+        {
+          "info": {
+            "name": "Argo CD ListEvents Returns a List of Project Events",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/projects/:name/events",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Argo CD ListEvents Returns a List of Project Events"
+        },
+        {
+          "info": {
+            "name": "Argo CD Get Returns a Virtual Project by Name",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/projects/:name/globalprojects",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Argo CD Get Returns a Virtual Project by Name"
+        },
+        {
+          "info": {
+            "name": "Argo CD ListLinks Returns All Deep Links for the Particular Project",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/projects/:name/links",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Argo CD ListLinks Returns All Deep Links for the Particular Project"
+        },
+        {
+          "info": {
+            "name": "Argo CD GetSchedulesState Returns True if There Are Any Active Sync SyncWindows",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/projects/:name/syncwindows",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Argo CD GetSchedulesState Returns True if There Are Any Active Sync SyncWindows"
+        },
+        {
+          "info": {
+            "name": "Argo CD Update Updates a Project",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/api/v1/projects/:project.metadata.name",
+            "params": [
+              {
+                "name": "project.metadata.name",
+                "value": "",
+                "type": "path",
+                "description": "Name must be unique within a namespace. Is required when creating resources, although\nsome resources may allow a client to request the generation of an appropriate name\nautomatically. Name is primarily intended for creation idempotence and configuration\ndefinition.\nCannot be updated.\nMore info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names#names\n+optional"
+              }
+            ]
+          },
+          "docs": "Argo CD Update Updates a Project"
+        },
+        {
+          "info": {
+            "name": "Argo CD Create a New Project Token",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v1/projects/:project/roles/:role/token",
+            "params": [
+              {
+                "name": "project",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "role",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Argo CD Create a New Project Token"
+        },
+        {
+          "info": {
+            "name": "Argo CD Delete a New Project Token",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/api/v1/projects/:project/roles/:role/token/:iat",
+            "params": [
+              {
+                "name": "project",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "role",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "iat",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Argo CD Delete a New Project Token"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

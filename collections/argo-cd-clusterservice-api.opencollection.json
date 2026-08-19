@@ -1,0 +1,209 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Argo CD AccountService ClusterService API",
+    "version": "2.14.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "ClusterService",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Argo CD List Returns List of Clusters",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/clusters",
+            "params": [
+              {
+                "name": "server",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "id.type",
+                "value": "",
+                "type": "query",
+                "description": "type is the type of the specified cluster identifier ( \"server\" - default, \"name\" )."
+              },
+              {
+                "name": "id.value",
+                "value": "",
+                "type": "query",
+                "description": "value holds the cluster server URL or cluster name."
+              }
+            ]
+          },
+          "docs": "Argo CD List Returns List of Clusters"
+        },
+        {
+          "info": {
+            "name": "Argo CD Create Creates a Cluster",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v1/clusters",
+            "params": [
+              {
+                "name": "upsert",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Argo CD Create Creates a Cluster"
+        },
+        {
+          "info": {
+            "name": "Argo CD Get Returns a Cluster by Server Address",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/clusters/:id.value",
+            "params": [
+              {
+                "name": "id.value",
+                "value": "",
+                "type": "path",
+                "description": "value holds the cluster server URL or cluster name"
+              },
+              {
+                "name": "server",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "id.type",
+                "value": "",
+                "type": "query",
+                "description": "type is the type of the specified cluster identifier ( \"server\" - default, \"name\" )."
+              }
+            ]
+          },
+          "docs": "Argo CD Get Returns a Cluster by Server Address"
+        },
+        {
+          "info": {
+            "name": "Argo CD Update Updates a Cluster",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/api/v1/clusters/:id.value",
+            "params": [
+              {
+                "name": "id.value",
+                "value": "",
+                "type": "path",
+                "description": "value holds the cluster server URL or cluster name"
+              },
+              {
+                "name": "updatedFields",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "id.type",
+                "value": "",
+                "type": "query",
+                "description": "type is the type of the specified cluster identifier ( \"server\" - default, \"name\" )."
+              }
+            ]
+          },
+          "docs": "Argo CD Update Updates a Cluster"
+        },
+        {
+          "info": {
+            "name": "Argo CD Delete Deletes a Cluster",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/api/v1/clusters/:id.value",
+            "params": [
+              {
+                "name": "id.value",
+                "value": "",
+                "type": "path",
+                "description": "value holds the cluster server URL or cluster name"
+              },
+              {
+                "name": "server",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "id.type",
+                "value": "",
+                "type": "query",
+                "description": "type is the type of the specified cluster identifier ( \"server\" - default, \"name\" )."
+              }
+            ]
+          },
+          "docs": "Argo CD Delete Deletes a Cluster"
+        },
+        {
+          "info": {
+            "name": "Argo CD InvalidateCache Invalidates Cluster Cache",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v1/clusters/:id.value/invalidate-cache",
+            "params": [
+              {
+                "name": "id.value",
+                "value": "",
+                "type": "path",
+                "description": "value holds the cluster server URL or cluster name"
+              }
+            ]
+          },
+          "docs": "Argo CD InvalidateCache Invalidates Cluster Cache"
+        },
+        {
+          "info": {
+            "name": "Argo CD RotateAuth Rotates the Bearer Token Used for a Cluster",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v1/clusters/:id.value/rotate-auth",
+            "params": [
+              {
+                "name": "id.value",
+                "value": "",
+                "type": "path",
+                "description": "value holds the cluster server URL or cluster name"
+              }
+            ]
+          },
+          "docs": "Argo CD RotateAuth Rotates the Bearer Token Used for a Cluster"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

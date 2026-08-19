@@ -1,0 +1,1286 @@
+{
+  "item": [
+    {
+      "id": "cec1482b-1e90-4323-8c65-9c2077d36896",
+      "name": "ClusterService",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9bc49458-b537-4c49-ad9c-70c495243104",
+          "name": "Argo CD List Returns List of Clusters",
+          "request": {
+            "name": "Argo CD List Returns List of Clusters",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "clusters"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "server",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "id.type",
+                  "value": "<string>",
+                  "description": "type is the type of the specified cluster identifier ( \"server\" - default, \"name\" )."
+                },
+                {
+                  "disabled": false,
+                  "key": "id.value",
+                  "value": "<string>",
+                  "description": "value holds the cluster server URL or cluster name."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "411f1123-adb7-46e9-bed5-edc90a7783cf",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "clusters"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "server",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "id.type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "id.value",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"items\": [\n    {\n      \"annotations\": {\n        \"key_0\": \"string\"\n      },\n      \"clusterResources\": false,\n      \"config\": {\n        \"awsAuthConfig\": {\n          \"clusterName\": \"string\",\n          \"profile\": \"string\",\n          \"roleARN\": \"string\"\n        },\n        \"bearerToken\": \"string\",\n        \"disableCompression\": true,\n        \"execProviderConfig\": {\n          \"apiVersion\": \"string\",\n          \"args\": [\n            \"string\",\n            \"string\"\n          ],\n          \"command\": \"string\",\n          \"env\": {\n            \"key_0\": \"string\",\n            \"key_1\": \"string\"\n          },\n          \"installHint\": \"string\"\n        },\n        \"password\": \"string\",\n        \"proxyUrl\": \"string\",\n        \"tlsClientConfig\": {\n          \"caData\": \"string\",\n          \"certData\": \"string\",\n          \"insecure\": false,\n          \"keyData\": \"string\",\n          \"serverName\": \"string\"\n        },\n        \"username\": \"string\"\n      },\n      \"connectionState\": {\n        \"attemptedAt\": \"1980-04-09T21:36:20.742Z\",\n        \"message\": \"string\",\n        \"status\": \"string\"\n      },\n      \"info\": {\n        \"apiVersions\": [\n          \"string\",\n          \"string\"\n        ],\n        \"applicationsCount\": 1785,\n        \"cacheInfo\": {\n          \"apisCount\": 597,\n          \"lastCacheSyncTime\": \"1963-07-06T10:44:57.629Z\",\n          \"resourcesCount\": 9585\n        },\n        \"connectionState\": {\n          \"attemptedAt\": \"1948-11-03T21:48:08.458Z\",\n          \"message\": \"string\",\n          \"status\": \"string\"\n        },\n        \"serverVersion\": \"string\"\n      },\n      \"labels\": {\n        \"key_0\": \"string\"\n      },\n      \"name\": \"string\",\n      \"namespaces\": [\n        \"string\",\n        \"string\"\n      ],\n      \"project\": \"string\",\n      \"refreshRequestedAt\": \"1979-03-08T20:55:14.523Z\",\n      \"server\": \"string\",\n      \"serverVersion\": \"string\",\n      \"shard\": 4323\n    },\n    {\n      \"annotations\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      },\n      \"clusterResources\": false,\n      \"config\": {\n        \"awsAuthConfig\": {\n          \"clusterName\": \"string\",\n          \"profile\": \"string\",\n          \"roleARN\": \"string\"\n        },\n        \"bearerToken\": \"string\",\n        \"disableCompression\": true,\n        \"execProviderConfig\": {\n          \"apiVersion\": \"string\",\n          \"args\": [\n            \"string\",\n            \"string\"\n          ],\n          \"command\": \"string\",\n          \"env\": {\n            \"key_0\": \"string\",\n            \"key_1\": \"string\",\n            \"key_2\": \"string\"\n          },\n          \"installHint\": \"string\"\n        },\n        \"password\": \"string\",\n        \"proxyUrl\": \"string\",\n        \"tlsClientConfig\": {\n          \"caData\": \"string\",\n          \"certData\": \"string\",\n          \"insecure\": true,\n          \"keyData\": \"string\",\n          \"serverName\": \"string\"\n        },\n        \"username\": \"string\"\n      },\n      \"connectionState\": {\n        \"attemptedAt\": \"1993-12-27T13:03:28.405Z\",\n        \"message\": \"string\",\n        \"status\": \"string\"\n      },\n      \"info\": {\n        \"apiVersions\": [\n          \"string\",\n          \"string\"\n        ],\n        \"applicationsCount\": 6602,\n        \"cacheInfo\": {\n          \"apisCount\": 6247,\n          \"lastCacheSyncTime\": \"1968-12-07T02:29:53.256Z\",\n          \"resourcesCount\": 8238\n        },\n        \"connectionState\": {\n          \"attemptedAt\": \"2003-11-08T14:03:18.583Z\",\n          \"message\": \"string\",\n          \"status\": \"string\"\n        },\n        \"serverVersion\": \"string\"\n      },\n      \"labels\": {\n        \"key_0\": \"string\"\n      },\n      \"name\": \"string\",\n      \"namespaces\": [\n        \"string\",\n        \"string\"\n      ],\n      \"project\": \"string\",\n      \"refreshRequestedAt\": \"2007-03-06T02:03:53.384Z\",\n      \"server\": \"string\",\n      \"serverVersion\": \"string\",\n      \"shard\": 395\n    }\n  ],\n  \"metadata\": {\n    \"continue\": \"string\",\n    \"remainingItemCount\": 9470,\n    \"resourceVersion\": \"string\",\n    \"selfLink\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b7edc4f1-e089-41cd-ad03-0fbdec2055f4",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "clusters"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "server",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "id.type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "id.value",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 1567,\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ],\n  \"error\": \"string\",\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f9ff913b-feb6-412b-9e6c-f1a1d2c6744e",
+          "name": "Argo CD Create Creates a Cluster",
+          "request": {
+            "name": "Argo CD Create Creates a Cluster",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "clusters"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "upsert",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"annotations\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"clusterResources\": \"<boolean>\",\n  \"config\": {\n    \"awsAuthConfig\": {\n      \"clusterName\": \"<string>\",\n      \"profile\": \"<string>\",\n      \"roleARN\": \"<string>\"\n    },\n    \"bearerToken\": \"<string>\",\n    \"disableCompression\": \"<boolean>\",\n    \"execProviderConfig\": {\n      \"apiVersion\": \"<string>\",\n      \"args\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"command\": \"<string>\",\n      \"env\": {\n        \"key_0\": \"<string>\",\n        \"key_1\": \"<string>\"\n      },\n      \"installHint\": \"<string>\"\n    },\n    \"password\": \"<string>\",\n    \"proxyUrl\": \"<string>\",\n    \"tlsClientConfig\": {\n      \"caData\": \"<byte>\",\n      \"certData\": \"<byte>\",\n      \"insecure\": \"<boolean>\",\n      \"keyData\": \"<byte>\",\n      \"serverName\": \"<string>\"\n    },\n    \"username\": \"<string>\"\n  },\n  \"connectionState\": {\n    \"attemptedAt\": \"<dateTime>\",\n    \"message\": \"<string>\",\n    \"status\": \"<string>\"\n  },\n  \"info\": {\n    \"apiVersions\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"applicationsCount\": \"<long>\",\n    \"cacheInfo\": {\n      \"apisCount\": \"<long>\",\n      \"lastCacheSyncTime\": \"<dateTime>\",\n      \"resourcesCount\": \"<long>\"\n    },\n    \"connectionState\": {\n      \"attemptedAt\": \"<dateTime>\",\n      \"message\": \"<string>\",\n      \"status\": \"<string>\"\n    },\n    \"serverVersion\": \"<string>\"\n  },\n  \"labels\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\"\n  },\n  \"name\": \"<string>\",\n  \"namespaces\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"project\": \"<string>\",\n  \"refreshRequestedAt\": \"<dateTime>\",\n  \"server\": \"<string>\",\n  \"serverVersion\": \"<string>\",\n  \"shard\": \"<long>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d9d5b681-84de-4e33-940d-196d041c2831",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "clusters"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "upsert",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"annotations\": {\n    \"key_0\": \"<string>\"\n  },\n  \"clusterResources\": \"<boolean>\",\n  \"config\": {\n    \"awsAuthConfig\": {\n      \"clusterName\": \"<string>\",\n      \"profile\": \"<string>\",\n      \"roleARN\": \"<string>\"\n    },\n    \"bearerToken\": \"<string>\",\n    \"disableCompression\": \"<boolean>\",\n    \"execProviderConfig\": {\n      \"apiVersion\": \"<string>\",\n      \"args\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"command\": \"<string>\",\n      \"env\": {\n        \"key_0\": \"<string>\",\n        \"key_1\": \"<string>\",\n        \"key_2\": \"<string>\",\n        \"key_3\": \"<string>\"\n      },\n      \"installHint\": \"<string>\"\n    },\n    \"password\": \"<string>\",\n    \"proxyUrl\": \"<string>\",\n    \"tlsClientConfig\": {\n      \"caData\": \"<byte>\",\n      \"certData\": \"<byte>\",\n      \"insecure\": \"<boolean>\",\n      \"keyData\": \"<byte>\",\n      \"serverName\": \"<string>\"\n    },\n    \"username\": \"<string>\"\n  },\n  \"connectionState\": {\n    \"attemptedAt\": \"<dateTime>\",\n    \"message\": \"<string>\",\n    \"status\": \"<string>\"\n  },\n  \"info\": {\n    \"apiVersions\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"applicationsCount\": \"<long>\",\n    \"cacheInfo\": {\n      \"apisCount\": \"<long>\",\n      \"lastCacheSyncTime\": \"<dateTime>\",\n      \"resourcesCount\": \"<long>\"\n    },\n    \"connectionState\": {\n      \"attemptedAt\": \"<dateTime>\",\n      \"message\": \"<string>\",\n      \"status\": \"<string>\"\n    },\n    \"serverVersion\": \"<string>\"\n  },\n  \"labels\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\"\n  },\n  \"name\": \"<string>\",\n  \"namespaces\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"project\": \"<string>\",\n  \"refreshRequestedAt\": \"<dateTime>\",\n  \"server\": \"<string>\",\n  \"serverVersion\": \"<string>\",\n  \"shard\": \"<long>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "df265855-2670-4bb0-83d7-79fd2762164c",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "clusters"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "upsert",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 8272,\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ],\n  \"error\": \"string\",\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e63e264b-b888-4563-bab4-3ae5918cbb68",
+          "name": "Argo CD Get Returns a Cluster by Server Address",
+          "request": {
+            "name": "Argo CD Get Returns a Cluster by Server Address",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "clusters",
+                ":id.value"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "server",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "id.type",
+                  "value": "<string>",
+                  "description": "type is the type of the specified cluster identifier ( \"server\" - default, \"name\" )."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id.value",
+                  "description": "(Required) value holds the cluster server URL or cluster name"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d9f0121b-064b-4744-a6d6-e40cd29306fd",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "clusters",
+                    ":id.value"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "server",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "id.type",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id.value",
+                      "description": "(Required) value holds the cluster server URL or cluster name"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"annotations\": {\n    \"key_0\": \"<string>\"\n  },\n  \"clusterResources\": \"<boolean>\",\n  \"config\": {\n    \"awsAuthConfig\": {\n      \"clusterName\": \"<string>\",\n      \"profile\": \"<string>\",\n      \"roleARN\": \"<string>\"\n    },\n    \"bearerToken\": \"<string>\",\n    \"disableCompression\": \"<boolean>\",\n    \"execProviderConfig\": {\n      \"apiVersion\": \"<string>\",\n      \"args\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"command\": \"<string>\",\n      \"env\": {\n        \"key_0\": \"<string>\",\n        \"key_1\": \"<string>\",\n        \"key_2\": \"<string>\",\n        \"key_3\": \"<string>\"\n      },\n      \"installHint\": \"<string>\"\n    },\n    \"password\": \"<string>\",\n    \"proxyUrl\": \"<string>\",\n    \"tlsClientConfig\": {\n      \"caData\": \"<byte>\",\n      \"certData\": \"<byte>\",\n      \"insecure\": \"<boolean>\",\n      \"keyData\": \"<byte>\",\n      \"serverName\": \"<string>\"\n    },\n    \"username\": \"<string>\"\n  },\n  \"connectionState\": {\n    \"attemptedAt\": \"<dateTime>\",\n    \"message\": \"<string>\",\n    \"status\": \"<string>\"\n  },\n  \"info\": {\n    \"apiVersions\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"applicationsCount\": \"<long>\",\n    \"cacheInfo\": {\n      \"apisCount\": \"<long>\",\n      \"lastCacheSyncTime\": \"<dateTime>\",\n      \"resourcesCount\": \"<long>\"\n    },\n    \"connectionState\": {\n      \"attemptedAt\": \"<dateTime>\",\n      \"message\": \"<string>\",\n      \"status\": \"<string>\"\n    },\n    \"serverVersion\": \"<string>\"\n  },\n  \"labels\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\"\n  },\n  \"name\": \"<string>\",\n  \"namespaces\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"project\": \"<string>\",\n  \"refreshRequestedAt\": \"<dateTime>\",\n  \"server\": \"<string>\",\n  \"serverVersion\": \"<string>\",\n  \"shard\": \"<long>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a49e742a-6cbb-4db5-84c7-8c07c492049e",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "clusters",
+                    ":id.value"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "server",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "id.type",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id.value",
+                      "description": "(Required) value holds the cluster server URL or cluster name"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 8272,\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ],\n  \"error\": \"string\",\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "998f1095-b892-45a1-9f4c-0da3af870d5f",
+          "name": "Argo CD Update Updates a Cluster",
+          "request": {
+            "name": "Argo CD Update Updates a Cluster",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "clusters",
+                ":id.value"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "updatedFields",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "updatedFields",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "id.type",
+                  "value": "<string>",
+                  "description": "type is the type of the specified cluster identifier ( \"server\" - default, \"name\" )."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id.value",
+                  "description": "(Required) value holds the cluster server URL or cluster name"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"annotations\": {\n    \"key_0\": \"<string>\"\n  },\n  \"clusterResources\": \"<boolean>\",\n  \"config\": {\n    \"awsAuthConfig\": {\n      \"clusterName\": \"<string>\",\n      \"profile\": \"<string>\",\n      \"roleARN\": \"<string>\"\n    },\n    \"bearerToken\": \"<string>\",\n    \"disableCompression\": \"<boolean>\",\n    \"execProviderConfig\": {\n      \"apiVersion\": \"<string>\",\n      \"args\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"command\": \"<string>\",\n      \"env\": {\n        \"key_0\": \"<string>\"\n      },\n      \"installHint\": \"<string>\"\n    },\n    \"password\": \"<string>\",\n    \"proxyUrl\": \"<string>\",\n    \"tlsClientConfig\": {\n      \"caData\": \"<byte>\",\n      \"certData\": \"<byte>\",\n      \"insecure\": \"<boolean>\",\n      \"keyData\": \"<byte>\",\n      \"serverName\": \"<string>\"\n    },\n    \"username\": \"<string>\"\n  },\n  \"connectionState\": {\n    \"attemptedAt\": \"<dateTime>\",\n    \"message\": \"<string>\",\n    \"status\": \"<string>\"\n  },\n  \"info\": {\n    \"apiVersions\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"applicationsCount\": \"<long>\",\n    \"cacheInfo\": {\n      \"apisCount\": \"<long>\",\n      \"lastCacheSyncTime\": \"<dateTime>\",\n      \"resourcesCount\": \"<long>\"\n    },\n    \"connectionState\": {\n      \"attemptedAt\": \"<dateTime>\",\n      \"message\": \"<string>\",\n      \"status\": \"<string>\"\n    },\n    \"serverVersion\": \"<string>\"\n  },\n  \"labels\": {\n    \"key_0\": \"<string>\"\n  },\n  \"name\": \"<string>\",\n  \"namespaces\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"project\": \"<string>\",\n  \"refreshRequestedAt\": \"<dateTime>\",\n  \"server\": \"<string>\",\n  \"serverVersion\": \"<string>\",\n  \"shard\": \"<long>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e06ed986-e008-4143-a8fd-f0a55d0d84a9",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "clusters",
+                    ":id.value"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "updatedFields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updatedFields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "id.type",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id.value",
+                      "description": "(Required) value holds the cluster server URL or cluster name"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"annotations\": {\n    \"key_0\": \"<string>\"\n  },\n  \"clusterResources\": \"<boolean>\",\n  \"config\": {\n    \"awsAuthConfig\": {\n      \"clusterName\": \"<string>\",\n      \"profile\": \"<string>\",\n      \"roleARN\": \"<string>\"\n    },\n    \"bearerToken\": \"<string>\",\n    \"disableCompression\": \"<boolean>\",\n    \"execProviderConfig\": {\n      \"apiVersion\": \"<string>\",\n      \"args\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"command\": \"<string>\",\n      \"env\": {\n        \"key_0\": \"<string>\",\n        \"key_1\": \"<string>\",\n        \"key_2\": \"<string>\",\n        \"key_3\": \"<string>\"\n      },\n      \"installHint\": \"<string>\"\n    },\n    \"password\": \"<string>\",\n    \"proxyUrl\": \"<string>\",\n    \"tlsClientConfig\": {\n      \"caData\": \"<byte>\",\n      \"certData\": \"<byte>\",\n      \"insecure\": \"<boolean>\",\n      \"keyData\": \"<byte>\",\n      \"serverName\": \"<string>\"\n    },\n    \"username\": \"<string>\"\n  },\n  \"connectionState\": {\n    \"attemptedAt\": \"<dateTime>\",\n    \"message\": \"<string>\",\n    \"status\": \"<string>\"\n  },\n  \"info\": {\n    \"apiVersions\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"applicationsCount\": \"<long>\",\n    \"cacheInfo\": {\n      \"apisCount\": \"<long>\",\n      \"lastCacheSyncTime\": \"<dateTime>\",\n      \"resourcesCount\": \"<long>\"\n    },\n    \"connectionState\": {\n      \"attemptedAt\": \"<dateTime>\",\n      \"message\": \"<string>\",\n      \"status\": \"<string>\"\n    },\n    \"serverVersion\": \"<string>\"\n  },\n  \"labels\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\"\n  },\n  \"name\": \"<string>\",\n  \"namespaces\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"project\": \"<string>\",\n  \"refreshRequestedAt\": \"<dateTime>\",\n  \"server\": \"<string>\",\n  \"serverVersion\": \"<string>\",\n  \"shard\": \"<long>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a44b99b9-af77-4144-a9d1-4931ff5173d5",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "clusters",
+                    ":id.value"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "updatedFields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updatedFields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "id.type",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id.value",
+                      "description": "(Required) value holds the cluster server URL or cluster name"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 8272,\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ],\n  \"error\": \"string\",\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6da2d1f0-e6ee-4d7c-96a6-8c1037c78040",
+          "name": "Argo CD Delete Deletes a Cluster",
+          "request": {
+            "name": "Argo CD Delete Deletes a Cluster",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "clusters",
+                ":id.value"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "server",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "id.type",
+                  "value": "<string>",
+                  "description": "type is the type of the specified cluster identifier ( \"server\" - default, \"name\" )."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id.value",
+                  "description": "(Required) value holds the cluster server URL or cluster name"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1e21419a-402e-468a-a22f-def4cd84e8e0",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "clusters",
+                    ":id.value"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "server",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "id.type",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id.value",
+                      "description": "(Required) value holds the cluster server URL or cluster name"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "73872ae6-d6be-4c03-9f02-ff0a14b7b185",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "clusters",
+                    ":id.value"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "server",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "id.type",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id.value",
+                      "description": "(Required) value holds the cluster server URL or cluster name"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 8272,\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ],\n  \"error\": \"string\",\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8c539af5-8815-487d-a69b-65cbfc7f4fed",
+          "name": "Argo CD InvalidateCache Invalidates Cluster Cache",
+          "request": {
+            "name": "Argo CD InvalidateCache Invalidates Cluster Cache",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "clusters",
+                ":id.value",
+                "invalidate-cache"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id.value",
+                  "description": "(Required) value holds the cluster server URL or cluster name"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "046c1d0e-b5b4-40c5-ae42-877bc2f94f0c",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "clusters",
+                    ":id.value",
+                    "invalidate-cache"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id.value",
+                      "description": "(Required) value holds the cluster server URL or cluster name"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"annotations\": {\n    \"key_0\": \"<string>\"\n  },\n  \"clusterResources\": \"<boolean>\",\n  \"config\": {\n    \"awsAuthConfig\": {\n      \"clusterName\": \"<string>\",\n      \"profile\": \"<string>\",\n      \"roleARN\": \"<string>\"\n    },\n    \"bearerToken\": \"<string>\",\n    \"disableCompression\": \"<boolean>\",\n    \"execProviderConfig\": {\n      \"apiVersion\": \"<string>\",\n      \"args\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"command\": \"<string>\",\n      \"env\": {\n        \"key_0\": \"<string>\",\n        \"key_1\": \"<string>\",\n        \"key_2\": \"<string>\",\n        \"key_3\": \"<string>\"\n      },\n      \"installHint\": \"<string>\"\n    },\n    \"password\": \"<string>\",\n    \"proxyUrl\": \"<string>\",\n    \"tlsClientConfig\": {\n      \"caData\": \"<byte>\",\n      \"certData\": \"<byte>\",\n      \"insecure\": \"<boolean>\",\n      \"keyData\": \"<byte>\",\n      \"serverName\": \"<string>\"\n    },\n    \"username\": \"<string>\"\n  },\n  \"connectionState\": {\n    \"attemptedAt\": \"<dateTime>\",\n    \"message\": \"<string>\",\n    \"status\": \"<string>\"\n  },\n  \"info\": {\n    \"apiVersions\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"applicationsCount\": \"<long>\",\n    \"cacheInfo\": {\n      \"apisCount\": \"<long>\",\n      \"lastCacheSyncTime\": \"<dateTime>\",\n      \"resourcesCount\": \"<long>\"\n    },\n    \"connectionState\": {\n      \"attemptedAt\": \"<dateTime>\",\n      \"message\": \"<string>\",\n      \"status\": \"<string>\"\n    },\n    \"serverVersion\": \"<string>\"\n  },\n  \"labels\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\"\n  },\n  \"name\": \"<string>\",\n  \"namespaces\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"project\": \"<string>\",\n  \"refreshRequestedAt\": \"<dateTime>\",\n  \"server\": \"<string>\",\n  \"serverVersion\": \"<string>\",\n  \"shard\": \"<long>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a8e5629e-bb23-4dc5-9355-7137d779ba42",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "clusters",
+                    ":id.value",
+                    "invalidate-cache"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id.value",
+                      "description": "(Required) value holds the cluster server URL or cluster name"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 8272,\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ],\n  \"error\": \"string\",\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "493954b8-1545-40ab-a329-8ff139a023db",
+          "name": "Argo CD RotateAuth Rotates the Bearer Token Used for a Cluster",
+          "request": {
+            "name": "Argo CD RotateAuth Rotates the Bearer Token Used for a Cluster",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "clusters",
+                ":id.value",
+                "rotate-auth"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id.value",
+                  "description": "(Required) value holds the cluster server URL or cluster name"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d6aed29f-a45f-47a2-a63d-661a377f9c24",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "clusters",
+                    ":id.value",
+                    "rotate-auth"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id.value",
+                      "description": "(Required) value holds the cluster server URL or cluster name"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "461709ca-62f3-408a-99b5-cd623cb1c10b",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "clusters",
+                    ":id.value",
+                    "rotate-auth"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id.value",
+                      "description": "(Required) value holds the cluster server URL or cluster name"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 8272,\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ],\n  \"error\": \"string\",\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "fa7ec963-f30a-4f42-8108-8f06f3c9d6d4",
+    "name": "Argo CD AccountService ClusterService API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Argo CD REST API for managing GitOps continuous delivery on Kubernetes. Authentication uses JWT bearer tokens obtained via the /api/v1/session endpoint.",
+      "type": "text/plain"
+    }
+  }
+}

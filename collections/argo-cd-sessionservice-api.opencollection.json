@@ -1,0 +1,51 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Argo CD AccountService SessionService API",
+    "version": "2.14.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "SessionService",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Argo CD Create a New JWT for Authentication and Set a Cookie if Using HTTP",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v1/session"
+          },
+          "docs": "Argo CD Create a New JWT for Authentication and Set a Cookie if Using HTTP"
+        },
+        {
+          "info": {
+            "name": "Argo CD Delete an Existing JWT Cookie if Using HTTP",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/api/v1/session"
+          },
+          "docs": "Argo CD Delete an Existing JWT Cookie if Using HTTP"
+        },
+        {
+          "info": {
+            "name": "Argo CD Get the Current User's Info",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/session/userinfo"
+          },
+          "docs": "Argo CD Get the Current User's Info"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

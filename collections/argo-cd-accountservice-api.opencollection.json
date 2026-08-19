@@ -1,0 +1,127 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Argo CD AccountService API",
+    "version": "2.14.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "AccountService",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Argo CD ListAccounts Returns the List of Accounts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/account"
+          },
+          "docs": "Argo CD ListAccounts Returns the List of Accounts"
+        },
+        {
+          "info": {
+            "name": "Argo CD CanI Checks if the Current Account Has Permission to Perform an Action",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/account/can-i/:resource/:action/:subresource",
+            "params": [
+              {
+                "name": "resource",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "action",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "subresource",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Argo CD CanI Checks if the Current Account Has Permission to Perform an Action"
+        },
+        {
+          "info": {
+            "name": "Argo CD UpdatePassword Updates an Account's Password to a New Value",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/api/v1/account/password"
+          },
+          "docs": "Argo CD UpdatePassword Updates an Account's Password to a New Value"
+        },
+        {
+          "info": {
+            "name": "Argo CD GetAccount Returns an Account",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/account/:name",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Argo CD GetAccount Returns an Account"
+        },
+        {
+          "info": {
+            "name": "Argo CD CreateToken Creates a Token",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v1/account/:name/token",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Argo CD CreateToken Creates a Token"
+        },
+        {
+          "info": {
+            "name": "Argo CD DeleteToken Deletes a Token",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/api/v1/account/:name/token/:id",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Argo CD DeleteToken Deletes a Token"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

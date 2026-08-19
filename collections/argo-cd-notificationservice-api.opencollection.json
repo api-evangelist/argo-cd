@@ -1,0 +1,51 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Argo CD AccountService NotificationService API",
+    "version": "2.14.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "NotificationService",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Argo CD List Returns List of Services",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/notifications/services"
+          },
+          "docs": "Argo CD List Returns List of Services"
+        },
+        {
+          "info": {
+            "name": "Argo CD List Returns List of Templates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/notifications/templates"
+          },
+          "docs": "Argo CD List Returns List of Templates"
+        },
+        {
+          "info": {
+            "name": "Argo CD List Returns List of Triggers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/notifications/triggers"
+          },
+          "docs": "Argo CD List Returns List of Triggers"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

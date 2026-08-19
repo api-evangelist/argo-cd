@@ -1,0 +1,99 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Argo CD AccountService CertificateService API",
+    "version": "2.14.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "CertificateService",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Argo CD List All Available Repository Certificates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/certificates",
+            "params": [
+              {
+                "name": "hostNamePattern",
+                "value": "",
+                "type": "query",
+                "description": "A file-glob pattern (not regular expression) the host name has to match."
+              },
+              {
+                "name": "certType",
+                "value": "",
+                "type": "query",
+                "description": "The type of the certificate to match (ssh or https)."
+              },
+              {
+                "name": "certSubType",
+                "value": "",
+                "type": "query",
+                "description": "The sub type of the certificate to match (protocol dependent, usually only used for ssh certs)."
+              }
+            ]
+          },
+          "docs": "Argo CD List All Available Repository Certificates"
+        },
+        {
+          "info": {
+            "name": "Argo CD Creates Repository Certificates on the Server",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v1/certificates",
+            "params": [
+              {
+                "name": "upsert",
+                "value": "",
+                "type": "query",
+                "description": "Whether to upsert already existing certificates."
+              }
+            ]
+          },
+          "docs": "Argo CD Creates Repository Certificates on the Server"
+        },
+        {
+          "info": {
+            "name": "Argo CD Delete the Certificates That Match the RepositoryCertificateQuery",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/api/v1/certificates",
+            "params": [
+              {
+                "name": "hostNamePattern",
+                "value": "",
+                "type": "query",
+                "description": "A file-glob pattern (not regular expression) the host name has to match."
+              },
+              {
+                "name": "certType",
+                "value": "",
+                "type": "query",
+                "description": "The type of the certificate to match (ssh or https)."
+              },
+              {
+                "name": "certSubType",
+                "value": "",
+                "type": "query",
+                "description": "The sub type of the certificate to match (protocol dependent, usually only used for ssh certs)."
+              }
+            ]
+          },
+          "docs": "Argo CD Delete the Certificates That Match the RepositoryCertificateQuery"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

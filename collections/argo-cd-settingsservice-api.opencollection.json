@@ -1,0 +1,40 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Argo CD AccountService SettingsService API",
+    "version": "2.14.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "SettingsService",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Argo CD Get Returns Argo CD Settings",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/settings"
+          },
+          "docs": "Argo CD Get Returns Argo CD Settings"
+        },
+        {
+          "info": {
+            "name": "Argo CD Get Returns Argo CD Plugins",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/settings/plugins"
+          },
+          "docs": "Argo CD Get Returns Argo CD Plugins"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

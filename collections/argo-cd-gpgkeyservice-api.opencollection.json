@@ -1,0 +1,94 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Argo CD AccountService GPGKeyService API",
+    "version": "2.14.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "GPGKeyService",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Argo CD List All Available Repository Certificates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/gpgkeys",
+            "params": [
+              {
+                "name": "keyID",
+                "value": "",
+                "type": "query",
+                "description": "The GPG key ID to query for."
+              }
+            ]
+          },
+          "docs": "Argo CD List All Available Repository Certificates"
+        },
+        {
+          "info": {
+            "name": "Argo CD Create One or More GPG Public Keys in the Server's Configuration",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v1/gpgkeys",
+            "params": [
+              {
+                "name": "upsert",
+                "value": "",
+                "type": "query",
+                "description": "Whether to upsert already existing public keys."
+              }
+            ]
+          },
+          "docs": "Argo CD Create One or More GPG Public Keys in the Server's Configuration"
+        },
+        {
+          "info": {
+            "name": "Argo CD Delete Specified GPG Public Key from the Server's Configuration",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/api/v1/gpgkeys",
+            "params": [
+              {
+                "name": "keyID",
+                "value": "",
+                "type": "query",
+                "description": "The GPG key ID to query for."
+              }
+            ]
+          },
+          "docs": "Argo CD Delete Specified GPG Public Key from the Server's Configuration"
+        },
+        {
+          "info": {
+            "name": "Argo CD Get Information About Specified GPG Public Key from the Server",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/gpgkeys/:keyID",
+            "params": [
+              {
+                "name": "keyID",
+                "value": "",
+                "type": "path",
+                "description": "The GPG key ID to query for"
+              }
+            ]
+          },
+          "docs": "Argo CD Get Information About Specified GPG Public Key from the Server"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

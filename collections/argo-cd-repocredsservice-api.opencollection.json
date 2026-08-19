@@ -1,0 +1,168 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Argo CD AccountService RepoCredsService API",
+    "version": "2.14.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "RepoCredsService",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Argo CD ListRepositoryCredentials Gets a List of All Configured Repository Credential Sets",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/repocreds",
+            "params": [
+              {
+                "name": "url",
+                "value": "",
+                "type": "query",
+                "description": "Repo URL for query."
+              }
+            ]
+          },
+          "docs": "Argo CD ListRepositoryCredentials Gets a List of All Configured Repository Credential Sets"
+        },
+        {
+          "info": {
+            "name": "Argo CD CreateRepositoryCredentials Creates a New Repository Credential Set",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v1/repocreds",
+            "params": [
+              {
+                "name": "upsert",
+                "value": "",
+                "type": "query",
+                "description": "Whether to create in upsert mode."
+              }
+            ]
+          },
+          "docs": "Argo CD CreateRepositoryCredentials Creates a New Repository Credential Set"
+        },
+        {
+          "info": {
+            "name": "Argo CD UpdateRepositoryCredentials Updates a Repository Credential Set",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/api/v1/repocreds/:creds.url",
+            "params": [
+              {
+                "name": "creds.url",
+                "value": "",
+                "type": "path",
+                "description": "URL is the URL to which these credentials match"
+              }
+            ]
+          },
+          "docs": "Argo CD UpdateRepositoryCredentials Updates a Repository Credential Set"
+        },
+        {
+          "info": {
+            "name": "Argo CD DeleteRepositoryCredentials Deletes a Repository Credential Set from the Configuration",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/api/v1/repocreds/:url",
+            "params": [
+              {
+                "name": "url",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Argo CD DeleteRepositoryCredentials Deletes a Repository Credential Set from the Configuration"
+        },
+        {
+          "info": {
+            "name": "Argo CD ListWriteRepositoryCredentials Gets a List of All Configured Repository Credential Sets That Have Write Access",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/write-repocreds",
+            "params": [
+              {
+                "name": "url",
+                "value": "",
+                "type": "query",
+                "description": "Repo URL for query."
+              }
+            ]
+          },
+          "docs": "Argo CD ListWriteRepositoryCredentials Gets a List of All Configured Repository Credential Sets That Have Write Access"
+        },
+        {
+          "info": {
+            "name": "Argo CD CreateWriteRepositoryCredentials Creates a New Repository Credential Set with Write Access",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v1/write-repocreds",
+            "params": [
+              {
+                "name": "upsert",
+                "value": "",
+                "type": "query",
+                "description": "Whether to create in upsert mode."
+              }
+            ]
+          },
+          "docs": "Argo CD CreateWriteRepositoryCredentials Creates a New Repository Credential Set with Write Access"
+        },
+        {
+          "info": {
+            "name": "Argo CD UpdateWriteRepositoryCredentials Updates a Repository Credential Set with Write Access",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/api/v1/write-repocreds/:creds.url",
+            "params": [
+              {
+                "name": "creds.url",
+                "value": "",
+                "type": "path",
+                "description": "URL is the URL to which these credentials match"
+              }
+            ]
+          },
+          "docs": "Argo CD UpdateWriteRepositoryCredentials Updates a Repository Credential Set with Write Access"
+        },
+        {
+          "info": {
+            "name": "Argo CD DeleteWriteRepositoryCredentials Deletes a Repository Credential Set with Write Access from the Configuration",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/api/v1/write-repocreds/:url",
+            "params": [
+              {
+                "name": "url",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Argo CD DeleteWriteRepositoryCredentials Deletes a Repository Credential Set with Write Access from the Configuration"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

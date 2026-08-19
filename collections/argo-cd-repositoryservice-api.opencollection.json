@@ -1,0 +1,761 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Argo CD AccountService RepositoryService API",
+    "version": "2.14.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "RepositoryService",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Argo CD ListRepositories Gets a List of All Configured Repositories",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/repositories",
+            "params": [
+              {
+                "name": "repo",
+                "value": "",
+                "type": "query",
+                "description": "Repo URL for query."
+              },
+              {
+                "name": "forceRefresh",
+                "value": "",
+                "type": "query",
+                "description": "Whether to force a cache refresh on repo's connection state."
+              },
+              {
+                "name": "appProject",
+                "value": "",
+                "type": "query",
+                "description": "App project for query."
+              }
+            ]
+          },
+          "docs": "Argo CD ListRepositories Gets a List of All Configured Repositories"
+        },
+        {
+          "info": {
+            "name": "Argo CD CreateRepository Creates a New Repository Configuration",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v1/repositories",
+            "params": [
+              {
+                "name": "upsert",
+                "value": "",
+                "type": "query",
+                "description": "Whether to create in upsert mode."
+              },
+              {
+                "name": "credsOnly",
+                "value": "",
+                "type": "query",
+                "description": "Whether to operate on credential set instead of repository."
+              }
+            ]
+          },
+          "docs": "Argo CD CreateRepository Creates a New Repository Configuration"
+        },
+        {
+          "info": {
+            "name": "Argo CD UpdateRepository Updates a Repository Configuration",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/api/v1/repositories/:repo.repo",
+            "params": [
+              {
+                "name": "repo.repo",
+                "value": "",
+                "type": "path",
+                "description": "Repo contains the URL to the remote repository"
+              }
+            ]
+          },
+          "docs": "Argo CD UpdateRepository Updates a Repository Configuration"
+        },
+        {
+          "info": {
+            "name": "Argo CD Get Returns a Repository or its Credentials",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/repositories/:repo",
+            "params": [
+              {
+                "name": "repo",
+                "value": "",
+                "type": "path",
+                "description": "Repo URL for query"
+              },
+              {
+                "name": "forceRefresh",
+                "value": "",
+                "type": "query",
+                "description": "Whether to force a cache refresh on repo's connection state."
+              },
+              {
+                "name": "appProject",
+                "value": "",
+                "type": "query",
+                "description": "App project for query."
+              }
+            ]
+          },
+          "docs": "Argo CD Get Returns a Repository or its Credentials"
+        },
+        {
+          "info": {
+            "name": "Argo CD DeleteRepository Deletes a Repository from the Configuration",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/api/v1/repositories/:repo",
+            "params": [
+              {
+                "name": "repo",
+                "value": "",
+                "type": "path",
+                "description": "Repo URL for query"
+              },
+              {
+                "name": "forceRefresh",
+                "value": "",
+                "type": "query",
+                "description": "Whether to force a cache refresh on repo's connection state."
+              },
+              {
+                "name": "appProject",
+                "value": "",
+                "type": "query",
+                "description": "App project for query."
+              }
+            ]
+          },
+          "docs": "Argo CD DeleteRepository Deletes a Repository from the Configuration"
+        },
+        {
+          "info": {
+            "name": "Argo CD ListApps Returns List of Apps in the Repo",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/repositories/:repo/apps",
+            "params": [
+              {
+                "name": "repo",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "revision",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "appName",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "appProject",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Argo CD ListApps Returns List of Apps in the Repo"
+        },
+        {
+          "info": {
+            "name": "Argo CD GetHelmCharts Returns List of Helm Charts in the Specified Repository",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/repositories/:repo/helmcharts",
+            "params": [
+              {
+                "name": "repo",
+                "value": "",
+                "type": "path",
+                "description": "Repo URL for query"
+              },
+              {
+                "name": "forceRefresh",
+                "value": "",
+                "type": "query",
+                "description": "Whether to force a cache refresh on repo's connection state."
+              },
+              {
+                "name": "appProject",
+                "value": "",
+                "type": "query",
+                "description": "App project for query."
+              }
+            ]
+          },
+          "docs": "Argo CD GetHelmCharts Returns List of Helm Charts in the Specified Repository"
+        },
+        {
+          "info": {
+            "name": "RepositoryService_ListOCITags",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/repositories/:repo/oci-tags",
+            "params": [
+              {
+                "name": "repo",
+                "value": "",
+                "type": "path",
+                "description": "Repo URL for query"
+              },
+              {
+                "name": "forceRefresh",
+                "value": "",
+                "type": "query",
+                "description": "Whether to force a cache refresh on repo's connection state."
+              },
+              {
+                "name": "appProject",
+                "value": "",
+                "type": "query",
+                "description": "App project for query."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "RepositoryService_ListRefs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/repositories/:repo/refs",
+            "params": [
+              {
+                "name": "repo",
+                "value": "",
+                "type": "path",
+                "description": "Repo URL for query"
+              },
+              {
+                "name": "forceRefresh",
+                "value": "",
+                "type": "query",
+                "description": "Whether to force a cache refresh on repo's connection state."
+              },
+              {
+                "name": "appProject",
+                "value": "",
+                "type": "query",
+                "description": "App project for query."
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "Argo CD ValidateAccess Validates Access to a Repository with Given Parameters",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v1/repositories/:repo/validate",
+            "params": [
+              {
+                "name": "repo",
+                "value": "",
+                "type": "path",
+                "description": "The URL to the repo"
+              },
+              {
+                "name": "username",
+                "value": "",
+                "type": "query",
+                "description": "Username for accessing repo."
+              },
+              {
+                "name": "password",
+                "value": "",
+                "type": "query",
+                "description": "Password for accessing repo."
+              },
+              {
+                "name": "sshPrivateKey",
+                "value": "",
+                "type": "query",
+                "description": "Private key data for accessing SSH repository."
+              },
+              {
+                "name": "insecure",
+                "value": "",
+                "type": "query",
+                "description": "Whether to skip certificate or host key validation."
+              },
+              {
+                "name": "tlsClientCertData",
+                "value": "",
+                "type": "query",
+                "description": "TLS client cert data for accessing HTTPS repository."
+              },
+              {
+                "name": "tlsClientCertKey",
+                "value": "",
+                "type": "query",
+                "description": "TLS client cert key for accessing HTTPS repository."
+              },
+              {
+                "name": "type",
+                "value": "",
+                "type": "query",
+                "description": "The type of the repo."
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "query",
+                "description": "The name of the repo."
+              },
+              {
+                "name": "enableOci",
+                "value": "",
+                "type": "query",
+                "description": "Whether helm-oci support should be enabled for this repo."
+              },
+              {
+                "name": "githubAppPrivateKey",
+                "value": "",
+                "type": "query",
+                "description": "Github App Private Key PEM data."
+              },
+              {
+                "name": "githubAppID",
+                "value": "",
+                "type": "query",
+                "description": "Github App ID of the app used to access the repo."
+              },
+              {
+                "name": "githubAppInstallationID",
+                "value": "",
+                "type": "query",
+                "description": "Github App Installation ID of the installed GitHub App."
+              },
+              {
+                "name": "githubAppEnterpriseBaseUrl",
+                "value": "",
+                "type": "query",
+                "description": "Github App Enterprise base url if empty will default to https://api.github.com."
+              },
+              {
+                "name": "proxy",
+                "value": "",
+                "type": "query",
+                "description": "HTTP/HTTPS proxy to access the repository."
+              },
+              {
+                "name": "project",
+                "value": "",
+                "type": "query",
+                "description": "Reference between project and repository that allow you automatically to be added as item inside SourceRepos project entity."
+              },
+              {
+                "name": "gcpServiceAccountKey",
+                "value": "",
+                "type": "query",
+                "description": "Google Cloud Platform service account key."
+              },
+              {
+                "name": "forceHttpBasicAuth",
+                "value": "",
+                "type": "query",
+                "description": "Whether to force HTTP basic auth."
+              },
+              {
+                "name": "useAzureWorkloadIdentity",
+                "value": "",
+                "type": "query",
+                "description": "Whether to use azure workload identity for authentication."
+              },
+              {
+                "name": "bearerToken",
+                "value": "",
+                "type": "query",
+                "description": "BearerToken contains the bearer token used for Git auth at the repo server."
+              },
+              {
+                "name": "insecureOciForceHttp",
+                "value": "",
+                "type": "query",
+                "description": "Whether https should be disabled for an OCI repo."
+              },
+              {
+                "name": "azureServicePrincipalClientId",
+                "value": "",
+                "type": "query",
+                "description": "Azure Service Principal Client ID."
+              },
+              {
+                "name": "azureServicePrincipalClientSecret",
+                "value": "",
+                "type": "query",
+                "description": "Azure Service Principal Client Secret."
+              },
+              {
+                "name": "azureServicePrincipalTenantId",
+                "value": "",
+                "type": "query",
+                "description": "Azure Service Principal Tenant ID."
+              },
+              {
+                "name": "azureActiveDirectoryEndpoint",
+                "value": "",
+                "type": "query",
+                "description": "Azure Active Directory Endpoint."
+              }
+            ]
+          },
+          "docs": "Argo CD ValidateAccess Validates Access to a Repository with Given Parameters"
+        },
+        {
+          "info": {
+            "name": "Argo CD GetAppDetails Returns Application Details by Given Path",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v1/repositories/:source.repoURL/appdetails",
+            "params": [
+              {
+                "name": "source.repoURL",
+                "value": "",
+                "type": "path",
+                "description": "RepoURL is the URL to the repository (Git or Helm) that contains the application manifests"
+              }
+            ]
+          },
+          "docs": "Argo CD GetAppDetails Returns Application Details by Given Path"
+        },
+        {
+          "info": {
+            "name": "Argo CD ListWriteRepositories Gets a List of All Configured Write Repositories",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/write-repositories",
+            "params": [
+              {
+                "name": "repo",
+                "value": "",
+                "type": "query",
+                "description": "Repo URL for query."
+              },
+              {
+                "name": "forceRefresh",
+                "value": "",
+                "type": "query",
+                "description": "Whether to force a cache refresh on repo's connection state."
+              },
+              {
+                "name": "appProject",
+                "value": "",
+                "type": "query",
+                "description": "App project for query."
+              }
+            ]
+          },
+          "docs": "Argo CD ListWriteRepositories Gets a List of All Configured Write Repositories"
+        },
+        {
+          "info": {
+            "name": "Argo CD CreateWriteRepository Creates a New Write Repository Configuration",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v1/write-repositories",
+            "params": [
+              {
+                "name": "upsert",
+                "value": "",
+                "type": "query",
+                "description": "Whether to create in upsert mode."
+              },
+              {
+                "name": "credsOnly",
+                "value": "",
+                "type": "query",
+                "description": "Whether to operate on credential set instead of repository."
+              }
+            ]
+          },
+          "docs": "Argo CD CreateWriteRepository Creates a New Write Repository Configuration"
+        },
+        {
+          "info": {
+            "name": "Argo CD UpdateWriteRepository Updates a Write Repository Configuration",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/api/v1/write-repositories/:repo.repo",
+            "params": [
+              {
+                "name": "repo.repo",
+                "value": "",
+                "type": "path",
+                "description": "Repo contains the URL to the remote repository"
+              }
+            ]
+          },
+          "docs": "Argo CD UpdateWriteRepository Updates a Write Repository Configuration"
+        },
+        {
+          "info": {
+            "name": "Argo CD GetWrite Returns a Repository or its Write Credentials",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/write-repositories/:repo",
+            "params": [
+              {
+                "name": "repo",
+                "value": "",
+                "type": "path",
+                "description": "Repo URL for query"
+              },
+              {
+                "name": "forceRefresh",
+                "value": "",
+                "type": "query",
+                "description": "Whether to force a cache refresh on repo's connection state."
+              },
+              {
+                "name": "appProject",
+                "value": "",
+                "type": "query",
+                "description": "App project for query."
+              }
+            ]
+          },
+          "docs": "Argo CD GetWrite Returns a Repository or its Write Credentials"
+        },
+        {
+          "info": {
+            "name": "Argo CD DeleteWriteRepository Deletes a Write Repository from the Configuration",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/api/v1/write-repositories/:repo",
+            "params": [
+              {
+                "name": "repo",
+                "value": "",
+                "type": "path",
+                "description": "Repo URL for query"
+              },
+              {
+                "name": "forceRefresh",
+                "value": "",
+                "type": "query",
+                "description": "Whether to force a cache refresh on repo's connection state."
+              },
+              {
+                "name": "appProject",
+                "value": "",
+                "type": "query",
+                "description": "App project for query."
+              }
+            ]
+          },
+          "docs": "Argo CD DeleteWriteRepository Deletes a Write Repository from the Configuration"
+        },
+        {
+          "info": {
+            "name": "Argo CD ValidateWriteAccess Validates Write Access to a Repository with Given Parameters",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v1/write-repositories/:repo/validate",
+            "params": [
+              {
+                "name": "repo",
+                "value": "",
+                "type": "path",
+                "description": "The URL to the repo"
+              },
+              {
+                "name": "username",
+                "value": "",
+                "type": "query",
+                "description": "Username for accessing repo."
+              },
+              {
+                "name": "password",
+                "value": "",
+                "type": "query",
+                "description": "Password for accessing repo."
+              },
+              {
+                "name": "sshPrivateKey",
+                "value": "",
+                "type": "query",
+                "description": "Private key data for accessing SSH repository."
+              },
+              {
+                "name": "insecure",
+                "value": "",
+                "type": "query",
+                "description": "Whether to skip certificate or host key validation."
+              },
+              {
+                "name": "tlsClientCertData",
+                "value": "",
+                "type": "query",
+                "description": "TLS client cert data for accessing HTTPS repository."
+              },
+              {
+                "name": "tlsClientCertKey",
+                "value": "",
+                "type": "query",
+                "description": "TLS client cert key for accessing HTTPS repository."
+              },
+              {
+                "name": "type",
+                "value": "",
+                "type": "query",
+                "description": "The type of the repo."
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "query",
+                "description": "The name of the repo."
+              },
+              {
+                "name": "enableOci",
+                "value": "",
+                "type": "query",
+                "description": "Whether helm-oci support should be enabled for this repo."
+              },
+              {
+                "name": "githubAppPrivateKey",
+                "value": "",
+                "type": "query",
+                "description": "Github App Private Key PEM data."
+              },
+              {
+                "name": "githubAppID",
+                "value": "",
+                "type": "query",
+                "description": "Github App ID of the app used to access the repo."
+              },
+              {
+                "name": "githubAppInstallationID",
+                "value": "",
+                "type": "query",
+                "description": "Github App Installation ID of the installed GitHub App."
+              },
+              {
+                "name": "githubAppEnterpriseBaseUrl",
+                "value": "",
+                "type": "query",
+                "description": "Github App Enterprise base url if empty will default to https://api.github.com."
+              },
+              {
+                "name": "proxy",
+                "value": "",
+                "type": "query",
+                "description": "HTTP/HTTPS proxy to access the repository."
+              },
+              {
+                "name": "project",
+                "value": "",
+                "type": "query",
+                "description": "Reference between project and repository that allow you automatically to be added as item inside SourceRepos project entity."
+              },
+              {
+                "name": "gcpServiceAccountKey",
+                "value": "",
+                "type": "query",
+                "description": "Google Cloud Platform service account key."
+              },
+              {
+                "name": "forceHttpBasicAuth",
+                "value": "",
+                "type": "query",
+                "description": "Whether to force HTTP basic auth."
+              },
+              {
+                "name": "useAzureWorkloadIdentity",
+                "value": "",
+                "type": "query",
+                "description": "Whether to use azure workload identity for authentication."
+              },
+              {
+                "name": "bearerToken",
+                "value": "",
+                "type": "query",
+                "description": "BearerToken contains the bearer token used for Git auth at the repo server."
+              },
+              {
+                "name": "insecureOciForceHttp",
+                "value": "",
+                "type": "query",
+                "description": "Whether https should be disabled for an OCI repo."
+              },
+              {
+                "name": "azureServicePrincipalClientId",
+                "value": "",
+                "type": "query",
+                "description": "Azure Service Principal Client ID."
+              },
+              {
+                "name": "azureServicePrincipalClientSecret",
+                "value": "",
+                "type": "query",
+                "description": "Azure Service Principal Client Secret."
+              },
+              {
+                "name": "azureServicePrincipalTenantId",
+                "value": "",
+                "type": "query",
+                "description": "Azure Service Principal Tenant ID."
+              },
+              {
+                "name": "azureActiveDirectoryEndpoint",
+                "value": "",
+                "type": "query",
+                "description": "Azure Active Directory Endpoint."
+              }
+            ]
+          },
+          "docs": "Argo CD ValidateWriteAccess Validates Write Access to a Repository with Given Parameters"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

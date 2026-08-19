@@ -1,0 +1,1269 @@
+{
+  "item": [
+    {
+      "id": "34a38503-c6af-40d8-959c-d1f9b25a8284",
+      "name": "RepoCredsService",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "fc817795-60b2-4092-abf9-fe6b6ac142ee",
+          "name": "Argo CD ListRepositoryCredentials Gets a List of All Configured Repository Credential Sets",
+          "request": {
+            "name": "Argo CD ListRepositoryCredentials Gets a List of All Configured Repository Credential Sets",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "repocreds"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "url",
+                  "value": "<string>",
+                  "description": "Repo URL for query."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6ad7dab2-64dd-40ea-b78d-ab37fb4ae295",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "repocreds"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "url",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"items\": [\n    {\n      \"azureActiveDirectoryEndpoint\": \"string\",\n      \"azureServicePrincipalClientId\": \"string\",\n      \"azureServicePrincipalClientSecret\": \"string\",\n      \"azureServicePrincipalTenantId\": \"string\",\n      \"bearerToken\": \"string\",\n      \"enableOCI\": true,\n      \"forceHttpBasicAuth\": false,\n      \"gcpServiceAccountKey\": \"string\",\n      \"githubAppEnterpriseBaseUrl\": \"string\",\n      \"githubAppID\": 4853,\n      \"githubAppInstallationID\": 7228,\n      \"githubAppPrivateKey\": \"string\",\n      \"insecureOCIForceHttp\": false,\n      \"noProxy\": \"string\",\n      \"password\": \"string\",\n      \"proxy\": \"string\",\n      \"sshPrivateKey\": \"string\",\n      \"tlsClientCertData\": \"string\",\n      \"tlsClientCertKey\": \"string\",\n      \"type\": \"string\",\n      \"url\": \"string\",\n      \"useAzureWorkloadIdentity\": false,\n      \"username\": \"string\"\n    },\n    {\n      \"azureActiveDirectoryEndpoint\": \"string\",\n      \"azureServicePrincipalClientId\": \"string\",\n      \"azureServicePrincipalClientSecret\": \"string\",\n      \"azureServicePrincipalTenantId\": \"string\",\n      \"bearerToken\": \"string\",\n      \"enableOCI\": true,\n      \"forceHttpBasicAuth\": false,\n      \"gcpServiceAccountKey\": \"string\",\n      \"githubAppEnterpriseBaseUrl\": \"string\",\n      \"githubAppID\": 2597,\n      \"githubAppInstallationID\": 6648,\n      \"githubAppPrivateKey\": \"string\",\n      \"insecureOCIForceHttp\": true,\n      \"noProxy\": \"string\",\n      \"password\": \"string\",\n      \"proxy\": \"string\",\n      \"sshPrivateKey\": \"string\",\n      \"tlsClientCertData\": \"string\",\n      \"tlsClientCertKey\": \"string\",\n      \"type\": \"string\",\n      \"url\": \"string\",\n      \"useAzureWorkloadIdentity\": false,\n      \"username\": \"string\"\n    }\n  ],\n  \"metadata\": {\n    \"continue\": \"string\",\n    \"remainingItemCount\": 4997,\n    \"resourceVersion\": \"string\",\n    \"selfLink\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "dad3d6f4-9c7b-464d-921c-ecd76a5cf51a",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "repocreds"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "url",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 9284,\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ],\n  \"error\": \"string\",\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6d022a75-d589-4a57-92ed-7d614ae25f48",
+          "name": "Argo CD CreateRepositoryCredentials Creates a New Repository Credential Set",
+          "request": {
+            "name": "Argo CD CreateRepositoryCredentials Creates a New Repository Credential Set",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "repocreds"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "upsert",
+                  "value": "<boolean>",
+                  "description": "Whether to create in upsert mode."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"azureActiveDirectoryEndpoint\": \"<string>\",\n  \"azureServicePrincipalClientId\": \"<string>\",\n  \"azureServicePrincipalClientSecret\": \"<string>\",\n  \"azureServicePrincipalTenantId\": \"<string>\",\n  \"bearerToken\": \"<string>\",\n  \"enableOCI\": \"<boolean>\",\n  \"forceHttpBasicAuth\": \"<boolean>\",\n  \"gcpServiceAccountKey\": \"<string>\",\n  \"githubAppEnterpriseBaseUrl\": \"<string>\",\n  \"githubAppID\": \"<long>\",\n  \"githubAppInstallationID\": \"<long>\",\n  \"githubAppPrivateKey\": \"<string>\",\n  \"insecureOCIForceHttp\": \"<boolean>\",\n  \"noProxy\": \"<string>\",\n  \"password\": \"<string>\",\n  \"proxy\": \"<string>\",\n  \"sshPrivateKey\": \"<string>\",\n  \"tlsClientCertData\": \"<string>\",\n  \"tlsClientCertKey\": \"<string>\",\n  \"type\": \"<string>\",\n  \"url\": \"<string>\",\n  \"useAzureWorkloadIdentity\": \"<boolean>\",\n  \"username\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c113e3d4-d9b4-4a71-8803-415fda99d6f6",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "repocreds"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "upsert",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"azureActiveDirectoryEndpoint\": \"<string>\",\n  \"azureServicePrincipalClientId\": \"<string>\",\n  \"azureServicePrincipalClientSecret\": \"<string>\",\n  \"azureServicePrincipalTenantId\": \"<string>\",\n  \"bearerToken\": \"<string>\",\n  \"enableOCI\": \"<boolean>\",\n  \"forceHttpBasicAuth\": \"<boolean>\",\n  \"gcpServiceAccountKey\": \"<string>\",\n  \"githubAppEnterpriseBaseUrl\": \"<string>\",\n  \"githubAppID\": \"<long>\",\n  \"githubAppInstallationID\": \"<long>\",\n  \"githubAppPrivateKey\": \"<string>\",\n  \"insecureOCIForceHttp\": \"<boolean>\",\n  \"noProxy\": \"<string>\",\n  \"password\": \"<string>\",\n  \"proxy\": \"<string>\",\n  \"sshPrivateKey\": \"<string>\",\n  \"tlsClientCertData\": \"<string>\",\n  \"tlsClientCertKey\": \"<string>\",\n  \"type\": \"<string>\",\n  \"url\": \"<string>\",\n  \"useAzureWorkloadIdentity\": \"<boolean>\",\n  \"username\": \"<string>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b6aca98b-3644-45c6-8ef6-6b9a35478940",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "repocreds"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "upsert",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 2679,\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ],\n  \"error\": \"string\",\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1e9d3c3f-3628-497f-a7ae-0d0cb4ab9755",
+          "name": "Argo CD UpdateRepositoryCredentials Updates a Repository Credential Set",
+          "request": {
+            "name": "Argo CD UpdateRepositoryCredentials Updates a Repository Credential Set",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "repocreds",
+                ":creds.url"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "creds.url",
+                  "description": "(Required) URL is the URL to which these credentials match"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"azureActiveDirectoryEndpoint\": \"<string>\",\n  \"azureServicePrincipalClientId\": \"<string>\",\n  \"azureServicePrincipalClientSecret\": \"<string>\",\n  \"azureServicePrincipalTenantId\": \"<string>\",\n  \"bearerToken\": \"<string>\",\n  \"enableOCI\": \"<boolean>\",\n  \"forceHttpBasicAuth\": \"<boolean>\",\n  \"gcpServiceAccountKey\": \"<string>\",\n  \"githubAppEnterpriseBaseUrl\": \"<string>\",\n  \"githubAppID\": \"<long>\",\n  \"githubAppInstallationID\": \"<long>\",\n  \"githubAppPrivateKey\": \"<string>\",\n  \"insecureOCIForceHttp\": \"<boolean>\",\n  \"noProxy\": \"<string>\",\n  \"password\": \"<string>\",\n  \"proxy\": \"<string>\",\n  \"sshPrivateKey\": \"<string>\",\n  \"tlsClientCertData\": \"<string>\",\n  \"tlsClientCertKey\": \"<string>\",\n  \"type\": \"<string>\",\n  \"url\": \"<string>\",\n  \"useAzureWorkloadIdentity\": \"<boolean>\",\n  \"username\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e39396d7-2ac8-4e8b-ab95-575e4cdd0a71",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "repocreds",
+                    ":creds.url"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "creds.url",
+                      "description": "(Required) URL is the URL to which these credentials match"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"azureActiveDirectoryEndpoint\": \"<string>\",\n  \"azureServicePrincipalClientId\": \"<string>\",\n  \"azureServicePrincipalClientSecret\": \"<string>\",\n  \"azureServicePrincipalTenantId\": \"<string>\",\n  \"bearerToken\": \"<string>\",\n  \"enableOCI\": \"<boolean>\",\n  \"forceHttpBasicAuth\": \"<boolean>\",\n  \"gcpServiceAccountKey\": \"<string>\",\n  \"githubAppEnterpriseBaseUrl\": \"<string>\",\n  \"githubAppID\": \"<long>\",\n  \"githubAppInstallationID\": \"<long>\",\n  \"githubAppPrivateKey\": \"<string>\",\n  \"insecureOCIForceHttp\": \"<boolean>\",\n  \"noProxy\": \"<string>\",\n  \"password\": \"<string>\",\n  \"proxy\": \"<string>\",\n  \"sshPrivateKey\": \"<string>\",\n  \"tlsClientCertData\": \"<string>\",\n  \"tlsClientCertKey\": \"<string>\",\n  \"type\": \"<string>\",\n  \"url\": \"<string>\",\n  \"useAzureWorkloadIdentity\": \"<boolean>\",\n  \"username\": \"<string>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9b6a7bd8-9979-450d-9d5d-e5f5bba922ee",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "repocreds",
+                    ":creds.url"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "creds.url",
+                      "description": "(Required) URL is the URL to which these credentials match"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 2679,\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ],\n  \"error\": \"string\",\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f70d2af4-e66e-4824-82a4-a2ad663138e0",
+          "name": "Argo CD DeleteRepositoryCredentials Deletes a Repository Credential Set from the Configuration",
+          "request": {
+            "name": "Argo CD DeleteRepositoryCredentials Deletes a Repository Credential Set from the Configuration",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "repocreds",
+                ":url"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "url",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a26225e2-876d-4b8d-9f45-18bb10fd34f7",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "repocreds",
+                    ":url"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "url",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b8c0a2a7-7882-46d9-bd0a-b712ce1311a0",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "repocreds",
+                    ":url"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "url",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 2679,\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ],\n  \"error\": \"string\",\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b6a781b2-7a90-4b48-a993-a4993298b136",
+          "name": "Argo CD ListWriteRepositoryCredentials Gets a List of All Configured Repository Credential Sets That Have Write Access",
+          "request": {
+            "name": "Argo CD ListWriteRepositoryCredentials Gets a List of All Configured Repository Credential Sets That Have Write Access",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "write-repocreds"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "url",
+                  "value": "<string>",
+                  "description": "Repo URL for query."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "03d6105a-0cfa-44cc-b699-29164ff5ff8e",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "write-repocreds"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "url",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"items\": [\n    {\n      \"azureActiveDirectoryEndpoint\": \"<string>\",\n      \"azureServicePrincipalClientId\": \"<string>\",\n      \"azureServicePrincipalClientSecret\": \"<string>\",\n      \"azureServicePrincipalTenantId\": \"<string>\",\n      \"bearerToken\": \"<string>\",\n      \"enableOCI\": \"<boolean>\",\n      \"forceHttpBasicAuth\": \"<boolean>\",\n      \"gcpServiceAccountKey\": \"<string>\",\n      \"githubAppEnterpriseBaseUrl\": \"<string>\",\n      \"githubAppID\": \"<long>\",\n      \"githubAppInstallationID\": \"<long>\",\n      \"githubAppPrivateKey\": \"<string>\",\n      \"insecureOCIForceHttp\": \"<boolean>\",\n      \"noProxy\": \"<string>\",\n      \"password\": \"<string>\",\n      \"proxy\": \"<string>\",\n      \"sshPrivateKey\": \"<string>\",\n      \"tlsClientCertData\": \"<string>\",\n      \"tlsClientCertKey\": \"<string>\",\n      \"type\": \"<string>\",\n      \"url\": \"<string>\",\n      \"useAzureWorkloadIdentity\": \"<boolean>\",\n      \"username\": \"<string>\"\n    },\n    {\n      \"azureActiveDirectoryEndpoint\": \"<string>\",\n      \"azureServicePrincipalClientId\": \"<string>\",\n      \"azureServicePrincipalClientSecret\": \"<string>\",\n      \"azureServicePrincipalTenantId\": \"<string>\",\n      \"bearerToken\": \"<string>\",\n      \"enableOCI\": \"<boolean>\",\n      \"forceHttpBasicAuth\": \"<boolean>\",\n      \"gcpServiceAccountKey\": \"<string>\",\n      \"githubAppEnterpriseBaseUrl\": \"<string>\",\n      \"githubAppID\": \"<long>\",\n      \"githubAppInstallationID\": \"<long>\",\n      \"githubAppPrivateKey\": \"<string>\",\n      \"insecureOCIForceHttp\": \"<boolean>\",\n      \"noProxy\": \"<string>\",\n      \"password\": \"<string>\",\n      \"proxy\": \"<string>\",\n      \"sshPrivateKey\": \"<string>\",\n      \"tlsClientCertData\": \"<string>\",\n      \"tlsClientCertKey\": \"<string>\",\n      \"type\": \"<string>\",\n      \"url\": \"<string>\",\n      \"useAzureWorkloadIdentity\": \"<boolean>\",\n      \"username\": \"<string>\"\n    }\n  ],\n  \"metadata\": {\n    \"continue\": \"string\",\n    \"remainingItemCount\": 9113,\n    \"resourceVersion\": \"string\",\n    \"selfLink\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c39ef03d-275d-4c17-9f73-a782efe9d282",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "write-repocreds"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "url",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 2679,\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ],\n  \"error\": \"string\",\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5e13efb9-3ee6-495d-bb03-f792f4935d7a",
+          "name": "Argo CD CreateWriteRepositoryCredentials Creates a New Repository Credential Set with Write Access",
+          "request": {
+            "name": "Argo CD CreateWriteRepositoryCredentials Creates a New Repository Credential Set with Write Access",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "write-repocreds"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "upsert",
+                  "value": "<boolean>",
+                  "description": "Whether to create in upsert mode."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"azureActiveDirectoryEndpoint\": \"<string>\",\n  \"azureServicePrincipalClientId\": \"<string>\",\n  \"azureServicePrincipalClientSecret\": \"<string>\",\n  \"azureServicePrincipalTenantId\": \"<string>\",\n  \"bearerToken\": \"<string>\",\n  \"enableOCI\": \"<boolean>\",\n  \"forceHttpBasicAuth\": \"<boolean>\",\n  \"gcpServiceAccountKey\": \"<string>\",\n  \"githubAppEnterpriseBaseUrl\": \"<string>\",\n  \"githubAppID\": \"<long>\",\n  \"githubAppInstallationID\": \"<long>\",\n  \"githubAppPrivateKey\": \"<string>\",\n  \"insecureOCIForceHttp\": \"<boolean>\",\n  \"noProxy\": \"<string>\",\n  \"password\": \"<string>\",\n  \"proxy\": \"<string>\",\n  \"sshPrivateKey\": \"<string>\",\n  \"tlsClientCertData\": \"<string>\",\n  \"tlsClientCertKey\": \"<string>\",\n  \"type\": \"<string>\",\n  \"url\": \"<string>\",\n  \"useAzureWorkloadIdentity\": \"<boolean>\",\n  \"username\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2ab0da8c-8382-4bba-81fb-8f9505d313a1",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "write-repocreds"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "upsert",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"azureActiveDirectoryEndpoint\": \"<string>\",\n  \"azureServicePrincipalClientId\": \"<string>\",\n  \"azureServicePrincipalClientSecret\": \"<string>\",\n  \"azureServicePrincipalTenantId\": \"<string>\",\n  \"bearerToken\": \"<string>\",\n  \"enableOCI\": \"<boolean>\",\n  \"forceHttpBasicAuth\": \"<boolean>\",\n  \"gcpServiceAccountKey\": \"<string>\",\n  \"githubAppEnterpriseBaseUrl\": \"<string>\",\n  \"githubAppID\": \"<long>\",\n  \"githubAppInstallationID\": \"<long>\",\n  \"githubAppPrivateKey\": \"<string>\",\n  \"insecureOCIForceHttp\": \"<boolean>\",\n  \"noProxy\": \"<string>\",\n  \"password\": \"<string>\",\n  \"proxy\": \"<string>\",\n  \"sshPrivateKey\": \"<string>\",\n  \"tlsClientCertData\": \"<string>\",\n  \"tlsClientCertKey\": \"<string>\",\n  \"type\": \"<string>\",\n  \"url\": \"<string>\",\n  \"useAzureWorkloadIdentity\": \"<boolean>\",\n  \"username\": \"<string>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b881a053-fc66-44cb-a895-1623127faff5",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "write-repocreds"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "upsert",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 2679,\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ],\n  \"error\": \"string\",\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "157029f6-8d7e-4f4d-9420-fb61ef99c5b3",
+          "name": "Argo CD UpdateWriteRepositoryCredentials Updates a Repository Credential Set with Write Access",
+          "request": {
+            "name": "Argo CD UpdateWriteRepositoryCredentials Updates a Repository Credential Set with Write Access",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "write-repocreds",
+                ":creds.url"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "creds.url",
+                  "description": "(Required) URL is the URL to which these credentials match"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"azureActiveDirectoryEndpoint\": \"<string>\",\n  \"azureServicePrincipalClientId\": \"<string>\",\n  \"azureServicePrincipalClientSecret\": \"<string>\",\n  \"azureServicePrincipalTenantId\": \"<string>\",\n  \"bearerToken\": \"<string>\",\n  \"enableOCI\": \"<boolean>\",\n  \"forceHttpBasicAuth\": \"<boolean>\",\n  \"gcpServiceAccountKey\": \"<string>\",\n  \"githubAppEnterpriseBaseUrl\": \"<string>\",\n  \"githubAppID\": \"<long>\",\n  \"githubAppInstallationID\": \"<long>\",\n  \"githubAppPrivateKey\": \"<string>\",\n  \"insecureOCIForceHttp\": \"<boolean>\",\n  \"noProxy\": \"<string>\",\n  \"password\": \"<string>\",\n  \"proxy\": \"<string>\",\n  \"sshPrivateKey\": \"<string>\",\n  \"tlsClientCertData\": \"<string>\",\n  \"tlsClientCertKey\": \"<string>\",\n  \"type\": \"<string>\",\n  \"url\": \"<string>\",\n  \"useAzureWorkloadIdentity\": \"<boolean>\",\n  \"username\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "912313d1-ea49-4690-b3c4-08786088e993",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "write-repocreds",
+                    ":creds.url"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "creds.url",
+                      "description": "(Required) URL is the URL to which these credentials match"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"azureActiveDirectoryEndpoint\": \"<string>\",\n  \"azureServicePrincipalClientId\": \"<string>\",\n  \"azureServicePrincipalClientSecret\": \"<string>\",\n  \"azureServicePrincipalTenantId\": \"<string>\",\n  \"bearerToken\": \"<string>\",\n  \"enableOCI\": \"<boolean>\",\n  \"forceHttpBasicAuth\": \"<boolean>\",\n  \"gcpServiceAccountKey\": \"<string>\",\n  \"githubAppEnterpriseBaseUrl\": \"<string>\",\n  \"githubAppID\": \"<long>\",\n  \"githubAppInstallationID\": \"<long>\",\n  \"githubAppPrivateKey\": \"<string>\",\n  \"insecureOCIForceHttp\": \"<boolean>\",\n  \"noProxy\": \"<string>\",\n  \"password\": \"<string>\",\n  \"proxy\": \"<string>\",\n  \"sshPrivateKey\": \"<string>\",\n  \"tlsClientCertData\": \"<string>\",\n  \"tlsClientCertKey\": \"<string>\",\n  \"type\": \"<string>\",\n  \"url\": \"<string>\",\n  \"useAzureWorkloadIdentity\": \"<boolean>\",\n  \"username\": \"<string>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "472c6bd3-1922-49ef-8e8c-35b51d3b3b32",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "write-repocreds",
+                    ":creds.url"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "creds.url",
+                      "description": "(Required) URL is the URL to which these credentials match"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 2679,\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ],\n  \"error\": \"string\",\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b0f79fde-eb18-4538-8bd3-69e0c28c0c3d",
+          "name": "Argo CD DeleteWriteRepositoryCredentials Deletes a Repository Credential Set with Write Access from the Configuration",
+          "request": {
+            "name": "Argo CD DeleteWriteRepositoryCredentials Deletes a Repository Credential Set with Write Access from the Configuration",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "write-repocreds",
+                ":url"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "url",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3cccb306-8f58-4485-8a6b-440d9a74ed1d",
+              "name": "A successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "write-repocreds",
+                    ":url"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "url",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "258d11a2-10ef-4681-8da9-ee11fada274e",
+              "name": "An unexpected error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "write-repocreds",
+                    ":url"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "url",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 2679,\n  \"details\": [\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"type_url\": \"string\",\n      \"value\": \"string\"\n    }\n  ],\n  \"error\": \"string\",\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "4794b6b7-2613-4c3a-96a4-17e55615e514",
+    "name": "Argo CD AccountService RepoCredsService API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Argo CD REST API for managing GitOps continuous delivery on Kubernetes. Authentication uses JWT bearer tokens obtained via the /api/v1/session endpoint.",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,219 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Argo CD AccountService ApplicationSetService API",
+    "version": "2.14.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "ApplicationSetService",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Argo CD List Returns List of Applicationset",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/applicationsets",
+            "params": [
+              {
+                "name": "projects",
+                "value": "",
+                "type": "query",
+                "description": "the project names to restrict returned list applicationsets."
+              },
+              {
+                "name": "selector",
+                "value": "",
+                "type": "query",
+                "description": "the selector to restrict returned list to applications only with matched labels."
+              },
+              {
+                "name": "appsetNamespace",
+                "value": "",
+                "type": "query",
+                "description": "The application set namespace. Default empty is argocd control plane namespace."
+              }
+            ]
+          },
+          "docs": "Argo CD List Returns List of Applicationset"
+        },
+        {
+          "info": {
+            "name": "Argo CD Create Creates an Applicationset",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v1/applicationsets",
+            "params": [
+              {
+                "name": "upsert",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "dryRun",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Argo CD Create Creates an Applicationset"
+        },
+        {
+          "info": {
+            "name": "Argo CD Generate Generates",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/v1/applicationsets/generate"
+          },
+          "docs": "Argo CD Generate Generates"
+        },
+        {
+          "info": {
+            "name": "Argo CD Get Returns an Applicationset by Name",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/applicationsets/:name",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "the applicationsets's name"
+              },
+              {
+                "name": "appsetNamespace",
+                "value": "",
+                "type": "query",
+                "description": "The application set namespace. Default empty is argocd control plane namespace."
+              }
+            ]
+          },
+          "docs": "Argo CD Get Returns an Applicationset by Name"
+        },
+        {
+          "info": {
+            "name": "Argo CD Delete Deletes an Application Set",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/api/v1/applicationsets/:name",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "appsetNamespace",
+                "value": "",
+                "type": "query",
+                "description": "The application set namespace. Default empty is argocd control plane namespace."
+              }
+            ]
+          },
+          "docs": "Argo CD Delete Deletes an Application Set"
+        },
+        {
+          "info": {
+            "name": "Argo CD ListResourceEvents Returns a List of Event Resources",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/applicationsets/:name/events",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "the applicationsets's name"
+              },
+              {
+                "name": "appsetNamespace",
+                "value": "",
+                "type": "query",
+                "description": "The application set namespace. Default empty is argocd control plane namespace."
+              }
+            ]
+          },
+          "docs": "Argo CD ListResourceEvents Returns a List of Event Resources"
+        },
+        {
+          "info": {
+            "name": "Argo CD ResourceTree Returns Resource Tree",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/applicationsets/:name/resource-tree",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "appsetNamespace",
+                "value": "",
+                "type": "query",
+                "description": "The application set namespace. Default empty is argocd control plane namespace."
+              }
+            ]
+          },
+          "docs": "Argo CD ResourceTree Returns Resource Tree"
+        },
+        {
+          "info": {
+            "name": "ApplicationSetService_Watch",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/stream/applicationsets",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "projects",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "selector",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "appSetNamespace",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "resourceVersion",
+                "value": "",
+                "type": "query",
+                "description": "when specified with a watch call, shows changes that occur after that particular version of a resource."
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
