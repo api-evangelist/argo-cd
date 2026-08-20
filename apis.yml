@@ -27,6 +27,14 @@ tags:
   - GitOps
   - Kubernetes
   - CNCF
+  - Open-Source
+tags_raw:
+  - Continuous Delivery
+  - Containers
+  - Deployment
+  - GitOps
+  - Kubernetes
+  - CNCF
   - Open Source
 url: https://raw.githubusercontent.com/api-evangelist/argo-cd/refs/heads/main/apis.yml
 created: '2026-03-26'
@@ -140,6 +148,8 @@ apis:
   description: The NotificationService API from Argo CD — 3 operation(s) for notificationservice.
   humanURL: https://argo-cd.readthedocs.io/en/stable/developer-guide/api-docs/
   tags:
+  - Notification Service
+  tags_raw:
   - NotificationService
   properties:
   - type: OpenAPI
